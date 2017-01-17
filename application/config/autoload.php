@@ -61,7 +61,7 @@ $autoload['packages'] = array();
 */
 
 //$autoload['libraries'] = array('user_agent','connector','MongoCI', 'RabbitMQ');
-$autoload['libraries'] = array('user_agent','connector', 'MongoCI','smarty','session','options','Generator');
+$autoload['libraries'] = array('user_agent','smarty','session','options','Generator');
 //$autoload['libraries'] = array('Mongo_db');
 
 
@@ -107,7 +107,7 @@ $autoload['helper'] = array('url', 'utility', 'form');
 */
 
 //$autoload['config'] = array('redis','mongo','rabbitmq','app-config');
-$autoload['config'] = array('redis','mongo','app-config','smarty','rabbitmq');
+$autoload['config'] = array('redis','app-config','smarty','rabbitmq');
 
 
 /*
