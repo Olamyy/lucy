@@ -84,3 +84,7 @@ define('EXIT_USER_INPUT', 7); // invalid user input
 define('EXIT_DATABASE', 8); // database error
 define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+define('PHPASS_HASH_STRENGTH', 8);
+define('PHPASS_HASH_PORTABLE', FALSE);

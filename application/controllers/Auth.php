@@ -9,6 +9,8 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
+        $this->load->library('session');
         $this->load->model('user_model');
 
         //check if user is already logged-in...
@@ -24,11 +26,11 @@ class Auth extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $confirm_password = $this->input->post('confirm_password');
-            $firstname = $this->input('firstname');
-            $lastname = $this->input('lastname');
-            $address = $this->input('address');
-            $state = $this->input('state');
-            $number = $this->input('number');
+            $firstname = $this->input->post('firstname');
+            $lastname = $this->input->post('lastname');
+            $address = $this->input->post('address');
+            $state = $this->input->post('state');
+            $number = $this->input->post('number');
 
             if ($action == "login") {
                 $this->login($email, $password);
@@ -65,60 +67,80 @@ class Auth extends CI_Controller
         if (empty($lastname)) $error[] = 'Provide a Valid Last Name';
         if (empty($address)) $error[] = 'Provide a Valid Address';
         if (empty($state)) $error[] = 'Provide a Valid State';
-        if (empty($password)) $error[] = 'Provide a Valid Password';
         if (empty($confirm_password)) $error[] = 'Provide a Valid Password';
         if (empty($number)) $error[] = "Provide a valid Mobile Number";
 
         if (empty($error)){
             $this->isSimilar($password, $confirm_password);
-        }
+
+            ///hash password  ...okay
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $user_details = array('email'=>$email,'password'=>$hash_password,'firstname'=>$firstname,'lastname'=>
+                                    $lastname,'address'=>$address, 'state'=>$state, 'number'=>$this->user_model->msisdn_sanitizer($number),
+                                    'user_group_id'=>1,'code'=>$this->user_model->get_transaction_code(),
+                                    'ip'=>$this->input->ip_address(),
+                                    'status' => 0,
+                                        'date_added' => date('Y-m-d H:i:s')
+                                  );
+
+            ////save user ...okay
+            $insert = $this->user_model->add($user_details, 'lucy_user');
+
+            if ($insert){
+
+                 ///send verification email with code
+
+                $send_mail = $this->send_email($user_details);
+
+
+                ///redic
+                 redirect('index.php/auth/verify');
+            }
+            else
+                $this->data['error'] = "Unable to register your details. Please, check your details.";
+            }
+        else
+            $this->data['error'] = "Your passwords are not similar";
+
+            $this->smarty->view('front/auth.tpl', $this->data);
 
     }
 
     private function isSimilar($password, $confirm_password)
     {
-
-    }
-
-}
-
-
-
-/*
- *
- *
- * $this->load->model('user_model');
-
-        //check if user is already logged-in...
-        $check = $this->session->userdata('admin-user');
-        if($check) redirect('admin/dashboard/');
-    }
-
-    public function index()
-    {
-        $error = array();
-        if (!empty($_POST)) {
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-
-
-            if (empty($username)) $error[] = 'Provide a Valid Username';
-            if (empty($password)) $error[] = 'Provide a Valid Password';
-
-
-            if (empty($error)) {
-                if ($username == $this->config->item("admin_username") && $password == $this->config->item("admin_password")) {
-                    //set session here okay.....
-                    $this->session->set_userdata('admin-user', array('username' => 'admin', 'full_name' => 'Administrator', 'privilege' => 1, 'status' => 1));
-                    redirect('index.php/admin/dashboard/');
-                } else
-                    $this->data['error'] = array('Invalid Username Or Password');
-            } else
-                $this->data['error'] = $error;
+        if ($password === $confirm_password){
+            return true;
         }
-        $this->smarty->view('admin/auth.tpl', $this->data);
+        else
+            return false;
+    }
+
+
+    public function verify(){
+
+        $this->smarty->view('front/verify.tpl');
+
+    }
+
+    private function send_email($user_details)
+    {
+        ///////////////////////////SendGrid Config///////////////////////////
+        $config = Array(
+            'protocol' => 'sendmail',
+            'smtp_host' => 'smtp.sendgrid.net',
+            'smtp_port' => 587,
+            'smtp_user' => 'apikey',
+            'smtp_pass' => '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',
+            'smtp_timeout' => '4',
+            'mailtype'  => 'html',
+            'charset'   => 'iso-8859-1'
+        );
+
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+
+        $this->email->send();
     }
 
 }
- *
- */

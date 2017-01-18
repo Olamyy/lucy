@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-16 19:27:05
+<?php /* Smarty version 3.1.24, created on 2017-01-17 08:50:11
          compiled from "/var/www/html/lucy/public/_template/front/specialdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1604322163587d10798d1743_77813777%%*/
+/*%%SmartyHeaderCode:2022691295587dccb3db2cd1_73818138%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ed6e72221110d17efed8bae0911e7807ef3af2ad' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/specialdeals.tpl',
-      1 => 1484590722,
+      1 => 1484639409,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1604322163587d10798d1743_77813777',
-  'variables' => 
-  array (
-    'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
-  ),
+  'nocache_hash' => '2022691295587dccb3db2cd1_73818138',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587d107990f909_64941654',
+  'unifunc' => 'content_587dccb3df22d4_23317007',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587d107990f909_64941654')) {
-function content_587d107990f909_64941654 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587dccb3df22d4_23317007')) {
+function content_587dccb3df22d4_23317007 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1604322163587d10798d1743_77813777';
+$_smarty_tpl->properties['nocache_hash'] = '2022691295587dccb3db2cd1_73818138';
 ?>
 <div class="sidebar-widget outer-bottom-small wow fadeInUp">
     <h3 class="section-title">Special Deals</h3>
@@ -40,9 +35,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1604322163587d10798d1743_77813777';
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p28.jpg"  alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -70,9 +63,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p15.jpg"  alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -100,9 +91,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p26.jpg"  alt="image"> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt="image"> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -134,9 +123,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p18.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -164,9 +151,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p17.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -194,9 +179,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p16.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -227,9 +210,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p15.jpg" alt="images">
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt="images">
                                                 <div class="zoom-overlay"></div>
                                             </a> </div>
                                         <!-- /.image -->
@@ -259,9 +240,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p14.jpg"  alt="">
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt="">
                                                 <div class="zoom-overlay"></div>
                                             </a> </div>
                                         <!-- /.image -->
@@ -291,9 +270,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/products/p13.jpg" alt="image"> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt="image"> </a> </div>
                                         <!-- /.image -->
 
                                     </div>

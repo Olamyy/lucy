@@ -1,3 +1,5 @@
+{include file="../dashboardfooter.tpl"}
+
 <!-- plugin level scripts -->
 {*<script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/jquery.uniform/js/jquery.uniform.js"></script>*}
 {*<script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/inputlimiter/js/jquery.inputlimiter.js"></script>*}
@@ -36,6 +38,8 @@
 <script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/jquery-tagsinput/js/jquery.tagsinput.js"></script>
 <script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/js/form.js"></script>
 <script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/js/pages/form_elements.js"></script>
+<script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/jquery-tagsinput/js/jquery.tagsinput.js"></script>
+
 
 </body>
 

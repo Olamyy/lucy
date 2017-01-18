@@ -9,7 +9,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p28.jpg"  alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -37,7 +37,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p15.jpg"  alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -65,7 +65,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p26.jpg"  alt="image"> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt="image"> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -97,7 +97,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p18.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -125,7 +125,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p17.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -153,7 +153,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p16.jpg" alt=""> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt=""> </a> </div>
                                         <!-- /.image -->
 
                                     </div>
@@ -184,7 +184,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p15.jpg" alt="images">
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt="images">
                                                 <div class="zoom-overlay"></div>
                                             </a> </div>
                                         <!-- /.image -->
@@ -214,7 +214,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p14.jpg"  alt="">
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700"  alt="">
                                                 <div class="zoom-overlay"></div>
                                             </a> </div>
                                         <!-- /.image -->
@@ -244,7 +244,7 @@
                             <div class="row product-micro-row">
                                 <div class="col col-xs-5">
                                     <div class="product-image">
-                                        <div class="image"> <a href="#"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/products/p13.jpg" alt="image"> </a> </div>
+                                        <div class="image"> <a href="#"> <img src="http://placehold.it/700x700" alt="image"> </a> </div>
                                         <!-- /.image -->
 
                                     </div>

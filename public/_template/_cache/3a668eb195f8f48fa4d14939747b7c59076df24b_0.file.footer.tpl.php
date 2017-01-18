@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-16 19:55:23
+<?php /* Smarty version 3.1.24, created on 2017-01-17 13:41:25
          compiled from "/var/www/html/lucy/public/_template/front/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1591994758587d171bd6f303_93364486%%*/
+/*%%SmartyHeaderCode:1652958756587e10f5125f94_43066573%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a668eb195f8f48fa4d14939747b7c59076df24b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/footer.tpl',
-      1 => 1484592918,
+      1 => 1484656879,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1591994758587d171bd6f303_93364486',
+  'nocache_hash' => '1652958756587e10f5125f94_43066573',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
+    'STORE_ADDRESS' => 0,
+    'STORE_MOBILE' => 0,
+    'STORE_EMAIL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587d171bdf1307_64793755',
+  'unifunc' => 'content_587e10f51d3712_18794537',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587d171bdf1307_64793755')) {
-function content_587d171bdf1307_64793755 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587e10f51d3712_18794537')) {
+function content_587e10f51d3712_18794537 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1591994758587d171bd6f303_93364486';
+$_smarty_tpl->properties['nocache_hash'] = '1652958756587e10f5125f94_43066573';
 ?>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
     <div class="logo-slider-inner">
@@ -124,19 +127,21 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <li class="media">
                                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i> </span> </div>
                                 <div class="media-body">
-                                    <p>Themesstock, 789 Main rd, Anytown, CA 12345 USA</p>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['STORE_ADDRESS']->value;?>
+</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inverse"></i> </span> </div>
                                 <div class="media-body">
-                                    <p>+(888) 123-4567<br>
-                                        +(888) 456-7890</p>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['STORE_MOBILE']->value;?>
+</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i> </span> </div>
-                                <div class="media-body"> <span><a href="#">lotus@themesstock.com</a></span> </div>
+                                <div class="media-body"> <span><a href="#"><?php echo $_smarty_tpl->tpl_vars['STORE_EMAIL']->value;?>
+</a></span> </div>
                             </li>
                         </ul>
                     </div>

@@ -9,8 +9,8 @@ $(document).ready(function() {
     var $toastlast;
 
     var shortCutFunction = "success";
-    var msg = "Thanks for checking our theme!";
-    var title = "<span>Welcome!</span> <h5 class='text-white'>Micheal</h5>";
+    //var msg = "Thanks for checking our theme!";
+    //var title = "<span>Welcome!</span> <h5 class='text-white'>Micheal</h5>";
     var $showDuration = 1000;
     var $hideDuration = 1000;
     var $timeOut = 5000;

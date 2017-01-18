@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-15 19:10:05
+<?php /* Smarty version 3.1.24, created on 2017-01-17 17:10:49
          compiled from "/var/www/html/lucy/public/_template/admin/dashboardfooter.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1082227500587bbafdd7aa69_33176052%%*/
+/*%%SmartyHeaderCode:64563259587e4209bb3a88_49860306%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '53af55481528022c49e0641db480fee7225b0e46' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/dashboardfooter.tpl',
-      1 => 1484503800,
+      1 => 1484669448,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1082227500587bbafdd7aa69_33176052',
+  'nocache_hash' => '64563259587e4209bb3a88_49860306',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587bbafdde2fc0_30691016',
+  'unifunc' => 'content_587e4209c0bf33_18201695',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587bbafdde2fc0_30691016')) {
-function content_587bbafdde2fc0_30691016 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587e4209c0bf33_18201695')) {
+function content_587e4209c0bf33_18201695 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1082227500587bbafdd7aa69_33176052';
+$_smarty_tpl->properties['nocache_hash'] = '64563259587e4209bb3a88_49860306';
 ?>
 
 <?php echo '<script'; ?>
@@ -112,11 +112,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /admin/assets/js/pages/new_dashboard.js"><?php echo '</script'; ?>
 >
-
-</body>
-
-<!-- Mirrored from dev.lorvent.com/admire/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jan 2017 10:05:15 GMT -->
-</html>
 <?php }
 }
 ?>

@@ -23,7 +23,15 @@
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
                     </div>
-                    <form class="register-form outer-top-xs" role="form">
+                    {if $error|default:''}
+                        <div class="alert alert-danger">
+                            <strong>Oops! Something went wrong</strong>
+                            {foreach from=$error item=err}
+                                <p>{$err}</p>
+                            {/foreach}
+                        </div>
+                    {/if}
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/auth">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
@@ -48,7 +56,15 @@
                 <div class="col-md-6 col-sm-6 create-new-account">
                     <h4 class="checkout-subtitle">Create a new account</h4>
                     <p class="text title-tag-line">Create your new account.</p>
-                    <form class="register-form outer-top-xs" role="form">
+                    {if $error|default:''}
+                        <div class="alert alert-danger">
+                            <strong>Oops! Something went wrong</strong>
+                            {foreach from=$error item=err}
+                                <p>{$err}</p>
+                            {/foreach}
+                        </div>
+                    {/if}
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/auth">
                         <input type="hidden" value="registration" name="action">
                         <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">First Name <span>*</span></label>

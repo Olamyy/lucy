@@ -28,8 +28,18 @@
     <!--End of plugin styles-->
     <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/css/pages/form_elements.css"/>
     <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/fileinput/css/fileinput.min.css""/>
-
     {*End Product Add*}
+
+    <!-- Category Add styles -->
+    <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/select2/css/select2.min.css"/>
+    <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/datatables/css/dataTables.bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/css/pages/dataTables.bootstrap.css"/>
+    <!-- end of plugin styles -->
+    <!--Page level styles-->
+    <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/css/pages/tables.css"/>
+
+    <link type="text/css" rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/jquery-tagsinput/css/jquery.tagsinput.css"/>
+
     <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
 
 

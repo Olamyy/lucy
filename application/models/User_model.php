@@ -34,10 +34,9 @@ class User_model extends CI_Model
     public function custom_query($query)
     {
         $state = $this->db->query($query);
-        if ($state){
+        if ($state) {
             return $state->result_array();
-        }
-        else
+        } else
             return false;
     }
 
@@ -62,125 +61,26 @@ class User_model extends CI_Model
         return mt_rand(1000, 9000);
     }
 
-    public static function msisdn_sanitizer($msisdn,$plus = false){
+    public static function msisdn_sanitizer($msisdn, $plus = false)
+    {
         $msisdn = trim($msisdn);
-        $msisdn = str_replace('+','',$msisdn);
+        $msisdn = str_replace('+', '', $msisdn);
 
-        if(preg_match('/^234/i',$msisdn) == true){
-            $msisdn = '0'.substr($msisdn,3);
+        if (preg_match('/^234/i', $msisdn) == true) {
+            $msisdn = '0' . substr($msisdn, 3);
         }
 
-        if(strlen($msisdn) == 11){
-            $msisdn = '+234'.substr($msisdn,1);
-        }else{
-            if(strpos($msisdn,'+') == false)
-                $msisdn = '+'.$msisdn;
+        if (strlen($msisdn) == 11) {
+            $msisdn = '+234' . substr($msisdn, 1);
+        } else {
+            if (strpos($msisdn, '+') == false)
+                $msisdn = '+' . $msisdn;
         }
 
-        if($plus == false) $msisdn = str_replace('+','',$msisdn);
+        if ($plus == false) $msisdn = str_replace('+', '', $msisdn);
 
         return $msisdn;
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-
-
-    public function check($msisdn){
-        return $this->predis->get_set(array("user-profile"=>$msisdn));
-    }
-
-    public function add($data){
-        $state = $this->mongoci->_save($data);
-        if(empty($state) || isset($state->error)){
-            return false;
-        }else{
-            //add to redis okay...
-            if(isset($state['answered_questions'])) $state['answered_questions'] = json_encode($state['answered_questions']);
-            $this->predis->add_set(array("key"=>array("user-profile"=>$state["msisdn"]),"data"=>$state));
-            return $state;
-
-        }
-    }
-
-    public function update($data,$condition)
-    {
-        $state = $this->mongoci->_update($data, $condition);
-        if (empty($state) || isset($state->error)) {
-            return false;
-        } else {
-            if(isset($state['answered_questions'])) $state['answered_questions'] = json_encode($state['answered_questions']);
-            $this->predis->add_set(array("key" => array("user-profile" => $state["msisdn"]), "data" => $state));
-            return $state["_id"];
-        }
-    }
-
-    public function get($condition,$fields=array()){
-        $data = $this->mongoci->_get($condition,$fields);
-
-    //        print_r($data);
-
-        if (empty($data) || isset($data->error)){
-            return false;
-        }
-        else{
-            return $this->predis->get_set(array("user_profile"=>$data["user"]));
-        }
-    }
-
-    public function get_all($condition=array(),$option=array()){
-        $data = $this->mongoci->_get_bulk($condition,$option);
-    //        $data->sort(array('points' => -1));
-        if(empty($data) || isset($data->error)){
-            return false;
-        }else{
-            return $data;
-        }
-    }
-
-
-
-
-    function getByID($id='') {
-        $user = $this->posts->findOne(array('_id' => new MongoId($id)));
-        if ($user) {
-            return $user;
-        }
-        return false;
-    }
-
-
-    //
-    //    public function next(){
-    //        if ($this->mongoci->)
-    //    }
-
-        */
-    }
-
-
+}

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-16 19:13:25
+<?php /* Smarty version 3.1.24, created on 2017-01-17 08:47:24
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:963338544587d0d45e107c6_16108526%%*/
+/*%%SmartyHeaderCode:117531095587dcc0c06e3f7_70721122%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1484590403,
+      1 => 1484639237,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '963338544587d0d45e107c6_16108526',
-  'variables' => 
-  array (
-    'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
-  ),
+  'nocache_hash' => '117531095587dcc0c06e3f7_70721122',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587d0d45e38907_89042228',
+  'unifunc' => 'content_587dcc0c0949c5_03029367',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587d0d45e38907_89042228')) {
-function content_587d0d45e38907_89042228 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587dcc0c0949c5_03029367')) {
+function content_587dcc0c0949c5_03029367 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '963338544587d0d45e107c6_16108526';
+$_smarty_tpl->properties['nocache_hash'] = '117531095587dcc0c06e3f7_70721122';
 ?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">hot deals</h3>
@@ -35,9 +30,7 @@ $_smarty_tpl->properties['nocache_hash'] = '963338544587d0d45e107c6_16108526';
         <div class="item">
             <div class="products">
                 <div class="hot-deal-wrapper">
-                    <div class="image"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/hot-deals/p1.jpg" alt=""> </div>
+                    <div class="image"> <img src="http://placehold.it/700x700" alt=""> </div>
                     <div class="sale-offer-tag"><span>49%<br>
                     off</span></div>
                     <div class="timing-wrapper">
@@ -81,9 +74,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
         <div class="item">
             <div class="products">
                 <div class="hot-deal-wrapper">
-                    <div class="image"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/hot-deals/p5.jpg" alt=""> </div>
+                    <div class="image"> <img src="http://placehold.it/700x700" alt=""> </div>
                     <div class="sale-offer-tag"><span>35%<br>
                     off</span></div>
                     <div class="timing-wrapper">
@@ -127,9 +118,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
         <div class="item">
             <div class="products">
                 <div class="hot-deal-wrapper">
-                    <div class="image"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/hot-deals/p10.jpg" alt=""> </div>
+                    <div class="image"> <img src="http://placehold.it/700x700" alt=""> </div>
                     <div class="sale-offer-tag"><span>35%<br>
                     off</span></div>
                     <div class="timing-wrapper">

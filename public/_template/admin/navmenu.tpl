@@ -78,6 +78,25 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-sitemap"></i>
+                        <span class="link-title">&nbsp; Product Categories</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="{$BASE_URL}index.php/admin/Category/view">
+                                <i class="fa fa-angle-right"></i> &nbsp;View Categories
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{$BASE_URL}index.php/admin/Category/add">
+                                <i class="fa fa-angle-right"></i> &nbsp;Add Category
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript:;">
@@ -121,11 +140,10 @@
                     </ul>
                 </li>
 
-                <li class="active">
+                <li class="">
                     <a href="index.html">
                         <i class="fa fa-users"></i>
                         <span class="link-title">&nbsp;Customers</span>
-                        {*<span class="fa arrow"></span>*}
                     </a>
                 </li>
 
@@ -183,10 +201,10 @@
 
                 </li>
 
-                <li class="active">
+                <li class="">
                     <a href="{$BASE_URL}">
                         <i class="fa fa-globe"></i>
-                        <span class="link-title">&nbsp;Go to Store</span>
+                        <span class="link-title" href="{$BASE_URL}index.php">&nbsp;Go to Store</span>
                     </a>
                 </li>
 

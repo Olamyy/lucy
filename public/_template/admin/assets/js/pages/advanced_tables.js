@@ -30,7 +30,23 @@ var $example_demo= $('#example_demo tbody');
             table.row('#example_demo tbody .selected').remove().draw( false );
             return false;
         } );
-        return false;
     } );
+
+    //$("#edit_button").click(function()
+    //{
+    //    $.ajax({
+    //        type: "POST",
+    //        url: window.location.href.replace('view', 'edit'),
+    //        data: {cat_title: $("#cat_title").val()},
+    //        dataType: "text",
+    //        cache:false,
+    //        success:
+    //            function(data){
+    //                console.log(data);
+    //            }
+    //    });// you have missed this bracket
+    //    return false;
+    //});
+
     // End of advanced Table
 });

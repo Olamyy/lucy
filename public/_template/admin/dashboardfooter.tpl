@@ -17,8 +17,3 @@
 
 <!--end of plugin scripts-->
 <script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/js/pages/new_dashboard.js"></script>
-
-</body>
-
-<!-- Mirrored from dev.lorvent.com/admire/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jan 2017 10:05:15 GMT -->
-</html>

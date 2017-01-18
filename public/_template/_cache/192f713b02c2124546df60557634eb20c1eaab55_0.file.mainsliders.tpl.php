@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 05:08:23
+<?php /* Smarty version 3.1.24, created on 2017-01-17 13:23:34
          compiled from "/var/www/html/lucy/public/_template/front/mainsliders.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1111616638587d98b7e8cd28_58305826%%*/
+/*%%SmartyHeaderCode:6745371587e0cc6445126_62313685%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,33 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '192f713b02c2124546df60557634eb20c1eaab55' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/mainsliders.tpl',
-      1 => 1484626100,
+      1 => 1484655810,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1111616638587d98b7e8cd28_58305826',
-  'variables' => 
-  array (
-    'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
-  ),
+  'nocache_hash' => '6745371587e0cc6445126_62313685',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587d98b7ea1a61_58507957',
+  'unifunc' => 'content_587e0cc6455b92_49589798',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587d98b7ea1a61_58507957')) {
-function content_587d98b7ea1a61_58507957 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587e0cc6455b92_49589798')) {
+function content_587e0cc6455b92_49589798 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1111616638587d98b7e8cd28_58305826';
+$_smarty_tpl->properties['nocache_hash'] = '6745371587e0cc6445126_62313685';
 ?>
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div id="hero">
         <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            <div class="item" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/sliders/1.jpg);">
+            <div class="item" style="background-image: url(http://placehold.it/840x340);">
                 <div class="container-fluid">
                     <div class="caption bg-color vertical-center text-left">
                     </div>
@@ -45,9 +38,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
             </div>
             <!-- /.item -->
 
-            <div class="item" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/sliders/slide.jpg);">
+            <div class="item" style="background-image: url(http://placehold.it/840x340);">
                 <div class="container-fluid">
                     <!-- /.caption -->
                 </div>
@@ -101,9 +92,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
         </div>
         <!-- /.info-boxes-inner -->
 
-    </div>
-</div>
-
-</div><?php }
+<?php }
 }
 ?>

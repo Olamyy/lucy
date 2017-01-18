@@ -14,3 +14,14 @@ license.txt
 readme.rst
 vendor
 uploads
+application/logs/
+sendgrid.env
+application/controllers/api/
+application/helpers/phppass_helper.php
+public/_template/_cache/ebbdbba7fb1bb2a415743b8e413937e49a178050_0.file.verify.tpl.php
+public/_template/front/verify.tpl
+system/session-log/PHPSESSID26d5ae3e5fc0f407014394623d186890ce18216a
+system/session-log/PHPSESSID2c8f99bc47468ae06e0520a82063adb4861cd942
+system/session-log/PHPSESSID63f8043e5f5610d0c11ad96c4d1f11e879cef6b2
+system/session-log/PHPSESSIDc0d1a792bc699c2075f052258a6c8f75b86097d7
+system/session-log/PHPSESSIDecc5637817316ae74670e0610ad0ebc6de1ee641
