@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-18 15:30:36
+<?php /* Smarty version 3.1.24, created on 2017-01-18 19:16:25
          compiled from "public/_template/admin/product/category/edit/edit.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:102522247587f7c0c83e220_94886460%%*/
+/*%%SmartyHeaderCode:2136545595587fb0f93811e7_13129272%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'adf97ceac866303bd1b6be7f33b2961461650c69' => 
     array (
       0 => 'public/_template/admin/product/category/edit/edit.tpl',
-      1 => 1484749835,
+      1 => 1484750208,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '102522247587f7c0c83e220_94886460',
+  'nocache_hash' => '2136545595587fb0f93811e7_13129272',
   'variables' => 
   array (
     'error' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587f7c0c8ce116_76859594',
+  'unifunc' => 'content_587fb0f94257b4_02904782',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587f7c0c8ce116_76859594')) {
-function content_587f7c0c8ce116_76859594 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_587fb0f94257b4_02904782')) {
+function content_587fb0f94257b4_02904782 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '102522247587f7c0c83e220_94886460';
+$_smarty_tpl->properties['nocache_hash'] = '2136545595587fb0f93811e7_13129272';
 echo $_smarty_tpl->getSubTemplate ("../../category/categoryheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -154,7 +154,7 @@ index.php/admin/category/edit">
                                     <div class="form-group row">
                                         <div class="col-lg-10 push-lg-1">
                                             <label for="signup_email" class="form-control-label form-group-horizontal">
-                                                Sub Category Categories
+                                                Sub Categories
                                             </label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" name="sub_cat_cats" id="signup_email" value="<?php echo $_smarty_tpl->tpl_vars['cat_details']->value[0]['sub_categories'];?>

@@ -394,3 +394,8 @@ function loadjscssfile(filename, filetype) {
   ga('create', 'UA-59850948-1', 'auto');
   ga('send', 'pageview');
 
+
+$("#finish").click(function()
+{
+    $("#add_product_form").submit();
+});

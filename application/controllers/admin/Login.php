@@ -43,33 +43,3 @@ class Login extends CI_Controller
 
 }
 
-
-
-
-
-/*
- * $data = array();
-        $error = array();
-
-        if(!empty($_POST)){
-        $username = $this->input->post('user');
-        $password = $this->input->post('password');
-
-
-        if (empty($username)) $error[] = 'Provide a Valid Username';
-        if (empty($password)) $error[] = 'Provide a Valid Password';
-
-        if (empty($error)){
-            if ($username == 'insta' && $password == 'driver'){
-                //set session here okay.....
-                $this->session->set_userdata('admin-user', array('username'=>'admin','full_name'=>'Administrator','privilege'=>1,'status'=>1));
-                redirect('admin/dashboard/');
-            }
-            else
-                $data['error'] = array('Invalid Username and Password');
-        }
-        else
-            $data['error'] = $error;
-        }
-
- */

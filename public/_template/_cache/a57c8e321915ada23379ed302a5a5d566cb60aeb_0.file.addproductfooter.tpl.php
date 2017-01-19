@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-18 12:30:09
+<?php /* Smarty version 3.1.24, created on 2017-01-19 09:34:15
          compiled from "/var/www/html/lucy/public/_template/admin/product/addproductfooter.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1120926347587f51c1a22a55_79590655%%*/
+/*%%SmartyHeaderCode:169935935658807a07d819a2_49041252%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a57c8e321915ada23379ed302a5a5d566cb60aeb' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/product/addproductfooter.tpl',
-      1 => 1484670408,
+      1 => 1484814852,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1120926347587f51c1a22a55_79590655',
+  'nocache_hash' => '169935935658807a07d819a2_49041252',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -21,37 +21,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587f51c1a6ac98_64381635',
+  'unifunc' => 'content_58807a07d9ed52_47440842',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587f51c1a6ac98_64381635')) {
-function content_587f51c1a6ac98_64381635 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58807a07d9ed52_47440842')) {
+function content_58807a07d9ed52_47440842 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1120926347587f51c1a22a55_79590655';
-echo $_smarty_tpl->getSubTemplate ("../dashboardfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+$_smarty_tpl->properties['nocache_hash'] = '169935935658807a07d819a2_49041252';
 ?>
-
-
-<!-- plugin level scripts -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- /#wrap -->
+<!-- global scripts-->
 <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
@@ -81,10 +60,8 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /admin/assets/js/pages/wizard.js"><?php echo '</script'; ?>
 >
-<!-- end page level scripts -->
-</body>
 
-<!--end of plugin scripts-->
+
 <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
@@ -98,11 +75,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/jquery-tagsinput/js/jquery.tagsinput.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /admin/assets/js/form.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
@@ -110,17 +82,10 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /admin/assets/js/pages/form_elements.js"><?php echo '</script'; ?>
 >
-<?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/jquery-tagsinput/js/jquery.tagsinput.js"><?php echo '</script'; ?>
->
 
-
+<!-- end page level scripts -->
 </body>
 
-
-<!-- Mirrored from dev.lorvent.com/admire/form_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jan 2017 10:09:52 GMT -->
 </html><?php }
 }
 ?>
