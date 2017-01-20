@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 13:26:22
+<?php /* Smarty version 3.1.24, created on 2017-01-19 14:50:30
          compiled from "/var/www/html/lucy/public/_template/front/newproducts.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1653847338587e0d6e193ed9_41193819%%*/
+/*%%SmartyHeaderCode:13436827695880c4266afc29_84183426%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a2d98444ad21e9b86ea37e6b7948d577f73e428b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/newproducts.tpl',
-      1 => 1484655978,
+      1 => 1484833830,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1653847338587e0d6e193ed9_41193819',
+  'nocache_hash' => '13436827695880c4266afc29_84183426',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587e0d6e25ea95_01390795',
+  'unifunc' => 'content_5880c42676acf6_74002286',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587e0d6e25ea95_01390795')) {
-function content_587e0d6e25ea95_01390795 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5880c42676acf6_74002286')) {
+function content_5880c42676acf6_74002286 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
+$_smarty_tpl->properties['nocache_hash'] = '13436827695880c4266afc29_84183426';
 ?>
 <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
     <div class="more-info-tab clearfix ">
@@ -54,7 +54,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -96,7 +96,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -138,7 +138,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -180,7 +180,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -222,7 +222,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -264,7 +264,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -315,7 +315,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -357,7 +357,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -399,7 +399,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -441,7 +441,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -483,7 +483,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -525,7 +525,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -576,7 +576,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -618,7 +618,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -660,7 +660,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -702,7 +702,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -744,7 +744,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -786,7 +786,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Apple Iphone 5s 32GB</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -837,7 +837,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -879,7 +879,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -921,7 +921,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -963,7 +963,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -1005,7 +1005,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>
@@ -1047,7 +1047,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1653847338587e0d6e193ed9_41193819';
                                     <h3 class="name"><a href="detail.html">Samsung Galaxy S4</a></h3>
                                     <div class="rating rateit-small"></div>
                                     <div class="description"></div>
-                                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                                    <div class="product-price"> <span class="price"> N450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                                     <!-- /.product-price -->
 
                                 </div>

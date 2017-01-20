@@ -45,7 +45,7 @@
                                 <h4 class="info-box-heading green">free shipping</h4>
                             </div>
                         </div>
-                        <h6 class="text">Shipping on orders over $99</h6>
+                        <h6 class="text">Shipping on orders over N99</h6>
                     </div>
                 </div>
                 <!-- .col -->
@@ -57,7 +57,7 @@
                                 <h4 class="info-box-heading green">Special Sale</h4>
                             </div>
                         </div>
-                        <h6 class="text">Extra $5 off on all items </h6>
+                        <h6 class="text">Extra N5 off on all items </h6>
                     </div>
                 </div>
                 <!-- .col -->

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 13:23:34
+<?php /* Smarty version 3.1.24, created on 2017-01-19 14:51:40
          compiled from "/var/www/html/lucy/public/_template/front/mainsliders.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6745371587e0cc6445126_62313685%%*/
+/*%%SmartyHeaderCode:11872250055880c46ca1cac4_52264118%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '192f713b02c2124546df60557634eb20c1eaab55' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/mainsliders.tpl',
-      1 => 1484655810,
+      1 => 1484833898,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6745371587e0cc6445126_62313685',
+  'nocache_hash' => '11872250055880c46ca1cac4_52264118',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587e0cc6455b92_49589798',
+  'unifunc' => 'content_5880c46ca2cb78_72613745',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587e0cc6455b92_49589798')) {
-function content_587e0cc6455b92_49589798 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5880c46ca2cb78_72613745')) {
+function content_5880c46ca2cb78_72613745 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6745371587e0cc6445126_62313685';
+$_smarty_tpl->properties['nocache_hash'] = '11872250055880c46ca1cac4_52264118';
 ?>
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -71,7 +71,7 @@ $_smarty_tpl->properties['nocache_hash'] = '6745371587e0cc6445126_62313685';
                                 <h4 class="info-box-heading green">free shipping</h4>
                             </div>
                         </div>
-                        <h6 class="text">Shipping on orders over $99</h6>
+                        <h6 class="text">Shipping on orders over N99</h6>
                     </div>
                 </div>
                 <!-- .col -->
@@ -83,7 +83,7 @@ $_smarty_tpl->properties['nocache_hash'] = '6745371587e0cc6445126_62313685';
                                 <h4 class="info-box-heading green">Special Sale</h4>
                             </div>
                         </div>
-                        <h6 class="text">Extra $5 off on all items </h6>
+                        <h6 class="text">Extra N5 off on all items </h6>
                     </div>
                 </div>
                 <!-- .col -->

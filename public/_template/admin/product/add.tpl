@@ -53,7 +53,7 @@
                                         <a class="nav-link " href="#tab41" data-toggle="tab"><span>4</span>Image</a>
                                     </li>
                                 </ul>
-                                <form method="post" action="{$BASE_URL}index.php/admin/product/add" id="add_product_form">
+                                <form method="post" action="{$BASE_URL}index.php/admin/product/add"  enctype="multipart/form-data" id="add_product_form">
                                 <div class="tab-content m-t-20">
                                     <div class="tab-pane" id="tab11">
                                         <div class="form-group">
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h5>Meta Tag Keywords</h5>
-                                            <textarea id="text4" class="form-control" name="prodcut_meta_keywords" cols="500" rows="5" placeholder="Meta Tag Keywords" required></textarea>
+                                            <textarea id="text4" class="form-control" name="product_meta_keywords" cols="500" rows="5" placeholder="Meta Tag Keywords" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <h5>Product Tags</h5>
@@ -141,11 +141,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="address1">Date Available</label>
-                                            <input id="address1" type="text" class="form-control" name="date_available">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Available</label>
+                                            <label>Status</label>
                                             <select class="custom-select form-control"
                                                     title="Available" name="availability">
                                                 <option>Yes</option>
@@ -160,7 +156,7 @@
                                     <div class="tab-pane" id="tab31">
                                         <div class="form-group">
                                             <label>Manufacturer Name</label>
-                                            <input type="text" class="form-control general_number" name="manufacture_name" placeholder="Manufacturer Name">
+                                            <input type="text" class="form-control" name="manufacturer_name" placeholder="Manufacturer Name">
                                         </div>
                                         <div class="form-group">
                                             <h5>Categories</h5>
@@ -173,6 +169,19 @@
                                         <div class="form-group">
                                             <h5>Related Products</h5>
                                             <textarea id="text4" class="form-control" name="related_products" cols="50" rows="5"  placeholder="Separate product names with commas" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Primary Position</label>
+                                            <select class="custom-select form-control"
+                                                    title="Position" name="primary_product_position">
+                                                <option>Hot Deals</option>
+                                                <option>Special Offer</option>
+                                                <option>Special Deals</option>
+                                                <option>New Products</option>
+                                                <option>Featured Products</option>
+                                                <option>Best Seller</option>
+                                                <option>New Arrivals</option>
+                                            </select>
                                         </div>
                                         <ul class="pager wizard pager_a_cursor_pointer">
                                             <li class="previous previous_btn3"><a>Previous</a></li>
@@ -190,7 +199,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12 m-t-35">
                                                                 <h5>File Upload</h5>
-                                                                <input id="input-fa" name="inputfa[]" type="file" multiple class="file-loading">
+                                                                <input type="file" name="product_image" multiple="multiple">
                                                             </div>
                                                         </div>
                                                     </div>

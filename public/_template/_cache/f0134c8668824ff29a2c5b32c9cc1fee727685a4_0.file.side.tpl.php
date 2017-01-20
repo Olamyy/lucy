@@ -62,7 +62,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -108,7 +108,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -154,7 +154,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -202,7 +202,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -232,7 +232,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -262,7 +262,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -294,7 +294,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -324,7 +324,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -352,7 +352,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -384,7 +384,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -412,7 +412,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
                                     </div>
                                 </div>
@@ -439,7 +439,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -500,7 +500,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -530,7 +530,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -560,7 +560,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -592,7 +592,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -620,7 +620,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -648,7 +648,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
                                     </div>
                                 </div>
@@ -683,7 +683,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -713,7 +713,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>
@@ -741,7 +741,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                     <div class="product-info">
                                         <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                                         <div class="rating rateit-small"></div>
-                                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                                        <div class="product-price"> <span class="price"> N450.99 </span> </div>
                                         <!-- /.product-price -->
 
                                     </div>

@@ -27,7 +27,7 @@
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -71,7 +71,7 @@
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -115,7 +115,7 @@
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>

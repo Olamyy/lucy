@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 08:47:24
+<?php /* Smarty version 3.1.24, created on 2017-01-19 14:49:38
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:117531095587dcc0c06e3f7_70721122%%*/
+/*%%SmartyHeaderCode:4681713985880c3f2156870_79054561%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1484639237,
+      1 => 1484833777,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '117531095587dcc0c06e3f7_70721122',
+  'nocache_hash' => '4681713985880c3f2156870_79054561',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587dcc0c0949c5_03029367',
+  'unifunc' => 'content_5880c3f217bda6_27269935',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587dcc0c0949c5_03029367')) {
-function content_587dcc0c0949c5_03029367 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5880c3f217bda6_27269935')) {
+function content_5880c3f217bda6_27269935 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '117531095587dcc0c06e3f7_70721122';
+$_smarty_tpl->properties['nocache_hash'] = '4681713985880c3f2156870_79054561';
 ?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">hot deals</h3>
@@ -53,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '117531095587dcc0c06e3f7_70721122';
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -97,7 +97,7 @@ $_smarty_tpl->properties['nocache_hash'] = '117531095587dcc0c06e3f7_70721122';
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>
@@ -141,7 +141,7 @@ $_smarty_tpl->properties['nocache_hash'] = '117531095587dcc0c06e3f7_70721122';
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
-                    <div class="product-price"> <span class="price"> $600.00 </span> <span class="price-before-discount">$800.00</span> </div>
+                    <div class="product-price"> <span class="price"> N600.00 </span> <span class="price-before-discount">N800.00</span> </div>
                     <!-- /.product-price -->
 
                 </div>

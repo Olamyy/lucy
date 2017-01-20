@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-19 10:08:19
+<?php /* Smarty version 3.1.24, created on 2017-01-20 12:43:08
          compiled from "public/_template/admin/product/add.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:500068174588082038ae215_26993267%%*/
+/*%%SmartyHeaderCode:1253787935881f7cc8d8707_92318167%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ddb12c259723b62b7917851e286054c77ee1c189' => 
     array (
       0 => 'public/_template/admin/product/add.tpl',
-      1 => 1484816895,
+      1 => 1484912579,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '500068174588082038ae215_26993267',
+  'nocache_hash' => '1253787935881f7cc8d8707_92318167',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5880820390b4a0_13684541',
+  'unifunc' => 'content_5881f7cc957c94_49126374',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5880820390b4a0_13684541')) {
-function content_5880820390b4a0_13684541 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5881f7cc957c94_49126374')) {
+function content_5881f7cc957c94_49126374 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '500068174588082038ae215_26993267';
+$_smarty_tpl->properties['nocache_hash'] = '1253787935881f7cc8d8707_92318167';
 echo $_smarty_tpl->getSubTemplate ("./addproductheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -88,7 +88,7 @@ index.php/Product/view">Products</a>
                                     </li>
                                 </ul>
                                 <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/product/add" id="add_product_form">
+index.php/admin/product/add"  enctype="multipart/form-data" id="add_product_form">
                                 <div class="tab-content m-t-20">
                                     <div class="tab-pane" id="tab11">
                                         <div class="form-group">
@@ -111,7 +111,7 @@ index.php/admin/product/add" id="add_product_form">
                                         </div>
                                         <div class="form-group">
                                             <h5>Meta Tag Keywords</h5>
-                                            <textarea id="text4" class="form-control" name="prodcut_meta_keywords" cols="500" rows="5" placeholder="Meta Tag Keywords" required></textarea>
+                                            <textarea id="text4" class="form-control" name="product_meta_keywords" cols="500" rows="5" placeholder="Meta Tag Keywords" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <h5>Product Tags</h5>
@@ -176,11 +176,7 @@ index.php/admin/product/add" id="add_product_form">
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="address1">Date Available</label>
-                                            <input id="address1" type="text" class="form-control" name="date_available">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Available</label>
+                                            <label>Status</label>
                                             <select class="custom-select form-control"
                                                     title="Available" name="availability">
                                                 <option>Yes</option>
@@ -195,7 +191,7 @@ index.php/admin/product/add" id="add_product_form">
                                     <div class="tab-pane" id="tab31">
                                         <div class="form-group">
                                             <label>Manufacturer Name</label>
-                                            <input type="text" class="form-control general_number" name="manufacture_name" placeholder="Manufacturer Name">
+                                            <input type="text" class="form-control" name="manufacturer_name" placeholder="Manufacturer Name">
                                         </div>
                                         <div class="form-group">
                                             <h5>Categories</h5>
@@ -208,6 +204,19 @@ index.php/admin/product/add" id="add_product_form">
                                         <div class="form-group">
                                             <h5>Related Products</h5>
                                             <textarea id="text4" class="form-control" name="related_products" cols="50" rows="5"  placeholder="Separate product names with commas" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Primary Position</label>
+                                            <select class="custom-select form-control"
+                                                    title="Position" name="primary_product_position">
+                                                <option>Hot Deals</option>
+                                                <option>Special Offer</option>
+                                                <option>Special Deals</option>
+                                                <option>New Products</option>
+                                                <option>Featured Products</option>
+                                                <option>Best Seller</option>
+                                                <option>New Arrivals</option>
+                                            </select>
                                         </div>
                                         <ul class="pager wizard pager_a_cursor_pointer">
                                             <li class="previous previous_btn3"><a>Previous</a></li>
@@ -225,7 +234,7 @@ index.php/admin/product/add" id="add_product_form">
                                                         <div class="row">
                                                             <div class="col-lg-12 m-t-35">
                                                                 <h5>File Upload</h5>
-                                                                <input id="input-fa" name="inputfa[]" type="file" multiple class="file-loading">
+                                                                <input type="file" name="product_image" multiple="multiple">
                                                             </div>
                                                         </div>
                                                     </div>

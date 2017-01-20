@@ -95,7 +95,6 @@ class Category extends CI_Controller
             $sub_cat_cats = $this->input->post('sub_cat_cats');
             $category_title = $this->input->post('category_title');
             $short_description = $this->input->post('short_description');
-            $sub_cat_titles = $this->input->post('sub_cat_titles');
             $cat_url = $this->input->post('cat_url');
             $cat_search_filters = $this->input->post('cat_search_filters');
 
