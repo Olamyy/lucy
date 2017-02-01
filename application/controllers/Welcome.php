@@ -16,11 +16,6 @@ class Welcome extends CI_Controller
 
     public function index()
     {
-
-        ///Handle nav activities ...okay
-
-//        $this->data['promo_message_1'] = $this->category_model->get('promo_messages');
-
         $cat_from_db = $this->category_model->get('lucy_category_description', 0 , 0);
 
 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-18 19:26:06
+<?php /* Smarty version 3.1.24, created on 2017-01-20 16:36:09
          compiled from "/var/www/html/lucy/public/_template/admin/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1394638232587fb33e513a19_78486573%%*/
+/*%%SmartyHeaderCode:198079026558822e69e939a1_93996816%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '06a25c92213522c9b6f8ad7e07dc06fbf9cb34a9' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/navmenu.tpl',
-      1 => 1484763963,
+      1 => 1484926547,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1394638232587fb33e513a19_78486573',
+  'nocache_hash' => '198079026558822e69e939a1_93996816',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587fb33e543f91_88937247',
+  'unifunc' => 'content_58822e69ef76d4_28962632',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587fb33e543f91_88937247')) {
-function content_587fb33e543f91_88937247 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58822e69ef76d4_28962632')) {
+function content_58822e69ef76d4_28962632 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1394638232587fb33e513a19_78486573';
+$_smarty_tpl->properties['nocache_hash'] = '198079026558822e69e939a1_93996816';
 ?>
 <div class="bg-dark" id="wrap">
     <div id="top">
@@ -237,7 +237,14 @@ index.php/admin/Product/add">
                     </ul>
 
                 </li>
-
+                <li class="">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+/index.php/admin/logout">
+                        <i class="fa fa-globe"></i>
+                        <span class="link-title" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+/index.php/admin/logout">&nbsp;Logout</span>
+                    </a>
+                </li>
                 <li class="">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 ">
@@ -246,8 +253,6 @@ index.php/admin/Product/add">
 index.php">&nbsp;Go to Store</span>
                     </a>
                 </li>
-
-
             </ul>
             <!-- /#menu -->
         </div>

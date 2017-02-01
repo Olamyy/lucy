@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-8 push-lg-2 col-md-10 push-md-1 col-sm-12">
                     <div class="bg-white login_content login_border_radius">
-                        <form action="{$BASE_URL}index.php/admin/login"  method="post" class="">
+                        <form action="{$BASE_URL}index.php/admin/login"  method="post" id="admin_auth">
                             {if $error|default:''}
                                 <div class="alert alert-danger">
                                     <strong>Oops! Something went wrong</strong>

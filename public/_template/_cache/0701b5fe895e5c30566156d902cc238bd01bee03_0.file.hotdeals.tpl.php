@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-19 14:49:38
+<?php /* Smarty version 3.1.24, created on 2017-01-23 23:20:22
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:4681713985880c3f2156870_79054561%%*/
+/*%%SmartyHeaderCode:726011493588681a6c646d9_60973670%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1484833777,
+      1 => 1485209946,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4681713985880c3f2156870_79054561',
+  'nocache_hash' => '726011493588681a6c646d9_60973670',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5880c3f217bda6_27269935',
+  'unifunc' => 'content_588681a6c885a0_84614995',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5880c3f217bda6_27269935')) {
-function content_5880c3f217bda6_27269935 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_588681a6c885a0_84614995')) {
+function content_588681a6c885a0_84614995 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '4681713985880c3f2156870_79054561';
+$_smarty_tpl->properties['nocache_hash'] = '726011493588681a6c646d9_60973670';
 ?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
-    <h3 class="section-title">hot deals</h3>
-    <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
+    <div id="advertisement" class="advertisement">
         <div class="item">
             <div class="products">
                 <div class="hot-deal-wrapper">
@@ -159,7 +158,7 @@ $_smarty_tpl->properties['nocache_hash'] = '4681713985880c3f2156870_79054561';
                 <!-- /.cart -->
             </div>
         </div>
-    </div>
+        </div>
     <!-- /.sidebar-widget -->
 </div>
 <?php }

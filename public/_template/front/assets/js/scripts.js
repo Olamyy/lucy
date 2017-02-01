@@ -330,9 +330,122 @@ jQuery(function () {
 /*===================================================================================*/
 /*  TOOLTIP 
 /*===================================================================================*/
-jQuery("[data-toggle='tooltip']").tooltip(); 
+jQuery("[data-toggle='tooltip']").tooltip();
+
+    /*===================================================================================*/
+    /*  HYDEE
+     /*===================================================================================*/
+
+    jQuery('.single-back-img').on('click', function () {
+        // alert($(this).attr('src'));
+        $('.main-back-img').css( { backgroundImage: 'url(' + $(this).attr('src') + ')' } );
+    });
+
+    var displayName = function () {
+        $('.name-display').text($('#name').val());
+        $('#name').hide();
+        $('.name-display').show();
+    };
+
+    jQuery('.couples-form').on('submit', function () {
+        event.preventDefault();
+        displayName();
+    });
+
+    jQuery('#name').on('blur', function () {
+        displayName();
+    });
+
+    jQuery('.name-display').on('click', function () {
+        $('#name').val($('.name-display').text());
+        $('.name-display').hide();
+        $('#name').show();
+    });
+
+//=====================================================================================
+$('#NoDate').on('change', function(){
+    if($('#NoDate').is(":checked")){
+        $('#wedding_date').attr('disabled', 'disabled')
+    }
+    else {
+        $('#wedding_date').removeAttr('disabled')
+    }
+});
+        var current_url = window.location.href;
+        if (current_url.indexOf("dashboard") > -1){
+            $('#dashboard').addClass('active');
+        }
+        else if(current_url.indexOf("manage")> -1){
+            $('#dashboard').removeClass('active');
+            $('#manage').addClass('active');
+        }
+        else if(current_url.indexOf("share")> -1){
+            $('#manage').removeClass('active');
+            $('#share').addClass('active');
+        }
+        else if(current_url.indexOf("settings")> -1){
+            $('#share').removeClass('active');
+            $('#settings').addClass('active');
+        }
+        else {
+            $('#settings').removeClass('active');
+            $('#account').addClass('active');
+
+        }
 
 
+    $('#uploader').on('click', function(){
+        $("input").trigger("click");
+        var fileSelect = document.getElementById('image_upload');
+        var files = fileSelect.files;
+        console.log(files);
+    });
 
+    jQuery('.single-back-img').on('click', function () {
+        $('.main-back-img').css( { backgroundImage: 'url(' + $(this).attr('src') + ')' } );
+// For IE we need to remove quotes to the proper url
+        var couple_id = $('#couple_id').val();
+        var bg_image = $('.main-back-img').css('background-image').replace(/(url\(|\)|")/g, '');
 
-})
+        $.ajax(
+            {
+                type: "GET",
+                url: $('#base_url').val()+ 'index.php/api/updates/dashboard_image',
+                data: {
+                    "couple_id": couple_id,
+                    "bg_image" : bg_image
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    console.log(response);
+                    },
+                error : function(response){}
+            });
+
+    });
+
+    jQuery('#setVowMessageButton').on('click', function () {
+        var couple_id = $('#couple_id').val();
+        var vow_message = $('#vows').val();
+        $.ajax(
+            {
+                type: "POST",
+                url: $('#base_url').val()+ 'index.php/api/updates/vow_message',
+                data: {
+                    "couple_id": couple_id,
+                    "vow_message" : vow_message
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    console.log(response);
+                    $('#Vmessage').html("Hello")
+                    },
+                error : function(response){}
+            });
+
+    });
+
+});
+

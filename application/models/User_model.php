@@ -19,15 +19,57 @@ class User_model extends CI_Model
             return false;
     }
 
+    public function get($table){
+        $query = $this->db->get($table);  // Produces: SELECT * FROM mytable
+        if ($query){
+            return $query->result;
+        }
+        else
+            return false;
+    }
 
-    public function update($data, $table)
+    public function auto_logout($field)
     {
-        $state = $this->db->replace($data, $table);
+        $t = time();
+        $new_time = $_SESSION[$field]['time'];
+        $diff = $t - $new_time;
+        if ($diff > 500 || !isset($new_time))
+        {
+            return true;
+        }
+        else
+        {
+            $_SESSION[$field] = time();
+        }
+    }
+
+
+    public function update($data, $table, $condition)
+    {
+        $state = $this->db->update($table, $data, $condition);
         if ($state) {
             return true;
         } else
             return false;
 
+    }
+
+    public function custom_get($table,$condition, $limit, $clause){
+        $query = $this->db->get_where($table,$condition, $limit, $clause);
+        if ($query){
+            return $query->result($type='array');
+        }
+        else
+            return false;
+    }
+
+    public function delete_data($table,$condition){
+        $query = $this->db->delete($table, $condition);  // Produces: // DELETE FROM mytable  // WHERE id = $id
+        if ($query){
+            return $query;
+        }
+        else
+            return false;
     }
 
 
@@ -41,10 +83,10 @@ class User_model extends CI_Model
     }
 
 
-    public function get_transaction_code()
+    public function get_transaction_code($length)
     {
         $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        $random_string_length = 20;
+        $random_string_length = $length;
         $string = '';
         $max = strlen($characters) - 1;
         for ($i = 0; $i < $random_string_length; $i++) {

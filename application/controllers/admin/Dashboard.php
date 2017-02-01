@@ -14,6 +14,12 @@ class Dashboard extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('user_model');
+
+//        if($this->user_model->auto_logout("admin-user"))
+//        {
+//            $this->session->sess_destroy();
+//            redirect('index.php/admin/login/');
+//        }
     }
 
     public function index(){

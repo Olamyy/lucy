@@ -399,3 +399,12 @@ $("#finish").click(function()
 {
     $("#add_product_form").submit();
 });
+
+$("#admin_auth").on('submit',function()
+{
+    $(this).submit(function () {
+        return false;
+    });
+
+    return true;
+});

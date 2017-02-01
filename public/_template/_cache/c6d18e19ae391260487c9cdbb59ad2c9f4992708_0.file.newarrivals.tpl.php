@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-19 14:50:30
+<?php /* Smarty version 3.1.24, created on 2017-01-20 18:45:20
          compiled from "/var/www/html/lucy/public/_template/front/newarrivals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5216135735880c4267e5416_53655803%%*/
+/*%%SmartyHeaderCode:75769961858824cb0b4fcb8_75170190%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6d18e19ae391260487c9cdbb59ad2c9f4992708' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/newarrivals.tpl',
-      1 => 1484833830,
+      1 => 1484934316,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5216135735880c4267e5416_53655803',
+  'nocache_hash' => '75769961858824cb0b4fcb8_75170190',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5880c4268207e6_51510567',
+  'unifunc' => 'content_58824cb0b82e16_61285744',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5880c4268207e6_51510567')) {
-function content_5880c4268207e6_51510567 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58824cb0b82e16_61285744')) {
+function content_58824cb0b82e16_61285744 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
+$_smarty_tpl->properties['nocache_hash'] = '75769961858824cb0b4fcb8_75170190';
 ?>
 <section class="section wow fadeInUp new-arriavls">
     <h3 class="section-title">New Arrivals</h3>
@@ -52,7 +52,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -94,7 +94,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -136,7 +136,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -178,7 +178,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -220,7 +220,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -262,7 +262,7 @@ $_smarty_tpl->properties['nocache_hash'] = '5216135735880c4267e5416_53655803';
                             <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>

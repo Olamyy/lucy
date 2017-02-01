@@ -72,7 +72,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                     <div class="action">
                         <div class="add-cart-button btn-group">
                             <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                            <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                         </div>
                     </div>
                     <!-- /.action -->
@@ -118,7 +118,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                     <div class="action">
                         <div class="add-cart-button btn-group">
                             <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                            <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                         </div>
                     </div>
                     <!-- /.action -->
@@ -164,7 +164,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                     <div class="action">
                         <div class="add-cart-button btn-group">
                             <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                            <button class="btn btn-primary cart-btn" type="button">Add to registry</button>
                         </div>
                     </div>
                     <!-- /.action -->

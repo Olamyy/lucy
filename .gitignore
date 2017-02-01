@@ -13,7 +13,7 @@ contributing.md
 license.txt
 readme.rst
 vendor
-uploads
+public/_template/uploads
 application/logs/
 sendgrid.env
 application/controllers/api/

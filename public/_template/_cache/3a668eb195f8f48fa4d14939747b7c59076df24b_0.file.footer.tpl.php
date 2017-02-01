@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 13:41:25
+<?php /* Smarty version 3.1.24, created on 2017-01-21 08:48:44
          compiled from "/var/www/html/lucy/public/_template/front/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1652958756587e10f5125f94_43066573%%*/
+/*%%SmartyHeaderCode:12856119575883125c772928_85078448%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a668eb195f8f48fa4d14939747b7c59076df24b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/footer.tpl',
-      1 => 1484656879,
+      1 => 1484984788,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1652958756587e10f5125f94_43066573',
+  'nocache_hash' => '12856119575883125c772928_85078448',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587e10f51d3712_18794537',
+  'unifunc' => 'content_5883125c85be43_90113128',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587e10f51d3712_18794537')) {
-function content_587e10f51d3712_18794537 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5883125c85be43_90113128')) {
+function content_5883125c85be43_90113128 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1652958756587e10f5125f94_43066573';
+$_smarty_tpl->properties['nocache_hash'] = '12856119575883125c772928_85078448';
 ?>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
     <div class="logo-slider-inner">
@@ -301,6 +301,11 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/js/bootstrap-select.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/js/bootstrap-datepicker.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;

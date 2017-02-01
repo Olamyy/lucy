@@ -200,15 +200,18 @@
                     </ul>
 
                 </li>
-
+                <li class="">
+                    <a href="{$BASE_URL}/index.php/admin/logout">
+                        <i class="fa fa-globe"></i>
+                        <span class="link-title" href="{$BASE_URL}/index.php/admin/logout">&nbsp;Logout</span>
+                    </a>
+                </li>
                 <li class="">
                     <a href="{$BASE_URL}">
                         <i class="fa fa-globe"></i>
                         <span class="link-title" href="{$BASE_URL}index.php">&nbsp;Go to Store</span>
                     </a>
                 </li>
-
-
             </ul>
             <!-- /#menu -->
         </div>

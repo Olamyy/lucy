@@ -175,6 +175,7 @@
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/jquery.rateit.min.js"></script>
 <script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/lightbox.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap-select.min.js"></script>
+<script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap-datepicker.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/wow.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/scripts.js"></script>
 </body>

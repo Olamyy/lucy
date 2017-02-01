@@ -103,7 +103,7 @@ class Product extends CI_Controller
 
     private function handle_image_upload(){
         $image_config = array(
-            'upload_path'=>FCPATH. "public/uploads",
+            'upload_path'=>FCPATH. "public/_templates/uploads",
             'allowed_types'=>'jpg|png|jpeg',
             'overwrite' => TRUE,
         );

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-16 18:56:47
+<?php /* Smarty version 3.1.24, created on 2017-01-24 13:45:15
          compiled from "/var/www/html/lucy/public/_template/front/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:585725863587d095f380806_92557393%%*/
+/*%%SmartyHeaderCode:19099465258874c5b2f16c5_51614165%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2037bafbda5845c55a2bf2f73de90610afb5de5' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/header.tpl',
-      1 => 1484589178,
+      1 => 1485260798,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '585725863587d095f380806_92557393',
+  'nocache_hash' => '19099465258874c5b2f16c5_51614165',
   'variables' => 
   array (
+    'APP_NAME' => 0,
     'BASE_URL' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587d095f3a25e3_52531844',
+  'unifunc' => 'content_58874c5b342712_75985431',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587d095f3a25e3_52531844')) {
-function content_587d095f3a25e3_52531844 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58874c5b342712_75985431')) {
+function content_58874c5b342712_75985431 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '585725863587d095f380806_92557393';
+$_smarty_tpl->properties['nocache_hash'] = '19099465258874c5b2f16c5_51614165';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,8 @@ $_smarty_tpl->properties['nocache_hash'] = '585725863587d095f380806_92557393';
     <meta name="keywords" content="MediaCenter, Template, eCommerce">
     <meta name="robots" content="all">
 
-    <title>Lotus premium HTML5 & CSS3 Template</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['APP_NAME']->value;?>
+</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
@@ -69,11 +71,10 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/rateit.css">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/css/datepicker.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/bootstrap-select.min.css">
-
-
-
-
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>

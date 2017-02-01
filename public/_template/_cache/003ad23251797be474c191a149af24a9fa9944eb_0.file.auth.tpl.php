@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-16 09:01:06
+<?php /* Smarty version 3.1.24, created on 2017-01-20 16:21:49
          compiled from "public/_template/admin/auth.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1507051422587c7dc2f2ea93_59207629%%*/
+/*%%SmartyHeaderCode:68416538058822b0ddac3d8_10568821%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '003ad23251797be474c191a149af24a9fa9944eb' => 
     array (
       0 => 'public/_template/admin/auth.tpl',
-      1 => 1484553663,
+      1 => 1484925461,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1507051422587c7dc2f2ea93_59207629',
+  'nocache_hash' => '68416538058822b0ddac3d8_10568821',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587c7dc3010633_37915095',
+  'unifunc' => 'content_58822b0ddfd776_92258385',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587c7dc3010633_37915095')) {
-function content_587c7dc3010633_37915095 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58822b0ddfd776_92258385')) {
+function content_58822b0ddfd776_92258385 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1507051422587c7dc2f2ea93_59207629';
+$_smarty_tpl->properties['nocache_hash'] = '68416538058822b0ddac3d8_10568821';
 echo $_smarty_tpl->getSubTemplate ('./header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -40,7 +40,7 @@ echo $_smarty_tpl->getSubTemplate ('./header.tpl', $_smarty_tpl->cache_id, $_sma
                 <div class="col-lg-8 push-lg-2 col-md-10 push-md-1 col-sm-12">
                     <div class="bg-white login_content login_border_radius">
                         <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/login"  method="post" class="">
+index.php/admin/login"  method="post" id="admin_auth">
                             <?php if ((($tmp = @$_smarty_tpl->tpl_vars['error']->value)===null||$tmp==='' ? '' : $tmp)) {?>
                                 <div class="alert alert-danger">
                                     <strong>Oops! Something went wrong</strong>
