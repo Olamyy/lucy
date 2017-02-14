@@ -14,7 +14,6 @@ class Login extends CI_Controller
         //check if user is already logged-in...
         $check = $this->session->has_userdata('admin-user');
         if($check) redirect('admin/dashboard/');
-
     }
 
     public function index()
@@ -33,7 +32,7 @@ class Login extends CI_Controller
                 if ($username == $this->config->item("admin_username") && $password == $this->config->item("admin_password")) {
 
                     $data = array('last_login'=>date('Y-m-d H:i:s'));
-                    $this->user_model->update('lucy_admin', $data);
+                    $this->user_model->update($data, 'lucy_admin' , array('username'=>"admin"));
                     //set session here okay.....
                     $this->session->set_userdata('admin-user', array('time'=>time(), 'username' => 'admin', 'full_name' => 'Administrator', 'privilege' => 1, 'status' => 1));
                     redirect('index.php/admin/dashboard/');

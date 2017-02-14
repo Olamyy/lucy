@@ -1,7 +1,6 @@
 {include file='../../header.tpl'}
 {include file='./nav.tpl'}
 
-
 <div class="body-content">
     <div class="container">
         <div class="sign-in-page">
@@ -23,7 +22,7 @@
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
                     </div>
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/registry/auth/login">
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/registry/auth/login?redirect={if $session[0].from|default:'' == "create_nav"}init{else}{/if}">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>

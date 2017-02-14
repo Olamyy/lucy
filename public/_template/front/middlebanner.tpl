@@ -5,8 +5,8 @@
                 <div class="image"> <img class="img-responsive" src="http://placehold.it/848x214" alt=""> </div>
                 <div class="strip strip-text">
                     <div class="strip-inner">
-                        <h2 class="text-right">New Mens Fashion<br>
-                            <span class="shopping-needs">Save up to 40% off</span></h2>
+                        <h2 class="text-right">Promo Message<br>
+                            <span class="shopping-needs">Save up to x% off</span></h2>
                     </div>
                 </div>
                 <div class="new-label">

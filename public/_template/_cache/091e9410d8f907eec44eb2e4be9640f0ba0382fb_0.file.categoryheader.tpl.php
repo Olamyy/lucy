@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-17 23:04:15
+<?php /* Smarty version 3.1.24, created on 2017-02-04 23:24:59
          compiled from "/var/www/html/lucy/public/_template/admin/product/category/categoryheader.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1577732552587e94df106a86_31461602%%*/
+/*%%SmartyHeaderCode:188542907589654bb5ab667_82546380%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '091e9410d8f907eec44eb2e4be9640f0ba0382fb' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/product/category/categoryheader.tpl',
-      1 => 1484690415,
+      1 => 1486247096,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1577732552587e94df106a86_31461602',
+  'nocache_hash' => '188542907589654bb5ab667_82546380',
   'variables' => 
   array (
+    'APP_NAME' => 0,
     'BASE_URL' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587e94df13eb44_34895005',
+  'unifunc' => 'content_589654bb5f64a0_94616580',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587e94df13eb44_34895005')) {
-function content_587e94df13eb44_34895005 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_589654bb5f64a0_94616580')) {
+function content_589654bb5f64a0_94616580 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1577732552587e94df106a86_31461602';
+$_smarty_tpl->properties['nocache_hash'] = '188542907589654bb5ab667_82546380';
 ?>
 
 <!doctype html>
@@ -37,7 +38,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1577732552587e94df106a86_31461602';
 <!-- Mirrored from dev.lorvent.com/admire/form_layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jan 2017 10:09:52 GMT -->
 <head>
     <meta charset="UTF-8">
-    <title>Form Layouts | Admire</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['APP_NAME']->value;?>
+</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;

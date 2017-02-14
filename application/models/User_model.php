@@ -22,6 +22,7 @@ class User_model extends CI_Model
     public function get($table){
         $query = $this->db->get($table);  // Produces: SELECT * FROM mytable
         if ($query){
+            print_r($query->result);
             return $query->result;
         }
         else
@@ -48,7 +49,7 @@ class User_model extends CI_Model
     {
         $state = $this->db->update($table, $data, $condition);
         if ($state) {
-            return true;
+            return $this->custom_get($table, array(), 0, 0);
         } else
             return false;
 

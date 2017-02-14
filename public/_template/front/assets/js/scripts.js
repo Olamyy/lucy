@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
     "use strict";
 
-/*===================================================================================*/
+    /*===================================================================================*/
 /*	OWL CAROUSEL
 /*===================================================================================*/
 jQuery(function () {
@@ -336,11 +336,6 @@ jQuery("[data-toggle='tooltip']").tooltip();
     /*  HYDEE
      /*===================================================================================*/
 
-    jQuery('.single-back-img').on('click', function () {
-        // alert($(this).attr('src'));
-        $('.main-back-img').css( { backgroundImage: 'url(' + $(this).attr('src') + ')' } );
-    });
-
     var displayName = function () {
         $('.name-display').text($('#name').val());
         $('#name').hide();
@@ -402,11 +397,12 @@ $('#NoDate').on('change', function(){
     });
 
     jQuery('.single-back-img').on('click', function () {
-        $('.main-back-img').css( { backgroundImage: 'url(' + $(this).attr('src') + ')' } );
+        //dashboard_image_setter($(this).attr('src'));
+        //$('.main-back-img').css( { backgroundImage: 'url(' + $(this).attr('src') + ')' } );
+        dashboard_image_setter($(this).attr('src'));
 // For IE we need to remove quotes to the proper url
         var couple_id = $('#couple_id').val();
         var bg_image = $('.main-back-img').css('background-image').replace(/(url\(|\)|")/g, '');
-
         $.ajax(
             {
                 type: "GET",
@@ -418,8 +414,8 @@ $('#NoDate').on('change', function(){
                 dataType: 'json',
                 async : false,
                 success: function (response) {
-                    console.log(response);
-                    },
+
+                },
                 error : function(response){}
             });
 
@@ -440,12 +436,81 @@ $('#NoDate').on('change', function(){
                 async : false,
                 success: function (response) {
                     console.log(response);
-                    $('#Vmessage').html("Hello")
+                    console.log( $('#Vmessage').text(vow_message));
                     },
-                error : function(response){}
+                error : function(response){
+                    console.log(response);
+                }
             });
 
     });
+
+
+    jQuery('#setVotMessageButton').on('click', function () {
+        var couple_id = $('#couple_id').val();
+        var votmessage = $('#vot').val();
+        $.ajax(
+            {
+                type: "POST",
+                url: $('#base_url').val()+ 'index.php/api/updates/vot_of_thanks',
+                data: {
+                    "couple_id": couple_id,
+                    "votmessage" : votmessage
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    console.log(response);
+                    console.log( $('#Tmessage').text(votmessage));
+                    },
+                error : function(response){
+                    console.log(response);
+                }
+            });
+
+    });
+
+    jQuery('#invitePartnerForm').on('click', function(){
+        var partner_email = $('#email').val();
+        var couple_id = $('#couple_id').val();
+
+        $.ajax(
+            {
+                type: "POST",
+                url: $('#base_url').val()+ 'index.php/api/updates/invite_partner',
+                data: {
+                    "couple_id": couple_id,
+                    "partner_email" : partner_email
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    $('#alert').removeClass('hidden');
+                },
+                error : function(response){
+                    console.log(response);
+                }
+            });
+    });
+
+    $('#extra_email').on('click', function(event){
+        $("<input type=\"email\" name=\"email\" class=\"form-control unicase-form-control text-input\"" +
+            " id=\"exampleInputEmail1\"> <br>").insertAfter('.form-group').insertBefore('#exampleInputEmail1:first-child')
+    });
+
+    $("#remove_extra").click(function() {
+        $("#exampleInputEmail1:last-child").remove();
+    });
+
+    var dashboard_image_setter = (function(image_url){
+        var bg_img = $("#dashboard_image").val();
+        image_url = image_url || bg_img;
+
+         $('.main-back-img').css( { backgroundImage: 'url(' + image_url + ')' } );
+         $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
+    });
+
+  dashboard_image_setter();
 
 });
 

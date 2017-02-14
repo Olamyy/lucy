@@ -6,7 +6,7 @@
 <!-- Mirrored from dev.lorvent.com/admire/form_layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jan 2017 10:09:52 GMT -->
 <head>
     <meta charset="UTF-8">
-    <title>Form Layouts | Admire</title>
+    <title>{$APP_NAME}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/img/logo1.ico"/>

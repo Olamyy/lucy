@@ -27,7 +27,7 @@
                      id="nav-content">
                     <ul class="nav navbar-nav top_menubar">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{$BASE_URL}index.php/admin/Product/">
+                            <a class="nav-link text-white" href="{$BASE_URL}admin/Product/">
                                 <i class="fa fa-product-hunt"></i> <span class="quick_text">Add Product</span>
                             </a>
                         </li>
@@ -62,12 +62,12 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Product/view">
+                            <a href="{$BASE_URL}admin/Product/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;View
                             </a>
                         </li>
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Product/add">
+                            <a href="{$BASE_URL}admin/Product/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add
                             </a>
                         </li>
@@ -86,12 +86,12 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Category/view">
+                            <a href="{$BASE_URL}admin/Category/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;View Categories
                             </a>
                         </li>
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Category/add">
+                            <a href="{$BASE_URL}admin/Category/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add Category
                             </a>
                         </li>
@@ -106,12 +106,12 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Product/view">
+                            <a href="{$BASE_URL}admin/Product/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;Orders
                             </a>
                         </li>
                         <li>
-                            <a href="{$BASE_URL}index.php/admin/Product/add">
+                            <a href="{$BASE_URL}admin/Product/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Returns
                             </a>
                         </li>
@@ -201,15 +201,15 @@
 
                 </li>
                 <li class="">
-                    <a href="{$BASE_URL}/index.php/admin/logout">
+                    <a href="{$BASE_URL}admin/logout">
                         <i class="fa fa-globe"></i>
-                        <span class="link-title" href="{$BASE_URL}/index.php/admin/logout">&nbsp;Logout</span>
+                        <span class="link-title" href="{$BASE_URL}admin/logout">&nbsp;Logout</span>
                     </a>
                 </li>
                 <li class="">
                     <a href="{$BASE_URL}">
                         <i class="fa fa-globe"></i>
-                        <span class="link-title" href="{$BASE_URL}index.php">&nbsp;Go to Store</span>
+                        <span class="link-title" href="{$BASE_URL}">&nbsp;Go to Store</span>
                     </a>
                 </li>
             </ul>

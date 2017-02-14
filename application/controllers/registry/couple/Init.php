@@ -17,7 +17,7 @@ class Init extends CI_Controller
         $this->data['pre_cart'] = $this->admin_model->get_cat_details();
 
         ///get user data from session
-        $user_session = $this->session->has_userdata('user_session');
+        $user_session = $this->session->userdata('user_session');
         if ($user_session){
             $this->data['user_session'] = $user_session;
         }
@@ -29,6 +29,7 @@ class Init extends CI_Controller
         $error = array();
         $user_ip = $this->input->ip_address();
         $this->check_user_ip = $this->user_model->custom_get('lucy_couple', array("ip" => $user_ip), 0, 0);
+
         if (!$this->check_user_ip){
             redirect('index.php/registry/auth/login');
         }

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-22 18:56:33
+<?php /* Smarty version 3.1.24, created on 2017-02-05 06:04:23
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:15002627825884f251ca0236_11640300%%*/
+/*%%SmartyHeaderCode:1542219785896b257b38546_41842487%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,40 +9,65 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1485107789,
+      1 => 1486271060,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '15002627825884f251ca0236_11640300',
+  'nocache_hash' => '1542219785896b257b38546_41842487',
   'variables' => 
   array (
+    'user_session' => 0,
     'BASE_URL' => 0,
     'promo_message_1' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
     'pre_cart' => 0,
     'data' => 0,
-    'cat' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5884f251cf31f4_64502744',
+  'unifunc' => 'content_5896b257ba75f8_18717647',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5884f251cf31f4_64502744')) {
-function content_5884f251cf31f4_64502744 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5896b257ba75f8_18717647')) {
+function content_5896b257ba75f8_18717647 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '15002627825884f251ca0236_11640300';
+$_smarty_tpl->properties['nocache_hash'] = '1542219785896b257b38546_41842487';
 ?>
  <!-- ============================================== TOP MENU ============================================== -->
+
+ <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+     <?php
+$_from = $_smarty_tpl->tpl_vars['user_session']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['session'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['session']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['session']->value) {
+$_smarty_tpl->tpl_vars['session']->_loop = true;
+$foreach_session_Sav = $_smarty_tpl->tpl_vars['session'];
+?>
+     <?php
+$_smarty_tpl->tpl_vars['session'] = $foreach_session_Sav;
+}
+?>
+ <?php }?>
+
     <div class="top-bar animate-dropdown">
         <div class="container">
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/account">My Account</a></li>
+registry/auth/account"><?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);
+} else { ?>
                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/auth/Login">Login</a></li>
+registry/auth/Login">My Account</a></li>
+                        <?php }?>
+                        </a>
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.cnt-account -->
@@ -162,6 +187,29 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
+                                <li class="dropdown"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Registry</a>
+                                    <ul class="dropdown-menu pages">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-menu">
+                                                        <ul class="links">
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/find">Find Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/create">Create Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/manage">Manage Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/whyus">Why Lucy Registry?</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
 
                                 <?php if ((($tmp = @$_smarty_tpl->tpl_vars['pre_cart']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 
@@ -177,53 +225,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['data']->_loop = true;
 $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
 ?>
-                                        <li class="dropdown"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/<?php echo $_smarty_tpl->tpl_vars['data']->value['category_url'];?>
-" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
+                                        <li> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+category?cat_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['category_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
 </a>
-
-                                                <ul class="dropdown-menu pages">
-                                                <li>
-                                                <div class="yamm-content">
-                                                <div class="row">
-                                                <div class="col-xs-12 col-menu">
-                                                <ul class="links">
-                                                <?php
-$_from = $_smarty_tpl->tpl_vars['data']->value['pre_cat'];
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['cat']->_loop = false;
-$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
-foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['cat']->value) {
-$_smarty_tpl->tpl_vars['cat']->_loop = true;
-$foreach_cat_Sav = $_smarty_tpl->tpl_vars['cat'];
-?>
-                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/Registry/<?php echo $_smarty_tpl->tpl_vars['data']->value['category_url'];?>
-"><?php echo $_smarty_tpl->tpl_vars['cat']->value;?>
-</a></li>
-                                                <?php
-$_smarty_tpl->tpl_vars['cat'] = $foreach_cat_Sav;
-}
-?>
-
-                                                </ul>
-                                                </div>
-                                                </div>
-                                                </div>
                                                 </li>
-                                                </ul>
-                                                </li>
-
-
-
                                             <?php
 $_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
 }
 ?>
-
                                 <?php }?>
                             </ul>
                             <!-- /.navbar-nav -->

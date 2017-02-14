@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-21 09:49:55
+<?php /* Smarty version 3.1.24, created on 2017-02-05 07:59:08
          compiled from "public/_template/front/registry/couple/details.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:574447508588320b360a3b7_66177242%%*/
+/*%%SmartyHeaderCode:18002575515896cd3c633c06_03044177%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2d8ef1159c1f7ab210ac481ea77d69c6322b76f' => 
     array (
       0 => 'public/_template/front/registry/couple/details.tpl',
-      1 => 1484988594,
+      1 => 1486277945,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '574447508588320b360a3b7_66177242',
+  'nocache_hash' => '18002575515896cd3c633c06_03044177',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_588320b364c713_43473722',
+  'unifunc' => 'content_5896cd3c68a824_71772285',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_588320b364c713_43473722')) {
-function content_588320b364c713_43473722 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5896cd3c68a824_71772285')) {
+function content_5896cd3c68a824_71772285 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '574447508588320b360a3b7_66177242';
+$_smarty_tpl->properties['nocache_hash'] = '18002575515896cd3c633c06_03044177';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -80,13 +80,13 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 ?>
                         </div>
                     <?php }?>
-                    <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+                    <?php if ($_smarty_tpl->tpl_vars['user_session']->value['coming_from'] == "create_nav") {?>
+                        <?php } else { ?>
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <strong>Hi, <br> We noticed <b>you</b> have a pending registration so we brought you here to continue it.</strong><br>
                             <strong class="alert-link">However, you can restart your registration by clicking <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 index.php/auth/login/nosession">here.</a> </strong>
-
                         </div>
                     <?php }?>
 

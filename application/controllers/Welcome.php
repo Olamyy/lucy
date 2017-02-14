@@ -17,7 +17,7 @@ class Welcome extends CI_Controller
     public function index()
     {
         $cat_from_db = $this->category_model->get('lucy_category_description', 0 , 0);
-
+        $this->data['user_session'] = $this->session->userdata('user_session');
 
         $pre_cart = array();
         foreach($cat_from_db as $data){
@@ -25,7 +25,6 @@ class Welcome extends CI_Controller
             $loop_cat = array_replace($data, $loop_cat);
             $pre_cart[] = $loop_cat;
         }
-
         $this->data['pre_cart'] = $pre_cart;
 
         $this->smarty->view('front/store.tpl', $this->data);

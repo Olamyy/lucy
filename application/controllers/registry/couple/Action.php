@@ -32,6 +32,27 @@ class Action extends CI_Controller
 
         redirect('index.php/');
     }
+
+    public function preview(){
+        $preview_id = $this->input->get('preview_id');
+        ///Check if couple_id is valid
+
+        if ($this->user_model->custom_get('lucy_couple', array('couple_id'=>$preview_id), 0, 0)){
+            $this->data['user_session'] = $this->session->userdata();
+            $this->smarty->view('front/registry/couple/preview/preview.tpl', $this->data);
+        }else{
+            $this->data['error'] = "Could not start preview";
+            $this->smarty->view('front/registry/couple/dashboard/manage.tpl', $this->data);
+        }
+    }
+
+    public function share(){
+        $this->smarty->view('front/registry/couple/share/share.tpl');
+    }
+
+    public function track(){
+        $this->smarty->view('front/registry/couple/track/track.tpl');
+    }
 }
 
 

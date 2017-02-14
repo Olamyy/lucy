@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-//$config['base_url'] = 'http://localhost/soccer-trivia-app/';
+$config['base_url'] = 'http://localhost/lucy/';
 
 
 /*
@@ -307,7 +307,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'segzpair';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------

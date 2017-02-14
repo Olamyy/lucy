@@ -1,11 +1,21 @@
  <!-- ============================================== TOP MENU ============================================== -->
+
+ {if $user_session|default: ''}
+     {foreach from=$user_session item=session key=eKey}
+     {/foreach}
+ {/if}
+
     <div class="top-bar animate-dropdown">
         <div class="container">
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                        <li><a href="{$BASE_URL}index.php/account">My Account</a></li>
-                        <li><a href="{$BASE_URL}index.php/registry/auth/Login">Login</a></li>
+                        <li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}
+                        <li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>
+                        {/if}
+                        </a>
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.cnt-account -->
@@ -120,34 +130,31 @@
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw"> <a href="{$BASE_URL}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
+                                <li class="dropdown"> <a href="{$BASE_URL}registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Registry</a>
+                                    <ul class="dropdown-menu pages">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-menu">
+                                                        <ul class="links">
+                                                                <li><a href="{$BASE_URL}registry/find">Find Registry</a></li>
+                                                                <li><a href="{$BASE_URL}registry/create">Create Registry</a></li>
+                                                                <li><a href="{$BASE_URL}registry/manage">Manage Registry</a></li>
+                                                                <li><a href="{$BASE_URL}registry/whyus">Why Lucy Registry?</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
 
                                 {if $pre_cart|default: ''}
 
                                     {foreach from=$pre_cart item=data key=eKey}
-                                        <li class="dropdown"> <a href="{$BASE_URL}index.php/{$data.category_url}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{$data.title}</a>
-
-                                                <ul class="dropdown-menu pages">
-                                                <li>
-                                                <div class="yamm-content">
-                                                <div class="row">
-                                                <div class="col-xs-12 col-menu">
-                                                <ul class="links">
-                                                {foreach from=$data.pre_cat item=cat key=eKey}
-                                                <li><a href="{$BASE_URL}index.php/Registry/{$data.category_url}">{$cat}</a></li>
-                                                {/foreach}
-
-                                                </ul>
-                                                </div>
-                                                </div>
-                                                </div>
+                                        <li> <a href="{$BASE_URL}category?cat_id={$data.category_id}">{$data.title}</a>
                                                 </li>
-                                                </ul>
-                                                </li>
-
-
-
                                             {/foreach}
-
                                 {/if}
                             </ul>
                             <!-- /.navbar-nav -->

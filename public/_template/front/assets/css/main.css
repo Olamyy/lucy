@@ -5924,12 +5924,11 @@ age-container #owl-main .owl-next {
 /*===================================================================================*/
 
 .main-back-img{
-  /*border:1px solid red;*/
   height: 400px;
-  background-image: url('../../../uploads/files/love-1.jpg');
-  background-repeat: no-repeat;
+  background: url('../../../uploads/files/love-1.jpg') no-repeat;
   background-size: cover;
   position: relative;
+  width: auto;
 }
 
 
@@ -6132,7 +6131,7 @@ age-container #owl-main .owl-next {
   font-size: 14px;
 }
 .email-field{
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   border-radius: 0;
   font-size:16px !important;
   padding: 5px 10px 5px 10px !important;
@@ -6151,7 +6150,7 @@ age-container #owl-main .owl-next {
 
 
 .vowmessagefield{
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   border-radius: 0;
   font-size:16px !important;
   padding: 5px 10px 5px 10px !important;
@@ -6161,5 +6160,73 @@ age-container #owl-main .owl-next {
 .vowmessagefield:focus{
   border: 2px solid #aaa;
   box-shadow: none;
+}
+
+
+/*<!-- ============================================== PREVIEW PAGE ============================================== -->*/
+.preview-header{
+  position: fixed;
+  width: 100%;
+}
+.preview-wrapper{
+    background-color: yellow;
+  /*border: 1px solid red;*/
+  height: 650px;
+  background-size: cover;
+}
+
+.preview-display-name{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  font-size: 72px;
+  font-family: 'Playfair Display', serif;
+  display: inline-block;
+  width: 95%;
+  margin-left: auto;
+  text-align: center;
+  padding: 5px;
+  text-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+  overflow: hidden !important;
+  margin-top: 180px;
+}
+
+.preview-display-date{
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  font-family: serif;
+  display: inline-block;
+  width: 95%;
+  margin-left: auto;
+  text-align: center;
+  padding: 5px;
+  text-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+  overflow: hidden !important;
+}
+
+.preview-cart{
+  border: 2px solid white;
+  display: inline-block;
+  padding: 10px;
+  width: 70px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  text-transform: uppercase;
+  border-radius: 10px 0 10px 0;
+  margin-right: 20px;
+}
+
+.preview-cart:hover{
+  background-color: white;
+  color: #cb2027;
+}
+
+.preview-modal-body{
+  min-height: 400px !important;
 }
 
