@@ -26,8 +26,8 @@
                         <p class="">Share via email</p>
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
-                            {*<label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>*}
-                            {*<input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">*}
+                            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
+                            <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
                         </div>
                         <div class="social-sign-in outer-top-xs pull-right">
                             <button type="submit" class="button btn-sm btn-primary"><i class=""></i>Share Registry</button>

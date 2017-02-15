@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-04 06:19:00
+<?php /* Smarty version 3.1.24, created on 2017-02-15 00:10:32
          compiled from "public/_template/front/registry/couple/share/share.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:13759938458956444f23763_72292826%%*/
+/*%%SmartyHeaderCode:34818231258a38e683ed9b4_27638876%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4d2c27fa42e4ae96d24a706081687ff468bdb815' => 
     array (
       0 => 'public/_template/front/registry/couple/share/share.tpl',
-      1 => 1486185538,
+      1 => 1487113830,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13759938458956444f23763_72292826',
+  'nocache_hash' => '34818231258a38e683ed9b4_27638876',
   'variables' => 
   array (
     'error' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_589564450206a5_29831965',
+  'unifunc' => 'content_58a38e6841cb27_81626434',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_589564450206a5_29831965')) {
-function content_589564450206a5_29831965 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a38e6841cb27_81626434')) {
+function content_58a38e6841cb27_81626434 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '13759938458956444f23763_72292826';
+$_smarty_tpl->properties['nocache_hash'] = '34818231258a38e683ed9b4_27638876';
 echo $_smarty_tpl->getSubTemplate ('../../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -74,8 +74,8 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                         <p class="">Share via email</p>
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
-                            
-                            
+                            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
+                            <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
                         </div>
                         <div class="social-sign-in outer-top-xs pull-right">
                             <button type="submit" class="button btn-sm btn-primary"><i class=""></i>Share Registry</button>

@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/owl.transitions.css">
     <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/animate.min.css">
     <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/rateit.css">
-    <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/datepicker.css">
     <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/bootstrap-select.min.css">
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/css/font-awesome.css">

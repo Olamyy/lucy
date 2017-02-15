@@ -44,11 +44,10 @@
                     <form action="" class="couples-form">
                         <input type="text" name="name" id="name" class="couples-name">
                         <span class="name-display">{$session[0].groom_first_name} & {$session[0].bride_first_name}</span>
-
-                        <span class="name-display" style="font-size: small; padding-top: 80px;">{if empty($session[0].wedding_date)}Date is coming soon{else}{$session[0].wedding_date}{/if}</span>
-
                     </form>
                 </div>
+                <h2 class="" style="font-size: small; padding-top: 80px;">{if empty($session[0].wedding_date)}Date is coming soon{else}{$session[0].wedding_date}{/if}</h2>
+
                 <div id="backgrounds" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-dialog-background">
                         <div class="modal-content modal-content-background">
@@ -96,7 +95,7 @@
                         <h4>invite partner</h4>
                         <p>Let your partners join you in this journey</p>
                     </a>
-                    <a href="{$BASE_URL}index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
+                    <a href="{$BASE_URL}index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
                         <h4>make it visible</h4>
                         <p>Guests can not view your registry until you go live.</p>
                     </a>
@@ -118,6 +117,25 @@
                                 <input type="email" class="form-control email-field" id="email" placeholder="{$session[0].spouse_email}">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">INVITE</button>
+                            <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sanityCheck" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><b>Validity Check</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <P class="desc-text">Enter the name of your partner to confirm going live.</P>
+                            <div class="form-group">
+                                <label for="email">NAME :</label>
+                                <input type="email" class="form-control email-field" id="email" placeholder="{$session[0].bride_first_name}">
+                            </div>
+                            <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">Go Live</button>
                             <br><br>
                     </div>
                 </div>

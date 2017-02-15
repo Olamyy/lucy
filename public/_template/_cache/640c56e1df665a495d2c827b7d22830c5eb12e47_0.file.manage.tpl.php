@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-11 18:41:46
+<?php /* Smarty version 3.1.24, created on 2017-02-15 06:19:15
          compiled from "public/_template/front/registry/couple/dashboard/manage.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:358426318589f4cda347243_93260052%%*/
+/*%%SmartyHeaderCode:118923304158a3e4d3cdb243_94741105%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '640c56e1df665a495d2c827b7d22830c5eb12e47' => 
     array (
       0 => 'public/_template/front/registry/couple/dashboard/manage.tpl',
-      1 => 1486834902,
+      1 => 1487135928,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '358426318589f4cda347243_93260052',
+  'nocache_hash' => '118923304158a3e4d3cdb243_94741105',
   'variables' => 
   array (
     'user_session' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_589f4cda4a61e7_11450271',
+  'unifunc' => 'content_58a3e4d3e24533_39617673',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_589f4cda4a61e7_11450271')) {
-function content_589f4cda4a61e7_11450271 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a3e4d3e24533_39617673')) {
+function content_58a3e4d3e24533_39617673 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '358426318589f4cda347243_93260052';
+$_smarty_tpl->properties['nocache_hash'] = '118923304158a3e4d3cdb243_94741105';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -116,13 +116,12 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                         <span class="name-display"><?php echo $_smarty_tpl->tpl_vars['session']->value[0]['groom_first_name'];?>
  & <?php echo $_smarty_tpl->tpl_vars['session']->value[0]['bride_first_name'];?>
 </span>
-
-                        <span class="name-display" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'])) {?>Date is coming soon<?php } else {
-echo $_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'];
-}?></span>
-
                     </form>
                 </div>
+                <h2 class="" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'])) {?>Date is coming soon<?php } else {
+echo $_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'];
+}?></h2>
+
                 <div id="backgrounds" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-dialog-background">
                         <div class="modal-content modal-content-background">
@@ -185,7 +184,7 @@ index.php/registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl
                         <p>Let your partners join you in this journey</p>
                     </a>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
+index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
                         <h4>make it visible</h4>
                         <p>Guests can not view your registry until you go live.</p>
                     </a>
@@ -208,6 +207,26 @@ index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sma
 ">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">INVITE</button>
+                            <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sanityCheck" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><b>Validity Check</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <P class="desc-text">Enter the name of your partner to confirm going live.</P>
+                            <div class="form-group">
+                                <label for="email">NAME :</label>
+                                <input type="email" class="form-control email-field" id="email" placeholder="<?php echo $_smarty_tpl->tpl_vars['session']->value[0]['bride_first_name'];?>
+">
+                            </div>
+                            <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">Go Live</button>
                             <br><br>
                     </div>
                 </div>

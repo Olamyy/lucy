@@ -6030,7 +6030,7 @@ age-container #owl-main .owl-next {
 }
 
 .couples-form{
-  /*border: 1px solid red;*/
+  border: 1px solid red;
   box-sizing: border-box;
   display: block;
   padding-left: 10px;

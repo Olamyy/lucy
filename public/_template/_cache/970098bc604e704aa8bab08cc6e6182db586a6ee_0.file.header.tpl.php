@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-28 07:47:36
+<?php /* Smarty version 3.1.24, created on 2017-02-15 00:48:13
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1861957867588c3e887c7169_63427884%%*/
+/*%%SmartyHeaderCode:207621493458a3973d0258e9_60448220%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '970098bc604e704aa8bab08cc6e6182db586a6ee' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/header.tpl',
-      1 => 1485585896,
+      1 => 1487115933,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1861957867588c3e887c7169_63427884',
+  'nocache_hash' => '207621493458a3973d0258e9_60448220',
   'variables' => 
   array (
     'APP_NAME' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_588c3e887f39e8_90733649',
+  'unifunc' => 'content_58a3973d040bd2_25653932',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_588c3e887f39e8_90733649')) {
-function content_588c3e887f39e8_90733649 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a3973d040bd2_25653932')) {
+function content_58a3973d040bd2_25653932 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1861957867588c3e887c7169_63427884';
+$_smarty_tpl->properties['nocache_hash'] = '207621493458a3973d0258e9_60448220';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,9 +69,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/rateit.css">
-    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/css/datepicker.css">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/bootstrap-select.min.css">

@@ -53,6 +53,14 @@ class Action extends CI_Controller
     public function track(){
         $this->smarty->view('front/registry/couple/track/track.tpl');
     }
+
+    public function settings(){
+        $this->smarty->view('front/registry/couple/settings.tpl');
+    }
+
+    public function help(){
+        $this->smarty->view('front/registry/couple/help.tpl');
+    }
 }
 
 
