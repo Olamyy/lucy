@@ -1,30 +1,78 @@
+<?php /* Smarty version 3.1.24, created on 2017-02-14 21:04:27
+         compiled from "/var/www/html/lucyregistry/public/_template/front/navmenu.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:114007089958a362cb35c9c0_16117820%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '1cd5f10519881993864947eba0d370a8eae44bb9' => 
+    array (
+      0 => '/var/www/html/lucyregistry/public/_template/front/navmenu.tpl',
+      1 => 1487102666,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '114007089958a362cb35c9c0_16117820',
+  'variables' => 
+  array (
+    'user_session' => 0,
+    'BASE_URL' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
+    'pre_cart' => 0,
+    'data' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_58a362cb39c682_33362282',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_58a362cb39c682_33362282')) {
+function content_58a362cb39c682_33362282 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '114007089958a362cb35c9c0_16117820';
+?>
  <!-- ============================================== TOP MENU ============================================== -->
 
- {if $user_session|default: ''}
-     {foreach from=$user_session item=session key=eKey}
-     {/foreach}
- {/if}
+ <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+     <?php
+$_from = $_smarty_tpl->tpl_vars['user_session']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['session'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['session']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['session']->value) {
+$_smarty_tpl->tpl_vars['session']->_loop = true;
+$foreach_session_Sav = $_smarty_tpl->tpl_vars['session'];
+?>
+     <?php
+$_smarty_tpl->tpl_vars['session'] = $foreach_session_Sav;
+}
+?>
+ <?php }?>
 
-    {*<div class="top-bar animate-dropdown">*}
-        {*<div class="container">*}
-            {*<div class="header-top-inner">*}
-                {*<div class="cnt-account">*}
-                    {*<ul class="list-unstyled">*}
-                        {*<li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}*}
-                        {*<li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>*}
-                        {*{/if}*}
+    
+        
+            
+                
+                    
+                        
+                        
+                        
 
-                    {*</ul>*}
-                {*</div>*}
-                {*<!-- /.cnt-account -->*}
-                {*<!-- /.list-unstyled -->*}
-            {*</div>*}
-            {*<!-- /.cnt-cart -->*}
-            {*<div class="offer-text">{$promo_message_1|default:'Promo'}</div>*}
-            {*<div class="clearfix"></div>*}
-        {*</div>*}
+                    
+                
+                
+                
+            
+            
+            
+            
+        
         <!-- /.header-top-inner -->
-    {*</div>*}
+    
     <!-- /.container -->
     <!-- /.header-top -->
     <!-- ============================================== TOP MENU : END ============================================== -->
@@ -33,7 +81,8 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-2 logo-holder">
                     <!-- ============================================================= LOGO ============================================================= -->
-                    <div class="logo"> <a href="{$BASE_URL}"> <img src="http://placehold.it/113x26" alt="logo"> </a> </div>
+                    <div class="logo"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+"> <img src="http://placehold.it/113x26" alt="logo"> </a> </div>
                     <!-- /.logo -->
                     <!-- ============================================================= LOGO : END ============================================================= --> </div>
                 <!-- /.logo-holder -->
@@ -79,7 +128,9 @@
                                     <div class="cart-item product-summary">
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <div class="image"> <a href="detail.html"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/cart.jpg" alt=""></a> </div>
+                                                <div class="image"> <a href="detail.html"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/images/cart.jpg" alt=""></a> </div>
                                             </div>
                                             <div class="col-xs-7">
                                                 <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
@@ -107,24 +158,27 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-4">
-                        {*<div class="top-bar animate-dropdown">*}
-                        {*<div class="container">*}
-                            {*<!-- /.cnt-cart -->*}
-                            {*<div class="offer-text">*}
-                                {*<ul class="list-unstyled">*}
-                                    {*<li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}*}
-                                    {*<li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>*}
-                                    {*{/if}*}
+                        
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                    
 
-                                {*</ul>*}
-                            {*</div>*}
-                        {*</div>*}
+                                
+                            
+                        
                         <!-- /.header-top-inner -->
-                    {*</div>*}
+                    
                         <ul class="account">
-                            <li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}
-                            <li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>
-                            {/if}
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/auth/account"><?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);
+} else { ?>
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/auth/Login">My Account</a></li>
+                            <?php }?>
                         </ul>
                     </div>
                     <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
@@ -150,18 +204,25 @@
                     <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
-                                <li class="active dropdown yamm-fw"> <a href="{$BASE_URL}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
-                                <li class="dropdown"> <a href="{$BASE_URL}registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick="window.location.href =''+{$BASE_URL}">Registry</a>
+                                <li class="active dropdown yamm-fw"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
+                                <li class="dropdown"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick="window.location.href =''+<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">Registry</a>
                                     <ul class="dropdown-menu pages">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-menu">
                                                         <ul class="links">
-                                                                <li><a href="{$BASE_URL}registry/find">Find Registry</a></li>
-                                                                <li><a href="{$BASE_URL}registry/create">Create Registry</a></li>
-                                                                <li><a href="{$BASE_URL}registry/manage">Manage Registry</a></li>
-                                                                <li><a href="{$BASE_URL}registry/whyus">Why Lucy Registry?</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/find">Find Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/create">Create Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/manage">Manage Registry</a></li>
+                                                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/whyus">Why Lucy Registry?</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -170,13 +231,30 @@
                                     </ul>
                                 </li>
 
-                                {if $pre_cart|default: ''}
+                                <?php if ((($tmp = @$_smarty_tpl->tpl_vars['pre_cart']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 
-                                    {foreach from=$pre_cart item=data key=eKey}
-                                        <li> <a href="{$BASE_URL}category?cat_id={$data.category_id}">{$data.title}</a>
+                                    <?php
+$_from = $_smarty_tpl->tpl_vars['pre_cart']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['data'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['data']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['data']->value) {
+$_smarty_tpl->tpl_vars['data']->_loop = true;
+$foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
+?>
+                                        <li> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+category?cat_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['category_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
+</a>
                                                 </li>
-                                            {/foreach}
-                                {/if}
+                                            <?php
+$_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
+}
+?>
+                                <?php }?>
                             </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>
@@ -196,4 +274,6 @@
     <!-- /.header-nav -->
     <!-- ============================================== NAVBAR : END ============================================== -->
 
-</header>
+</header><?php }
+}
+?>

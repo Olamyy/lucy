@@ -6230,3 +6230,130 @@ age-container #owl-main .owl-next {
   min-height: 400px !important;
 }
 
+.account{
+  /*border: 1px solid white;*/
+  display: block;
+  height: inherit;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 10px 13px 10px;
+
+}
+
+.account>li>a{
+  color: white !important;
+  font-weight: 400;
+}
+
+/*<!-- ============================================== REGISTRY PAGE ============================================== -->*/
+
+.benefit-main-wrapper{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.top-div{
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-color: rgba(255, 42, 48, 0.2);
+}
+.top-div>h2{
+    font-family: 'Raleway', 'Roboto Slab', serif, sans-serif;
+    font-weight: 500;
+}
+
+.top-div>p{
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+.btn-reg, .btn-find{
+  border: 1px solid #cb2027;
+  width: 50%;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #cb2027;
+  color: white;
+  font-weight: 600;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.link-wrapper{
+    /*border: 1px solid red;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.benefit-wrapper{
+    /*border: 1px solid black;*/
+}
+.benefit-wrapper>h1{
+    margin-bottom: 30px;
+}
+
+.benefit-block{
+    border: 1px solid rgba(177, 177, 177, 0.23);
+    display: block;
+    text-decoration: none;
+    padding-bottom: 40px;
+}
+.benefit-block:hover{
+    background-color: #eeeeee;
+}
+.benefit-content{
+    /*border: 1px solid red;*/
+    width: 90%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto  ;
+}
+.benefit-content>h3{
+    font-size: 24px;
+    font-weight:400;
+    color: black;
+}
+.benefit-content>p{
+    font-size: 16px;
+}
+
+.glyphicon-gift{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.btn-link{
+    color: #cb2027;
+}
+
+.nav-section{
+    padding-bottom: 20px;
+}
+.nav-section li{
+    margin-top: 10px;
+}
+
+.nav-section a{
+    color: #5a5a5a;
+}
+
+.nav-section a:hover{
+    font-weight: 600;
+    color: #cb2027;
+}
+
+.nav-section a:active{
+    font-weight: 600;
+    color: #cb2027;
+}
+
+.nav-section>h6{
+    border-bottom: 1px solid #a8a8a8;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+
+
