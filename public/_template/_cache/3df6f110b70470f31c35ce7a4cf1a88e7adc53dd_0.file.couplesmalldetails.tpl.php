@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-24 06:19:44
+<?php /* Smarty version 3.1.24, created on 2017-02-16 09:29:56
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/couplesmalldetails.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:21059294215886e3f0a94948_87781148%%*/
+/*%%SmartyHeaderCode:129929655158a563040e8952_40885990%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3df6f110b70470f31c35ce7a4cf1a88e7adc53dd' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/couplesmalldetails.tpl',
-      1 => 1485235183,
+      1 => 1487233792,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21059294215886e3f0a94948_87781148',
+  'nocache_hash' => '129929655158a563040e8952_40885990',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5886e3f0abf541_29583728',
+  'unifunc' => 'content_58a5630413f946_46555047',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5886e3f0abf541_29583728')) {
-function content_5886e3f0abf541_29583728 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a5630413f946_46555047')) {
+function content_58a5630413f946_46555047 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '21059294215886e3f0a94948_87781148';
+$_smarty_tpl->properties['nocache_hash'] = '129929655158a563040e8952_40885990';
 ?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <div id="advertisement" class="advertisement">
@@ -66,7 +66,8 @@ $_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
 ?>
                 <?php }?>
                 <button class="glyphicon glyphicon-plus btn btn-lg btn-primary" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/" style="margin-top: 20px; height: 50px; width: 200px;">Add Gifts</button>
+" style="margin-top: 20px; height: 50px; width: 200px;" onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+'">Add Gifts</button>
             </div>
         </div>
     </div>

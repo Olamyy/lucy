@@ -4,7 +4,6 @@
 
 {include file="./side.tpl"}
 
-
 {include file="../../../mainsliders.tpl"}
 
 {include file="../../../newproducts.tpl"}

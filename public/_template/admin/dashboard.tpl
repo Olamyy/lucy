@@ -32,9 +32,7 @@
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="sales_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="sales_count"></span><br/>
                                                     <span class="card_description">Orders</span>
                                                 </div>
                                             </div>
@@ -54,9 +52,7 @@
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="visitors_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="visitors_count">{$visitor_count}</span><br/>
                                                     <span class="card_description">Visitors</span>
                                                 </div>
                                             </div>
@@ -81,9 +77,7 @@
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="sales_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="sales_count">{$customer_count}</span><br/>
                                                     <span class="card_description">Customers</span>
                                                 </div>
                                             </div>
@@ -103,8 +97,7 @@
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="visitors_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
+                                                    <span class="number_val" id="visitors_count">{$online_user_count}</span>
                                                     <br/>
                                                     <span class="card_description">Online</span>
                                                 </div>

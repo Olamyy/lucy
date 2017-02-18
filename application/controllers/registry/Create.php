@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lekanterragon
- * Date: 2/5/17
- * Time: 6:08 AM
- */
 
 class Create extends CI_Controller
 {
@@ -29,7 +23,7 @@ class Create extends CI_Controller
                        $user_session['coming_from'] = "create_nav";
                         $user_session['redirect'] = "init";
                     $this->session->set_userdata(array('user_session'=>$user_session));
-;                   redirect('registry/couple/init');
+                   redirect('registry/couple/init');
             }
             else{
                 $user_session['coming_from'] = "create_nav";
@@ -46,9 +40,5 @@ class Create extends CI_Controller
         }
     }
 
-    public function index()
-    {
-
-    }
 
 }

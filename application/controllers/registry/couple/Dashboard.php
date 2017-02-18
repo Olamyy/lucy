@@ -23,6 +23,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+
         $this->smarty->view('front/registry/couple/dashboard/dashboard.tpl', $this->data);
     }
 

@@ -6,8 +6,12 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfont9efe.eot?v=4.6.2');
-  src: url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfontd41d.eot?#iefix&v=4.6.2') format('embedded-opentype'), url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfont9efe.woff2?v=4.6.2') format('woff2'), url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfont9efe.woff?v=4.6.2') format('woff'), url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfont9efe.ttf?v=4.6.2') format('truetype'), url('../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/fonts/fontawesome-webfont9efe.svg?v=4.6.2#fontawesomeregular') format('svg');
+  src: url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfont9efe.eot');
+  src: url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfontd41d.eot') format('embedded-opentype'),
+  url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfont9efe.woff2?v=4.6.2') format('woff2'),
+  url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfont9efe.woff?v=4.6.2') format('woff'),
+  url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfont9efe.ttf?v=4.6.2') format('truetype'),
+  url('/var/www/html/lucy/public/_template/front/assets/fonts/fontawesome-webfont9efe.svg?v=4.6.2#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

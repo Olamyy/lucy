@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-20 18:24:48
+<?php /* Smarty version 3.1.24, created on 2017-02-16 06:59:58
          compiled from "public/_template/admin/dashboard.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:176654760588247e082e3e9_84270690%%*/
+/*%%SmartyHeaderCode:203670421058a53fde1f8961_71433074%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9e93b319806e1a8990fa1123da3e7df27ec8e4a2' => 
     array (
       0 => 'public/_template/admin/dashboard.tpl',
-      1 => 1484933083,
+      1 => 1487224792,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '176654760588247e082e3e9_84270690',
+  'nocache_hash' => '203670421058a53fde1f8961_71433074',
   'variables' => 
   array (
+    'visitor_count' => 0,
+    'customer_count' => 0,
+    'online_user_count' => 0,
     'BASE_URL' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_588247e08a62f5_95046581',
+  'unifunc' => 'content_58a53fde240787_31268223',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_588247e08a62f5_95046581')) {
-function content_588247e08a62f5_95046581 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a53fde240787_31268223')) {
+function content_58a53fde240787_31268223 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '176654760588247e082e3e9_84270690';
+$_smarty_tpl->properties['nocache_hash'] = '203670421058a53fde1f8961_71433074';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -66,9 +69,7 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="sales_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="sales_count"></span><br/>
                                                     <span class="card_description">Orders</span>
                                                 </div>
                                             </div>
@@ -88,9 +89,8 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="visitors_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="visitors_count"><?php echo $_smarty_tpl->tpl_vars['visitor_count']->value;?>
+</span><br/>
                                                     <span class="card_description">Visitors</span>
                                                 </div>
                                             </div>
@@ -115,9 +115,8 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="sales_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
-                                                    <br/>
+                                                    <span class="number_val" id="sales_count"><?php echo $_smarty_tpl->tpl_vars['customer_count']->value;?>
+</span><br/>
                                                     <span class="card_description">Customers</span>
                                                 </div>
                                             </div>
@@ -137,8 +136,8 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
                                             </div>
                                             <div class="col-lg-7 icon_padd_right">
                                                 <div class="float-xs-right cards_content">
-                                                    <span class="number_val" id="visitors_count"></span><i
-                                                            class="fa fa-long-arrow-up fa-2x"></i>
+                                                    <span class="number_val" id="visitors_count"><?php echo $_smarty_tpl->tpl_vars['online_user_count']->value;?>
+</span>
                                                     <br/>
                                                     <span class="card_description">Online</span>
                                                 </div>

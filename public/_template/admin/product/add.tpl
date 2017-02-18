@@ -62,7 +62,11 @@
                                                    class="form-control" required>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Product Description</h5>
+                                            <h5>Product Short Description</h5>
+                                            <textarea id="text4" class="form-control" cols="500" rows="15" name="short_description" placeholder="Product Description" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Product Long Description</h5>
                                             <textarea id="text4" class="form-control" cols="500" rows="15" name="product_description" placeholder="Product Description" required></textarea>
                                         </div>
                                         <div class="form-group">

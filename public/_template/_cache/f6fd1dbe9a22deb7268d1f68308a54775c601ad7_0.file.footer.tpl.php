@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-22 11:18:15
+<?php /* Smarty version 3.1.24, created on 2017-02-17 13:12:15
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:66055054588486e7dd3179_26764916%%*/
+/*%%SmartyHeaderCode:159597788858a6e89f815847_03558893%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f6fd1dbe9a22deb7268d1f68308a54775c601ad7' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/footer.tpl',
-      1 => 1485080293,
+      1 => 1487333520,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '66055054588486e7dd3179_26764916',
+  'nocache_hash' => '159597788858a6e89f815847_03558893',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_588486e7dfd458_78170136',
+  'unifunc' => 'content_58a6e89f8387c1_92394416',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_588486e7dfd458_78170136')) {
-function content_588486e7dfd458_78170136 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a6e89f8387c1_92394416')) {
+function content_58a6e89f8387c1_92394416 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '66055054588486e7dd3179_26764916';
+$_smarty_tpl->properties['nocache_hash'] = '159597788858a6e89f815847_03558893';
 ?>
 
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
@@ -90,6 +90,11 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/js/wow.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/js/toastr.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;

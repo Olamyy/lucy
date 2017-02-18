@@ -20,14 +20,22 @@ class Base extends CI_Controller
         $this->load->model('user_model');
         $this->load->model('category_model');
 
-        //check if user is already logged-in...
-//        $this->check = $this->session->userdata('user_session');
-//        if (empty($check)) redirect('index.php/registry/auth/login');
     }
 
     public function index()
     {
-        $this->smarty->view('front/registry/base.tpl');
+        $cat_from_db = $this->category_model->get('lucy_category_description', 0 , 0);
+        $this->data['user_session'] = $this->session->userdata('user_session');
+
+        $pre_cart = array();
+        foreach($cat_from_db as $data){
+            $loop_cat = array('pre_cat'=>explode(",", $data['sub_categories']));
+            $loop_cat = array_replace($data, $loop_cat);
+            $pre_cart[] = $loop_cat;
+        }
+        $this->data['pre_cart'] = $pre_cart;
+
+        $this->smarty->view('front/registry/base.tpl', $this->data);
     }
 
 }

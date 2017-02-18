@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-05 06:04:23
+<?php /* Smarty version 3.1.24, created on 2017-02-17 00:24:40
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1542219785896b257b38546_41842487%%*/
+/*%%SmartyHeaderCode:6950897658a634b83be6e3_34098946%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,86 +9,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1486271060,
+      1 => 1487287477,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1542219785896b257b38546_41842487',
+  'nocache_hash' => '6950897658a634b83be6e3_34098946',
   'variables' => 
   array (
-    'user_session' => 0,
     'BASE_URL' => 0,
-    'promo_message_1' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
+    'user_session' => 0,
     'pre_cart' => 0,
     'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5896b257ba75f8_18717647',
+  'unifunc' => 'content_58a634b8422540_71972469',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5896b257ba75f8_18717647')) {
-function content_5896b257ba75f8_18717647 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a634b8422540_71972469')) {
+function content_58a634b8422540_71972469 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1542219785896b257b38546_41842487';
+$_smarty_tpl->properties['nocache_hash'] = '6950897658a634b83be6e3_34098946';
 ?>
- <!-- ============================================== TOP MENU ============================================== -->
-
- <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-     <?php
-$_from = $_smarty_tpl->tpl_vars['user_session']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['session'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['session']->_loop = false;
-$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
-foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['session']->value) {
-$_smarty_tpl->tpl_vars['session']->_loop = true;
-$foreach_session_Sav = $_smarty_tpl->tpl_vars['session'];
-?>
-     <?php
-$_smarty_tpl->tpl_vars['session'] = $foreach_session_Sav;
-}
-?>
- <?php }?>
-
-    <div class="top-bar animate-dropdown">
-        <div class="container">
-            <div class="header-top-inner">
-                <div class="cnt-account">
-                    <ul class="list-unstyled">
-                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/auth/account"><?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);
-} else { ?>
-                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/auth/Login">My Account</a></li>
-                        <?php }?>
-                        </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- /.cnt-account -->
-                </ul>
-                <!-- /.list-unstyled -->
-            </div>
-            <!-- /.cnt-cart -->
-            <div class="offer-text"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['promo_message_1']->value)===null||$tmp==='' ? 'Promo' : $tmp);?>
-</div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- /.header-top-inner -->
-    </div>
-    <!-- /.container -->
-    </div>
-    <!-- /.header-top -->
-    <!-- ============================================== TOP MENU : END ============================================== -->
+ <!-- ============================================== TOP MENU : END ============================================== -->
     <div class="main-header">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                <div class="col-xs-12 col-sm-12 col-md-2 logo-holder">
                     <!-- ============================================================= LOGO ============================================================= -->
                     <div class="logo"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 "> <img src="http://placehold.it/113x26" alt="logo"> </a> </div>
@@ -121,48 +69,65 @@ registry/auth/Login">My Account</a></li>
                     <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
                 <!-- /.top-search-holder -->
 
-                <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+                <div class="col-xs-12 col-sm-12 col-md-4 animate-dropdown top-cart-row">
                     <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <div class="dropdown dropdown-cart">
+                            <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+                                <div class="items-cart-inner">
+                                    <div class="top-cart">  </div>
 
-                    <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-                            <div class="items-cart-inner">
-                                <div class="top-cart">  </div>
-
-                                <div class="total-price-basket"> <span class="lbl">2 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value">600.00</span> </span> </div>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="cart-item product-summary">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <div class="image"> <a href="detail.html"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+                                    <div class="total-price-basket"> <span class="lbl">2 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value">600.00</span> </span> </div>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="cart-item product-summary">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <div class="image"> <a href="detail.html"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/images/cart.jpg" alt=""></a> </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
+                                                <div class="price">$600.00</div>
+                                            </div>
+                                            <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
                                         </div>
-                                        <div class="col-xs-7">
-                                            <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
-                                            <div class="price">$600.00</div>
-                                        </div>
-                                        <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
                                     </div>
-                                </div>
-                                <!-- /.cart-item -->
-                                <div class="clearfix"></div>
-                                <hr>
-                                <div class="clearfix cart-total">
-                                    <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                                    <!-- /.cart-item -->
                                     <div class="clearfix"></div>
-                                    <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                                <!-- /.cart-total-->
+                                    <hr>
+                                    <div class="clearfix cart-total">
+                                        <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                                        <div class="clearfix"></div>
+                                        <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                                    <!-- /.cart-total-->
 
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-menu-->
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-menu-->
+                        </div>
+                        <!-- /.dropdown-cart -->
+
+
                     </div>
-                    <!-- /.dropdown-cart -->
 
-                    <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <!-- /.header-top-inner -->
+                        <ul class="account">
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/couple/action/settings">
+                                    <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>Hi,
+                                    <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
+
+                                    <?php } else { ?>
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+auth/login">My Account</a></li>
+                            <?php }?>
+                        </ul>
+                    </div>
                 <!-- /.top-cart-row -->
             </div>
             <!-- /.row -->
@@ -171,6 +136,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
         <!-- /.container -->
 
     </div>
+
     <!-- /.main-header -->
 
     <!-- ============================================== NAVBAR ============================================== -->
@@ -188,7 +154,8 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                 <li class="active dropdown yamm-fw"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
                                 <li class="dropdown"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Registry</a>
+registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick='location.href ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/base"'>Registry</a>
                                     <ul class="dropdown-menu pages">
                                         <li>
                                             <div class="yamm-content">
@@ -200,7 +167,7 @@ registry/find">Find Registry</a></li>
                                                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 registry/create">Create Registry</a></li>
                                                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/manage">Manage Registry</a></li>
+registry/auth/login">Manage Registry</a></li>
                                                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 registry/whyus">Why Lucy Registry?</a></li>
                                                         </ul>

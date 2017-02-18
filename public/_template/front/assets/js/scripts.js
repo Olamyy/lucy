@@ -406,7 +406,7 @@ $('#NoDate').on('change', function(){
         $.ajax(
             {
                 type: "GET",
-                url: $('#base_url').val()+ 'index.php/api/updates/dashboard_image',
+                url: $('#base_url').val()+ '/api/updates/dashboard_image',
                 data: {
                     "couple_id": couple_id,
                     "bg_image" : bg_image
@@ -427,7 +427,7 @@ $('#NoDate').on('change', function(){
         $.ajax(
             {
                 type: "POST",
-                url: $('#base_url').val()+ 'index.php/api/updates/vow_message',
+                url: $('#base_url').val()+ '/api/updates/vow_message',
                 data: {
                     "couple_id": couple_id,
                     "vow_message" : vow_message
@@ -452,7 +452,7 @@ $('#NoDate').on('change', function(){
         $.ajax(
             {
                 type: "POST",
-                url: $('#base_url').val()+ 'index.php/api/updates/vot_of_thanks',
+                url: $('#base_url').val()+ '/api/updates/vot_of_thanks',
                 data: {
                     "couple_id": couple_id,
                     "votmessage" : votmessage
@@ -477,7 +477,7 @@ $('#NoDate').on('change', function(){
         $.ajax(
             {
                 type: "POST",
-                url: $('#base_url').val()+ 'index.php/api/updates/invite_partner',
+                url: $('#base_url').val()+ '/api/updates/invite_partner',
                 data: {
                     "couple_id": couple_id,
                     "partner_email" : partner_email
@@ -511,6 +511,39 @@ $('#NoDate').on('change', function(){
     });
 
   dashboard_image_setter();
+
+    $('.registry_add').on('click', function(event){
+        event.preventDefault();
+        toastr.info('The product has been added to your registry');
+    });
+    $('.cart_add').on('click', function(event){
+        console.log('We ready');
+        event.preventDefault();
+        var user_ip = $('#user_ip').val();
+        var product_id = $('#product_id').val();
+        var base_url = $('#base_url').val();
+        var quantity = $('#quantity').val();
+
+        $.ajax(
+            {
+                type: "POST",
+                url: $('#base_url').val()+ '/api/updates/cart',
+                data: {
+                    "couple_id": user_ip,
+                    "partner_email" : product_id,
+                    "quantity" : quantity
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    toastr.info('The product has been added to your cart');
+                },
+                error : function(response){
+                    toastr.error('Unable to add the product to your cart');
+                }
+            });
+        toastr.info('The product has been added to your cart');
+    });
 
 });
 

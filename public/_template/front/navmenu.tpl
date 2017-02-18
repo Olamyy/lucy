@@ -1,33 +1,4 @@
- <!-- ============================================== TOP MENU ============================================== -->
-
- {if $user_session|default: ''}
-     {foreach from=$user_session item=session key=eKey}
-     {/foreach}
- {/if}
-
-    {*<div class="top-bar animate-dropdown">*}
-        {*<div class="container">*}
-            {*<div class="header-top-inner">*}
-                {*<div class="cnt-account">*}
-                    {*<ul class="list-unstyled">*}
-                        {*<li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}*}
-                        {*<li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>*}
-                        {*{/if}*}
-
-                    {*</ul>*}
-                {*</div>*}
-                {*<!-- /.cnt-account -->*}
-                {*<!-- /.list-unstyled -->*}
-            {*</div>*}
-            {*<!-- /.cnt-cart -->*}
-            {*<div class="offer-text">{$promo_message_1|default:'Promo'}</div>*}
-            {*<div class="clearfix"></div>*}
-        {*</div>*}
-        <!-- /.header-top-inner -->
-    {*</div>*}
-    <!-- /.container -->
-    <!-- /.header-top -->
-    <!-- ============================================== TOP MENU : END ============================================== -->
+ <!-- ============================================== TOP MENU : END ============================================== -->
     <div class="main-header">
         <div class="container">
             <div class="row">
@@ -107,27 +78,16 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-4">
-                        {*<div class="top-bar animate-dropdown">*}
-                        {*<div class="container">*}
-                            {*<!-- /.cnt-cart -->*}
-                            {*<div class="offer-text">*}
-                                {*<ul class="list-unstyled">*}
-                                    {*<li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}*}
-                                    {*<li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>*}
-                                    {*{/if}*}
-
-                                {*</ul>*}
-                            {*</div>*}
-                        {*</div>*}
                         <!-- /.header-top-inner -->
-                    {*</div>*}
                         <ul class="account">
-                            <li><a href="{$BASE_URL}registry/auth/account">{if $user_session[0].is_logged_in|default: ''}Hi, {$user_session[0].groom_first_name|default: ''}{else}
-                            <li><a href="{$BASE_URL}registry/auth/Login">My Account</a></li>
+                            <li><a href="{$BASE_URL}registry/couple/action/settings">
+                                    {if $user_session[0].is_logged_in|default: ''}Hi,
+                                    {$user_session[0].groom_first_name|default: ''}
+                                    {else}
+                            <li><a href="{$BASE_URL}auth/login">My Account</a></li>
                             {/if}
                         </ul>
                     </div>
-                    <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
                 <!-- /.top-cart-row -->
             </div>
             <!-- /.row -->
@@ -136,6 +96,7 @@
         <!-- /.container -->
 
     </div>
+
     <!-- /.main-header -->
 
     <!-- ============================================== NAVBAR ============================================== -->
@@ -151,7 +112,7 @@
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw"> <a href="{$BASE_URL}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
-                                <li class="dropdown"> <a href="{$BASE_URL}registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick="window.location.href =''+{$BASE_URL}">Registry</a>
+                                <li class="dropdown"> <a href="{$BASE_URL}registry" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick='location.href ="{$BASE_URL}registry/base"'>Registry</a>
                                     <ul class="dropdown-menu pages">
                                         <li>
                                             <div class="yamm-content">
@@ -160,7 +121,7 @@
                                                         <ul class="links">
                                                                 <li><a href="{$BASE_URL}registry/find">Find Registry</a></li>
                                                                 <li><a href="{$BASE_URL}registry/create">Create Registry</a></li>
-                                                                <li><a href="{$BASE_URL}registry/manage">Manage Registry</a></li>
+                                                                <li><a href="{$BASE_URL}registry/auth/login">Manage Registry</a></li>
                                                                 <li><a href="{$BASE_URL}registry/whyus">Why Lucy Registry?</a></li>
                                                         </ul>
                                                     </div>

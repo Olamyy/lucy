@@ -29,6 +29,7 @@ class Product extends CI_Controller
         if (!empty($_POST)) {
             $name = $this->input->post('product_name');
             $description = $this->input->post('product_description');
+            $short_description = $this->input->post('short_description');
             $product_meta_title = $this->input->post('product_meta_title');
             $product_meta_description = $this->input->post('product_meta_description');
             $product_meta_keywords = $this->input->post('product_meta_keywords');
@@ -69,12 +70,13 @@ class Product extends CI_Controller
             if (empty($product_search_filters)) $error[] = 'Provide search filters';
             if (empty($position)) $error[] = 'Provide Primary Product Position';
             if (empty($related_products)) $error[] = 'Provide related products';
+            if (empty($short_description)) $error[] = 'Provide a short description';
             if (empty($image)) $error[] = 'Provide product image again.';
 
             if (empty($error)) {
                 $image_data = $this->handle_image_upload($image);
 
-                $product_details = array('name'=>$name, 'description'=>$description, 'product_meta_title'=>$product_meta_title,
+                $product_details = array('name'=>$name, 'description'=>$description,'short_description'=>$short_description, 'product_meta_title'=>$product_meta_title,
                                         'product_meta_description'=>$product_meta_description, 'product_meta_keywords'=>$product_meta_keywords,
                                         'product_tags'=>$product_tags, 'model'=>$model, 'isbn'=>$isbn, 'mpn'=>$mpn,
                                         'quantity'=>$quantity, 'manufacturer_id'=>"",'delivery'=>$requires_delivery,
@@ -85,7 +87,7 @@ class Product extends CI_Controller
                                         'out_of_store_range'=>$out_of_store_range,'requires_delivery'=>$requires_delivery,
                                         'manufacturer_name'=>$manufacturer_name,
                                         'product_categories'=>$product_categories,'related_products'=>$related_products,
-                                        'image'=>$image_data['full_path'], 'product_id'=>$this->product_model->code_generator()
+                                        'image'=>$image_data['file_name'], 'product_id'=>$this->product_model->code_generator()
                                         );
 
                 $insert = $this->product_model->add($product_details, "lucy_product");

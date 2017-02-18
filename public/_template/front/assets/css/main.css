@@ -6030,7 +6030,6 @@ age-container #owl-main .owl-next {
 }
 
 .couples-form{
-  border: 1px solid red;
   box-sizing: border-box;
   display: block;
   padding-left: 10px;
@@ -6353,6 +6352,11 @@ age-container #owl-main .owl-next {
     border-bottom: 1px solid #a8a8a8;
     padding-bottom: 5px;
     font-weight: 600;
+}
+
+
+.toast-info {
+  background-color: whitesmoke;
 }
 
 

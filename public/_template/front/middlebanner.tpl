@@ -3,12 +3,6 @@
         <div class="col-md-12">
             <div class="wide-banner cnt-strip">
                 <div class="image"> <img class="img-responsive" src="http://placehold.it/848x214" alt=""> </div>
-                <div class="strip strip-text">
-                    <div class="strip-inner">
-                        <h2 class="text-right">Promo Message<br>
-                            <span class="shopping-needs">Save up to x% off</span></h2>
-                    </div>
-                </div>
                 <div class="new-label">
                     <div class="text">NEW</div>
                 </div>

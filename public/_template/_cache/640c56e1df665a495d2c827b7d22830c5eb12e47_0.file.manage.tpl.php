@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-15 06:19:15
+<?php /* Smarty version 3.1.24, created on 2017-02-15 12:30:36
          compiled from "public/_template/front/registry/couple/dashboard/manage.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:118923304158a3e4d3cdb243_94741105%%*/
+/*%%SmartyHeaderCode:11145909758a43bdc511094_15574589%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '640c56e1df665a495d2c827b7d22830c5eb12e47' => 
     array (
       0 => 'public/_template/front/registry/couple/dashboard/manage.tpl',
-      1 => 1487135928,
+      1 => 1487158234,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '118923304158a3e4d3cdb243_94741105',
+  'nocache_hash' => '11145909758a43bdc511094_15574589',
   'variables' => 
   array (
     'user_session' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a3e4d3e24533_39617673',
+  'unifunc' => 'content_58a43bdc681556_98004850',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a3e4d3e24533_39617673')) {
-function content_58a3e4d3e24533_39617673 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a43bdc681556_98004850')) {
+function content_58a43bdc681556_98004850 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '118923304158a3e4d3cdb243_94741105';
+$_smarty_tpl->properties['nocache_hash'] = '11145909758a43bdc511094_15574589';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -118,7 +118,7 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 </span>
                     </form>
                 </div>
-                <h2 class="" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'])) {?>Date is coming soon<?php } else {
+                <h2 class="name-display" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'])) {?>Date is coming soon<?php } else {
 echo $_smarty_tpl->tpl_vars['session']->value[0]['wedding_date'];
 }?></h2>
 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-06 06:23:10
+<?php /* Smarty version 3.1.24, created on 2017-02-17 00:43:17
          compiled from "public/_template/front/registry/auth/auth_login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10601298935898083e9111d9_91039315%%*/
+/*%%SmartyHeaderCode:89566146558a639157c72e4_18098328%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dab37b01fab4395b113b97a931062c1a138a7377' => 
     array (
       0 => 'public/_template/front/registry/auth/auth_login.tpl',
-      1 => 1486358586,
+      1 => 1487288588,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10601298935898083e9111d9_91039315',
+  'nocache_hash' => '89566146558a639157c72e4_18098328',
   'variables' => 
   array (
     'error' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5898083e943206_92397167',
+  'unifunc' => 'content_58a639157f7d74_08961364',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5898083e943206_92397167')) {
-function content_5898083e943206_92397167 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a639157f7d74_08961364')) {
+function content_58a639157f7d74_08961364 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '10601298935898083e9111d9_91039315';
+$_smarty_tpl->properties['nocache_hash'] = '89566146558a639157c72e4_18098328';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -73,7 +73,7 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
                     </div>
                     <form class="register-form outer-top-xs" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/auth/login?redirect=<?php if ((($tmp = @$_smarty_tpl->tpl_vars['session']->value[0]['from'])===null||$tmp==='' ? '' : $tmp) == "create_nav") {?>init<?php } else {
+index.php/auth/login?redirect=<?php if ((($tmp = @$_smarty_tpl->tpl_vars['session']->value[0]['from'])===null||$tmp==='' ? '' : $tmp) == "create_nav") {?>init<?php } else {
 }?>">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">

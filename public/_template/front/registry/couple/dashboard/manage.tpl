@@ -46,7 +46,7 @@
                         <span class="name-display">{$session[0].groom_first_name} & {$session[0].bride_first_name}</span>
                     </form>
                 </div>
-                <h2 class="" style="font-size: small; padding-top: 80px;">{if empty($session[0].wedding_date)}Date is coming soon{else}{$session[0].wedding_date}{/if}</h2>
+                <h2 class="name-display" style="font-size: small; padding-top: 80px;">{if empty($session[0].wedding_date)}Date is coming soon{else}{$session[0].wedding_date}{/if}</h2>
 
                 <div id="backgrounds" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-dialog-background">

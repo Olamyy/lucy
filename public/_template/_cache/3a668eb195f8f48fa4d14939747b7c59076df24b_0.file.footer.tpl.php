@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-21 08:48:44
+<?php /* Smarty version 3.1.24, created on 2017-02-17 13:14:32
          compiled from "/var/www/html/lucy/public/_template/front/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12856119575883125c772928_85078448%%*/
+/*%%SmartyHeaderCode:77722626458a6e92805fe98_09744976%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a668eb195f8f48fa4d14939747b7c59076df24b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/footer.tpl',
-      1 => 1484984788,
+      1 => 1487333666,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12856119575883125c772928_85078448',
+  'nocache_hash' => '77722626458a6e92805fe98_09744976',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5883125c85be43_90113128',
+  'unifunc' => 'content_58a6e9280dedb3_61202509',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5883125c85be43_90113128')) {
-function content_5883125c85be43_90113128 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a6e9280dedb3_61202509')) {
+function content_58a6e9280dedb3_61202509 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12856119575883125c772928_85078448';
+$_smarty_tpl->properties['nocache_hash'] = '77722626458a6e92805fe98_09744976';
 ?>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
     <div class="logo-slider-inner">
@@ -311,6 +311,11 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/js/wow.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/js/toastr.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;

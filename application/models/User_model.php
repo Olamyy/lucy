@@ -14,7 +14,7 @@ class User_model extends CI_Model
     {
         $query = $this->db->insert($data, $table);
         if ($query) {
-            return true;
+            return $this->get('lucy_cart');
         } else
             return false;
     }
@@ -22,8 +22,7 @@ class User_model extends CI_Model
     public function get($table){
         $query = $this->db->get($table);  // Produces: SELECT * FROM mytable
         if ($query){
-            print_r($query->result);
-            return $query->result;
+            return $query->result();
         }
         else
             return false;

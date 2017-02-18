@@ -3,19 +3,19 @@
     <div class="sidebar-widget-body outer-top-xs">
         <ul>
             <li class="tag-list">
-                <a class="item" title="Phone" >Upload A Couple Photo</a>
+                <a class="item" title="Phone" href="{$BASE_URL}registry/couple/action/manage" >Upload A Couple Photo</a>
             </li>
             <li class="tag-list">
-                <a class="item" title="Phone" >Add Gifts</a>
+                <a class="item" title="Phone" href="{$BASE_URL}" >Add Gifts</a>
             </li>
             <li class="tag-list">
-                <a class="item" title="Phone" >Setup Shipping</a>
+                <a class="item" title="Phone" href="{$BASE_URL}registry/couple/action/settings" >Setup Shipping</a>
             </li>
             <li class="tag-list">
-                <a class="item" title="Phone" >Invite Partner</a>
+                <a class="item" title="Phone" href="{$BASE_URL}registry/manage">Invite Partner</a>
             </li>
             <li class="tag-list">
-                <a class="item" title="Phone" >Go Live</a>
+                <a class="item" title="Phone"  href="{$BASE_URL}registry/couple/live">Go Live</a>
             </li>
             <li class="tag-list">
                 <a class="item" title="Phone" >Receive Gifts</a>

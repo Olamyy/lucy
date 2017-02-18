@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-20 12:43:08
+<?php /* Smarty version 3.1.24, created on 2017-02-17 21:56:52
          compiled from "public/_template/admin/product/add.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1253787935881f7cc8d8707_92318167%%*/
+/*%%SmartyHeaderCode:195022180858a76394991ae2_77764937%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ddb12c259723b62b7917851e286054c77ee1c189' => 
     array (
       0 => 'public/_template/admin/product/add.tpl',
-      1 => 1484912579,
+      1 => 1487347166,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1253787935881f7cc8d8707_92318167',
+  'nocache_hash' => '195022180858a76394991ae2_77764937',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5881f7cc957c94_49126374',
+  'unifunc' => 'content_58a763949f3535_77671665',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5881f7cc957c94_49126374')) {
-function content_5881f7cc957c94_49126374 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a763949f3535_77671665')) {
+function content_58a763949f3535_77671665 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1253787935881f7cc8d8707_92318167';
+$_smarty_tpl->properties['nocache_hash'] = '195022180858a76394991ae2_77764937';
 echo $_smarty_tpl->getSubTemplate ("./addproductheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -97,7 +97,11 @@ index.php/admin/product/add"  enctype="multipart/form-data" id="add_product_form
                                                    class="form-control" required>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Product Description</h5>
+                                            <h5>Product Short Description</h5>
+                                            <textarea id="text4" class="form-control" cols="500" rows="15" name="short_description" placeholder="Product Description" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Product Long Description</h5>
                                             <textarea id="text4" class="form-control" cols="500" rows="15" name="product_description" placeholder="Product Description" required></textarea>
                                         </div>
                                         <div class="form-group">

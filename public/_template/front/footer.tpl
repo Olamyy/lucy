@@ -177,6 +177,7 @@
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap-select.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap-datepicker.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/wow.min.js"></script>
+<script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/toastr.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/scripts.js"></script>
 </body>
 

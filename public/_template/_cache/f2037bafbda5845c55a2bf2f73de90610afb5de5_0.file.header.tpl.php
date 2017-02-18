@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-24 13:45:15
+<?php /* Smarty version 3.1.24, created on 2017-02-17 13:12:17
          compiled from "/var/www/html/lucy/public/_template/front/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:19099465258874c5b2f16c5_51614165%%*/
+/*%%SmartyHeaderCode:142576938858a6e8a1f2ae51_65819952%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2037bafbda5845c55a2bf2f73de90610afb5de5' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/header.tpl',
-      1 => 1485260798,
+      1 => 1487333469,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19099465258874c5b2f16c5_51614165',
+  'nocache_hash' => '142576938858a6e8a1f2ae51_65819952',
   'variables' => 
   array (
     'APP_NAME' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58874c5b342712_75985431',
+  'unifunc' => 'content_58a6e8a2011510_62438340',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58874c5b342712_75985431')) {
-function content_58874c5b342712_75985431 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a6e8a2011510_62438340')) {
+function content_58a6e8a2011510_62438340 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '19099465258874c5b2f16c5_51614165';
+$_smarty_tpl->properties['nocache_hash'] = '142576938858a6e8a1f2ae51_65819952';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,10 +80,16 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/font-awesome.css">
 
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/css/toastr.min.css">
+
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 
 </head>

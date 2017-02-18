@@ -8,10 +8,10 @@
     {*<p class="text-center">Does that sound creepy?</p>*}
     <div class="row">
         <div class="col-md-6">
-            <button class="pull-right btn-reg">register</button>
+            <a href="{$BASE_URL}registry/auth/join"><button class="pull-right btn-reg">register</button></a>
         </div>
         <div class="col-md-6">
-            <button class="pull-left btn-find">Find a lucky couple</button>
+            <a href="{$BASE_URL}registry/find"><button class="pull-left btn-find">Find a lucky couple</button></a>
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-20 16:36:09
+<?php /* Smarty version 3.1.24, created on 2017-02-15 16:44:53
          compiled from "/var/www/html/lucy/public/_template/admin/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:198079026558822e69e939a1_93996816%%*/
+/*%%SmartyHeaderCode:113367390058a47775aecf49_87834978%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '06a25c92213522c9b6f8ad7e07dc06fbf9cb34a9' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/navmenu.tpl',
-      1 => 1484926547,
+      1 => 1486249618,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '198079026558822e69e939a1_93996816',
+  'nocache_hash' => '113367390058a47775aecf49_87834978',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58822e69ef76d4_28962632',
+  'unifunc' => 'content_58a47775c289a7_67106734',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58822e69ef76d4_28962632')) {
-function content_58822e69ef76d4_28962632 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a47775c289a7_67106734')) {
+function content_58a47775c289a7_67106734 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '198079026558822e69e939a1_93996816';
+$_smarty_tpl->properties['nocache_hash'] = '113367390058a47775aecf49_87834978';
 ?>
 <div class="bg-dark" id="wrap">
     <div id="top">
@@ -58,7 +58,7 @@ $_smarty_tpl->properties['nocache_hash'] = '198079026558822e69e939a1_93996816';
                     <ul class="nav navbar-nav top_menubar">
                         <li class="nav-item">
                             <a class="nav-link text-white" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Product/">
+admin/Product/">
                                 <i class="fa fa-product-hunt"></i> <span class="quick_text">Add Product</span>
                             </a>
                         </li>
@@ -94,13 +94,13 @@ index.php/admin/Product/">
                     <ul class="sub-menu">
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Product/view">
+admin/Product/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;View
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Product/add">
+admin/Product/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add
                             </a>
                         </li>
@@ -120,13 +120,13 @@ index.php/admin/Product/add">
                     <ul class="sub-menu">
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Category/view">
+admin/Category/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;View Categories
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Category/add">
+admin/Category/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add Category
                             </a>
                         </li>
@@ -142,13 +142,13 @@ index.php/admin/Category/add">
                     <ul class="sub-menu">
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Product/view">
+admin/Product/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;Orders
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/Product/add">
+admin/Product/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Returns
                             </a>
                         </li>
@@ -239,10 +239,10 @@ index.php/admin/Product/add">
                 </li>
                 <li class="">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-/index.php/admin/logout">
+admin/logout">
                         <i class="fa fa-globe"></i>
                         <span class="link-title" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-/index.php/admin/logout">&nbsp;Logout</span>
+admin/logout">&nbsp;Logout</span>
                     </a>
                 </li>
                 <li class="">
@@ -250,7 +250,7 @@ index.php/admin/Product/add">
 ">
                         <i class="fa fa-globe"></i>
                         <span class="link-title" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php">&nbsp;Go to Store</span>
+">&nbsp;Go to Store</span>
                     </a>
                 </li>
             </ul>

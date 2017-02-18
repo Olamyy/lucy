@@ -12,7 +12,7 @@
                         </div>
                     {/foreach}
                 {/if}
-                <button class="glyphicon glyphicon-plus btn btn-lg btn-primary" href="{$BASE_URL}index.php/" style="margin-top: 20px; height: 50px; width: 200px;">Add Gifts</button>
+                <button class="glyphicon glyphicon-plus btn btn-lg btn-primary" href="{$BASE_URL}" style="margin-top: 20px; height: 50px; width: 200px;" onclick="window.location.href = '{$BASE_URL}'">Add Gifts</button>
             </div>
         </div>
     </div>
