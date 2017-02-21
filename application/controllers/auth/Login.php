@@ -17,7 +17,7 @@ class Login extends CI_Controller
 
         //check if user is already logged-in...
         $check = $this->session->userdata('user_session');
-        if ($check) redirect('index.php/registry/couple/dashboard');
+        if ($check) redirect('registry/couple/dashboard');
 
     }
 
@@ -31,16 +31,12 @@ class Login extends CI_Controller
             $redirect_uri = $this->input->get('redirect');
             $ip = $this->input->ip_address();
 
-            print_r($ip);
-
-
             if (empty($email)) $error[] = 'Provide a Valid Email';
             if (empty($password)) $error[] = 'Provide a Valid Password';
 
             if (empty($error)){
                 //verify email
                 $couple_data = $this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0);
-
 
                 //misc update
                 $user_ip = $this->user_model->custom_get('misc', array('ip'=>$ip), 0, 0);
@@ -55,7 +51,7 @@ class Login extends CI_Controller
                             'success_login'=>$user_ip['success_login'] + 1),'misc',  array('ip'=>$ip));
                         $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0)));
                         if (empty($redirect_uri)){
-                            redirect('index.php/registry/couple/dashboard');
+                            redirect('registry/couple/dashboard');
                         }
                         else
                             redirect('couple/init');
@@ -75,6 +71,7 @@ class Login extends CI_Controller
                                 'success_login'=>$user_ip['success_login'] + 1),'misc',  array('ip'=>$ip));
                             $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0)));
                             redirect('/');
+
                         }
                         else
                             $this->user_model->update(array('login_attempt'=>$user_ip['login_attempt'] + 1,
@@ -96,7 +93,7 @@ class Login extends CI_Controller
     public function nosession(){
         $this->user_model->delete_data('lucy_couple', array('ip'=>$this->session->userdata('user_session')['ip']));
         $this->session->sess_destroy();
-        redirect('index.php/registry/auth/login');
+        redirect('/registry/login');
     }
 
 }

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 00:24:40
+<?php /* Smarty version 3.1.24, created on 2017-02-20 19:15:44
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6950897658a634b83be6e3_34098946%%*/
+/*%%SmartyHeaderCode:2384988258ab3250d3d1d9_40015797%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,31 +9,33 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1487287477,
+      1 => 1487614447,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6950897658a634b83be6e3_34098946',
+  'nocache_hash' => '2384988258ab3250d3d1d9_40015797',
   'variables' => 
   array (
-    'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
     'user_session' => 0,
+    'BASE_URL' => 0,
     'pre_cart' => 0,
     'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a634b8422540_71972469',
+  'unifunc' => 'content_58ab3250d9bde7_25028609',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a634b8422540_71972469')) {
-function content_58a634b8422540_71972469 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab3250d9bde7_25028609')) {
+function content_58ab3250d9bde7_25028609 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6950897658a634b83be6e3_34098946';
+$_smarty_tpl->properties['nocache_hash'] = '2384988258ab3250d3d1d9_40015797';
 ?>
  <!-- ============================================== TOP MENU : END ============================================== -->
-    <div class="main-header">
+ <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+">
+
+ <div class="main-header">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-2 logo-holder">
@@ -76,34 +78,19 @@ $_smarty_tpl->properties['nocache_hash'] = '6950897658a634b83be6e3_34098946';
                             <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
                                 <div class="items-cart-inner">
                                     <div class="top-cart">  </div>
-
-                                    <div class="total-price-basket"> <span class="lbl">2 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value">600.00</span> </span> </div>
+                                    <div class="total-price-basket"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
                                 </div>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="cart-item product-summary">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <div class="image"> <a href="detail.html"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/cart.jpg" alt=""></a> </div>
+                                        <div class="row" id="cart_details">
+                                            <div class="col-xs-8" id="empty_cart_indicator">
+                                                <h5 class="name">Empty Cart</h5>
                                             </div>
-                                            <div class="col-xs-7">
-                                                <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
-                                                <div class="price">$600.00</div>
-                                            </div>
-                                            <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
                                         </div>
                                     </div>
-                                    <!-- /.cart-item -->
-                                    <div class="clearfix"></div>
-                                    <hr>
-                                    <div class="clearfix cart-total">
-                                        <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
-                                        <div class="clearfix"></div>
-                                        <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                                    <!-- /.cart-total-->
+
 
                                 </li>
                             </ul>

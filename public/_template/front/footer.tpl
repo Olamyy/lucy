@@ -179,6 +179,8 @@
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/wow.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/toastr.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/scripts.js"></script>
+<script type="text/javascript" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/admin/assets/vendors/sweetalert/js/sweetalert2.min.js"></script>
+
 </body>
 
 <!-- Mirrored from themesground.com/Lotus/V1/HTML/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Jan 2017 17:55:59 GMT -->

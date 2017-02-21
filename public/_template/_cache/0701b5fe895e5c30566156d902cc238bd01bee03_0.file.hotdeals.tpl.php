@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 22:29:06
+<?php /* Smarty version 3.1.24, created on 2017-02-20 19:26:06
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:135165938858a76b23004c28_81291687%%*/
+/*%%SmartyHeaderCode:97907854458ab34bed61800_62423654%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,34 +9,40 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1487366940,
+      1 => 1487615135,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '135165938858a76b23004c28_81291687',
+  'nocache_hash' => '97907854458ab34bed61800_62423654',
   'variables' => 
   array (
     'hot_deals' => 0,
     'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
+    'ip' => 0,
     'data' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a76b2306b685_00448428',
+  'unifunc' => 'content_58ab34beda8de1_01015499',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a76b2306b685_00448428')) {
-function content_58a76b2306b685_00448428 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab34beda8de1_01015499')) {
+function content_58ab34beda8de1_01015499 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '135165938858a76b23004c28_81291687';
+$_smarty_tpl->properties['nocache_hash'] = '97907854458ab34bed61800_62423654';
 if ((($tmp = @$_smarty_tpl->tpl_vars['hot_deals']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-
 
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">Hot Deals</h3>
-        <div id="advertisement" class="advertisement">
+    <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
+">
+
+    <div id="advertisement" class="advertisement">
             <?php
 $_from = $_smarty_tpl->tpl_vars['hot_deals']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -49,6 +55,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['data']->_loop = true;
 $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
 ?>
+                <input type="hidden" id="product_id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'];?>
+">
                 <div class="item">
                 <div class="products">
                     <div class="hot-deal-wrapper">
@@ -79,8 +87,6 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'
                                     <button class="btn btn-success cart_add" type="button">To Cart</button>
                                     <button class="btn btn-primary registry_add" type="button">To Registry</button>
                                 </li>
-                                <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                             </ul>
                         </div>
                         <!-- /.action -->

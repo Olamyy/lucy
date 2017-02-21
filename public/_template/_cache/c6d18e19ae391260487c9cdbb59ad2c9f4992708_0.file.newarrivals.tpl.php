@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 20:48:06
+<?php /* Smarty version 3.1.24, created on 2017-02-20 19:28:01
          compiled from "/var/www/html/lucy/public/_template/front/newarrivals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:41309434858a753767f3313_72265023%%*/
+/*%%SmartyHeaderCode:178108178358ab3531b0ac20_10423173%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,30 +9,38 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6d18e19ae391260487c9cdbb59ad2c9f4992708' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/newarrivals.tpl',
-      1 => 1487346854,
+      1 => 1487615277,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '41309434858a753767f3313_72265023',
+  'nocache_hash' => '178108178358ab3531b0ac20_10423173',
   'variables' => 
   array (
     'new_arrivals' => 0,
     'BASE_URL' => 0,
+    'ip' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
     'new_arrival' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a7537681c2a3_25179206',
+  'unifunc' => 'content_58ab3531b410d8_61996959',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a7537681c2a3_25179206')) {
-function content_58a7537681c2a3_25179206 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab3531b410d8_61996959')) {
+function content_58ab3531b410d8_61996959 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '41309434858a753767f3313_72265023';
+$_smarty_tpl->properties['nocache_hash'] = '178108178358ab3531b0ac20_10423173';
 if ((($tmp = @$_smarty_tpl->tpl_vars['new_arrivals']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-<section class="section wow fadeInUp new-arriavls">
+
+    <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
+">
+
+    <section class="section wow fadeInUp new-arriavls">
     <h3 class="section-title">New Arrivals</h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
         <?php
@@ -80,11 +88,9 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['new_arrival']->value['prod
                 <div class="action">
                     <ul class="list-unstyled">
                         <li class="add-cart-button btn-group">
-                            <button class="btn btn-success" type="button">To Cart</button>
+                            <button class="btn btn-success cart_add" type="button">To Cart</button>
                             <button class="btn btn-primary registry_add" type="button">To Registry</button>
                         </li>
-                        <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                     </ul>
                 </div>
                 <!-- /.action -->

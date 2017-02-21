@@ -15,15 +15,14 @@ class Welcome extends CI_Controller
         $check = $this->session->userdata('user_session');
         if ($check) {
             $this->data['user_details'] = $check;
-            $this->data['user_details']['product_count'] = count(explode(",",$this->data['user_details']['cart']));
+//            $this->data['user_details']['product_count'] = count(explode(",",$this->data['user_details']['cart']));
         }
-
-
 
     }
 
     public function index()
     {
+        $this->data['ip'] = $this->input->ip_address();
         $cat_from_db = $this->category_model->get('lucy_category_description', 0 , 0);
         $this->data['user_session'] = $this->session->userdata('user_session');
 
@@ -44,6 +43,7 @@ class Welcome extends CI_Controller
         $this->data['new_arrivals'] = $this->user_model->custom_get('lucy_product', array('position'=>"New Arrivals"), 0, 0);
         $this->data['promo'] = $this->user_model->custom_get('lucy_product', array('position'=>"Promo"), 0, 0);
 
+//        print_r($this->data['user_session'] );
         $this->smarty->view('front/store.tpl', $this->data);
     }
 

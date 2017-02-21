@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-05 06:48:18
+<?php /* Smarty version 3.1.24, created on 2017-02-20 22:23:09
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6468654165896bca2e41528_85402237%%*/
+/*%%SmartyHeaderCode:176678831658ab5e3d5eded9_12900781%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c4c5bbe61253ce282b60d73a2f57351fdae6802d' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/nav.tpl',
-      1 => 1486273654,
+      1 => 1487622898,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6468654165896bca2e41528_85402237',
+  'nocache_hash' => '176678831658ab5e3d5eded9_12900781',
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'user_session' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5896bca2e6dca9_91448066',
+  'unifunc' => 'content_58ab5e3d641c43_96224592',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5896bca2e6dca9_91448066')) {
-function content_5896bca2e6dca9_91448066 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab5e3d641c43_96224592')) {
+function content_58ab5e3d641c43_96224592 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6468654165896bca2e41528_85402237';
+$_smarty_tpl->properties['nocache_hash'] = '176678831658ab5e3d5eded9_12900781';
 ?>
 
 <!-- /.container -->
@@ -131,13 +132,13 @@ $_smarty_tpl->properties['nocache_hash'] = '6468654165896bca2e41528_85402237';
                     <div class="nav-outer">
                         <ul class="nav navbar-nav">
                             <li class="active"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/dashboard" id="dashboard">Dashboard</a> </li>
+registry/couple/dashboard" id="dashboard">Dashboard</a> </li>
                             <li class=""> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/manage" id="manage">Manage Registry</a> </li>
+registry/couple/action/manage" id="manage">Manage Registry</a> </li>
                             <li class=""> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/share" id="share">Share</a> </li>
+registry/couple/action/share" id="share">Share</a> </li>
                             <li class=""> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/track" id="track">Track</a> </li>
+registry/couple/action/track" id="track">Track</a> </li>
                             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">My Account</a>
                                 <ul class="dropdown-menu pages">
                                     <li>
@@ -146,11 +147,17 @@ index.php/registry/couple/action/track" id="track">Track</a> </li>
                                                 <div class="col-xs-12 col-menu">
                                                     <ul class="links">
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/settings">Account Settings</a></li>
+registry/couple/action/settings">Account Settings</a></li>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/help">Help</a></li>
+registry/couple/action/help">Help</a></li>
+                                                        <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">
+                                                        <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+">
+                                                        <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['ip'];?>
+">
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/logout">Logout</a></li>
+registry/couple/action/logout" id="logout_btn">Logout</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

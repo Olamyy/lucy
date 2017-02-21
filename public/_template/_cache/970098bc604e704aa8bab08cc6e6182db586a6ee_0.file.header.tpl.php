@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-15 00:48:13
+<?php /* Smarty version 3.1.24, created on 2017-02-20 07:45:26
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:207621493458a3973d0258e9_60448220%%*/
+/*%%SmartyHeaderCode:108421138058aa9086974295_51472056%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '970098bc604e704aa8bab08cc6e6182db586a6ee' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/header.tpl',
-      1 => 1487115933,
+      1 => 1487573122,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '207621493458a3973d0258e9_60448220',
+  'nocache_hash' => '108421138058aa9086974295_51472056',
   'variables' => 
   array (
     'APP_NAME' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a3973d040bd2_25653932',
+  'unifunc' => 'content_58aa90869a09f2_69437704',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a3973d040bd2_25653932')) {
-function content_58a3973d040bd2_25653932 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58aa90869a09f2_69437704')) {
+function content_58aa90869a09f2_69437704 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '207621493458a3973d0258e9_60448220';
+$_smarty_tpl->properties['nocache_hash'] = '108421138058aa9086974295_51472056';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +76,13 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/css/font-awesome.css">
+
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/front/assets/js/js.cookie.js"><?php echo '</script'; ?>
+>
+
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>

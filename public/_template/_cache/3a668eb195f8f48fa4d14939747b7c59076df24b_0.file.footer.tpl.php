@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 13:14:32
+<?php /* Smarty version 3.1.24, created on 2017-02-19 11:29:52
          compiled from "/var/www/html/lucy/public/_template/front/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:77722626458a6e92805fe98_09744976%%*/
+/*%%SmartyHeaderCode:39153888358a973a0210d32_78775729%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a668eb195f8f48fa4d14939747b7c59076df24b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/footer.tpl',
-      1 => 1487333666,
+      1 => 1487500158,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '77722626458a6e92805fe98_09744976',
+  'nocache_hash' => '39153888358a973a0210d32_78775729',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a6e9280dedb3_61202509',
+  'unifunc' => 'content_58a973a028cbf4_21383183',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a6e9280dedb3_61202509')) {
-function content_58a6e9280dedb3_61202509 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a973a028cbf4_21383183')) {
+function content_58a973a028cbf4_21383183 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '77722626458a6e92805fe98_09744976';
+$_smarty_tpl->properties['nocache_hash'] = '39153888358a973a0210d32_78775729';
 ?>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
     <div class="logo-slider-inner">
@@ -322,6 +322,12 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /front/assets/js/scripts.js"><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/admin/assets/vendors/sweetalert/js/sweetalert2.min.js"><?php echo '</script'; ?>
+>
+
 </body>
 
 <!-- Mirrored from themesground.com/Lotus/V1/HTML/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Jan 2017 17:55:59 GMT -->

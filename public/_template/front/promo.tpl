@@ -3,6 +3,9 @@
     <h3 class="section-title">Promo Deals</h3>
     <div id="advertisement" class="advertisement">
         {foreach from=$promo_deals item=data key=eKey}
+
+            <input type="hidden" id="product_id" value="{$data.product_id}">
+
             <div class="item">
                 <div class="products">
                     <div class="hot-deal-wrapper">

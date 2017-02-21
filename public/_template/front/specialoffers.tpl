@@ -1,4 +1,7 @@
 {if $special_offer|default:''}
+    <input type="hidden" id="base_url" value="{$BASE_URL}">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="{$ip}">
 
 <div class="sidebar-widget outer-bottom-small wow fadeInUp">
     <h3 class="section-title">Special Offers</h3>

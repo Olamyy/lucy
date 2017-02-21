@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-15 12:30:36
+<?php /* Smarty version 3.1.24, created on 2017-02-20 19:35:16
          compiled from "public/_template/front/registry/couple/dashboard/manage.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:11145909758a43bdc511094_15574589%%*/
+/*%%SmartyHeaderCode:82228956658ab36e42be844_08404431%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '640c56e1df665a495d2c827b7d22830c5eb12e47' => 
     array (
       0 => 'public/_template/front/registry/couple/dashboard/manage.tpl',
-      1 => 1487158234,
+      1 => 1487575009,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11145909758a43bdc511094_15574589',
+  'nocache_hash' => '82228956658ab36e42be844_08404431',
   'variables' => 
   array (
     'user_session' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a43bdc681556_98004850',
+  'unifunc' => 'content_58ab36e43a69a9_41242335',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a43bdc681556_98004850')) {
-function content_58a43bdc681556_98004850 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab36e43a69a9_41242335')) {
+function content_58ab36e43a69a9_41242335 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '11145909758a43bdc511094_15574589';
+$_smarty_tpl->properties['nocache_hash'] = '82228956658ab36e42be844_08404431';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -87,7 +87,7 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 </div><!-- /.breadcrumb -->
 <!-- ============================================== HEADER : END ============================================== -->
 <form>
-    <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['session']->value[0]['couple_id'];?>
+    <input type="hidden" name="name"  value="<?php echo $_smarty_tpl->tpl_vars['session']->value[0]['couple_id'];?>
 " id="couple_id" class="couples-name">
     <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " />
@@ -174,7 +174,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                 </div>
                 <div class="row small-boxes-wrapper">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl_vars['session']->value[0]['couple_id'];?>
+registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl_vars['session']->value[0]['couple_id'];?>
 " class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
                         <h4>view as a guest</h4>
                         <p>View your profile as a guest and know how it feels</p>
@@ -184,7 +184,7 @@ index.php/registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl
                         <p>Let your partners join you in this journey</p>
                     </a>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
+registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
                         <h4>make it visible</h4>
                         <p>Guests can not view your registry until you go live.</p>
                     </a>

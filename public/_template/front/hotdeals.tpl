@@ -1,10 +1,14 @@
 {if $hot_deals|default:''}
 
-
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">Hot Deals</h3>
-        <div id="advertisement" class="advertisement">
+    <input type="hidden" id="base_url" value="{$BASE_URL}">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="{$ip}">
+
+    <div id="advertisement" class="advertisement">
             {foreach from=$hot_deals item=data key=eKey}
+                <input type="hidden" id="product_id" value="{$data.product_id}">
                 <div class="item">
                 <div class="products">
                     <div class="hot-deal-wrapper">
@@ -28,8 +32,6 @@
                                     <button class="btn btn-success cart_add" type="button">To Cart</button>
                                     <button class="btn btn-primary registry_add" type="button">To Registry</button>
                                 </li>
-                                <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                             </ul>
                         </div>
                         <!-- /.action -->

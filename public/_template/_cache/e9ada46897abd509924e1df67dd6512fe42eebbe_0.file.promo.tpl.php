@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 13:36:11
+<?php /* Smarty version 3.1.24, created on 2017-02-19 20:31:20
          compiled from "/var/www/html/lucy/public/_template/front/promo.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:29107161658a6ee3b6a2695_07257060%%*/
+/*%%SmartyHeaderCode:96530675658a9f2886a26a4_31222270%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,28 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e9ada46897abd509924e1df67dd6512fe42eebbe' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/promo.tpl',
-      1 => 1487334826,
+      1 => 1487532668,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29107161658a6ee3b6a2695_07257060',
+  'nocache_hash' => '96530675658a9f2886a26a4_31222270',
   'variables' => 
   array (
     'promo_deals' => 0,
+    'data' => 0,
     'BASE_URL' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
-    'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a6ee3b6e7ac3_90722149',
+  'unifunc' => 'content_58a9f2886db329_85223683',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a6ee3b6e7ac3_90722149')) {
-function content_58a6ee3b6e7ac3_90722149 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58a9f2886db329_85223683')) {
+function content_58a9f2886db329_85223683 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '29107161658a6ee3b6a2695_07257060';
+$_smarty_tpl->properties['nocache_hash'] = '96530675658a9f2886a26a4_31222270';
 if ((($tmp = @$_smarty_tpl->tpl_vars['promo_deals']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">Promo Deals</h3>
@@ -47,6 +47,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['data']->_loop = true;
 $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
 ?>
+
+            <input type="hidden" id="product_id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'];?>
+">
+
             <div class="item">
                 <div class="products">
                     <div class="hot-deal-wrapper">

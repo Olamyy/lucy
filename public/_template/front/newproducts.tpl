@@ -1,8 +1,16 @@
 {if $new_products|default:''}
 
+    <input type="hidden" id="base_url" value="{$BASE_URL}">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="{$ip}">
+
+
 <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
     <div class="more-info-tab clearfix ">
-        <h3 class="new-product-title pull-left">New Products</h3>
+        {assign var="current_url" value=$smarty.server.HTTP_HOST}
+        {assign var="page_url" value=$smarty.server.REQUEST_URI}
+        {assign var="current_page" value=$current_url|cat:$page_url}
+        <h3 class="new-product-title pull-left">{if $current_page|strstr:'registry/couple/dashboard'}Product List{else}New Products{/if}</h3>
         <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
             <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">All</a></li>
             {foreach from=$pre_cart item=data key=eKey}
@@ -16,6 +24,7 @@
             <div class="product-slider">
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
           {foreach from=$new_products item=new_product key=eKey}
+              <input type="hidden" value="{$new_product.product_id}" id="product_id">
                     <div class="item item-carousel">
                         <div class="products">
                             <div class="product">
@@ -40,11 +49,9 @@
                                 <div class="action">
                                     <ul class="list-unstyled">
                                         <li class="add-cart-button btn-group">
-                                            <button class="btn btn-success" type="button">To Cart</button>
+                                            <button class="btn btn-success cart_add" type="button">To Cart</button>
                                             <button class="btn btn-primary registry_add" type="button">To Registry</button>
                                         </li>
-                                        <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                                     </ul>
                                 </div>
                                 <!-- /.action -->

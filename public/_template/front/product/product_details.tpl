@@ -8,8 +8,7 @@
 <input type="hidden" id="user_ip" value="{$ip}">
 <input type="hidden" id="product_id" value="{$product.product_id}">
 <input type="hidden" id="base_url" value="{$BASE_URL}">
-
-
+<input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
 
 <div class="body-content Hi outer-top-xs">
         <div class='container'>
@@ -109,7 +108,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="stock-box">
-                                                    <span class="value">{if $product.availability == "1"}In Stock {else}Out of Stock{/if}</span>
+                                                    <span class="value">{if $product.availability == 1}In Stock {else}Out of Stock{/if}</span>
                                                 </div>
                                             </div>
                                         </div><!-- /.row -->
@@ -142,14 +141,14 @@
                                             <div class="col-sm-2">
                                                 <div class="cart-quantity">
                                                     <div class="quant-input">
-                                                        <input type="text" id="quantity" placeholder="1" name="quantity">
+                                                        <input type="text" id="quantity" value="1" placeholder="1" name="quantity">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-7">
                                                 <a class="btn btn-success cart_add">TO CART</a>
-                                                <a class="btn btn-warning">COMPARE</a>
+                                                <a class="btn btn-warning product_compare">COMPARE</a>
                                                 <a class="btn btn-primary registry_add">TO REGISTRY</a>
                                             </div>
 

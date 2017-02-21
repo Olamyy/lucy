@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 20:48:06
+<?php /* Smarty version 3.1.24, created on 2017-02-20 19:26:06
          compiled from "/var/www/html/lucy/public/_template/front/specialoffers.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:107181299058a753764dece7_42696383%%*/
+/*%%SmartyHeaderCode:10185290658ab34bedafe82_19276281%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '78f4dde7e0e748eca51fbaf5dab68fe458db3bc1' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/specialoffers.tpl',
-      1 => 1487346743,
+      1 => 1487615104,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '107181299058a753764dece7_42696383',
+  'nocache_hash' => '10185290658ab34bedafe82_19276281',
   'variables' => 
   array (
     'special_offer' => 0,
     'BASE_URL' => 0,
+    'ip' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
     'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a753765376e6_32626238',
+  'unifunc' => 'content_58ab34bedd6ee1_46528826',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a753765376e6_32626238')) {
-function content_58a753765376e6_32626238 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab34bedd6ee1_46528826')) {
+function content_58ab34bedd6ee1_46528826 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '107181299058a753764dece7_42696383';
+$_smarty_tpl->properties['nocache_hash'] = '10185290658ab34bedafe82_19276281';
 if ((($tmp = @$_smarty_tpl->tpl_vars['special_offer']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+    <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
+">
 
 <div class="sidebar-widget outer-bottom-small wow fadeInUp">
     <h3 class="section-title">Special Offers</h3>

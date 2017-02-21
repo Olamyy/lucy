@@ -502,47 +502,185 @@ $('#NoDate').on('change', function(){
         $("#exampleInputEmail1:last-child").remove();
     });
 
-    var dashboard_image_setter = (function(image_url){
+    var dashboard_image_setter = function(image_url){
         var bg_img = $("#dashboard_image").val();
         image_url = image_url || bg_img;
 
          $('.main-back-img').css( { backgroundImage: 'url(' + image_url + ')' } );
          $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
-    });
+    };
 
+
+    /*
+
+     <ul class="dropdown-menu">
+     <li>
+     <div class="cart-item product-summary">
+     <div class="row">
+     <div class="col-xs-4">
+     <div class="image"> <a href="detail.html"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/cart.jpg" alt=""></a> </div>
+     </div>
+     <div class="col-xs-7">
+     <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
+     <div class="price">$600.00</div>
+     </div>
+     <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
+     </div>
+     </div>
+     <!-- /.cart-item -->
+     <div class="clearfix"></div>
+     <hr>
+     <div class="clearfix cart-total">
+     <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+     <div class="clearfix"></div>
+     <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+     <!-- /.cart-total-->
+
+     </li>
+     </ul>
+
+     */
   dashboard_image_setter();
+
+    var getCartDetails = function(){
+        var base_url = $('#base_url').val();
+        var template_url = $('#template_url').val();
+        $.ajax({
+           type: "GET",
+            url: base_url + '/api/updates/get_ip',
+            dataType: 'json',
+            async : false,
+            success: function (response) {
+                var current_user_ip = response.response;
+                var user_details = Cookies.getJSON('user_details');
+                console.log(user_details);
+                if (user_details){
+                    if (user_details.user_ip === current_user_ip){
+                        var sums = [];
+                        for (var key in user_details.cart_data) {
+                            if (user_details.cart_data.hasOwnProperty(key)) {
+                                sums.push(user_details.cart_data[key]['quantity'] * user_details.cart_data[key]['price']);
+                                $("#empty_cart_indicator").remove();
+                                var cart_html = '<div class="col-xs-4"><div class="image"> ' +
+                                    '<a href="detail.html"><img src=' + template_url + '/uploads/products/' + user_details.cart_data[key]["image"]>'\
+                                    </a></div></div><div class="col-xs-7">\<' +
+                                    'h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3><div class="price">$600.00</div></div><div class="col-xs-1 action">\ ' +
+                                    '<a href="#"><i class="fa fa-trash"></i></a> </div></div></div><div class="clearfix"></div>\
+                                    <hr><div class="clearfix cart-total"><div class="pull-right"> <span class="text">Sub Total :</span><span class="price">$600.00</span> </div>\
+                                    <div class="clearfix"></div><a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>';
+                                $("#cart_details").append(cart_html);
+                            }
+                        }
+                        var sum = sums.reduce(function(pv, cv) { return pv + cv; }, 0);
+                       $('#price_count_span').html(user_details.cart_count + '  items /');
+                       $('#cart_price_sum').html(sum);
+                    }
+                    }
+            },
+            error : function(){
+            }
+        });
+    };
+
+    getCartDetails();
 
     $('.registry_add').on('click', function(event){
         event.preventDefault();
-        toastr.info('The product has been added to your registry');
-    });
-    $('.cart_add').on('click', function(event){
-        console.log('We ready');
-        event.preventDefault();
         var user_ip = $('#user_ip').val();
         var product_id = $('#product_id').val();
-        var base_url = $('#base_url').val();
         var quantity = $('#quantity').val();
+        var couple_id = $('#couple_id').val();
+        var base_url = $('#base_url').val();
 
         $.ajax(
             {
                 type: "POST",
-                url: $('#base_url').val()+ '/api/updates/cart',
+                url: base_url + '/api/updates/registry_add',
                 data: {
-                    "couple_id": user_ip,
-                    "partner_email" : product_id,
+                    "user_ip": user_ip,
+                    "product_id" : product_id,
+                    "quantity" : quantity,
+                    "couple_id":couple_id
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                    console.log(response)
+                    toastr.info('The product has been added to your registry');
+                },
+                error : function(response){
+                    console.log(response);
+                    toastr.warning('You need to login to add to registry');
+                }
+            });
+    });
+
+
+    $('.product_compare').on('click', function(event){
+        event.preventDefault();
+        toastr.info('The product has been set up for comparison.');
+    });
+
+    $('#logout_btn').on('click', function(event){
+        event.preventDefault();
+        var couple_id = $('#couple_id').val();
+        var user_ip = $('#user_ip').val();
+        var base_url = $('#base_url').val();
+
+        console.log(base_url, user_ip, couple_id);
+
+        $.ajax(
+            {
+                type: "POST",
+                url: base_url + '/api/updates/logout',
+                data: {
+                    "user_ip": user_ip,
+                    "couple_id": couple_id
+                },
+                dataType: 'json',
+                async : false,
+                success: function (response) {
+                   window.location.href = base_url;
+                },
+                error : function(response){
+                }
+            });
+
+    });
+
+
+    $('.cart_add').on('click', function(event){
+        event.preventDefault();
+        var user_ip = $('#user_ip').val();
+        var product_id = $('#product_id').val();
+        var quantity = $('#quantity').val();
+        var base_url = $('#base_url').val();
+
+        console.log(user_ip, product_id, quantity, base_url);
+
+        $.ajax(
+            {
+                type: "POST",
+                url: base_url + '/api/updates/cart',
+                data: {
+                    "user_ip": user_ip,
+                    "product_id" : product_id,
                     "quantity" : quantity
                 },
                 dataType: 'json',
                 async : false,
                 success: function (response) {
+                    var user_details =  Cookies.set('user_details', {'user_ip':user_ip,
+                        'cart_data':response.response.data,
+                        'cart_count':response.response.item_count});
                     toastr.info('The product has been added to your cart');
+                    getCartDetails()
                 },
                 error : function(response){
+                    console.log(response);
                     toastr.error('Unable to add the product to your cart');
                 }
             });
-        toastr.info('The product has been added to your cart');
     });
 
 });

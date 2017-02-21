@@ -24,13 +24,29 @@ class Action extends CI_Controller
 
     public function manage(){
         $this->data['user_session'] = $this->session->userdata();
+        $couple_id = $this->data['user_session']['user_session'][0]['couple_id'];
+        $couple_details = $this->user_model->custom_get('lucy_couple', array('couple_id'=>$couple_id), 0, 0);
+        print_r($this->data['user_session']['user_session'][0]);
         $this->smarty->view('front/registry/couple/dashboard/manage.tpl', $this->data);
     }
 
     public function logout(){
+
+        $user_ip = $this->post('user_ip');
+        $couple_id = $this->post('couple_id');
+
+        $error = array();
+        if(empty($user_ip)) $error[] = 'Empty user ip';
+        if(empty($couple_id)) $error[] = 'Enter a couple id';
+
+        $data = array('ip'=>$user_ip, 'couple_id'=>$couple_id);
+        $user_exists = $this->user_model->custom_get('lucy_couple', $data, 0, 0);
+
+        $this->user_model->update(array('is_logged_in'=>0), 'lucy_couple', array('couple_id' => $user_exists[0]['couple_id']));
         $this->session->sess_destroy();
 
-        redirect('index.php/');
+        redirect('/');
+
     }
 
     public function preview(){

@@ -1,6 +1,11 @@
 {if $best_sellers|default: ''}
 
-<div class="best-deal wow fadeInUp outer-bottom-xs">
+    <input type="hidden" id="base_url" value="{$BASE_URL}">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="{$ip}">
+
+
+    <div class="best-deal wow fadeInUp outer-bottom-xs">
     <h3 class="section-title">Best seller</h3>
     <div class="sidebar-widget-body outer-top-xs">
         <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">

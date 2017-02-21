@@ -99,10 +99,10 @@
                 <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                     <div class="nav-outer">
                         <ul class="nav navbar-nav">
-                            <li class="active"> <a href="{$BASE_URL}index.php/registry/couple/dashboard" id="dashboard">Dashboard</a> </li>
-                            <li class=""> <a href="{$BASE_URL}index.php/registry/couple/action/manage" id="manage">Manage Registry</a> </li>
-                            <li class=""> <a href="{$BASE_URL}index.php/registry/couple/action/share" id="share">Share</a> </li>
-                            <li class=""> <a href="{$BASE_URL}index.php/registry/couple/action/track" id="track">Track</a> </li>
+                            <li class="active"> <a href="{$BASE_URL}registry/couple/dashboard" id="dashboard">Dashboard</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/couple/action/manage" id="manage">Manage Registry</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/couple/action/share" id="share">Share</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/couple/action/track" id="track">Track</a> </li>
                             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">My Account</a>
                                 <ul class="dropdown-menu pages">
                                     <li>
@@ -110,9 +110,12 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-menu">
                                                     <ul class="links">
-                                                        <li><a href="{$BASE_URL}index.php/registry/couple/action/settings">Account Settings</a></li>
-                                                        <li><a href="{$BASE_URL}index.php/registry/couple/action/help">Help</a></li>
-                                                        <li><a href="{$BASE_URL}index.php/registry/couple/action/logout">Logout</a></li>
+                                                        <li><a href="{$BASE_URL}registry/couple/action/settings">Account Settings</a></li>
+                                                        <li><a href="{$BASE_URL}registry/couple/action/help">Help</a></li>
+                                                        <input type="hidden" id="base_url" value="{$BASE_URL}">
+                                                        <input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+                                                        <input type="hidden" id="user_ip" value="{$user_session[0].ip}">
+                                                        <li><a href="{$BASE_URL}registry/couple/action/logout" id="logout_btn">Logout</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

@@ -19,6 +19,8 @@ class Category extends CI_Controller
         $this->load->model('user_model');
         $this->load->model('category_model');
 
+        $this->data['user_session'] = $this->session->userdata('user_session');
+
     }
 
     public function index()

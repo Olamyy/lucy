@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 20:48:06
+<?php /* Smarty version 3.1.24, created on 2017-02-20 22:32:24
          compiled from "/var/www/html/lucy/public/_template/front/newproducts.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:29737088858a753765ffea2_40194591%%*/
+/*%%SmartyHeaderCode:90820668258ab606801c381_75606261%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,35 +9,49 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a2d98444ad21e9b86ea37e6b7948d577f73e428b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/newproducts.tpl',
-      1 => 1487346841,
+      1 => 1487626333,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29737088858a753765ffea2_40194591',
+  'nocache_hash' => '90820668258ab606801c381_75606261',
   'variables' => 
   array (
     'new_products' => 0,
+    'BASE_URL' => 0,
+    'ip' => 0,
+    'current_url' => 0,
+    'page_url' => 0,
+    'current_page' => 0,
     'pre_cart' => 0,
     'data' => 0,
-    'BASE_URL' => 0,
     'new_product' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a75376687217_75521535',
+  'unifunc' => 'content_58ab606811f167_28476328',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a75376687217_75521535')) {
-function content_58a75376687217_75521535 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58ab606811f167_28476328')) {
+function content_58ab606811f167_28476328 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '29737088858a753765ffea2_40194591';
+$_smarty_tpl->properties['nocache_hash'] = '90820668258ab606801c381_75606261';
 if ((($tmp = @$_smarty_tpl->tpl_vars['new_products']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+
+    <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['ip']->value;?>
+">
+
 
 <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
     <div class="more-info-tab clearfix ">
-        <h3 class="new-product-title pull-left">New Products</h3>
+        <?php $_smarty_tpl->tpl_vars["current_url"] = new Smarty_Variable($_SERVER['HTTP_HOST'], null, 0);?>
+        <?php $_smarty_tpl->tpl_vars["page_url"] = new Smarty_Variable($_SERVER['REQUEST_URI'], null, 0);?>
+        <?php $_smarty_tpl->tpl_vars["current_page"] = new Smarty_Variable(($_smarty_tpl->tpl_vars['current_url']->value).($_smarty_tpl->tpl_vars['page_url']->value), null, 0);?>
+        <h3 class="new-product-title pull-left"><?php if (strstr($_smarty_tpl->tpl_vars['current_page']->value,'registry/couple/dashboard')) {?>Product List<?php } else { ?>New Products<?php }?></h3>
         <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
             <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">All</a></li>
             <?php
@@ -78,6 +92,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['new_product']->_loop = true;
 $foreach_new_product_Sav = $_smarty_tpl->tpl_vars['new_product'];
 ?>
+              <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['new_product']->value['product_id'];?>
+" id="product_id">
                     <div class="item item-carousel">
                         <div class="products">
                             <div class="product">
@@ -111,11 +127,9 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['new_product']->value['prod
                                 <div class="action">
                                     <ul class="list-unstyled">
                                         <li class="add-cart-button btn-group">
-                                            <button class="btn btn-success" type="button">To Cart</button>
+                                            <button class="btn btn-success cart_add" type="button">To Cart</button>
                                             <button class="btn btn-primary registry_add" type="button">To Registry</button>
                                         </li>
-                                        <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                                     </ul>
                                 </div>
                                 <!-- /.action -->

@@ -1543,7 +1543,7 @@ abstract class REST_Controller extends CI_Controller
         $this->responseArray['status'] = false;
         $this->responseArray['error'] = $error_string;
         $this->responseArray['error-reasons'] = $reasons;
-        $this->response($this->responseArray,200);
+        $this->response($this->responseArray,300);
     }
 
 

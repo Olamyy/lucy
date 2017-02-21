@@ -1,5 +1,10 @@
 {if $new_arrivals|default:''}
-<section class="section wow fadeInUp new-arriavls">
+
+    <input type="hidden" id="base_url" value="{$BASE_URL}">
+    <input type="hidden" id="quantity" value="1">
+    <input type="hidden" id="user_ip" value="{$ip}">
+
+    <section class="section wow fadeInUp new-arriavls">
     <h3 class="section-title">New Arrivals</h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
         {foreach from=$new_arrivals item=new_arrival key=eKey}
@@ -29,11 +34,9 @@
                 <div class="action">
                     <ul class="list-unstyled">
                         <li class="add-cart-button btn-group">
-                            <button class="btn btn-success" type="button">To Cart</button>
+                            <button class="btn btn-success cart_add" type="button">To Cart</button>
                             <button class="btn btn-primary registry_add" type="button">To Registry</button>
                         </li>
-                        <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                     </ul>
                 </div>
                 <!-- /.action -->

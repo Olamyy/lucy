@@ -8,12 +8,4 @@
 
 {include file="../../../newproducts.tpl"}
 
-{include file="../../../featuredproducts.tpl"}
-
-{include file="../../../middlebanner.tpl"}
-
-{include file="../../../bestseller.tpl"}
-
-{include file="../../../newarrivals.tpl"}
-
 {include file="./footer.tpl"}

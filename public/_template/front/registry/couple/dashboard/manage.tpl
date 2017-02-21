@@ -20,7 +20,7 @@
 </div><!-- /.breadcrumb -->
 <!-- ============================================== HEADER : END ============================================== -->
 <form>
-    <input type="hidden" name="name" value="{$session[0].couple_id}" id="couple_id" class="couples-name">
+    <input type="hidden" name="name"  value="{$session[0].couple_id}" id="couple_id" class="couples-name">
     <input type="hidden" id="base_url" value="{$BASE_URL}" />
     <input type="hidden" id="dashboard_image" value="{$session[0].dashboard_image}" />
 </form>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="row small-boxes-wrapper">
-                    <a href="{$BASE_URL}index.php/registry/couple/action/preview?preview_id={$session[0].couple_id}" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
+                    <a href="{$BASE_URL}registry/couple/action/preview?preview_id={$session[0].couple_id}" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
                         <h4>view as a guest</h4>
                         <p>View your profile as a guest and know how it feels</p>
                     </a>
@@ -95,7 +95,7 @@
                         <h4>invite partner</h4>
                         <p>Let your partners join you in this journey</p>
                     </a>
-                    <a href="{$BASE_URL}index.php/registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
+                    <a href="{$BASE_URL}registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" data-toggle="modal" data-target="#sanityCheck">
                         <h4>make it visible</h4>
                         <p>Guests can not view your registry until you go live.</p>
                     </a>

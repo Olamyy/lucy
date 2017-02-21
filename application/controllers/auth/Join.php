@@ -36,7 +36,8 @@ class Join extends CI_Controller
                         'couple_id' => $this->user_model->get_transaction_code(15),
                         'ip' => $this->input->ip_address(),
                         'couple_status' => 0,
-                        'date_added' => date('Y-m-d H:i:s'));
+                        'date_added' => date('Y-m-d H:i:s'),
+                        'registry_id'=>$this->user_model->get_transaction_code(10));
 
                     $insert = $this->user_model->add($user_details, 'lucy_couple');
 

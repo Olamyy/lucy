@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-17 22:29:39
+<?php /* Smarty version 3.1.24, created on 2017-02-20 14:33:32
          compiled from "public/_template/front/product/product_details.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:44261541558a76b4334a5e0_90671213%%*/
+/*%%SmartyHeaderCode:35821694258aaf02c6ceaa3_91212583%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,28 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20258b6b70504364befa08b165eacc13785dc748' => 
     array (
       0 => 'public/_template/front/product/product_details.tpl',
-      1 => 1487366940,
+      1 => 1487597584,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '44261541558a76b4334a5e0_90671213',
+  'nocache_hash' => '35821694258aaf02c6ceaa3_91212583',
   'variables' => 
   array (
     'product_details' => 0,
     'ip' => 0,
     'product' => 0,
     'BASE_URL' => 0,
+    'user_session' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58a76b434445c7_11589691',
+  'unifunc' => 'content_58aaf02c919b82_93671846',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58a76b434445c7_11589691')) {
-function content_58a76b434445c7_11589691 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58aaf02c919b82_93671846')) {
+function content_58aaf02c919b82_93671846 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '44261541558a76b4334a5e0_90671213';
+$_smarty_tpl->properties['nocache_hash'] = '35821694258aaf02c6ceaa3_91212583';
 echo $_smarty_tpl->getSubTemplate ("../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -59,8 +60,8 @@ $foreach_product_Sav = $_smarty_tpl->tpl_vars['product'];
 ">
 <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 ">
-
-
+<input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+">
 
 <div class="body-content Hi outer-top-xs">
         <div class='container'>
@@ -213,7 +214,7 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="stock-box">
-                                                    <span class="value"><?php if ($_smarty_tpl->tpl_vars['product']->value['availability'] == "1") {?>In Stock <?php } else { ?>Out of Stock<?php }?></span>
+                                                    <span class="value"><?php if ($_smarty_tpl->tpl_vars['product']->value['availability'] == 1) {?>In Stock <?php } else { ?>Out of Stock<?php }?></span>
                                                 </div>
                                             </div>
                                         </div><!-- /.row -->
@@ -248,14 +249,14 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                                             <div class="col-sm-2">
                                                 <div class="cart-quantity">
                                                     <div class="quant-input">
-                                                        <input type="text" placeholder="1" name="quantity">
+                                                        <input type="text" id="quantity" value="1" placeholder="1" name="quantity">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-7">
                                                 <a class="btn btn-success cart_add">TO CART</a>
-                                                <a class="btn btn-warning">COMPARE</a>
+                                                <a class="btn btn-warning product_compare">COMPARE</a>
                                                 <a class="btn btn-primary registry_add">TO REGISTRY</a>
                                             </div>
 

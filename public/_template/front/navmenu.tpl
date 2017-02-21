@@ -1,5 +1,7 @@
  <!-- ============================================== TOP MENU : END ============================================== -->
-    <div class="main-header">
+ <input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+
+ <div class="main-header">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-2 logo-holder">
@@ -41,32 +43,19 @@
                             <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
                                 <div class="items-cart-inner">
                                     <div class="top-cart">  </div>
-
-                                    <div class="total-price-basket"> <span class="lbl">2 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value">600.00</span> </span> </div>
+                                    <div class="total-price-basket"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
                                 </div>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="cart-item product-summary">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <div class="image"> <a href="detail.html"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/cart.jpg" alt=""></a> </div>
+                                        <div class="row" id="cart_details">
+                                            <div class="col-xs-8" id="empty_cart_indicator">
+                                                <h5 class="name">Empty Cart</h5>
                                             </div>
-                                            <div class="col-xs-7">
-                                                <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
-                                                <div class="price">$600.00</div>
-                                            </div>
-                                            <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
                                         </div>
                                     </div>
-                                    <!-- /.cart-item -->
-                                    <div class="clearfix"></div>
-                                    <hr>
-                                    <div class="clearfix cart-total">
-                                        <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
-                                        <div class="clearfix"></div>
-                                        <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                                    <!-- /.cart-total-->
+
 
                                 </li>
                             </ul>
