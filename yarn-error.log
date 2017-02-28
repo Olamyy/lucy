@@ -1,0 +1,35 @@
+Arguments: 
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js add typeahead.js
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  6.9.2
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ENETUNREACH 2400:cb00:2048:1::6810:3dad:443 - Local (:::0)
+      at Object.exports._errnoException (util.js:1022:11)
+      at exports._exceptionWithHostPort (util.js:1045:20)
+      at connect (net.js:881:16)
+      at net.js:1010:7
+      at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
