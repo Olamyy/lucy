@@ -60,7 +60,7 @@ class User_model extends CI_Model
     {
         $state = $this->db->update($table, $data, $condition);
         if ($state) {
-            return $this->custom_get($table,$condition, 0, 0);
+            return $this->get($table);
         } else
             return false;
 

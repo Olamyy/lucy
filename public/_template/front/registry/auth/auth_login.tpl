@@ -5,7 +5,6 @@
     <div class="container">
         <div class="sign-in-page">
             <div class="row">
-                <!-- Sign-in -->
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Sign in</h4>
                     <p class="">Hello, sign in to continue to your wedding registry.</p>
@@ -18,10 +17,6 @@
                             {/foreach}
                         </div>
                     {/if}
-                    <div class="social-sign-in outer-top-xs">
-                        <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-                        <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
-                    </div>
                     <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/auth/login?redirect={if $session[0].from|default:'' == "create_nav"}init{else}{/if}">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
@@ -38,17 +33,7 @@
                         <a href="{$BASE_URL}auth/join" class="button btn-success"><i class=""></i>Click here to sign up</a>
                     </div>
                 </div>
-                <!-- Sign-in -->
-
-                <!-- create a new account -->
-
-                <!-- create a new account -->			</div><!-- /.row -->
-        </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-        </div><!-- /.logo-slider -->
-        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
-<!-- ============================================================= FOOTER ============================================================= -->
-
+            </div>
+        </div>
+        </div>
 {include file='../couple/dashboard/footer.tpl'}

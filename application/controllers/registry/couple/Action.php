@@ -49,7 +49,7 @@ class Action extends CI_Controller
             $this->data['user_session'] = $this->session->userdata('user_session');
             $couple_id = $this->data['user_session'][0]['couple_id'];
             $this->data['couple_details'] = $this->user_model->custom_get('lucy_couple', array('couple_id'=>$couple_id), 0, 0);
-            $this->data['registry_details'] = $this->user_model->custom_get('lucy_registry_cart_items', array('couple_id'=>$couple_id), 0, 0);
+            $this->data['registry_details'] = $this->user_model->custom_get('lucy_registry_items', array('couple_id'=>$couple_id), 0, 0);
             $this->data['ip'] = $this->input->ip_address();
             $pre_cart = array();
             $product_details = array();
@@ -59,6 +59,9 @@ class Action extends CI_Controller
             foreach($pre_cart as $product_id){
                 $product_details[] = $this->user_model->custom_get('lucy_product', array('product_id'=>$product_id), 0, 0);
             }
+            $temp_user_cart = $this->user_model->custom_get('lucy_temp_user', array('ip'=>$this->data['user_session'][0]['ip']), 0, 0);
+            $this->data['user_cart_items'] = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$temp_user_cart[0]['cart_id']), 0, 0);
+            $this->data['product_details'] = $this->user_model->custom_get('lucy_product', array('product_id'=>$this->data['user_cart_items'][0]['product_id']), 0, 0);
             $this->data['user_products'] = $product_details;
             $this->smarty->view('front/registry/couple/preview/preview.tpl', $this->data);
         } else {
@@ -68,22 +71,22 @@ class Action extends CI_Controller
     }
 
     public function share(){
-        $this->data['user_session'] = $this->session->userdata();
+        $this->data['user_session'] = $this->session->userdata('user_session');
         $this->smarty->view('front/registry/couple/share/share.tpl', $this->data);
     }
 
     public function track(){
-        $this->data['user_session'] = $this->session->userdata();
+        $this->data['user_session'] = $this->session->userdata('user_session');
         $this->smarty->view('front/registry/couple/track/track.tpl', $this->data);
     }
 
     public function settings(){
-        $this->data['user_session'] = $this->session->userdata();
+        $this->data['user_session'] = $this->session->userdata('user_session');
         $this->smarty->view('front/registry/couple/settings.tpl', $this->data);
     }
 
     public function help(){
-        $this->data['user_session'] = $this->session->userdata();
+        $this->data['user_session'] = $this->session->userdata('user_session');
         $this->smarty->view('front/registry/couple/help.tpl', $this->data);
     }
 }

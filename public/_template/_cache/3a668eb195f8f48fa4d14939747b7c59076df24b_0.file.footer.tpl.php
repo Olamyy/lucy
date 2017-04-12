@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-21 12:47:34
+<?php /* Smarty version 3.1.24, created on 2017-04-11 10:52:12
          compiled from "/var/www/html/lucy/public/_template/front/footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:98154248858ac28d6ed8457_83085678%%*/
+/*%%SmartyHeaderCode:116501572058eca74c623a72_16150539%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,109 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a668eb195f8f48fa4d14939747b7c59076df24b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/footer.tpl',
-      1 => 1487677328,
+      1 => 1491904324,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '98154248858ac28d6ed8457_83085678',
+  'nocache_hash' => '116501572058eca74c623a72_16150539',
   'variables' => 
   array (
-    'BASE_URL' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
     'STORE_ADDRESS' => 0,
     'STORE_MOBILE' => 0,
     'STORE_EMAIL' => 0,
+    'BASE_URL' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58ac28d701b565_59787112',
+  'unifunc' => 'content_58eca74c672e92_40350885',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58ac28d701b565_59787112')) {
-function content_58ac28d701b565_59787112 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58eca74c672e92_40350885')) {
+function content_58eca74c672e92_40350885 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '98154248858ac28d6ed8457_83085678';
+$_smarty_tpl->properties['nocache_hash'] = '116501572058eca74c623a72_16150539';
 ?>
-<div id="brands-carousel" class="logo-slider wow fadeInUp">
-    <div class="logo-slider-inner">
-        <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
-            <div class="item m-t-15"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand1.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item m-t-10"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand2.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand3.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand4.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand5.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand6.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand2.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand4.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand1.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/brands/brand5.png" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-        </div>
-        <!-- /.owl-carousel #logo-slider -->
-    </div>
-    <!-- /.logo-slider-inner -->
-
-</div>
-
-
 <footer id="footer" class="footer color-bg">
     <div class="footer-bottom">
         <div class="container">
@@ -214,9 +134,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
                     <li class="fb pull-left"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
                     <li class="tw pull-left"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
                     <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
-                    <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
-                    <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
-                    <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
                     <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
                 </ul>
             </div>
@@ -245,13 +162,6 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
         </div>
     </div>
 </footer>
-<!-- ============================================================= FOOTER : END============================================================= -->
-
-<!-- For demo purposes – can be removed on production -->
-
-<!-- For demo purposes – can be removed on production : End -->
-
-<!-- JavaScripts placed at the end of the document so the pages load faster -->
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>

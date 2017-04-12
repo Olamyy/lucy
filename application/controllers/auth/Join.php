@@ -18,7 +18,6 @@ class Join extends CI_Controller
 
     public function index()
     {
-        $this->data['user_session'] = $this->session->userdata('user_session');
         $error = array();
         if (!empty($_POST)) {
             $email = $this->input->post('email');
@@ -39,22 +38,20 @@ class Join extends CI_Controller
                         'date_added' => date('Y-m-d H:i:s'),
                         'registry_id'=>$this->user_model->get_transaction_code(10));
 
-                    $insert = $this->user_model->add($user_details, 'lucy_couple');
+                    $insert = $this->user_model->add('lucy_couple',$user_details);
 
                     if ($insert) {
+                        $this->session->set_userdata(array('user_session'=>$insert));
                         redirect('index.php/registry/couple/init');
                     } else
                         $this->data['error'] = "Unable to register your details. Please, check your details.";
                     }
                 else
                     $this->data['error'] = "This email is already registered";
-
             }
             else
                 $this->data['error'] = $error;
-
             }
-
         $this->smarty->view('front/registry/auth/auth_reg.tpl', $this->data);
 
     }

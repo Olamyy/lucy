@@ -12,18 +12,52 @@
     <input type="hidden" id="base_url" value="{$BASE_URL}" />
 </form>
 
-<div id="carts" class="modal fade" role="dialog">
+<div id="carts" class="modal fade" role="dialog" >
     <div class="modal-dialog modal-dialog-background">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">Your Cart</h3>
             </div>
-            <div class="modal-body preview-modal-body">
-                <h4 class="text-center"><br><br><br><br>You have nothing in your cart. Get shopping!</h4>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="cart-description item">Image</th>
+                        <th class="cart-product-name item">Product Name</th>
+                        <th class="cart-total last-item">Quantity</th>
+                        <th class="cart-sub-total item">Subtotal</th>
+                    </tr>
+                    </thead><!-- /thead -->
+                    <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <div class="shopping-cart-btn">
+							<span class="">
+								<a href="{$BASE_URL}registry/couple/checkout" class="btn btn-upper btn-primary pull-right outer-right-xs">Check Out</a>
+							</span>
+                            </div><!-- /.shopping-cart-btn -->
+                        </td>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {foreach from=$user_cart_items item=product key=eKey}
+                        <tr>
+                            <td class="cart-image">
+                                <a class="entry-thumbnail">
+                                    <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/uploads/products/{$product.image}" width="100" height="100" alt="">
+                                </a>
+                            </td>
+                            <td class="cart-product-name-info">
+                                <h4 class='cart-product-description'><a href="{$BASE_URL}product?product_id={$product.product_id}">{$product_details[0]['name']}</a></h4>
+                            </td>
+                            <td class="cart-product-sub-total"><span class="cart-sub-total-price">{$product.quantity}</span></td>
+                            <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;{$product.price}</span></td>
+                        </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                </h4>
             </div>
         </div>
     </div>

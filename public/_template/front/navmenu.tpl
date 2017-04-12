@@ -1,5 +1,6 @@
-<!-- ============================================== TOP MENU : END ============================================== -->
+{if $user_session|default:''}
 <input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+{/if}
 
 <div class="main-header">
   <div class="container">
@@ -18,13 +19,13 @@
           <form>
             <div class="control-group">
               <ul class="categories-filter animate-dropdown">
-                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Filter Search <b class="caret"></b></a>
+                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" >Filter Search <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" >
                     <li class="menu-header">Computer</li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Wedding</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Souvenirs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Made In Nigeria</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Customized</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Wedding</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Souvenirs</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Made In Nigeria</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Customized</a></li>
                   </ul>
                 </li>
               </ul>
@@ -32,63 +33,32 @@
               <a class="search-button" href="#" ></a> </div>
           </form>
         </div>
-        <!-- /.search-area -->
-        <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
-      <!-- /.top-search-holder -->
-
+      </div>
       <div class="col-xs-12 col-sm-12 col-md-4 animate-dropdown top-cart-row">
-        <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
         <div class="col-xs-12 col-sm-12 col-md-8">
           <div class="dropdown dropdown-cart">
-            <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+            <a href="{$BASE_URL}registry/checkout/cart" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
               <div class="items-cart-inner">
                 <div class="top-cart">  </div>
-                <div class="total-price-basket"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
+                <div class="total-price-basket"  id="checkoutbtn"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
               </div>
             </a>
-            <ul class="dropdown-menu">
-              <li>
-                <div class="cart-item product-summary">
-                  <div class="row" id="cart_details">
-                    <div class="col-xs-8" id="empty_cart_indicator">
-                      <h5 class="name">Empty Cart</h5>
-                    </div>
-                  </div>
-                </div>
 
-
-              </li>
-            </ul>
-            <!-- /.dropdown-menu-->
           </div>
-          <!-- /.dropdown-cart -->
-
-
         </div>
-
         <div class="col-xs-12 col-sm-12 col-md-4">
-          <!-- /.header-top-inner -->
           <ul class="account">
-            <li><a href="{$BASE_URL}registry/couple/action/settings">
-                {if $user_session[0].is_logged_in|default: ''}Hi,
-                {$user_session[0].groom_first_name|default: ''}
-                {else}
-            <li><a href="{$BASE_URL}auth/login">My Account</a></li>
+            {if $user_session[0].is_logged_in|default: ''}
+            <li><a href="{$BASE_URL}registry/couple/action/settings">Hi, {$user_session[0].groom_first_name|default: ''}
+              </a></li>
+            {else}
+              <li><a href="{$BASE_URL}auth/login">My Account</a></li>
             {/if}
           </ul>
         </div>
-        <!-- /.top-cart-row -->
       </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
-
   </div>
-
-  <!-- /.main-header -->
-
-  <!-- ============================================== NAVBAR ============================================== -->
   <div class="header-nav animate-dropdown">
     <div class="container">
       <div class="yamm navbar navbar-default" role="navigation">

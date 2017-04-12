@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-25 00:13:53
+<?php /* Smarty version 3.1.24, created on 2017-03-01 02:06:35
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/couplesmalldetails.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:9276465858b0be318f9899_59876217%%*/
+/*%%SmartyHeaderCode:58486125758b61e9b295d60_61979222%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3df6f110b70470f31c35ce7a4cf1a88e7adc53dd' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/couplesmalldetails.tpl',
-      1 => 1487978030,
+      1 => 1488298254,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9276465858b0be318f9899_59876217',
+  'nocache_hash' => '58486125758b61e9b295d60_61979222',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b0be3191c015_20586175',
+  'unifunc' => 'content_58b61e9b2c7211_94532834',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b0be3191c015_20586175')) {
-function content_58b0be3191c015_20586175 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b61e9b2c7211_94532834')) {
+function content_58b61e9b2c7211_94532834 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '9276465858b0be318f9899_59876217';
+$_smarty_tpl->properties['nocache_hash'] = '58486125758b61e9b295d60_61979222';
 ?>
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <div id="advertisement" class="advertisement">

@@ -30,4 +30,9 @@ class Account extends CI_Controller
         print_r($this->check);
     }
 
+    public function cart()
+    {
+
+    }
+
 }

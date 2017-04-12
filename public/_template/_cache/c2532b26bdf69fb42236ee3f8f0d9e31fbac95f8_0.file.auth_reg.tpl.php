@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-25 15:43:19
+<?php /* Smarty version 3.1.24, created on 2017-03-05 13:57:39
          compiled from "public/_template/front/registry/auth/auth_reg.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:149685788658b198079274f5_57200186%%*/
+/*%%SmartyHeaderCode:191644711058bc0b43f001a9_88740200%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2532b26bdf69fb42236ee3f8f0d9e31fbac95f8' => 
     array (
       0 => 'public/_template/front/registry/auth/auth_reg.tpl',
-      1 => 1488033795,
+      1 => 1488718107,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '149685788658b198079274f5_57200186',
+  'nocache_hash' => '191644711058bc0b43f001a9_88740200',
   'variables' => 
   array (
     'error' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b19807974703_23506030',
+  'unifunc' => 'content_58bc0b44109bb8_43149459',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b19807974703_23506030')) {
-function content_58b19807974703_23506030 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58bc0b44109bb8_43149459')) {
+function content_58bc0b44109bb8_43149459 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '149685788658b198079274f5_57200186';
+$_smarty_tpl->properties['nocache_hash'] = '191644711058bc0b43f001a9_88740200';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -40,7 +40,6 @@ echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $
     <div class="container">
         <div class="sign-in-page">
             <div class="row">
-                <!-- Sign-in -->
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Sign Up</h4>
                     <p class="">Fill the form below to start..</p>
@@ -66,12 +65,8 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 ?>
                         </div>
                     <?php }?>
-                    <div class="social-sign-in outer-top-xs">
-                        <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign up with Facebook</a>
-                        <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign up with Twitter</a>
-                    </div>
                     <form class="register-form outer-top-xs" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/auth/join">
+auth/join">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
@@ -83,24 +78,14 @@ index.php/registry/auth/join">
                         </div>
                         <div class="social-sign-in outer-top-xs pull-right">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/auth/login" class="button btn-success"><i class=""></i>Click here to sign in</a>
+auth/login" class="button btn-success"><i class=""></i>Click here to sign in</a>
                         </div>
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
                     </form>
                 </div>
-                <!-- Sign-in -->
-
-                <!-- create a new account -->
-
-                <!-- create a new account -->			</div><!-- /.row -->
-        </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-    </div><!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
-<!-- ============================================================= FOOTER ============================================================= -->
-
+            </div>
+        </div>
+    </div>
 <?php echo $_smarty_tpl->getSubTemplate ("../../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 
 }

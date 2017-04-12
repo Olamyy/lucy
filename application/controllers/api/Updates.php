@@ -29,7 +29,6 @@ class Updates extends REST_Controller
       if(empty($couple_id)) $error[] = 'Invalid or empty couple id';
       if(empty($bg_image)) $error[] = 'Invalid or empty dashboard image';
 
-
       if (empty($error)){
 
           $couple_details = $this->user_model->custom_get('lucy_couple', array('couple_id'=>$couple_id), 0, 0);
@@ -160,11 +159,11 @@ class Updates extends REST_Controller
               $this->response_ok($update);
           }
           else{
-              $this->response_bad('Unable to logout');
+              $this->response_bad('Unable to logout', $error);
           }
       }
       else
-          $this->response_bad('Invalid Parameters');
+          $this->response_bad('Invalid Parameters', $error);
   }
 
   public function cart_add_post(){
@@ -183,58 +182,59 @@ class Updates extends REST_Controller
           if(empty($user_details)){
               $temp_user_details = $this->user_model->custom_get('lucy_temp_user', array('ip'=>$user_ip), 0, 0);
               $cart_id = $this->user_model->get_transaction_code(10);
+              $temp_user_id = $this->user_model->get_transaction_code(5);
               if(empty($temp_user_details)){
-                    $create_user = $this->create_temp_user($user_ip,$cart_id);
-                    if ($create_user){
-                        $add_cart = $this->add_to_cart($create_user[0]['cart_id'], $product_details, $quantity);
+                  ///temp user does not exist
+                  $create_temp_user = $this->create_temp_user($user_ip,$temp_user_id, $cart_id);
+                  if ($create_temp_user){
+                        $add_cart = $this->add_to_cart($create_temp_user[0]['cart_id'], $product_details, $quantity);
                         if ($add_cart){
-                            $this->response_ok($add_cart);
-                        }
-                        else{
-                            $this->response_bad('Unable to add item to cart', $error);
-                        }
-                    }
-                    else{
-                        $this->response_bad('Unable to create temp user', $error);
-                    }
+                            $this->response_ok(array('cart_count'=>count($add_cart), 'cart_data'=>$add_cart));
+                                        }
+                      else{
+                          $this->response_bad('Unable to add item to cart');
+                      }
+                  }
+                  else
+                      $this->response_bad('Unable to create temp user');
               }
-              else{
+              else
+                  //temp user exists
                   $cart_id = $temp_user_details[0]['cart_id'];
-                  $user_cart = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$cart_id, 'user_id'=>$temp_user_details[0]['code'], 'product_id'=>$product_id), 0, 0);
-                  $product_check = $this->user_model->custom_get('lucy_user_cart_items', array('product_id'=>$product_id), 0, 0);
-                  if(empty($product_check)){
-                      $add_new_product = $this->add_to_cart($cart_id, $product_details , $quantity, $temp_user_details[0]['code']);
-                      if ($add_new_product){
-                          $this->response_ok($add_new_product);
+                  //check if user already has product in cart
+                    $user_cart = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$cart_id,
+                                    'product_id'=>$product_id), 0 , 0);
+                  if(empty($user_cart)){
+                      //new product
+                      $add_cart = $this->add_to_cart($cart_id, $product_details, $quantity);
+                      if ($add_cart){
+                          $this->response_ok(array('cart_count'=>count($add_cart), 'cart_data'=>$add_cart));
                       }
                       else{
-                          $this->response_bad('Unable to add item to registry', $error);
+                          $this->response_bad('Unable to add item to cart');
                       }
                   }
                   else{
-                      $update_cart = $this->update_cart($user_cart, $quantity);
+                      $update_cart = $this->update_cart($user_cart, $quantity, $product_id);
                       if ($update_cart){
-                          $this->response_ok($update_cart);
+                          $this->response_ok(array('cart_count'=>count($update_cart), 'cart_data'=>$update_cart));
                       }
                       else{
-                          $this->response_bad('Unable to add item to cart', $error);
+                          $this->response_bad('Unable to update  cart');
                       }
                   }
 
-              }
           }
           else{
               $cart_id = $user_details[0]['cart_id'];
-              $user_cart = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$cart_id), 0, 0);
               if($user_details[0]['is_logged_in'] == 0){
-                  $this->response_bad('You need to login to to add to cart');
+
+                  $this->response_bad('You need to login to to add to cart', $user_details);
               }
               else{
-                  $user_id = $this->user_model->custom_get('lucy_user', array('ip'=>$user_ip), 0, 0)[0]['user_id'];
                   if (empty($user_details[0]['cart_id'])){
                       $cart_id = $this->user_model->get_transaction_code(10);
-                      $this->user_model->update(array('cart_id'=>$cart_id), 'lucy_user', array('user_id'=>$user_details[0]['user_id']));
-                      $add_cart = $this->add_to_cart($cart_id, $product_details, $quantity, $user_id);
+                      $add_cart = $this->add_to_cart($cart_id, $product_details, $quantity);
                       if ($add_cart){
                           $this->response_ok($add_cart);
                       }
@@ -244,7 +244,7 @@ class Updates extends REST_Controller
                   }
                   else
                       if(empty($user_cart)){
-                          $add_cart = $this->add_to_cart($user_id, $cart_id, $product_details, $quantity);
+                          $add_cart = $this->add_to_cart($cart_id, $product_details, $quantity);
                           if ($add_cart){
                               $this->response_ok($add_cart);
                           }
@@ -253,7 +253,7 @@ class Updates extends REST_Controller
                           }
                       }
                       else{
-                          $update_cart = $this->update_cart($user_cart, $quantity);
+                          $update_cart = $this->update_cart($user_cart, $quantity, $product_id);
                           if ($update_cart){
                               $this->response_ok($update_cart);
                           }
@@ -264,10 +264,10 @@ class Updates extends REST_Controller
               }
           }
       }
-
+      else
+          $this->response_bad('Invalid details', $error);
 
   }
-
 
   public function registry_add_post(){
       $user_ip = $this->post('user_ip');
@@ -289,7 +289,7 @@ class Updates extends REST_Controller
           }
           else{
               if($couple_details[0]['is_logged_in'] == 0){
-                  $this->response_bad('You need to login to to add to cart');
+                  $this->response_bad('You need to login to add to registry');
               }
               else{
                   if (empty($couple_details[0]['registry_id'])){
@@ -338,45 +338,46 @@ class Updates extends REST_Controller
                                   $this->response_bad('Unable to add item to registry', $error);
                               }
                           }
-
                       }
               }
           }
       }
       else
           $this->response_bad('Invalid details', $error);
-
-
   }
 
-  private function create_temp_user($user_ip,$cart_id)
+  private function create_temp_user($user_ip, $temp_user_id , $cart_id)
     {
+
         $temp_user = $this->user_model->add('lucy_temp_user',
-            array('user_status'=>0, 'code'=>$cart_id,
-                'ip'=>$user_ip,'date_added'=>date('Y-m-d H:i:s'), 'cart_id'=>$this->user_model->get_transaction_code(20)));
-        if($temp_user){
-            return $this->user_model->add('lucy_user_cart', array('cart_id'=>$temp_user[0]['cart_id'], 'user_id'=>$temp_user[0]['code'],
+            array('user_status'=>0, 'temp_user_id'=>$temp_user_id,
+                'ip'=>$user_ip,'date_added'=>date('Y-m-d H:i:s'), 'cart_id'=>$cart_id));
+            return $this->user_model->add('lucy_user_cart', array('cart_id'=>$temp_user[0]['cart_id'], 'user_id'=>$temp_user[0]['temp_user_id'],
                 'date_added'=>date('Y-m-d H:i:s')));
-        }
+
     }
 
   private function add_to_cart($cart_id, $product_details, $quantity)
     {
         $this->user_model->update(array('date_modified'=>date('Y-m-d H:i:s')), 'lucy_user_cart',
             array('cart_id'=>$cart_id), 0, 0);
-         return $this->user_model->add('lucy_user_cart_items', array('cart_item_id' => $this->user_model->get_transaction_code(7),
+        
+        return $this->user_model->add('lucy_user_cart_items', array('cart_item_id' => $this->user_model->get_transaction_code(7),
                 'cart_id' => $cart_id, 'product_id' => $product_details[0]['product_id'], 'quantity' => $quantity, 'price' => $product_details[0]['price'],
                 'image' => $product_details[0]['image'], 'date_added'=>date('Y-m-d H:i:s')));
-
     }
 
-  private function update_cart($user_cart, $quantity)
+  private function update_cart($user_cart, $quantity, $product_id)
     {
+
         $this->user_model->update(array('date_modified'=>date('Y-m-d H:i:s')), 'lucy_user_cart',
             array('cart_id'=>$user_cart[0]['cart_id']), 0, 0);
-        return $this->user_model->update(array('quantity'=>$user_cart[0]['quantity'] + $quantity), 'lucy_user_cart_items'
+
+        if ($this->user_model->update(array('quantity'=>$user_cart[0]['quantity'] + $quantity), 'lucy_user_cart_items'
                                             ,array('cart_item_id'=>$user_cart[0]['cart_item_id'],
-                                'cart_id'=>$user_cart[0]['cart_id']));
+                                'cart_id'=>$user_cart[0]['cart_id'], 'product_id'=>$product_id))){
+            return $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$user_cart[0]['cart_id']), 0,0);
+        };
     }
 
   private function add_to_registry($couple_id,$product_details, $quantity)
@@ -391,6 +392,12 @@ class Updates extends REST_Controller
         return $this->user_model->update(array('quantity'=>$couple_registry[0]['quantity'] + $quantity), 'lucy_registry_items'
             ,array('registry_item_id'=>$couple_registry[0]['registry_item_id']));
     }
+
+  public function get_ip_post(){
+        $ip = $this->input->ip_address();
+        $this->response_ok($ip);
+    }
+
 
 
 }

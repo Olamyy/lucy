@@ -1,20 +1,5 @@
 {include file="./header.tpl"}
 {include file="./nav.tpl"}
-
-       <!-- ============================================== HEADER : END ============================================== -->
-
-{if $error|default:''}
-    <div class="alert alert-danger">
-        <strong>Oops! Something went wrong</strong>
-        {foreach from=$error item=err}
-            <p>{$err}</p>
-        {/foreach}
-    </div>
-{/if}
-
-<div class="breadcrumb" xmlns="http://www.w3.org/1999/html"><!-- /.container -->
-</div><!-- /.breadcrumb -->
-<!-- ============================================== HEADER : END ============================================== -->
 <form>
     <input type="hidden" name="name"  value="{$user_session[0].couple_id}" id="couple_id" class="couples-name">
     <input type="hidden" id="base_url" value="{$BASE_URL}" />
@@ -24,8 +9,9 @@
 <div class="body-content outer-top-vs" id="top-banner-and-menu">
     <div class="container">
         <div class="row">
+            <h2 class="test"></h2>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="container-fluid main-back-img">
+                <div class="container-fluid main-couple-img">
                     <button type="button" class="edit-btn" data-toggle="modal" data-target="#backgrounds">
                         edit background
                     </button>
@@ -46,8 +32,8 @@
                             <div class="modal-body modal-body-background">
                                 <div class="upload-wrap col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                                     <div class="fileUpload text-center ">
-                                        <span class="glyphicon glyphicon-camera"></span><br>
-                                        <span>upload photo</span>
+                                        <span class="fa fa-camera"></span><br>
+                                        <span style="padding-bottom: 1000px">upload photo</span>
                                         <input type="file" class="upload"/>
                                     </div>
                                 </div>

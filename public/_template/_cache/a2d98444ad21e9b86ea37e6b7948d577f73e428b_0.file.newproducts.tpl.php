@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-24 19:22:26
+<?php /* Smarty version 3.1.24, created on 2017-03-02 10:45:15
          compiled from "/var/www/html/lucy/public/_template/front/newproducts.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:132259560158b079e29e9b24_65975944%%*/
+/*%%SmartyHeaderCode:109060793958b7e9abe28849_54835250%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a2d98444ad21e9b86ea37e6b7948d577f73e428b' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/newproducts.tpl',
-      1 => 1487960543,
+      1 => 1488445994,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '132259560158b079e29e9b24_65975944',
+  'nocache_hash' => '109060793958b7e9abe28849_54835250',
   'variables' => 
   array (
     'new_products' => 0,
@@ -27,13 +27,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b079e2aab594_13803092',
+  'unifunc' => 'content_58b7e9ac05c9d7_99468538',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b079e2aab594_13803092')) {
-function content_58b079e2aab594_13803092 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b7e9ac05c9d7_99468538')) {
+function content_58b7e9ac05c9d7_99468538 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '132259560158b079e29e9b24_65975944';
+$_smarty_tpl->properties['nocache_hash'] = '109060793958b7e9abe28849_54835250';
 if ((($tmp = @$_smarty_tpl->tpl_vars['new_products']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 
   <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -70,7 +70,7 @@ $_smarty_tpl->tpl_vars['new_product']->_loop = true;
 $foreach_new_product_Sav = $_smarty_tpl->tpl_vars['new_product'];
 ?>
               <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['new_product']->value['product_id'];?>
-" id="product_id">
+" id="product_id" class="productID">
               <div class="item item-carousel">
                 <div class="products">
                   <div class="product">

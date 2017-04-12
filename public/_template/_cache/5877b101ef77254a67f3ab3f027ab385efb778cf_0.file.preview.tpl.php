@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-25 21:06:31
+<?php /* Smarty version 3.1.24, created on 2017-03-05 12:17:09
          compiled from "public/_template/front/registry/couple/preview/preview.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:174753862658b1e3c7b8cfb6_93343586%%*/
+/*%%SmartyHeaderCode:16050338558bbf3b5070863_95200820%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,34 +9,37 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5877b101ef77254a67f3ab3f027ab385efb778cf' => 
     array (
       0 => 'public/_template/front/registry/couple/preview/preview.tpl',
-      1 => 1488048865,
+      1 => 1488702590,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '174753862658b1e3c7b8cfb6_93343586',
+  'nocache_hash' => '16050338558bbf3b5070863_95200820',
   'variables' => 
   array (
     'user_session' => 0,
     'session' => 0,
     'BASE_URL' => 0,
+    'user_cart_items' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
+    'product' => 0,
+    'product_details' => 0,
     'user_products' => 0,
     'ip' => 0,
     'current_url' => 0,
     'page_url' => 0,
     'user_product' => 0,
     'user_pro' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b1e3c7d29a87_55409123',
+  'unifunc' => 'content_58bbf3b5355380_98263942',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b1e3c7d29a87_55409123')) {
-function content_58b1e3c7d29a87_55409123 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58bbf3b5355380_98263942')) {
+function content_58bbf3b5355380_98263942 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '174753862658b1e3c7b8cfb6_93343586';
+$_smarty_tpl->properties['nocache_hash'] = '16050338558bbf3b5070863_95200820';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -72,18 +75,75 @@ $_smarty_tpl->tpl_vars['session'] = $foreach_session_Sav;
 " />
 </form>
 
-<div id="carts" class="modal fade" role="dialog">
+<div id="carts" class="modal fade" role="dialog" >
     <div class="modal-dialog modal-dialog-background">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">Your Cart</h3>
             </div>
-            <div class="modal-body preview-modal-body">
-                <h4 class="text-center"><br><br><br><br>You have nothing in your cart. Get shopping!</h4>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="cart-description item">Image</th>
+                        <th class="cart-product-name item">Product Name</th>
+                        <th class="cart-total last-item">Quantity</th>
+                        <th class="cart-sub-total item">Subtotal</th>
+                    </tr>
+                    </thead><!-- /thead -->
+                    <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <div class="shopping-cart-btn">
+							<span class="">
+								<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/couple/checkout" class="btn btn-upper btn-primary pull-right outer-right-xs">Check Out</a>
+							</span>
+                            </div><!-- /.shopping-cart-btn -->
+                        </td>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <?php
+$_from = $_smarty_tpl->tpl_vars['user_cart_items']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['product'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['product']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->_loop = true;
+$foreach_product_Sav = $_smarty_tpl->tpl_vars['product'];
+?>
+                        <tr>
+                            <td class="cart-image">
+                                <a class="entry-thumbnail">
+                                    <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/uploads/products/<?php echo $_smarty_tpl->tpl_vars['product']->value['image'];?>
+" width="100" height="100" alt="">
+                                </a>
+                            </td>
+                            <td class="cart-product-name-info">
+                                <h4 class='cart-product-description'><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+product?product_id=<?php echo $_smarty_tpl->tpl_vars['product']->value['product_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['product_details']->value[0]['name'];?>
+</a></h4>
+                            </td>
+                            <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo $_smarty_tpl->tpl_vars['product']->value['quantity'];?>
+</span></td>
+                            <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+</span></td>
+                        </tr>
+                    <?php
+$_smarty_tpl->tpl_vars['product'] = $foreach_product_Sav;
+}
+?>
+                    </tbody>
+                </table>
+                </h4>
             </div>
         </div>
     </div>

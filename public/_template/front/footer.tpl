@@ -1,43 +1,3 @@
-<div id="brands-carousel" class="logo-slider wow fadeInUp">
-    <div class="logo-slider-inner">
-        <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
-            <div class="item m-t-15"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand1.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item m-t-10"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand2.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand3.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand4.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand5.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand6.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand2.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand4.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand1.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-
-            <div class="item"> <a href="#" class="image"> <img data-echo="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/brands/brand5.png" src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/blank.gif" alt=""> </a> </div>
-            <!--/.item-->
-        </div>
-        <!-- /.owl-carousel #logo-slider -->
-    </div>
-    <!-- /.logo-slider-inner -->
-
-</div>
-
-
 <footer id="footer" class="footer color-bg">
     <div class="footer-bottom">
         <div class="container">
@@ -137,9 +97,6 @@
                     <li class="fb pull-left"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
                     <li class="tw pull-left"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
                     <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
-                    <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
-                    <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
-                    <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
                     <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
                 </ul>
             </div>
@@ -158,13 +115,6 @@
         </div>
     </div>
 </footer>
-<!-- ============================================================= FOOTER : END============================================================= -->
-
-<!-- For demo purposes – can be removed on production -->
-
-<!-- For demo purposes – can be removed on production : End -->
-
-<!-- JavaScripts placed at the end of the document so the pages load faster -->
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/jquery-1.11.1.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap.min.js"></script>
 <script src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/js/bootstrap-hover-dropdown.min.js"></script>

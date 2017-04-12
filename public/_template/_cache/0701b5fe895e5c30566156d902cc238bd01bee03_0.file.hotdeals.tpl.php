@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-21 15:53:04
+<?php /* Smarty version 3.1.24, created on 2017-03-01 02:05:21
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:196563306058ac5450e57e55_89019314%%*/
+/*%%SmartyHeaderCode:150385268458b61e516c5350_13827762%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1487688593,
+      1 => 1488298254,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '196563306058ac5450e57e55_89019314',
+  'nocache_hash' => '150385268458b61e516c5350_13827762',
   'variables' => 
   array (
     'hot_deals' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58ac5451117ac9_99948663',
+  'unifunc' => 'content_58b61e51795887_33110538',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58ac5451117ac9_99948663')) {
-function content_58ac5451117ac9_99948663 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b61e51795887_33110538')) {
+function content_58b61e51795887_33110538 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '196563306058ac5450e57e55_89019314';
+$_smarty_tpl->properties['nocache_hash'] = '150385268458b61e516c5350_13827762';
 if ((($tmp = @$_smarty_tpl->tpl_vars['hot_deals']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 
   <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">

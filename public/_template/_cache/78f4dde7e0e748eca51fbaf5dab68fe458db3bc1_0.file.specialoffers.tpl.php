@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-21 15:53:05
+<?php /* Smarty version 3.1.24, created on 2017-03-01 02:05:21
          compiled from "/var/www/html/lucy/public/_template/front/specialoffers.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:192722207358ac54511913f6_52047906%%*/
+/*%%SmartyHeaderCode:174082705758b61e519cbcf9_49538248%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '78f4dde7e0e748eca51fbaf5dab68fe458db3bc1' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/specialoffers.tpl',
-      1 => 1487688593,
+      1 => 1488298254,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '192722207358ac54511913f6_52047906',
+  'nocache_hash' => '174082705758b61e519cbcf9_49538248',
   'variables' => 
   array (
     'special_offer' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58ac54511b7226_66116917',
+  'unifunc' => 'content_58b61e519faea2_29010960',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58ac54511b7226_66116917')) {
-function content_58ac54511b7226_66116917 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b61e519faea2_29010960')) {
+function content_58b61e519faea2_29010960 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '192722207358ac54511913f6_52047906';
+$_smarty_tpl->properties['nocache_hash'] = '174082705758b61e519cbcf9_49538248';
 if ((($tmp = @$_smarty_tpl->tpl_vars['special_offer']->value)===null||$tmp==='' ? '' : $tmp)) {?>
   <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 ">

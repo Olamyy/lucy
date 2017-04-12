@@ -8,16 +8,8 @@
                 <!-- Sign-in -->
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Registry Sharer</h4>
-                    <p class="">Select on option to share</p>
-                    {if $error|default:''}
-                        <div class="alert alert-danger">
-                            <strong>Oops! Something went wrong</strong>
-                            {foreach from=$error item=err}
-                                <p>{$err}</p>
-                            {/foreach}
-                        </div>
-                    {/if}
-                    <input type="email" name="email" class="form-control disabled" disabled  id="exampleInputEmail1">
+                    <p class="">Your registry url</p>
+                    <input type="text"  class="form-control disabled" disabled value="{$BASE_URL}registry/{$user_session[0]['registry_url_tag']}">
                     <div class="social-sign-in outer-top-xs">
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i>Share on Facebook</a>
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i>Share on Twitter</a>

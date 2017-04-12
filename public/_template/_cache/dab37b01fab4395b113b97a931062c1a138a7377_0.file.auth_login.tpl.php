@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-25 15:41:56
+<?php /* Smarty version 3.1.24, created on 2017-03-05 07:09:40
          compiled from "public/_template/front/registry/auth/auth_login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:35307721258b197b4c92326_50972677%%*/
+/*%%SmartyHeaderCode:21558622158bbaba492a588_41110276%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dab37b01fab4395b113b97a931062c1a138a7377' => 
     array (
       0 => 'public/_template/front/registry/auth/auth_login.tpl',
-      1 => 1488033712,
+      1 => 1488460600,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '35307721258b197b4c92326_50972677',
+  'nocache_hash' => '21558622158bbaba492a588_41110276',
   'variables' => 
   array (
     'error' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b197b4cc7ee8_21773419',
+  'unifunc' => 'content_58bbaba4b569a4_28518070',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b197b4cc7ee8_21773419')) {
-function content_58b197b4cc7ee8_21773419 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58bbaba4b569a4_28518070')) {
+function content_58bbaba4b569a4_28518070 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '35307721258b197b4c92326_50972677';
+$_smarty_tpl->properties['nocache_hash'] = '21558622158bbaba492a588_41110276';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -41,7 +41,6 @@ echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $
     <div class="container">
         <div class="sign-in-page">
             <div class="row">
-                <!-- Sign-in -->
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Sign in</h4>
                     <p class="">Hello, sign in to continue to your wedding registry.</p>
@@ -68,10 +67,6 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 ?>
                         </div>
                     <?php }?>
-                    <div class="social-sign-in outer-top-xs">
-                        <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-                        <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
-                    </div>
                     <form class="register-form outer-top-xs" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 index.php/auth/login?redirect=<?php if ((($tmp = @$_smarty_tpl->tpl_vars['session']->value[0]['from'])===null||$tmp==='' ? '' : $tmp) == "create_nav") {?>init<?php } else {
 }?>">
@@ -91,19 +86,9 @@ index.php/auth/login?redirect=<?php if ((($tmp = @$_smarty_tpl->tpl_vars['sessio
 auth/join" class="button btn-success"><i class=""></i>Click here to sign up</a>
                     </div>
                 </div>
-                <!-- Sign-in -->
-
-                <!-- create a new account -->
-
-                <!-- create a new account -->			</div><!-- /.row -->
-        </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-        </div><!-- /.logo-slider -->
-        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
-<!-- ============================================================= FOOTER ============================================================= -->
-
+            </div>
+        </div>
+        </div>
 <?php echo $_smarty_tpl->getSubTemplate ('../couple/dashboard/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 

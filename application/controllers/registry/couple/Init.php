@@ -13,8 +13,7 @@ class Init extends CI_Controller
 
         $this->load->library('session');
         $this->load->model('user_model');
-        $this->load->model('admin_model');
-        $this->data['pre_cart'] = $this->admin_model->get_cat_details();
+        $this->data['pre_cart'] = $this->user_model->get_cat_details();
 
         ///get user data from session
         $user_session = $this->session->userdata('user_session');
@@ -54,6 +53,7 @@ class Init extends CI_Controller
                 $update = $this->user_model->update($couple_details,'lucy_couple', array('couple_id'=>$this->check_user_ip[0]['couple_id']));
 
                 if($update){
+                    $this->session->set_userdata(array('user_session'=>$update));
                     redirect('index.php/registry/couple/init/conclude');
                 }
                 else
@@ -69,6 +69,7 @@ class Init extends CI_Controller
     public function conclude(){
         $error = array();
         if (!empty($_POST)) {
+
             $reg_url = $this->input->post('reg_url');
             $wedding_date = $this->input->post('wedding_date');
 
@@ -81,9 +82,10 @@ class Init extends CI_Controller
                                             'date_modified' => date('Y-m-d H:i:s'), 'walkthrough'=>1);
 
                 $update = $this->user_model->update($couple_details, 'lucy_couple', array('couple_id'=>$this->check_user_ip[0]['couple_id']));
+                $this->user_model->update(array('walkthrough'=>1), 'lucy_couple', array('couple_id'=>$this->check_user_ip[0]['couple_id']));
 
                 if($update){
-                    $this->session->set_userdata(array('user_session'=>$this->check_user_ip));
+                    $this->session->set_userdata(array('user_session'=>$update));
                     redirect('index.php/registry/couple/dashboard');
                 }
                 else

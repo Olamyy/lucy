@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-21 16:48:18
+<?php /* Smarty version 3.1.24, created on 2017-03-05 14:45:42
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:164439036558ac614276f716_07143946%%*/
+/*%%SmartyHeaderCode:24517082358bc1686b2e7c3_56717175%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1487691052,
+      1 => 1488721539,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '164439036558ac614276f716_07143946',
+  'nocache_hash' => '24517082358bc1686b2e7c3_56717175',
   'variables' => 
   array (
     'user_session' => 0,
@@ -23,17 +23,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58ac61427bb5c9_54420011',
+  'unifunc' => 'content_58bc1686bf06f2_60937938',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58ac61427bb5c9_54420011')) {
-function content_58ac61427bb5c9_54420011 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58bc1686bf06f2_60937938')) {
+function content_58bc1686bf06f2_60937938 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '164439036558ac614276f716_07143946';
-?>
-<!-- ============================================== TOP MENU : END ============================================== -->
+$_smarty_tpl->properties['nocache_hash'] = '24517082358bc1686b2e7c3_56717175';
+if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
 ">
+<?php }?>
 
 <div class="main-header">
   <div class="container">
@@ -53,13 +53,13 @@ $_smarty_tpl->properties['nocache_hash'] = '164439036558ac614276f716_07143946';
           <form>
             <div class="control-group">
               <ul class="categories-filter animate-dropdown">
-                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Filter Search <b class="caret"></b></a>
+                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" >Filter Search <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" >
                     <li class="menu-header">Computer</li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Wedding</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Souvenirs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Made In Nigeria</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Customized</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Wedding</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Souvenirs</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Made In Nigeria</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1">Customized</a></li>
                   </ul>
                 </li>
               </ul>
@@ -67,66 +67,36 @@ $_smarty_tpl->properties['nocache_hash'] = '164439036558ac614276f716_07143946';
               <a class="search-button" href="#" ></a> </div>
           </form>
         </div>
-        <!-- /.search-area -->
-        <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
-      <!-- /.top-search-holder -->
-
+      </div>
       <div class="col-xs-12 col-sm-12 col-md-4 animate-dropdown top-cart-row">
-        <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
         <div class="col-xs-12 col-sm-12 col-md-8">
           <div class="dropdown dropdown-cart">
-            <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/checkout/cart" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
               <div class="items-cart-inner">
                 <div class="top-cart">  </div>
-                <div class="total-price-basket"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
+                <div class="total-price-basket"  id="checkoutbtn"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
               </div>
             </a>
-            <ul class="dropdown-menu">
-              <li>
-                <div class="cart-item product-summary">
-                  <div class="row" id="cart_details">
-                    <div class="col-xs-8" id="empty_cart_indicator">
-                      <h5 class="name">Empty Cart</h5>
-                    </div>
-                  </div>
-                </div>
 
-
-              </li>
-            </ul>
-            <!-- /.dropdown-menu-->
           </div>
-          <!-- /.dropdown-cart -->
-
-
         </div>
-
         <div class="col-xs-12 col-sm-12 col-md-4">
-          <!-- /.header-top-inner -->
           <ul class="account">
+            <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>
             <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/couple/action/settings">
-                <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>Hi,
-                <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
+registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
 
-                <?php } else { ?>
-            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+              </a></li>
+            <?php } else { ?>
+              <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 auth/login">My Account</a></li>
             <?php }?>
           </ul>
         </div>
-        <!-- /.top-cart-row -->
       </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
-
   </div>
-
-  <!-- /.main-header -->
-
-  <!-- ============================================== NAVBAR ============================================== -->
   <div class="header-nav animate-dropdown">
     <div class="container">
       <div class="yamm navbar navbar-default" role="navigation">

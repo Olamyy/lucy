@@ -20,7 +20,7 @@
         <div class="product-slider">
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
             {foreach from=$new_products item=new_product key=eKey}
-              <input type="hidden" value="{$new_product.product_id}" id="product_id">
+              <input type="hidden" value="{$new_product.product_id}" id="product_id" class="productID">
               <div class="item item-carousel">
                 <div class="products">
                   <div class="product">

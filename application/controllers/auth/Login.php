@@ -24,6 +24,7 @@ class Login extends CI_Controller
     public function index()
     {
         $this->data['user_session'] = $this->session->userdata('user_session');
+
         if (!empty($_POST)) {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
@@ -50,6 +51,7 @@ class Login extends CI_Controller
                             'success_login'=>$user_ip['success_login'] + 1),'misc',  array('ip'=>$ip));
                         $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0)));
                         if (empty($redirect_uri)){
+                            print_r($this->session->userdata());
                             redirect('registry/couple/dashboard');
                         }
                         else
@@ -70,7 +72,6 @@ class Login extends CI_Controller
                                 'success_login'=>$user_ip['success_login'] + 1),'misc',  array('ip'=>$ip));
                             $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0)));
                             redirect('/');
-
                         }
                         else
                             $this->user_model->update(array('login_attempt'=>$user_ip[0]['login_attempt'] + 1,
@@ -84,7 +85,7 @@ class Login extends CI_Controller
                 }
             }
         }
-            $this->smarty->view('front/registry/auth/auth_login.tpl', $this->data);
+        $this->smarty->view('front/registry/auth/auth_login.tpl', $this->data);
 
 
     }

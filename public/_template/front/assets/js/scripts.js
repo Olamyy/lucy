@@ -385,45 +385,29 @@ jQuery(document).ready(function() {
   else {
     $('#settings').removeClass('active');
     $('#account').addClass('active');
-
   }
 
+
+  var hideDeliveryDetails = function () {
+    $('#delivery_options').hide('slow');
+  };
+
+  var showDeliveryDetails = function () {
+    $('#delivery_options').show();
+  };
+
+  var cartConfig = {};
+
+  $('#address_choice_option').on('click', function(){
+    cartConfig['delivery_address'] = $('#address_options').find(":selected").text();
+    hideDeliveryDetails();
+  });
 
   $('#uploader').on('click', function(){
     $("input").trigger("click");
     var fileSelect = document.getElementById('image_upload');
     var files = fileSelect.files;
     console.log(files);
-  });
-
-  jQuery('.single-back-img').on('click', function () {
-
-    dashboard_image_setter($(this).attr('src'));
-
-// For IE we need to remove quotes to the proper url
-    var couple_id = $('#couple_id').val();
-    var bg_image = $('.main-back-img').css('background-image').replace(/(url\(|\)|")/g, '');
-
-    $.ajax(
-        {
-          type: "GET",
-          url: $('#base_url').val()+ '/api/updates/dashboard_image',
-          data: {
-            "couple_id": couple_id,
-            "bg_image" : bg_image
-          },
-          dataType: 'json',
-          async : false,
-          success: function (response) {
-            console.log(response)
-
-          },
-          error : function(response){
-            console.log(response)
-
-          }
-        });
-
   });
 
   jQuery('#setVowMessageButton').on('click', function () {
@@ -440,11 +424,9 @@ jQuery(document).ready(function() {
           dataType: 'json',
           async : false,
           success: function (response) {
-            console.log( $('#Vmessage').text(vow_message));
           },
           error : function(response){
-            console.log(response);
-            //toastr.error('Unable to set vow message');
+            toastr.error('Unable to set vow message');
           }
         });
 
@@ -464,12 +446,9 @@ jQuery(document).ready(function() {
           dataType: 'json',
           async : false,
           success: function (response) {
-            console.log(response);
-            console.log( $('#Tmessage').text(votmessage));
+            $('#Tmessage').text(votmessage);
           },
           error : function(response){
-            console.log(couple_id, votmessage);
-            console.log(response);
           }
         });
 
@@ -508,42 +487,51 @@ jQuery(document).ready(function() {
 
   var dashboard_image_setter = function(image_url){
     var bg_img = $("#dashboard_image").val();
-    image_url = image_url || bg_img;
-
-    $('.main-back-img').css( { backgroundImage: 'url(' + image_url + ')' } );
+    console
+        .log(bg_img);
+    image_url = image_url || bg_img
+    $('.main-couple-img').css('background-image', 'url(' + image_url + ')');
     $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
   };
 
+  jQuery('.single-back-img').on('click', function () {
 
-  /*
+    var new_bg_image = $(this).attr('src');
 
-   <ul class="dropdown-menu">
-   <li>
-   <div class="cart-item product-summary">
-   <div class="row">
-   <div class="col-xs-4">
-   <div class="image"> <a href="detail.html"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/cart.jpg" alt=""></a> </div>
-   </div>
-   <div class="col-xs-7">
-   <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
-   <div class="price">$600.00</div>
-   </div>
-   <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-   </div>
-   </div>
-   <!-- /.cart-item -->
-   <div class="clearfix"></div>
-   <hr>
-   <div class="clearfix cart-total">
-   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
-   <div class="clearfix"></div>
-   <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-   <!-- /.cart-total-->
+// For IE we need to remove quotes to the proper url
+    var couple_id = $('#couple_id').val();
+    var bg_image = $('.main-couple-img').css('backgroundImage');
 
-   </li>
-   </ul>
+    $.ajax(
+        {
+          type: "GET",
+          url: $('#base_url').val()+ '/api/updates/dashboard_image',
+          data: {
+            "couple_id": couple_id,
+            "bg_image" : new_bg_image
+          },
+          dataType: 'json',
+          async : false,
+          success: function (response) {
+            dashboard_image_setter(new_bg_image);
+          },
+          error : function(response){
+            toastr.error('Unable to set dashboard image.')
+          }
+        });
 
-   */
+  });
+
+  var hide_product_details = function(){
+    $('#product_cart_details').css("display","none");
+  };
+
+  var show_product_details = function(){
+    $('#product_cart_details').css("display","block");
+  };
+
+  hide_product_details();
+
   dashboard_image_setter();
 
   var getCartDetails = function(){
@@ -563,19 +551,12 @@ jQuery(document).ready(function() {
             for (var key in user_details.cart_data) {
               if (user_details.cart_data.hasOwnProperty(key)) {
                 sums.push(user_details.cart_data[key]['quantity'] * user_details.cart_data[key]['price']);
-                //$("#empty_cart_indicator").remove();
-                ////var cart_html = '<div class="col-xs-4"><div class="image"> ' +
-                ////    '<a href="detail.html"><img src=' + template_url + '/uploads/products/' + user_details.cart_data[key]["image"]>'\
-                ////                    </a></div></div><div class="col-xs-7">\<' +
-                //    'h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3><div class="price">$600.00</div></div><div class="col-xs-1 action">\ ' +
-                //    '<a href="#"><i class="fa fa-trash"></i></a> </div></div></div><div class="clearfix"></div>\
-                //    <hr><div class="clearfix cart-total"><div class="pull-right"> <span class="text">Sub Total :</span><span class="price">$600.00</span> </div>\
-                //    <div class="clearfix"></div><a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>';
-                //$("#cart_details").append(cart_html);
+                $("#empty_cart_indicator").remove();
+                show_product_details();
               }
             }
             var sum = sums.reduce(function(pv, cv) { return pv + cv; }, 0);
-            $('#price_count_span').html(user_details.cart_count + '  items /');
+            $('#price_count_span').html(user_details.cart_count + '  item(s) /');
             $('#cart_price_sum').html(sum);
           }
         }
@@ -608,7 +589,6 @@ jQuery(document).ready(function() {
                   toastr.success('The product has been removed');
                 },
                 error : function(response){
-                  console.log(response);
                 }
               });
         }, function(dismiss) {
@@ -637,11 +617,9 @@ jQuery(document).ready(function() {
           dataType: 'json',
           async : false,
           success: function (response) {
-            console.log(response)
             toastr.info('The product has been added to your registry');
           },
           error : function(response){
-            console.log(response);
             toastr.warning('You need to login to add to registry');
           }
         });
@@ -652,13 +630,16 @@ jQuery(document).ready(function() {
     toastr.info('The product has been set up for comparison.');
   });
 
+  $('#checkoutbtn').on('click', function(){
+    var base_url = $('#base_url').val();
+    window.location.href = base_url + 'registry/checkout/cart';
+  });
+
   $('#logout_btn').on('click', function(event){
     event.preventDefault();
     var couple_id = $('#couple_id').val();
     var user_ip = $('#user_ip').val();
     var base_url = $('#base_url').val();
-
-    console.log(base_url, user_ip, couple_id);
 
     $.ajax(
         {
@@ -674,7 +655,6 @@ jQuery(document).ready(function() {
             window.location.href = base_url;
           },
           error : function(response){
-            console.log(response);
           }
         });
 
@@ -686,8 +666,9 @@ jQuery(document).ready(function() {
     var product_id = $('#product_id').val();
     var quantity = $('#quantity').val();
     var base_url = $('#base_url').val();
-
-    console.log(user_ip, product_id, quantity, base_url);
+    var date = new Date();
+    var minutes = 30;
+    date.setTime(date.getTime() + (minutes * 60 * 1000));
 
     $.ajax(
         {
@@ -701,14 +682,14 @@ jQuery(document).ready(function() {
           dataType: 'json',
           async : false,
           success: function (response) {
-            var user_details =  Cookies.set('user_details', {'user_ip':user_ip,
-              'cart_data':response.response.data,
-              'cart_count':response.response.item_count});
-            toastr.info('The product has been added to your cart');
-            getCartDetails()
+            Cookies.set('user_details',
+            {'user_ip':user_ip,
+              'cart_data':response.response.cart_data,
+              'cart_count':response.response.cart_count},{ expires: date});
+                toastr.info('The product has been added to your cart');
+            getCartDetails();
           },
           error : function(response){
-            console.log(response);
             toastr.error('Unable to add the product to your cart');
           }
         });

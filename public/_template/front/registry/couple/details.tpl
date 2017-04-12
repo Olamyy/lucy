@@ -28,15 +28,8 @@
                             {/foreach}
                         </div>
                     {/if}
-                    {if $user_session.coming_from == "create_nav"}
-                        {else}
-                        <div class="alert alert-success alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <strong>Hi, <br> We noticed <b>you</b> have a pending registration so we brought you here to continue it.</strong><br>
-                            <strong class="alert-link">However, you can restart your registration by clicking <a href="{$BASE_URL}index.php/auth/login/nosession">here.</a> </strong>
-                        </div>
+                    {if $user_session|default:''}
                     {/if}
-
                     <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/registry/couple/init">
                         <div class="form-group">
                             <h4 class="">Groom Details</h4>

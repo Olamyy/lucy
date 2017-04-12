@@ -9,9 +9,7 @@ class Category extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('product_model');
-        $this->load->model('category_model');
-
+        $this->load->model('user_model');
 
     }
 
@@ -24,7 +22,7 @@ class Category extends CI_Controller
     {
 
 
-        $category_details = $this->category_model->get("lucy_category_description", 0, 0);
+        $category_details = $this->user_model->get("lucy_category_description", 0, 0);
 
 
         $this->data["category_details"] = $category_details;

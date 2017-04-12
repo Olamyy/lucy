@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-24 18:21:13
+<?php /* Smarty version 3.1.24, created on 2017-03-02 14:02:37
          compiled from "public/_template/front/registry/couple/share/share.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:74580434658b06b890c7a61_33999162%%*/
+/*%%SmartyHeaderCode:50143295158b817ed2c9c77_14120082%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4d2c27fa42e4ae96d24a706081687ff468bdb815' => 
     array (
       0 => 'public/_template/front/registry/couple/share/share.tpl',
-      1 => 1487677328,
+      1 => 1488459754,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '74580434658b06b890c7a61_33999162',
+  'nocache_hash' => '50143295158b817ed2c9c77_14120082',
   'variables' => 
   array (
-    'error' => 0,
-    'err' => 0,
+    'BASE_URL' => 0,
+    'user_session' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b06b89117879_11374864',
+  'unifunc' => 'content_58b817ed2ec841_23213075',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b06b89117879_11374864')) {
-function content_58b06b89117879_11374864 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b817ed2ec841_23213075')) {
+function content_58b817ed2ec841_23213075 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '74580434658b06b890c7a61_33999162';
+$_smarty_tpl->properties['nocache_hash'] = '50143295158b817ed2c9c77_14120082';
 echo $_smarty_tpl->getSubTemplate ('../../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -42,30 +42,10 @@ echo $_smarty_tpl->getSubTemplate ('../../../header.tpl', $_smarty_tpl->cache_id
                 <!-- Sign-in -->
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Registry Sharer</h4>
-                    <p class="">Select on option to share</p>
-                    <?php if ((($tmp = @$_smarty_tpl->tpl_vars['error']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-                        <div class="alert alert-danger">
-                            <strong>Oops! Something went wrong</strong>
-                            <?php
-$_from = $_smarty_tpl->tpl_vars['error']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['err'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['err']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
-$_smarty_tpl->tpl_vars['err']->_loop = true;
-$foreach_err_Sav = $_smarty_tpl->tpl_vars['err'];
-?>
-                                <p><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
-</p>
-                            <?php
-$_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
-}
-?>
-                        </div>
-                    <?php }?>
-                    <input type="email" name="email" class="form-control disabled" disabled  id="exampleInputEmail1">
+                    <p class="">Your registry url</p>
+                    <input type="text"  class="form-control disabled" disabled value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['registry_url_tag'];?>
+">
                     <div class="social-sign-in outer-top-xs">
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i>Share on Facebook</a>
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i>Share on Twitter</a>

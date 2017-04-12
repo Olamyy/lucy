@@ -1,12 +1,8 @@
-
-<!-- /.container -->
 </div>
-<!-- /.header-top -->
-<!-- ============================================== TOP MENU : END ============================================== -->
 <div class="main-header">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+            <div class="col-xs-12 col-sm-12 col-md-2 logo-holder">
                 <!-- ============================================================= LOGO ============================================================= -->
                 <div class="logo"> <a href="{$BASE_URL}"> <img src="http://placehold.it/113x26" alt="logo"> </a> </div>
                 <!-- /.logo -->
@@ -20,13 +16,13 @@
                     <form>
                         <div class="control-group">
                             <ul class="categories-filter animate-dropdown">
-                                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown">Categories <b class="caret"></b></a>
+                                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Filter Search <b class="caret"></b></a>
                                     <ul class="dropdown-menu" role="menu" >
                                         <li class="menu-header">Computer</li>
-                                        <li role="presentation"> <input type="hidden" value="clothing_category" <a role="menuitem" tabindex="-1">- Clothing</a></li>
-                                        <li role="presentation"><input type="hidden" value="electronics_category" <a role="menuitem" tabindex="-1">- Electronics</a></li>
-                                        <li role="presentation"><input type="hidden" value="electronics_category" <a role="menuitem" tabindex="-1" >- Shoes</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" <a role="menuitem" tabindex="-1">- Watches</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Wedding</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Souvenirs</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Made In Nigeria</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Customized</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -38,56 +34,70 @@
                 <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
             <!-- /.top-search-holder -->
 
-            <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+            <div class="col-xs-12 col-sm-12 col-md-4 animate-dropdown top-cart-row">
                 <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
-
-                <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-                        <div class="items-cart-inner">
-                            <div class="top-cart">  </div>
-
-                            <div class="total-price-basket"> <span class="lbl">2 items /</span> <span class="total-price"> <span class="sign">$</span><span class="value">600.00</span> </span> </div>
-                        </div>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="cart-item product-summary">
-                                <div class="row">
-                                    <div class="col-xs-4">
-                                        <div class="image"> <a href="detail.html"><img src="assets/images/cart.jpg" alt=""></a> </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
-                                        <div class="price">$600.00</div>
-                                    </div>
-                                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-                                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                    <div class="dropdown dropdown-cart">
+                        <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+                            <div class="items-cart-inner">
+                                <div class="top-cart">  </div>
+                                <div class="total-price-basket"> <span class="lbl" id="price_count_span">0 items /</span> <span class="total-price"> <span class="sign">N</span><span class="value" id="cart_price_sum">0</span> </span> </div>
                             </div>
-                            <!-- /.cart-item -->
-                            <div class="clearfix"></div>
-                            <hr>
-                            <div class="clearfix cart-total">
-                                <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="cart-item product-summary">
+                                    <div class="row" id="cart_details">
+                                        <div class="col-xs-8" id="empty_cart_indicator">
+                                            <h5 class="name">Empty Cart</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </li>
+                        </ul>
+                        <ul class="dropdown-menu" id="">
+                            <li>
+                                <div class="cart-item product-summary">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="image"> <a href="detail.html"><img src="assets/images/cart.jpg" alt=""></a> </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <h3 class="name"><a href="index8a95.html?page-detail">Simple Product</a></h3>
+                                            <div class="price">$600.00</div>
+                                        </div>
+                                        <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
+                                    </div>
+                                </div>
+                                <!-- /.cart-item -->
                                 <div class="clearfix"></div>
-                                <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                            <!-- /.cart-total-->
+                                <hr>
+                                <div class="clearfix cart-total">
+                                    <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                                    <div class="clearfix"></div>
+                                    <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                                <!-- /.cart-total-->
 
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-menu-->
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- /.dropdown-cart -->
-
-                <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
-            <!-- /.top-cart-row -->
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <ul class="account">
+                        {if $user_session[0].is_logged_in|default: ''}
+                            <li><a href="{$BASE_URL}registry/couple/action/settings">Hi, {$user_session[0].groom_first_name|default: ''}
+                                </a></li>
+                        {else}
+                            <li><a href="{$BASE_URL}auth/login">My Account</a></li>
+                        {/if}
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- /.row -->
-
-    </div>
-            <!-- /.top-cart-row -->
         </div>
-        <!-- /.row -->
-
-    <!-- /.container -->
 <div class="header-nav animate-dropdown">
     <div class="container">
         <div class="yamm navbar navbar-default" role="navigation">
@@ -124,27 +134,14 @@
                                 </ul>
                             </li>
                         </ul>
-                        <!-- /.navbar-nav -->
                         <div class="clearfix"></div>
                     </div>
-                    <!-- /.nav-outer -->
                 </div>
-                <!-- /.navbar-collapse -->
-
             </div>
-            <!-- /.nav-bg-class -->
         </div>
-        <!-- /.navbar-default -->
     </div>
-    <!-- /.container-class -->
 
 </div>
 
 </div>
-<!-- /.main-header -->
-
-<!-- ============================================== NAVBAR ============================================== -->
-<!-- /.header-nav -->
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>

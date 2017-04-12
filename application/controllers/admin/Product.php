@@ -14,7 +14,6 @@ class Product extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('product_model');
     }
 
     public function index(){
@@ -103,7 +102,7 @@ class Product extends CI_Controller
         $this->smarty->view('admin/product/add.tpl', $this->data);
     }
 
-    private function handle_image_upload(){
+    private function handle_image_upload($image){
         $image_config = array(
             'upload_path'=>FCPATH. "public/_templates/uploads",
             'allowed_types'=>'jpg|png|jpeg',
@@ -120,7 +119,7 @@ class Product extends CI_Controller
 
     public function view(){
 
-        $product_details = $this->product_model->get("lucy_product", 0, 0);
+        $product_details = $this->user_model->get("lucy_product", 0, 0);
         $this->data['product_details'] = $product_details;
 
         $error = array();

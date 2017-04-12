@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-24 22:49:39
+<?php /* Smarty version 3.1.24, created on 2017-03-06 18:26:22
          compiled from "public/_template/front/registry/couple/dashboard/manage.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:103649925758b0aa730d9be9_17103625%%*/
+/*%%SmartyHeaderCode:151715052758bd9bbe8745f3_34296973%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,15 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '640c56e1df665a495d2c827b7d22830c5eb12e47' => 
     array (
       0 => 'public/_template/front/registry/couple/dashboard/manage.tpl',
-      1 => 1487972970,
+      1 => 1488821179,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '103649925758b0aa730d9be9_17103625',
+  'nocache_hash' => '151715052758bd9bbe8745f3_34296973',
   'variables' => 
   array (
-    'error' => 0,
-    'err' => 0,
     'user_session' => 0,
     'BASE_URL' => 0,
     'bg_images' => 0,
@@ -32,49 +30,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b0aa731ad844_84105329',
+  'unifunc' => 'content_58bd9bbe96dd57_51405601',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b0aa731ad844_84105329')) {
-function content_58b0aa731ad844_84105329 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58bd9bbe96dd57_51405601')) {
+function content_58bd9bbe96dd57_51405601 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '103649925758b0aa730d9be9_17103625';
+$_smarty_tpl->properties['nocache_hash'] = '151715052758bd9bbe8745f3_34296973';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("./nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
-
-       <!-- ============================================== HEADER : END ============================================== -->
-
-<?php if ((($tmp = @$_smarty_tpl->tpl_vars['error']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-    <div class="alert alert-danger">
-        <strong>Oops! Something went wrong</strong>
-        <?php
-$_from = $_smarty_tpl->tpl_vars['error']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['err'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['err']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
-$_smarty_tpl->tpl_vars['err']->_loop = true;
-$foreach_err_Sav = $_smarty_tpl->tpl_vars['err'];
-?>
-            <p><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
-</p>
-        <?php
-$_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
-}
-?>
-    </div>
-<?php }?>
-
-<div class="breadcrumb" xmlns="http://www.w3.org/1999/html"><!-- /.container -->
-</div><!-- /.breadcrumb -->
-<!-- ============================================== HEADER : END ============================================== -->
 <form>
     <input type="hidden" name="name"  value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
 " id="couple_id" class="couples-name">
@@ -87,8 +56,9 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 <div class="body-content outer-top-vs" id="top-banner-and-menu">
     <div class="container">
         <div class="row">
+            <h2 class="test"></h2>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="container-fluid main-back-img">
+                <div class="container-fluid main-couple-img">
                     <button type="button" class="edit-btn" data-toggle="modal" data-target="#backgrounds">
                         edit background
                     </button>
@@ -113,8 +83,8 @@ echo $_smarty_tpl->tpl_vars['user_session']->value[0]['wedding_date'];
                             <div class="modal-body modal-body-background">
                                 <div class="upload-wrap col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                                     <div class="fileUpload text-center ">
-                                        <span class="glyphicon glyphicon-camera"></span><br>
-                                        <span>upload photo</span>
+                                        <span class="fa fa-camera"></span><br>
+                                        <span style="padding-bottom: 1000px">upload photo</span>
                                         <input type="file" class="upload"/>
                                     </div>
                                 </div>

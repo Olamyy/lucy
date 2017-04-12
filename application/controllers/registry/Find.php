@@ -12,9 +12,8 @@ class Find extends CI_Controller
 
         $this->load->library('session');
         $this->load->model('user_model');
-        $this->load->model('admin_model');
 
-        $this->data['pre_cart'] = $this->admin_model->get_cat_details();
+        $this->data['pre_cart'] = $this->user_model->get_cat_details();
 
         ///get user data from session
         $user_session = $this->session->userdata('user_session');

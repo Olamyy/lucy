@@ -5922,14 +5922,12 @@ age-container #owl-main .owl-next {
 /*===================================================================================*/
 /* Hydee
 /*===================================================================================*/
-
-.main-back-img{
+.main-couple-img{
   height: 400px;
-  background: url('../../../uploads/files/bgimagecouple2.png') no-repeat;
+  background: url('../../../uploads/files/bgimagecouple2.png') no-repeat !important;
   background-size: cover;
   position: relative;
-  width: auto;
-}
+  width: auto;}
 
 
 .edit-btn{
@@ -5946,7 +5944,6 @@ age-container #owl-main .owl-next {
   outline: none !important;
   letter-spacing: .1em;
   cursor: pointer;
-  background-color: #fff;
   color: #a8a8aa;
   transition: all 0.5s;
 }
@@ -6230,21 +6227,17 @@ age-container #owl-main .owl-next {
 }
 
 .account{
-  /*border: 1px solid white;*/
   display: block;
   height: inherit;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 10px auto;
   padding: 15px 10px 13px 10px;
-
 }
 
 .account>li>a{
   color: white !important;
   font-weight: 400;
 }
+
 
 /*<!-- ============================================== REGISTRY PAGE ============================================== -->*/
 
