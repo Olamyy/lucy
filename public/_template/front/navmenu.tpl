@@ -1,5 +1,9 @@
 {if $user_session|default:''}
-<input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+  {if $user_session[0].regType == "wedding"}
+    <input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+  {/if}
+  {else}
+  <input type="hidden" id="user_id" value="{$user_session[0].user_id}">
 {/if}
 
 <div class="main-header">
@@ -18,17 +22,6 @@
         <div class="search-area">
           <form>
             <div class="control-group">
-              <ul class="categories-filter animate-dropdown">
-                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" >Filter Search <b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu" >
-                    <li class="menu-header">Computer</li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Wedding</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Souvenirs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Made In Nigeria</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Customized</a></li>
-                  </ul>
-                </li>
-              </ul>
               <input class="search-field" placeholder="Search here..." />
               <a class="search-button" href="#" ></a> </div>
           </form>
@@ -79,8 +72,8 @@
                           <div class="col-xs-12 col-menu">
                             <ul class="links">
                               <li><a href="{$BASE_URL}registry/find">Find Registry</a></li>
-                              <li><a href="{$BASE_URL}registry/create">Create Registry</a></li>
-                              <li><a href="{$BASE_URL}registry/auth/login">Manage Registry</a></li>
+                              <li><a href="{$BASE_URL}auth/join">Create Registry</a></li>
+                              <li><a href="{$BASE_URL}auth/login">Manage Registry</a></li>
                               <li><a href="{$BASE_URL}registry/whyus">Why Lucy Registry?</a></li>
                             </ul>
                           </div>
@@ -93,9 +86,25 @@
                 {if $pre_cart|default: ''}
 
                   {foreach from=$pre_cart item=data key=eKey}
-                    <li> <a href="{$BASE_URL}category?cat_id={$data.category_id}">{$data.title}</a>
+                  <li class="dropdown"> <a href="{$BASE_URL}category?cat_id={$data.category_id}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick="location.href ='{$BASE_URL}category?cat_id={$data.category_id}'">{$data.title}</a>
+                  <ul class="dropdown-menu pages">
+                    <li>
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-xs-12 col-menu">
+                            <ul class="links">
+                              {foreach from=$data.pre_cat item=cat_cart key=eKey}
+                                <li><a href="{$BASE_URL}registry/find">{$cat_cart}</a></li>
+                              {/foreach}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </li>
+                  </ul>
+                </li>
                   {/foreach}
+
                 {/if}
               </ul>
               <!-- /.navbar-nav -->

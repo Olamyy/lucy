@@ -7,12 +7,10 @@
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
                 <li><a href="{$BASE_URL}">Home</a></li>
-                <li class='active'>{$category_details[0]["title"]}</li>
+                <li class='active'>{$category_details[0]['title']}</li>
             </ul>
         </div>
-        <!-- /.breadcrumb-inner -->
     </div>
-    <!-- /.container -->
 </div>
 
 <div class="body-content outer-top-xs">

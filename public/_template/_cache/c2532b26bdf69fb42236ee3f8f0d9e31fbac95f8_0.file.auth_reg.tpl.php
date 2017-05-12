@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-05 13:57:39
+<?php /* Smarty version 3.1.24, created on 2017-05-10 01:52:47
          compiled from "public/_template/front/registry/auth/auth_reg.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:191644711058bc0b43f001a9_88740200%%*/
+/*%%SmartyHeaderCode:20460970595912645f47e7b8_65995346%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2532b26bdf69fb42236ee3f8f0d9e31fbac95f8' => 
     array (
       0 => 'public/_template/front/registry/auth/auth_reg.tpl',
-      1 => 1488718107,
+      1 => 1494377566,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '191644711058bc0b43f001a9_88740200',
+  'nocache_hash' => '20460970595912645f47e7b8_65995346',
   'variables' => 
   array (
     'error' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bc0b44109bb8_43149459',
+  'unifunc' => 'content_5912645f565ed8_57535529',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bc0b44109bb8_43149459')) {
-function content_58bc0b44109bb8_43149459 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5912645f565ed8_57535529')) {
+function content_5912645f565ed8_57535529 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '191644711058bc0b43f001a9_88740200';
+$_smarty_tpl->properties['nocache_hash'] = '20460970595912645f47e7b8_65995346';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -76,11 +76,26 @@ auth/join">
                             <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
                             <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
                         </div>
-                        <div class="social-sign-in outer-top-xs pull-right">
+                        <div class="sidebar-widget product-tag wow fadeInUp outer-top-vs">
+                            <h3 class="section-title">Registry Type</h3>
+                            <div class="sidebar-widget-body outer-top-xs">
+                                <div class="tag-list"> <a class="item" title="Phone" id="wedding" href="#">Wedding</a>
+                                    <a class="item" id="birthday">Birthday</a>
+                                    <a class="item" id="anniv">Wedding Anniversary </a>
+                                    <a class="item" id="houseWarming">House Warming</a>
+                                    <a class="item" id="childNaming">Child Naming</a>
+                                    <a class="item" id="lucky">Feeling Lucky</a>
+                            </div>
+                        </div>
+                            <input type="hidden" id="regType" name="regType" value="">
+                            <div class="social-sign-in outer-top-xs pull-right">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 auth/login" class="button btn-success"><i class=""></i>Click here to sign in</a>
                         </div>
+
+                            <br>
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
+                        </div>
                     </form>
                 </div>
             </div>

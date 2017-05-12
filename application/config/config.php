@@ -19,6 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 //$config['base_url'] = 'http://6ffcd44e.ngrok.io/lucy/';
+//$config['base_url'] = 'http://695821fd.ngrok.io/lucy/';
 $config['base_url'] = 'http://localhost/lucy/';
 
 
@@ -359,7 +360,7 @@ $config['encryption_key'] = '';
 |
 */
 
-$config['sess_use_database'] = TRUE;
+$config['sess_use_database'] = FALSE;
 $config['sess_driver'] = 'files';
 $config['sess_table_name'] = 'ci_sessions';
 $config['sess_expiration'] = 7200;

@@ -9,7 +9,8 @@
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Registry Sharer</h4>
                     <p class="">Your registry url</p>
-                    <input type="text"  class="form-control disabled" disabled value="{$BASE_URL}registry/{$user_session[0]['registry_url_tag']}">
+                    {foreach from=$current_user item=_user}
+                    <input type="text"  class="form-control disabled" disabled value="{$BASE_URL}registry/{$_user.registry_url_tag}">
                     <div class="social-sign-in outer-top-xs">
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i>Share on Facebook</a>
                         <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i>Share on Twitter</a>
@@ -27,6 +28,8 @@
                         <button class="btn-upper btn btn-success" id="extra_email">Add new email</button>
                         <button class="btn-upper btn btn-warning" id="remove_extra">Remove Last Email</button>
                 </div>
+                {/foreach}
+
                 <!-- Sign-in -->
 
                 <!-- create a new account -->

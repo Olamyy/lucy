@@ -12,7 +12,7 @@
                 <a class="item" title="Phone" href="{$BASE_URL}registry/couple/action/settings" >Setup Shipping</a>
             </li>
             <li class="tag-list">
-                <a class="item" title="Phone" href="{$BASE_URL}registry/manage">Invite Partner</a>
+                <a class="item" title="Phone" href="{$BASE_URL}registry/couple/action/manage">Invite Partner</a>
             </li>
             <li class="tag-list">
                 <a class="item" title="Phone"  href="{$BASE_URL}registry/couple/live">Go Live</a>

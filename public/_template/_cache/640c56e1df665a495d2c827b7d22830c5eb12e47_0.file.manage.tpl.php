@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-06 18:26:22
+<?php /* Smarty version 3.1.24, created on 2017-04-16 09:07:39
          compiled from "public/_template/front/registry/couple/dashboard/manage.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:151715052758bd9bbe8745f3_34296973%%*/
+/*%%SmartyHeaderCode:188491129658f3264b979148_25422816%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,15 +9,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '640c56e1df665a495d2c827b7d22830c5eb12e47' => 
     array (
       0 => 'public/_template/front/registry/couple/dashboard/manage.tpl',
-      1 => 1488821179,
+      1 => 1492330054,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '151715052758bd9bbe8745f3_34296973',
+  'nocache_hash' => '188491129658f3264b979148_25422816',
   'variables' => 
   array (
-    'user_session' => 0,
+    'current_user' => 0,
+    '_user' => 0,
     'BASE_URL' => 0,
+    'user' => 0,
     'bg_images' => 0,
     'SMARTY_VIEW_FOLDER' => 0,
     'bg_image' => 0,
@@ -30,26 +32,43 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bd9bbe96dd57_51405601',
+  'unifunc' => 'content_58f3264ba7ac13_34938354',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bd9bbe96dd57_51405601')) {
-function content_58bd9bbe96dd57_51405601 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58f3264ba7ac13_34938354')) {
+function content_58f3264ba7ac13_34938354 ($_smarty_tpl) {
+if (!is_callable('smarty_function_format_date')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/function.format_date.php';
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '151715052758bd9bbe8745f3_34296973';
+$_smarty_tpl->properties['nocache_hash'] = '188491129658f3264b979148_25422816';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("./nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
+
+<?php
+$_from = $_smarty_tpl->tpl_vars['current_user']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['_user'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['_user']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['_user']->value) {
+$_smarty_tpl->tpl_vars['_user']->_loop = true;
+$foreach__user_Sav = $_smarty_tpl->tpl_vars['_user'];
+?>
+
 <form>
-    <input type="hidden" name="name"  value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+    <input type="hidden" name="name"  value="<?php echo $_smarty_tpl->tpl_vars['_user']->value['couple_id'];?>
 " id="couple_id" class="couples-name">
     <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " />
-    <input type="hidden" id="dashboard_image" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['dashboard_image'];?>
+    <input type="hidden" id="dashboard_image" value="<?php echo $_smarty_tpl->tpl_vars['_user']->value['dashboard_image'];?>
+" />
+    <input type="hidden" id="base_dashboard_image" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+public/_template/uploads/files/<?php echo $_smarty_tpl->tpl_vars['_user']->value['base_dashboard_image'];?>
 " />
 </form>
 
@@ -64,13 +83,16 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
                     </button>
                     <form action="" class="couples-form">
                         <input type="text" name="name" id="name" class="couples-name">
-                        <span class="name-display"><?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'];?>
- & <?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['bride_first_name'];?>
+                        <span class="name-display"><?php echo $_smarty_tpl->tpl_vars['_user']->value['groom_first_name'];?>
+ & <?php echo $_smarty_tpl->tpl_vars['_user']->value['bride_first_name'];?>
 </span>
                     </form>
                 </div>
-                <h2 class="name-display" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['user_session']->value[0]['wedding_date'])) {?>Date is coming soon<?php } else {
-echo $_smarty_tpl->tpl_vars['user_session']->value[0]['wedding_date'];
+                <h2 class="name-display" style="font-size: small; padding-top: 80px;"><?php if (empty($_smarty_tpl->tpl_vars['_user']->value['wedding_date'])) {?>Date is coming soon<?php } else {
+ob_start();
+echo $_smarty_tpl->tpl_vars['user']->value['wedding_date'];
+$_tmp1=ob_get_clean();
+echo smarty_function_format_date(array('date'=>$_tmp1),$_smarty_tpl);
 }?></h2>
 
                 <div id="backgrounds" class="modal fade" role="dialog">
@@ -115,7 +137,7 @@ $_smarty_tpl->tpl_vars['bg_image'] = $foreach_bg_image_Sav;
                 </div>
                 <div class="row small-boxes-wrapper">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+registry/couple/action/preview?preview_id=<?php echo $_smarty_tpl->tpl_vars['_user']->value['couple_id'];?>
 " class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
                         <h4>view as a guest</h4>
                         <p>View your profile as a guest and know how it feels</p>
@@ -144,7 +166,7 @@ registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" 
                         <P class="desc-text">Once invited, your partner will be able to add, remove, and update products and adjust your wedding registry settings.</P>
                             <div class="form-group">
                                 <label for="email">EMAIL ADDRESS:</label>
-                                <input type="email" class="form-control email-field" id="email" placeholder="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['spouse_email'];?>
+                                <input type="email" class="form-control email-field" id="email" placeholder="<?php echo $_smarty_tpl->tpl_vars['_user']->value['spouse_email'];?>
 ">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">INVITE</button>
@@ -164,7 +186,7 @@ registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" 
                         <P class="desc-text">Enter the name of your partner to confirm going live.</P>
                             <div class="form-group">
                                 <label for="email">NAME :</label>
-                                <input type="email" class="form-control email-field" id="email" placeholder="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['bride_first_name'];?>
+                                <input type="email" class="form-control email-field" id="email" placeholder="<?php echo $_smarty_tpl->tpl_vars['_user']->value['bride_first_name'];?>
 ">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">Go Live</button>
@@ -193,10 +215,10 @@ registry/couple/live" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes" 
                                 <div id="description" class="tab-pane in active">
                                     <div class="product-tab">
                                         <p class="text"  id="Vmessage">
-                                           <br><br><br><?php if (empty($_smarty_tpl->tpl_vars['user_session']->value[0]['vow_message'])) {?>
+                                           <br><br><br><?php if (empty($_smarty_tpl->tpl_vars['_user']->value['vow_message'])) {?>
                                             Share your love with the world ....
                                             <?php } else {
-echo $_smarty_tpl->tpl_vars['user_session']->value[0]['vow_message'];
+echo $_smarty_tpl->tpl_vars['_user']->value['vow_message'];
 }?><br><br></p>
                                            <p>Click <a href="#"  data-toggle="modal" data-target="#vowMessage" >here</a> to edit this message </p>
                                     </div>
@@ -206,14 +228,19 @@ echo $_smarty_tpl->tpl_vars['user_session']->value[0]['vow_message'];
                                     <div class="product-tab">
                                         <div class="product-tab">
                                             <p class="text" id="Tmessage">
-                                                <br><br><?php if (empty($_smarty_tpl->tpl_vars['user_session']->value[0]['vote_of_thanks'])) {?>Got anyone you'd like to thank? ....
+                                                <br><br><?php if (empty($_smarty_tpl->tpl_vars['_user']->value['vote_of_thanks'])) {?>Got anyone you'd like to thank? ....
                                                 <?php } else {
-echo $_smarty_tpl->tpl_vars['user_session']->value[0]['vote_of_thanks'];
+echo $_smarty_tpl->tpl_vars['_user']->value['vote_of_thanks'];
 }?><br><br></p>
                                                 <p>Click <a href="#" data-toggle="modal" data-target="#votMessage" >here</a> to edit this message. </p>
                                         </div>
                                      </div><!-- /.product-tabs -->
             </div>
+                                
+                                <?php
+$_smarty_tpl->tpl_vars['_user'] = $foreach__user_Sav;
+}
+?>
 
 
 

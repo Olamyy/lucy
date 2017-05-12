@@ -19,6 +19,7 @@ class Welcome extends CI_Controller
 
   public function index()
   {
+//    $this->data['ip'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
     $this->data['ip'] = $this->input->ip_address();
     $cat_from_db = $this->user_model->get('lucy_category_description', 0, 0);
     $this->data['user_session'] = $this->session->userdata('user_session');
@@ -38,6 +39,9 @@ class Welcome extends CI_Controller
     $this->data['new_arrivals'] = $this->user_model->custom_get('lucy_product', array('position' => "New Arrivals"), 0, 0);
     $this->data['promo'] = $this->user_model->custom_get('lucy_product', array('position' => "Promo"), 0, 0);
 
+//    echo '<pre>';
+//    print_r($this->data['pre_cart']);
+//    echo '<pre>';
     $this->smarty->view('front/store.tpl', $this->data);
   }
 

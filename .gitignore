@@ -25,9 +25,10 @@ system/session-log/PHPSESSIDc0d1a792bc699c2075f052258a6c8f75b86097d7
 system/session-log/PHPSESSIDecc5637817316ae74670e0610ad0ebc6de1ee641
 ### Example user template template
 ### Example user template
-
+system/session-log/*
 # IntelliJ project files
 .idea
 *.iml
 out
 gen
+public/_template/_cache

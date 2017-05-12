@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-07 10:10:48
+<?php /* Smarty version 3.1.24, created on 2017-04-14 18:21:40
          compiled from "/var/www/html/lucy/public/_template/admin/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:16054416458e757985362a9_32462622%%*/
+/*%%SmartyHeaderCode:1271516058f10524f05c25_83199104%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,31 +9,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '06a25c92213522c9b6f8ad7e07dc06fbf9cb34a9' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/navmenu.tpl',
-      1 => 1487677328,
+      1 => 1492190497,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16054416458e757985362a9_32462622',
+  'nocache_hash' => '1271516058f10524f05c25_83199104',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58e75798560791_36129642',
+  'unifunc' => 'content_58f105250266b6_86169516',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58e75798560791_36129642')) {
-function content_58e75798560791_36129642 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58f105250266b6_86169516')) {
+function content_58f105250266b6_86169516 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '16054416458e757985362a9_32462622';
+$_smarty_tpl->properties['nocache_hash'] = '1271516058f10524f05c25_83199104';
 ?>
 <div class="bg-dark" id="wrap">
     <div id="top">
         <!-- .navbar -->
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
-                <a class="navbar-brand text-xs-center" href="index.html">
+                <a class="navbar-brand text-xs-center" href="">
                     <h4 class="text-white">LUCY ADMIN</h4>
                 </a>
                 <div class="menu">
@@ -49,26 +49,6 @@ $_smarty_tpl->properties['nocache_hash'] = '16054416458e757985362a9_32462622';
                         ☰
                     </button>
                 </div>
-                <!-- Nav Content -->
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="topnav dropdown-menu-right float-xs-right">
-                </div>
-                <div class="collapse navbar-toggleable-sm col-xl-6 col-lg-6 hidden-md-down float-xl-right  top_menu"
-                     id="nav-content">
-                    <ul class="nav navbar-nav top_menubar">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-admin/Product/">
-                                <i class="fa fa-product-hunt"></i> <span class="quick_text">Add Product</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="gallery.html">
-                                <i class="fa fa-mail-reply"></i> <span class="quick_text">Send Mail</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <!-- /.container-fluid --> </nav>
@@ -80,7 +60,7 @@ admin/Product/">
             <!-- #menu -->
             <ul id="menu" class="bg-blue dker">
                 <li class="active">
-                    <a href="index.html">
+                    <a href="">
                         <i class="fa fa-home"></i>
                         <span class="link-title">&nbsp;Dashboard</span>
                     </a>
@@ -104,11 +84,6 @@ admin/Product/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <i class="fa fa-angle-right"></i> &nbsp;Edit
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li>
@@ -120,16 +95,17 @@ admin/Product/add">
                     <ul class="sub-menu">
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-admin/Category/view">
-                                <i class="fa fa-angle-right"></i> &nbsp;View Categories
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 admin/Category/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add Category
                             </a>
                         </li>
+                        <li>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/Category/view">
+                                <i class="fa fa-angle-right"></i> &nbsp;View Categories
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -141,16 +117,55 @@ admin/Category/add">
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-admin/Product/view">
+                            <a href="javascript:;">
                                 <i class="fa fa-angle-right"></i> &nbsp;Orders
                             </a>
+                            <ul class="sub-menu sub-submenu">
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/orders?type=pending">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Pending Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/orders?type=approved">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Approved Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/orders?type=rejected">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Rejected Orders
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-admin/Product/add">
+                            <a href="javascript:;">
                                 <i class="fa fa-angle-right"></i> &nbsp;Returns
                             </a>
+                            <ul class="sub-menu sub-submenu">
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/returns?type=pending">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Pending Returns
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/returns?type=approved">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Approved Returns
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/returns?type=rejected">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Rejected Orders
+                                    </a>
+                                </li>
+                            </ul>
+
                         </li>
                             <li>
                             <a href="javascript:;">
@@ -158,18 +173,15 @@ admin/Product/add">
                             </a>
                             <ul class="sub-menu sub-submenu">
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/vouchers?action=create">
                                         <i class="fa fa-angle-right"></i> &nbsp;Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/sales/vouchers?action=view"">
                                         <i class="fa fa-angle-right"></i> &nbsp;View
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-angle-right"></i> &nbsp;Remove
                                     </a>
                                 </li>
                             </ul>
@@ -177,61 +189,58 @@ admin/Product/add">
                     </ul>
                 </li>
 
-                <li class="">
-                    <a href="index.html">
-                        <i class="fa fa-users"></i>
-                        <span class="link-title">&nbsp;Customers</span>
-                    </a>
-                </li>
-
                 <li>
                     <a href="javascript:;">
-                        <i class="fa fa-archive"></i> &nbsp;Marketing
+                        <i class="fa fa-users"></i> &nbsp;Customers
                         <span class="fa arrow"></span>
 
                     </a>
                     <ul class="sub-menu sub-submenu">
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Campaign
+                            <a  href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/customers?filter=all">
+                                <i class="fa fa-angle-right"></i> &nbsp;All Users
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Coupon
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/customers?filter=active">
+                                <i class="fa fa-angle-right"></i> &nbsp;Active Users
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Mail
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/customers?filter=inactive">
+                                <i class="fa fa-angle-right"></i> &nbsp;Inactive Users
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/customers?filter=disabled">
+                                <i class="fa fa-angle-right"></i> &nbsp;Disabled Users
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="fa fa-history"></i> &nbsp;Reports
+                        <i class="fa fa-history"></i> &nbsp;Download Reports
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="sub-menu sub-submenu">
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Sales
+                                <i class="fa fa-angle-right"></i> &nbsp;Sales Reports
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Products
+                                <i class="fa fa-angle-right"></i> &nbsp;Products Reports
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Customers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Marketers
+                                <i class="fa fa-angle-right"></i> &nbsp;Customers Reports
                             </a>
                         </li>
                     </ul>

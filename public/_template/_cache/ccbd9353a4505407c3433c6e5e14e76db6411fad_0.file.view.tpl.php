@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-11 10:28:36
+<?php /* Smarty version 3.1.24, created on 2017-04-14 17:50:40
          compiled from "public/_template/admin/product/view.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:132377735658eca1c4e229f8_70668238%%*/
+/*%%SmartyHeaderCode:50267527058f0fde09af149_44343030%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ccbd9353a4505407c3433c6e5e14e76db6411fad' => 
     array (
       0 => 'public/_template/admin/product/view.tpl',
-      1 => 1487677328,
+      1 => 1492185751,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '132377735658eca1c4e229f8_70668238',
+  'nocache_hash' => '50267527058f0fde09af149_44343030',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58eca1c4f15119_94241914',
+  'unifunc' => 'content_58f0fde0a5ff48_23110777',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58eca1c4f15119_94241914')) {
-function content_58eca1c4f15119_94241914 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58f0fde0a5ff48_23110777')) {
+function content_58f0fde0a5ff48_23110777 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '132377735658eca1c4e229f8_70668238';
+$_smarty_tpl->properties['nocache_hash'] = '50267527058f0fde09af149_44343030';
 echo $_smarty_tpl->getSubTemplate ("../product/category/view/viewheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -46,13 +46,13 @@ echo $_smarty_tpl->getSubTemplate ("../product/category/view/viewheader.tpl", $_
             <div class="col-lg-6 col-md-4 col-sm-4">
                 <h4 class="nav_top_align">
                     <i class="fa fa-th"></i>
-                    Categories
+                    Products
                 </h4>
             </div>
             <div class="col-lg-6 col-md-8 col-sm-8">
                 <ol class="breadcrumb float-xs-right nav_breadcrumb_top_align">
                     <li class="breadcrumb-item">
-                        <a href="index.html">
+                        <a href="">
                             <i class="fa fa-home" data-pack="default" data-tags=""></i>
                             Dashboard
                         </a>
@@ -76,7 +76,7 @@ echo $_smarty_tpl->getSubTemplate ("../product/category/view/viewheader.tpl", $_
                 </div>
                 <div class="modal-body">
                     <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/product/view">
+/admin/product/view">
                         <p>
                             Product Title:
                             <input id="cat_title" type="text" name="product_name" class="form-control" placeholder="Enter the name of the product to edit"/>
@@ -84,9 +84,7 @@ index.php/admin/product/view">
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                    <button type="submit" class="btn btn-primary" id="edit_button">Edit</button>
                 </div>
-                </form>
             </div>
         </div>
     </div>
@@ -139,6 +137,7 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                                         <th>Delivery</th>
                                         <th>Price</th>
                                         <th>Views</th>
+                                        <th>Date Added</th>
                                         <th>Date Added</th>
                                         <th>Search Filters</th>
                                     </tr>

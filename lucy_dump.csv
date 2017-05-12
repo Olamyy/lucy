@@ -1,0 +1,526 @@
+-- MySQL dump 10.13  Distrib 5.7.16, for Linux (x86_64)
+--
+-- Host: localhost    Database: lucy
+-- ------------------------------------------------------
+-- Server version	5.7.16-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image` (
+  `mainslider` varchar(1000) DEFAULT NULL,
+  `registry_options` varchar(10000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image`
+--
+
+LOCK TABLES `image` WRITE;
+/*!40000 ALTER TABLE `image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_admin`
+--
+
+DROP TABLE IF EXISTS `lucy_admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_admin` (
+  `last_login` datetime NOT NULL,
+  `username` varchar(100) NOT NULL DEFAULT 'admin'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_admin`
+--
+
+LOCK TABLES `lucy_admin` WRITE;
+/*!40000 ALTER TABLE `lucy_admin` DISABLE KEYS */;
+INSERT INTO `lucy_admin` VALUES ('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin'),('2017-04-19 18:54:28','admin');
+/*!40000 ALTER TABLE `lucy_admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_category_description`
+--
+
+DROP TABLE IF EXISTS `lucy_category_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_category_description` (
+  `category_id` varchar(30) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `sub_categories` varchar(255) NOT NULL,
+  `search_filters` varchar(255) NOT NULL,
+  `category_url` varchar(100) NOT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `shop_by` varchar(5000) DEFAULT NULL,
+  `price_range` varchar(600) DEFAULT NULL,
+  PRIMARY KEY (`title`,`category_url`),
+  KEY `name` (`title`,`search_filters`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_category_description`
+--
+
+LOCK TABLES `lucy_category_description` WRITE;
+/*!40000 ALTER TABLE `lucy_category_description` DISABLE KEYS */;
+INSERT INTO `lucy_category_description` VALUES ('sndfh79a7e0wxhzz1939','Birthday','This is just a test category','birth, birthday, birthdays,birthdaysss','birth, birthday, birthdays,birthdaysss','birth','2017-02-04 23:50:45',NULL,''),('bfhbvkhvhbsvv76275687','Test','Another test category','test, tester, testing, tests','test, tester, testing, tests','test',NULL,'testt','123');
+/*!40000 ALTER TABLE `lucy_category_description` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_ci_sessions`
+--
+
+DROP TABLE IF EXISTS `lucy_ci_sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_ci_sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text NOT NULL,
+  PRIMARY KEY (`session_id`),
+  KEY `last_activity_idx` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_ci_sessions`
+--
+
+LOCK TABLES `lucy_ci_sessions` WRITE;
+/*!40000 ALTER TABLE `lucy_ci_sessions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lucy_ci_sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_couple`
+--
+
+DROP TABLE IF EXISTS `lucy_couple`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_couple` (
+  `couple_id` varchar(30) NOT NULL,
+  `couple_status` tinyint(1) NOT NULL,
+  `groom_first_name` varchar(200) NOT NULL DEFAULT '',
+  `bride_first_name` varchar(200) NOT NULL DEFAULT '',
+  `password` varchar(255) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `dashboard_image` varchar(255) DEFAULT NULL,
+  `code` varchar(40) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `delivery_address` varchar(500) DEFAULT NULL,
+  `wedding_date` datetime DEFAULT NULL,
+  `registry_url_tag` varchar(300) NOT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `number` varchar(11) DEFAULT NULL,
+  `card_details` int(25) DEFAULT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `spouse_email` varchar(45) DEFAULT NULL,
+  `groom_last_name` varchar(200) NOT NULL DEFAULT '',
+  `bride_last_name` varchar(200) NOT NULL DEFAULT '',
+  `walkthrough` tinyint(1) NOT NULL DEFAULT '0',
+  `vow_message` varchar(10000) DEFAULT NULL,
+  `vote_of_thanks` varchar(10000) DEFAULT NULL,
+  `dashboard_name` varchar(1000) DEFAULT NULL,
+  `is_logged_in` tinyint(1) NOT NULL DEFAULT '0',
+  `cart` varchar(7000) DEFAULT NULL,
+  `registry_id` varchar(20) NOT NULL,
+  `base_dashboard_image` varchar(1000) DEFAULT NULL COMMENT 'bigimage',
+  PRIMARY KEY (`couple_id`),
+  UNIQUE KEY `lucy_couple_email_uindex` (`email`),
+  KEY `name` (`email`,`wedding_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_couple`
+--
+
+LOCK TABLES `lucy_couple` WRITE;
+/*!40000 ALTER TABLE `lucy_couple` DISABLE KEYS */;
+INSERT INTO `lucy_couple` VALUES ('0vznjjv0embb8b4',0,'Deji','Next','$2y$10$GP3Tqo3g26fUentlHKM93uajyms5LFlN0wX6K73k6RZHvO2ggONOK','08075477557@nextone.com','http://localhost/lucy/public/_template/uploads/files/bgimagecouplesitting.jpg','ul1o','','2017-03-05 19:35:32',NULL,NULL,NULL,'',NULL,NULL,NULL,'2017-04-14 12:24:21','fremi@next.com','Faremi','One',0,NULL,NULL,NULL,0,NULL,'t37dvnkw6p',NULL),('3j0hlqilfeiv11m',0,'','','$2y$10$TsDGEhqRPKhvtBdOd9jZVee7f44tK2EDFcsQNVn/QYeMiwXw8EtJi','doyouknowiloveyou@gmail.com',NULL,'fmtd','','2017-03-05 22:14:07',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'j73qnk7lkj',NULL),('4fvafwtrf7ehrhh',0,'Olamilekan','Fatogun','$2y$10$nH7uSsoB78Yvn97YeDib8e9KEZXUg4kwhwX.fhDSwxZoi1Ni.tkbi','nextone@us.me',NULL,'uvsm','','2017-03-05 19:27:30',NULL,NULL,NULL,'',NULL,NULL,NULL,'2017-03-05 19:30:18','','Wahab','Olum',0,NULL,NULL,NULL,0,NULL,'hnuo5uxg4q',NULL),('4lyktudldiib5ko',0,'','','$2y$10$h7fW7sGA.pFif8GjjEz4AOXwT5MK.YTYNPnf0QW6KsDtpdeJgi7mG','testing@gmail.com',NULL,'uq4o','','2017-03-06 09:55:43',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'z71fyxf907',NULL),('78b06zjf55mvprb',0,'david','tolu','$2y$10$fxY4TLs9cxEDbEWYzu8qm.gmv37AqqRbYfAxa4AaMWdN7zXHrsnA.','kemime@me.com','http://localhost/lucy/public/_template/uploads/files/bgimagecouple1.jpg','12345','','2017-01-24 00:07:01',NULL,NULL,'2018-04-15 08:00:00','lekandeji','love',NULL,NULL,'2017-03-05 14:49:39','','asamu','fakiyesi',0,'Were are you dear?','Where the fuck are you?',NULL,1,NULL,'9o5ntle5ze','bgimagecouple3.jpg'),('88w8p5o3u2klqfs',0,'','','$2y$10$NOwlqnmZ3w9ljdWz90vnlOewldX60JSbEXVRyK4YkcYHhnKVBTIMy','olamilekan@gmail.com',NULL,'9b0m','','2017-03-05 22:05:52',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'u540tj37q6',NULL),('b4jaksx8s6vd79c',0,'','','$2y$10$c78W.YIHIlbwHyQrlDR9IeF72DNrVEvizN.zkrPdDrhcosKcuWAYy','dejifaremi@gmail.com',NULL,'7wiy','','2017-04-14 12:23:54',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'l3tufkc2sr',NULL),('belniqk2et3yxpc',0,'','','$2y$10$/p5gml7h6yg4SAoz5OtwDe6jr75t/oL/FJAHOXcEfjAfkZ1D8YhgK','whynotme@me.com',NULL,'5qd4','','2017-03-05 19:28:09',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'cxjzvf00lk',NULL),('bu4euwybyks7blv',0,'','','$2y$10$GTG6SqpNtRrjmGdDzFIxQOg3QSrUMIE8/WoBDbGRtj9zzZJCUH20m','bashirhamza05@gmail.com',NULL,'dvnf','','2017-03-05 14:47:36',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'wpyrd2hotb',NULL),('f7xs3854rzy7cku',0,'','','$2y$10$AhXewLoYd1sgwyg8B9DRe.wEPod0qGSEtQtnyp3FHgd9dvQmFX4wC','thisisus@me.com','url(\"http://localhost/lucy/public/_template/uploads/files/bgimagecouple2.png\")','z13s','','2017-03-05 19:10:06',NULL,NULL,'2018-04-15 08:00:00','',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,1,NULL,'7flxcu08t2',NULL),('g5b8v7ebcrr7a3i',0,'','','$2y$10$nk7D.fcbRxzoaeEOiRAUGe8.nHU2oyq8f9JkroruPB0EsrX9DI55q','huhuhu@me.com',NULL,'vcyk','','2017-03-05 19:28:52',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'l9gxy2pq01',NULL),('i0y212y0fxjkhap',0,'','','$2y$10$XcOP..rNnmgZAt8B4SeZT.DvoHupToBsfhlBh7c5xzzvMY5BY/22G','lutherlawoyin@gmail.com',NULL,'mbq2','','2017-03-05 14:24:47',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'z99tni8hfk',NULL),('kly2t30w9cztvog',0,'','','$2y$10$zPMKI/sMvJw8/SCm0MS4keXgTg94CyN7Hl5WiYLFe0cojpl/t2Txi','airahyusuff@yahoo.com',NULL,'v2h9','','2017-03-05 20:30:53',NULL,NULL,'2018-04-15 08:00:00','',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'sbg83s6nml',NULL),('kmtujuy2wdas6cr',0,'','','$2y$10$XApAfwWPnC00HoD4KZiwku3yn5zFpxSHbvWokFob34obYNAToBJsO','olamilekanwahab@gmail.com','http://98cae5b4.ngrok.io/lucy/public/_template/uploads/files/couple-love-1807857_960_720.jpg','i3n7','','2017-03-05 14:13:39',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'97vy47jnvt',NULL),('m2l61nsp7ab2ww5',0,'','','$2y$10$.agTEML9FQRg6xTTdKweMOE7NJOjdEAsO.FeyHpeK7oHMYNzZqmES','olamyy53@gmail.com',NULL,'00av','','2017-02-03 15:53:52',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'',NULL),('ynt2ly4zv6dhzgx',0,'','','$2y$10$nJ120FNxti9qvXdYD3NqgursFc94nFhRXWRc9JzpiGPxdrjW8JcOW','bjbdfj@gmial.com',NULL,'i2mj','','2017-03-05 14:04:47',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'','',0,NULL,NULL,NULL,0,NULL,'n4rx2lynuq',NULL);
+/*!40000 ALTER TABLE `lucy_couple` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_couple_log`
+--
+
+DROP TABLE IF EXISTS `lucy_couple_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_couple_log` (
+  `couple_id` varchar(30) NOT NULL,
+  `couple_status` tinyint(1) NOT NULL,
+  `groom_name` varchar(200) NOT NULL DEFAULT '',
+  `bride_name` varchar(200) NOT NULL DEFAULT '',
+  `password` varchar(255) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `dashboard_image` varchar(255) DEFAULT NULL,
+  `code` varchar(40) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `delivery_address` varchar(500) DEFAULT NULL,
+  `wedding_date` datetime DEFAULT NULL,
+  `registry_url_tag` varchar(300) NOT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `number` varchar(11) DEFAULT NULL,
+  `card_details` int(25) DEFAULT NULL,
+  `date_modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_couple_log`
+--
+
+LOCK TABLES `lucy_couple_log` WRITE;
+/*!40000 ALTER TABLE `lucy_couple_log` DISABLE KEYS */;
+INSERT INTO `lucy_couple_log` VALUES ('0',0,'','','$2y$10$VVij8Gu9z9idh/7mRbTDJ.zIBNEh1nrocIg7ISwBzftqTuE4irLwS','olamyy53@gmail.com',NULL,NULL,'8109xj469esaw9u4na8z','127.0.0.1','2017-01-20 21:11:33',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL),('s8haombj2ks4bk9',0,'','','$2y$10$n7TlXGAQxCdoea8Pvo4dc.6KvtP3rbloESfKcCZlTfZipKQV2Kjia','eminado@me.com',NULL,NULL,'2wvw','127.0.0.1','2017-01-20 21:27:41',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `lucy_couple_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_misc`
+--
+
+DROP TABLE IF EXISTS `lucy_misc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_misc` (
+  `ip` varchar(200) NOT NULL,
+  `login_attempt` int(11) DEFAULT '0',
+  `success_login` int(11) DEFAULT '0',
+  `failed_login` int(11) DEFAULT '0',
+  `datetime` datetime NOT NULL,
+  PRIMARY KEY (`ip`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_misc`
+--
+
+LOCK TABLES `lucy_misc` WRITE;
+/*!40000 ALTER TABLE `lucy_misc` DISABLE KEYS */;
+INSERT INTO `lucy_misc` VALUES ('127.0.0.1',1,1,23,'2017-01-23 21:08:15');
+/*!40000 ALTER TABLE `lucy_misc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_orders`
+--
+
+DROP TABLE IF EXISTS `lucy_orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_orders` (
+  `user_id` varchar(300) DEFAULT NULL,
+  `date_ordered` datetime DEFAULT NULL,
+  `product_id` varchar(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `order_status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_orders`
+--
+
+LOCK TABLES `lucy_orders` WRITE;
+/*!40000 ALTER TABLE `lucy_orders` DISABLE KEYS */;
+INSERT INTO `lucy_orders` VALUES ('abcd','2017-04-14 16:36:43','bjbj',5,'pending');
+/*!40000 ALTER TABLE `lucy_orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_product`
+--
+
+DROP TABLE IF EXISTS `lucy_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_product` (
+  `name` varchar(200) NOT NULL,
+  `description` varchar(400) NOT NULL,
+  `product_id` varchar(20) NOT NULL,
+  `product_meta_title` varchar(50) DEFAULT NULL,
+  `product_meta_description` varchar(200) DEFAULT NULL,
+  `product_meta_keywords` varchar(200) DEFAULT NULL,
+  `product_tags` varchar(200) DEFAULT NULL,
+  `model` varchar(64) NOT NULL,
+  `isbn` varchar(17) DEFAULT NULL,
+  `mpn` varchar(64) NOT NULL,
+  `quantity` int(5) NOT NULL DEFAULT '0',
+  `manufacturer_id` int(11) NOT NULL,
+  `delivery` tinyint(1) NOT NULL DEFAULT '1',
+  `date_available` datetime DEFAULT NULL,
+  `minimum` int(11) NOT NULL DEFAULT '1',
+  `sort_order` int(11) NOT NULL DEFAULT '0',
+  `availability` tinyint(1) NOT NULL DEFAULT '0',
+  `view_count` int(10) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `position` varchar(200) NOT NULL,
+  `search_filters` varchar(300) NOT NULL,
+  `out_of_store_range` varchar(300) NOT NULL,
+  `requires_delivery` varchar(300) DEFAULT NULL,
+  `manufacturer_name` varchar(300) DEFAULT NULL,
+  `product_categories` varchar(300) NOT NULL,
+  `related_products` varchar(300) NOT NULL,
+  `image` varchar(300) NOT NULL,
+  `short_description` varchar(1000) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT '0.00',
+  `product_category` varchar(30) DEFAULT NULL,
+  `before_discount_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`product_id`),
+  KEY `name` (`product_id`,`search_filters`,`model`,`image`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_product`
+--
+
+LOCK TABLES `lucy_product` WRITE;
+/*!40000 ALTER TABLE `lucy_product` DISABLE KEYS */;
+INSERT INTO `lucy_product` VALUES ('ksvks','5.5 inches IPS LCD capacitive touchscreen, 16M colors\nAndroid OS, v6.0 (Marshmallow)\nDual SIM (Micro-SIM/Nano-SIM, dual stand-by)\nMediatek MT6797 Helio X20\n64 GB, 3 GB RAM, microSD, up to 256 GB (uses SIM 2 slot)\n13 MP, f/2.0, phase detection autofocus, dual-LED (dual tone) flash','680980890','j','wjeh','whg','ljgl','skdvkbvwk','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Hot Deals','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg','This is a short project description',10.00,'sndfh79a7e0wxhzz1939',NULL),('BKJBK','jdfnjb','bb','jdjb','fdjkn','fjb','fbj','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','New Products','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('hdbf','jdbjkb','bjbj','jbkb','sbb','bdb','ljgl','skdvkbvwk','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Special Offer','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('tytt','bbbb','bjk','bb','jbbfjb','bdb','ljgl','skdvkbvwk','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Hot Deals','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','hbdhbu','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','hbjhb','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('jn','jhbhjv','jbbj','hdbhv','bbv','hvbvb','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','jbjk','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','jbkjv','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','New Arrivals','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','jhgfdjkfb6556','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,1,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('jjbk\n','fd','jkbjk','hdbhv','bbv','hvbvb','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Best Sellers','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL),('ndbdjkndb','jfb','jknjkbnb','kfbkf','fkbj','kbvkj','vbjks','bhjbf','bwjk','bejefqb',0,0,0,'2017-01-20 12:49:32',0,0,0,0,'2017-01-20 12:49:32','2017-01-20 12:49:32','Featured Products','kjbvjwb','2-3 days','Yes','wvbi','jwb','kjbwje','leye.jpg',NULL,10.00,NULL,NULL);
+/*!40000 ALTER TABLE `lucy_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_registry_items`
+--
+
+DROP TABLE IF EXISTS `lucy_registry_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_registry_items` (
+  `registry_item_id` varchar(100) NOT NULL,
+  `couple_id` varchar(20) NOT NULL,
+  `product_id` varchar(100) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `image` varchar(300) NOT NULL,
+  `date_added` datetime DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_registry_items`
+--
+
+LOCK TABLES `lucy_registry_items` WRITE;
+/*!40000 ALTER TABLE `lucy_registry_items` DISABLE KEYS */;
+INSERT INTO `lucy_registry_items` VALUES ('hi7de6u','78b06zjf55mvprb','680980890',44,10.00,'leye.jpg','2017-02-26 09:57:28'),('1wd4sam','78b06zjf55mvprb','bb',19,10.00,'leye.jpg','2017-02-26 09:50:40'),('4rz0hh9','78b06zjf55mvprb','bjbj',19,10.00,'leye.jpg','2017-03-01 02:09:23'),('05bi86s','78b06zjf55mvprb','bjk',36,10.00,'leye.jpg','2017-02-26 10:00:17'),('n84dbtc','78b06zjf55mvprb','jbkjv',1,10.00,'leye.jpg','2017-02-26 09:58:10'),('72crj7c','78b06zjf55mvprb','jhgfdjkfb6556',5,10.00,'leye.jpg','2017-02-26 09:53:46'),('ur1a7cy','78b06zjf55mvprb','jkbjk',1,10.00,'leye.jpg','2017-02-26 09:57:05'),('1t1vcpw','78b06zjf55mvprb','jknjkbnb',9,10.00,'leye.jpg','2017-02-26 09:54:12');
+/*!40000 ALTER TABLE `lucy_registry_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_returns`
+--
+
+DROP TABLE IF EXISTS `lucy_returns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_returns` (
+  `user_id` varchar(100) DEFAULT NULL,
+  `new_column` int(11) DEFAULT NULL,
+  `return_status` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_returns`
+--
+
+LOCK TABLES `lucy_returns` WRITE;
+/*!40000 ALTER TABLE `lucy_returns` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lucy_returns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_temp_user`
+--
+
+DROP TABLE IF EXISTS `lucy_temp_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_temp_user` (
+  `user_status` tinyint(1) NOT NULL,
+  `temp_user_id` varchar(40) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `cart_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`cart_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_temp_user`
+--
+
+LOCK TABLES `lucy_temp_user` WRITE;
+/*!40000 ALTER TABLE `lucy_temp_user` DISABLE KEYS */;
+INSERT INTO `lucy_temp_user` VALUES (0,'9awhc','127.0.0.1','2017-03-02 09:54:59','dtvkle8goi');
+/*!40000 ALTER TABLE `lucy_temp_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_user`
+--
+
+DROP TABLE IF EXISTS `lucy_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_user` (
+  `user_id` varchar(30) NOT NULL,
+  `user_status` tinyint(1) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `code` varchar(40) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `delivery_address` varchar(500) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `number` varchar(11) DEFAULT NULL,
+  `card_details` int(25) DEFAULT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `is_logged_in` tinyint(1) NOT NULL DEFAULT '0',
+  `cart_id` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_user`
+--
+
+LOCK TABLES `lucy_user` WRITE;
+/*!40000 ALTER TABLE `lucy_user` DISABLE KEYS */;
+INSERT INTO `lucy_user` VALUES ('abcd',0,'wxPython','olamyy5','45433','127.0.0.1','2017-04-14 16:36:10',NULL,NULL,NULL,NULL,NULL,NULL,0,NULL);
+/*!40000 ALTER TABLE `lucy_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_user_cart`
+--
+
+DROP TABLE IF EXISTS `lucy_user_cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_user_cart` (
+  `cart_id` varchar(10) DEFAULT NULL,
+  `user_id` varchar(10) DEFAULT NULL,
+  `date_added` datetime DEFAULT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  UNIQUE KEY `lucy_user_cart_cart_id_pk` (`cart_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_user_cart`
+--
+
+LOCK TABLES `lucy_user_cart` WRITE;
+/*!40000 ALTER TABLE `lucy_user_cart` DISABLE KEYS */;
+INSERT INTO `lucy_user_cart` VALUES ('dtvkle8goi','9awhc','2017-03-02 09:54:59','2017-04-11 11:05:24');
+/*!40000 ALTER TABLE `lucy_user_cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_user_cart_items`
+--
+
+DROP TABLE IF EXISTS `lucy_user_cart_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_user_cart_items` (
+  `cart_item_id` varchar(100) NOT NULL,
+  `cart_id` varchar(20) NOT NULL,
+  `product_id` varchar(100) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `image` varchar(300) NOT NULL,
+  `date_added` datetime DEFAULT NULL,
+  PRIMARY KEY (`cart_item_id`),
+  KEY `cart_item_id` (`cart_id`,`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_user_cart_items`
+--
+
+LOCK TABLES `lucy_user_cart_items` WRITE;
+/*!40000 ALTER TABLE `lucy_user_cart_items` DISABLE KEYS */;
+INSERT INTO `lucy_user_cart_items` VALUES ('x7gmuqf','dtvkle8goi','680980890',72,10.0000,'leye.jpg','2017-03-02 09:54:59'),('x934hg','dtvkle8goi','hbdhbu',20,10.0000,'leye.jpg','2017-03-05 11:16:39');
+/*!40000 ALTER TABLE `lucy_user_cart_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lucy_vouchers`
+--
+
+DROP TABLE IF EXISTS `lucy_vouchers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lucy_vouchers` (
+  `date_created` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lucy_vouchers`
+--
+
+LOCK TABLES `lucy_vouchers` WRITE;
+/*!40000 ALTER TABLE `lucy_vouchers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lucy_vouchers` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-04-28 20:21:26

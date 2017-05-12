@@ -19,12 +19,12 @@ class Dashboard extends CI_Controller
         }
         $this->data['user_details'] = $this->session->userdata()['user_session'];
 
+
     }
 
     public function index()
     {
         $cat_from_db = $this->user_model->get('lucy_category_description', 0 , 0);
-        $this->data['user_session'] = $this->session->userdata('user_session');
         $pre_cart = array();
         foreach($cat_from_db as $data){
             $loop_cat = array('pre_cat'=>explode(",", $data['sub_categories']));

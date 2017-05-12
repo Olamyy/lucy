@@ -3,7 +3,7 @@
         <!-- .navbar -->
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
-                <a class="navbar-brand text-xs-center" href="index.html">
+                <a class="navbar-brand text-xs-center" href="">
                     <h4 class="text-white">LUCY ADMIN</h4>
                 </a>
                 <div class="menu">
@@ -19,25 +19,6 @@
                         ☰
                     </button>
                 </div>
-                <!-- Nav Content -->
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="topnav dropdown-menu-right float-xs-right">
-                </div>
-                <div class="collapse navbar-toggleable-sm col-xl-6 col-lg-6 hidden-md-down float-xl-right  top_menu"
-                     id="nav-content">
-                    <ul class="nav navbar-nav top_menubar">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{$BASE_URL}admin/Product/">
-                                <i class="fa fa-product-hunt"></i> <span class="quick_text">Add Product</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="gallery.html">
-                                <i class="fa fa-mail-reply"></i> <span class="quick_text">Send Mail</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <!-- /.container-fluid --> </nav>
@@ -49,7 +30,7 @@
             <!-- #menu -->
             <ul id="menu" class="bg-blue dker">
                 <li class="active">
-                    <a href="index.html">
+                    <a href="">
                         <i class="fa fa-home"></i>
                         <span class="link-title">&nbsp;Dashboard</span>
                     </a>
@@ -71,11 +52,6 @@
                                 <i class="fa fa-angle-right"></i> &nbsp;Add
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <i class="fa fa-angle-right"></i> &nbsp;Edit
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li>
@@ -86,15 +62,16 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{$BASE_URL}admin/Category/view">
-                                <i class="fa fa-angle-right"></i> &nbsp;View Categories
-                            </a>
-                        </li>
-                        <li>
                             <a href="{$BASE_URL}admin/Category/add">
                                 <i class="fa fa-angle-right"></i> &nbsp;Add Category
                             </a>
                         </li>
+                        <li>
+                            <a href="{$BASE_URL}admin/Category/view">
+                                <i class="fa fa-angle-right"></i> &nbsp;View Categories
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -106,14 +83,49 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{$BASE_URL}admin/Product/view">
+                            <a href="javascript:;">
                                 <i class="fa fa-angle-right"></i> &nbsp;Orders
                             </a>
+                            <ul class="sub-menu sub-submenu">
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/orders?type=pending">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Pending Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/orders?type=approved">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Approved Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/orders?type=rejected">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Rejected Orders
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="{$BASE_URL}admin/Product/add">
+                            <a href="javascript:;">
                                 <i class="fa fa-angle-right"></i> &nbsp;Returns
                             </a>
+                            <ul class="sub-menu sub-submenu">
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/returns?type=pending">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Pending Returns
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/returns?type=approved">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Approved Returns
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{$BASE_URL}admin/sales/returns?type=rejected">
+                                        <i class="fa fa-angle-right"></i> &nbsp;Rejected Orders
+                                    </a>
+                                </li>
+                            </ul>
+
                         </li>
                             <li>
                             <a href="javascript:;">
@@ -121,18 +133,13 @@
                             </a>
                             <ul class="sub-menu sub-submenu">
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="{$BASE_URL}admin/sales/vouchers?action=create">
                                         <i class="fa fa-angle-right"></i> &nbsp;Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="{$BASE_URL}admin/sales/vouchers?action=view"">
                                         <i class="fa fa-angle-right"></i> &nbsp;View
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-angle-right"></i> &nbsp;Remove
                                     </a>
                                 </li>
                             </ul>
@@ -140,61 +147,54 @@
                     </ul>
                 </li>
 
-                <li class="">
-                    <a href="index.html">
-                        <i class="fa fa-users"></i>
-                        <span class="link-title">&nbsp;Customers</span>
-                    </a>
-                </li>
-
                 <li>
                     <a href="javascript:;">
-                        <i class="fa fa-archive"></i> &nbsp;Marketing
+                        <i class="fa fa-users"></i> &nbsp;Customers
                         <span class="fa arrow"></span>
 
                     </a>
                     <ul class="sub-menu sub-submenu">
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Campaign
+                            <a  href="{$BASE_URL}admin/customers?filter=all">
+                                <i class="fa fa-angle-right"></i> &nbsp;All Users
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Coupon
+                            <a href="{$BASE_URL}admin/customers?filter=active">
+                                <i class="fa fa-angle-right"></i> &nbsp;Active Users
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Mail
+                            <a href="{$BASE_URL}admin/customers?filter=inactive">
+                                <i class="fa fa-angle-right"></i> &nbsp;Inactive Users
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{$BASE_URL}admin/customers?filter=disabled">
+                                <i class="fa fa-angle-right"></i> &nbsp;Disabled Users
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:;">
-                        <i class="fa fa-history"></i> &nbsp;Reports
+                        <i class="fa fa-history"></i> &nbsp;Download Reports
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="sub-menu sub-submenu">
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Sales
+                                <i class="fa fa-angle-right"></i> &nbsp;Sales Reports
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Products
+                                <i class="fa fa-angle-right"></i> &nbsp;Products Reports
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Customers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-angle-right"></i> &nbsp;Marketers
+                                <i class="fa fa-angle-right"></i> &nbsp;Customers Reports
                             </a>
                         </li>
                     </ul>

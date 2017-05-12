@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-05 14:45:42
+<?php /* Smarty version 3.1.24, created on 2017-05-11 21:32:20
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:24517082358bc1686b2e7c3_56717175%%*/
+/*%%SmartyHeaderCode:12282024975914ca54a758d7_76925881%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1488721539,
+      1 => 1494534738,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24517082358bc1686b2e7c3_56717175',
+  'nocache_hash' => '12282024975914ca54a758d7_76925881',
   'variables' => 
   array (
     'user_session' => 0,
     'BASE_URL' => 0,
     'pre_cart' => 0,
     'data' => 0,
+    'cat_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bc1686bf06f2_60937938',
+  'unifunc' => 'content_5914ca54ae9e93_75331007',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bc1686bf06f2_60937938')) {
-function content_58bc1686bf06f2_60937938 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5914ca54ae9e93_75331007')) {
+function content_5914ca54ae9e93_75331007 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '24517082358bc1686b2e7c3_56717175';
+$_smarty_tpl->properties['nocache_hash'] = '12282024975914ca54a758d7_76925881';
 if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-<input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+  <?php if ($_smarty_tpl->tpl_vars['user_session']->value[0]['regType'] == "wedding") {?>
+    <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+">
+  <?php }?>
+  <?php } else { ?>
+  <input type="hidden" id="user_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['user_id'];?>
 ">
 <?php }?>
 
@@ -52,17 +58,6 @@ if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ?
         <div class="search-area">
           <form>
             <div class="control-group">
-              <ul class="categories-filter animate-dropdown">
-                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" >Filter Search <b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu" >
-                    <li class="menu-header">Computer</li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Wedding</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Souvenirs</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Made In Nigeria</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1">Customized</a></li>
-                  </ul>
-                </li>
-              </ul>
               <input class="search-field" placeholder="Search here..." />
               <a class="search-button" href="#" ></a> </div>
           </form>
@@ -122,9 +117,9 @@ registry/base"'>Registry</a>
                               <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 registry/find">Find Registry</a></li>
                               <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/create">Create Registry</a></li>
+auth/join">Create Registry</a></li>
                               <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/auth/login">Manage Registry</a></li>
+auth/login">Manage Registry</a></li>
                               <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 registry/whyus">Why Lucy Registry?</a></li>
                             </ul>
@@ -149,15 +144,49 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['data']->_loop = true;
 $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
 ?>
-                    <li> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+                  <li class="dropdown"> <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 category?cat_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['category_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
+" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" onclick="location.href ='<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+category?cat_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['category_id'];?>
+'"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
 </a>
+                  <ul class="dropdown-menu pages">
+                    <li>
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-xs-12 col-menu">
+                            <ul class="links">
+                              <?php
+$_from = $_smarty_tpl->tpl_vars['data']->value['pre_cat'];
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['cat_cart'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['cat_cart']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['cat_cart']->value) {
+$_smarty_tpl->tpl_vars['cat_cart']->_loop = true;
+$foreach_cat_cart_Sav = $_smarty_tpl->tpl_vars['cat_cart'];
+?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/find"><?php echo $_smarty_tpl->tpl_vars['cat_cart']->value;?>
+</a></li>
+                              <?php
+$_smarty_tpl->tpl_vars['cat_cart'] = $foreach_cat_cart_Sav;
+}
+?>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </li>
+                  </ul>
+                </li>
                   <?php
 $_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
 }
 ?>
+
                 <?php }?>
               </ul>
               <!-- /.navbar-nav -->

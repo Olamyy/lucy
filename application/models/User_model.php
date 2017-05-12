@@ -14,7 +14,8 @@ class User_model extends CI_Model
     {
         $query = $this->db->insert($table, $data);
         if ($query) {
-            return $this->get($table);
+            $insert_id = $this->db->insert_id();
+            return $this->custom_get($table,array('id' => $insert_id), 0, 0);
         } else
             return false;
     }
@@ -68,6 +69,41 @@ class User_model extends CI_Model
 
     public function custom_get($table,$condition, $limit, $clause){
         $query = $this->db->get_where($table,$condition, $limit, $clause);
+        if ($query){
+            return $query->result($type='array');
+        }
+        else
+            return false;
+    }
+
+    public function get_where_or_where($table, $where, $or_where){
+        $query = $this->db->select('*')->from($table)
+            ->group_start()
+            ->where($where)
+            ->or_group_start()
+            ->where($or_where)
+            ->group_end()
+            ->group_end()
+            ->get();
+        if ($query){
+            return $query->result($type='array');
+        }
+        else
+            return false;
+    }
+
+    public function get_registry_with_email_or_name($query_term){
+        $query = $this->db->select('*')->from('lucy_couple')
+            ->group_start()
+            ->where(array('email'=>$query_term))
+            ->or_group_start()
+            ->or_where(array('groom_first_name'=>$query_term))
+            ->or_where(array('groom_last_name'=>$query_term))
+            ->or_where(array('bride_first_name'=>$query_term))
+            ->or_where(array('bride_last_name'=>$query_term))
+            ->group_end()
+            ->group_end()
+            ->get();
         if ($query){
             return $query->result($type='array');
         }

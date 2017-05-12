@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-02 13:55:03
+<?php /* Smarty version 3.1.24, created on 2017-05-09 16:09:06
          compiled from "/var/www/html/lucy/public/_template/front/registry/couple/dashboard/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:170883933058b81627dfb697_14721314%%*/
+/*%%SmartyHeaderCode:8716062395911db9293b882_19480301%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c4c5bbe61253ce282b60d73a2f57351fdae6802d' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/registry/couple/dashboard/nav.tpl',
-      1 => 1488459301,
+      1 => 1494342543,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '170883933058b81627dfb697_14721314',
+  'nocache_hash' => '8716062395911db9293b882_19480301',
   'variables' => 
   array (
     'BASE_URL' => 0,
-    'user_session' => 0,
+    'current_user' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b81627e4c769_80863123',
+  'unifunc' => 'content_5911db92983d26_86489667',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b81627e4c769_80863123')) {
-function content_58b81627e4c769_80863123 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5911db92983d26_86489667')) {
+function content_5911db92983d26_86489667 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '170883933058b81627dfb697_14721314';
+$_smarty_tpl->properties['nocache_hash'] = '8716062395911db9293b882_19480301';
 ?>
 </div>
 <div class="main-header">
@@ -119,9 +119,9 @@ $_smarty_tpl->properties['nocache_hash'] = '170883933058b81627dfb697_14721314';
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <ul class="account">
-                        <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>
+                        <?php if ((($tmp = @$_smarty_tpl->tpl_vars['current_user']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
+registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['current_user']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
 
                                 </a></li>
                         <?php } else { ?>
@@ -165,9 +165,9 @@ registry/couple/action/settings">Account Settings</a></li>
 registry/couple/action/help">Help</a></li>
                                                         <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 ">
-                                                        <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
+                                                        <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['current_user']->value[0]['couple_id'];?>
 ">
-                                                        <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['ip'];?>
+                                                        <input type="hidden" id="user_ip" value="<?php echo $_smarty_tpl->tpl_vars['current_user']->value[0]['ip'];?>
 ">
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 registry/couple/action/logout" id="logout_btn">Logout</a></li>

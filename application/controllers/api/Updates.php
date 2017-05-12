@@ -35,10 +35,10 @@ class Updates extends REST_Controller
 
           if(!empty($couple_details)){
               $update_data = array('dashboard_image'=>$bg_image);
-              $test = $this->user_model->update($update_data,
+              $update = $this->user_model->update($update_data,
                   'lucy_couple',
                   array('couple_id'=>$couple_details[0]['couple_id']));
-              if ($test){
+              if ($update){
                   $response_data = $this->user_model->custom_get('lucy_couple', array('couple_id'=>$couple_details[0]['couple_id']), 0, 0);
                   $this->response_ok($response_data);
               }
@@ -138,8 +138,8 @@ class Updates extends REST_Controller
   }
 
   public function get_ip_get(){
-        $ip = $this->input->ip_address();
-        $this->response_ok($ip);
+      $ip = $this->input->ip_address();
+      $this->response_ok($ip);
     }
 
   public function logout_post(){
@@ -223,13 +223,12 @@ class Updates extends REST_Controller
                           $this->response_bad('Unable to update  cart');
                       }
                   }
-
           }
           else{
               $cart_id = $user_details[0]['cart_id'];
               if($user_details[0]['is_logged_in'] == 0){
-
-                  $this->response_bad('You need to login to to add to cart', $user_details);
+                  $error_msg = array('reason'=>'NoLogin');
+                  $this->response_bad('You need to login to add to cart', $error_msg);
               }
               else{
                   if (empty($user_details[0]['cart_id'])){

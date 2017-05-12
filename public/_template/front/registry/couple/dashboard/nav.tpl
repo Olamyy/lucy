@@ -87,8 +87,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <ul class="account">
-                        {if $user_session[0].is_logged_in|default: ''}
-                            <li><a href="{$BASE_URL}registry/couple/action/settings">Hi, {$user_session[0].groom_first_name|default: ''}
+                        {if $current_user[0].is_logged_in|default: ''}
+                            <li><a href="{$BASE_URL}registry/couple/action/settings">Hi, {$current_user[0].groom_first_name|default: ''}
                                 </a></li>
                         {else}
                             <li><a href="{$BASE_URL}auth/login">My Account</a></li>
@@ -123,8 +123,8 @@
                                                         <li><a href="{$BASE_URL}registry/couple/action/settings">Account Settings</a></li>
                                                         <li><a href="{$BASE_URL}registry/couple/action/help">Help</a></li>
                                                         <input type="hidden" id="base_url" value="{$BASE_URL}">
-                                                        <input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
-                                                        <input type="hidden" id="user_ip" value="{$user_session[0].ip}">
+                                                        <input type="hidden" id="couple_id" value="{$current_user[0].couple_id}">
+                                                        <input type="hidden" id="user_ip" value="{$current_user[0].ip}">
                                                         <li><a href="{$BASE_URL}registry/couple/action/logout" id="logout_btn">Logout</a></li>
                                                     </ul>
                                                 </div>

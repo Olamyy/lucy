@@ -485,13 +485,28 @@ jQuery(document).ready(function() {
     $("#exampleInputEmail1:last-child").remove();
   });
 
+
   var dashboard_image_setter = function(image_url){
-    var bg_img = $("#dashboard_image").val();
-    console
-        .log(bg_img);
-    image_url = image_url || bg_img
-    $('.main-couple-img').css('background-image', 'url(' + image_url + ')');
-    $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
+     var bg_img = Cookies.get('dash_image');
+     if (!bg_img){
+         var bg_from_html = $("#dashboard_image").val();
+         if (bg_from_html){
+             image_url = bg_from_html;
+             $('.main-couple-img').css('background-image', 'url(' + image_url + ')');
+             $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
+         }
+         else{
+             image_url = bg_img;
+             $('.main-couple-img').css('background-image', 'url(' + image_url + ')');
+             $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
+         }
+     }
+      else {
+         image_url = bg_img;
+         $('.main-couple-img').css('background-image', 'url(' + image_url + ')');
+         $('.preview-wrapper').css( { backgroundImage: 'url(' + image_url + ')' } );
+     }
+
   };
 
   jQuery('.single-back-img').on('click', function () {
@@ -513,7 +528,9 @@ jQuery(document).ready(function() {
           dataType: 'json',
           async : false,
           success: function (response) {
-            dashboard_image_setter(new_bg_image);
+            var new_bg = $("#dashboard_image").val(response.response[0].dashboard_image);
+              Cookies.set('dash_image', response.response[0].dashboard_image);
+              dashboard_image_setter(new_bg);
           },
           error : function(response){
             toastr.error('Unable to set dashboard image.')
@@ -529,11 +546,7 @@ jQuery(document).ready(function() {
   var show_product_details = function(){
     $('#product_cart_details').css("display","block");
   };
-
-  hide_product_details();
-
-  dashboard_image_setter();
-
+    
   var getCartDetails = function(){
     var base_url = $('#base_url').val();
     var template_url = $('#template_url').val();
@@ -544,7 +557,9 @@ jQuery(document).ready(function() {
       async : false,
       success: function (response) {
         var current_user_ip = response.response;
+        console.log(current_user_ip);
         var user_details = Cookies.getJSON('user_details');
+        console.log(user_details);
         if (user_details){
           if (user_details.user_ip === current_user_ip){
             var sums = [];
@@ -561,12 +576,20 @@ jQuery(document).ready(function() {
           }
         }
       },
-      error : function(){
+      error : function(response){
+        console.log(response)
       }
     });
   };
 
-  getCartDetails();
+  var handleReg = function(){
+    $('.item').on('click', function(event){
+      var itemID = this.id;
+      $(this).toggleClass("active");
+      $('#regType').val(itemID);
+    })
+  };
+
 
   $('.remove_btn').on('click', function(event){
     event.preventDefault();
@@ -655,6 +678,7 @@ jQuery(document).ready(function() {
             window.location.href = base_url;
           },
           error : function(response){
+            console.log(response)
           }
         });
 
@@ -669,14 +693,13 @@ jQuery(document).ready(function() {
     var date = new Date();
     var minutes = 30;
     date.setTime(date.getTime() + (minutes * 60 * 1000));
-
     $.ajax(
         {
+            url: base_url + 'api/updates/cart_add',
           type: "POST",
-          url: base_url + 'api/updates/cart_add',
           data: {
-            "user_ip": user_ip,
             "product_id" : product_id,
+            "user_ip": user_ip,
             "quantity" : quantity
           },
           dataType: 'json',
@@ -690,10 +713,20 @@ jQuery(document).ready(function() {
             getCartDetails();
           },
           error : function(response){
-            toastr.error('Unable to add the product to your cart');
+              if (response.responseJSON['error-reasons'].reason == "NoLogin"){
+                  toastr.error('You need to login to add to cart');
+              }
           }
         });
   });
+
+  hide_product_details();
+
+  dashboard_image_setter();
+
+  getCartDetails();
+
+  handleReg();
 
 });
 

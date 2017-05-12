@@ -34,7 +34,7 @@ class Category extends CI_Controller
             if (empty($cat_title)) $error[] = "The field cannot be empty.";
 
             if (empty($error)){
-                $check = $this->category_model->custom_get("lucy_category_description",
+                $check = $this->user_model->custom_get("lucy_category_description",
                     array("title" => $cat_title), 0, 0);
                 if ($check) {
                     $this->data['cat_details'] = $check;
@@ -69,9 +69,9 @@ class Category extends CI_Controller
             if (empty($error)) {
                 $category_details = array("title" => $category_title, "description" => $short_description,
                     "sub_categories" => $sub_cat_cats, "category_url" => $cat_url, "created_on" => date('Y-m-d H:i:s'),
-                    "search_filters" => $cat_search_filters, "category_id" => $this->category_model->get_transaction_code()
+                    "search_filters" => $cat_search_filters, "category_id" => $this->user_model->get_transaction_code(5)
                 );
-                $insert = $this->category_model->add($category_details, "lucy_category_description");
+                $insert = $this->user_model->add("lucy_category_description", $category_details);
 
                 if ($insert) {
                     $this->data["message"] = "Successfully Created the category";
@@ -105,9 +105,9 @@ class Category extends CI_Controller
             if (empty($error)) {
                 $category_details = array("title" => $category_title, "description" => $short_description,
                     "sub_categories" => $sub_cat_cats, "category_url" => $cat_url, "created_on" => date('Y-m-d H:i:s'),
-                    "search_filters" => $cat_search_filters, "category_id" => $this->category_model->get_transaction_code()
+                    "search_filters" => $cat_search_filters, "category_id" => $this->user_model->get_transaction_code()
                 );
-                $insert = $this->category_model->update("lucy_category_description",$category_details);
+                $insert = $this->user_model->update("lucy_category_description",$category_details);
 
                 if ($insert) {
                     $this->data["message"] = "Successfully updated the category";

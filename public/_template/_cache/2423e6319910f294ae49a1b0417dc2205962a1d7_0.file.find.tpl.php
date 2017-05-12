@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-05 14:52:22
+<?php /* Smarty version 3.1.24, created on 2017-04-15 18:46:48
          compiled from "public/_template/front/registry/find.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:165583736858bc1816ba26a3_97993546%%*/
+/*%%SmartyHeaderCode:182949927758f25c88c4a051_57823094%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2423e6319910f294ae49a1b0417dc2205962a1d7' => 
     array (
       0 => 'public/_template/front/registry/find.tpl',
-      1 => 1487677328,
+      1 => 1492278404,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '165583736858bc1816ba26a3_97993546',
+  'nocache_hash' => '182949927758f25c88c4a051_57823094',
   'variables' => 
   array (
     'error' => 0,
     'err' => 0,
     'BASE_URL' => 0,
+    'registry_search_details' => 0,
+    'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bc18172f6e65_18654486',
+  'unifunc' => 'content_58f25c88c8efb6_14112640',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bc18172f6e65_18654486')) {
-function content_58bc18172f6e65_18654486 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58f25c88c8efb6_14112640')) {
+function content_58f25c88c8efb6_14112640 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '165583736858bc1816ba26a3_97993546';
+$_smarty_tpl->properties['nocache_hash'] = '182949927758f25c88c4a051_57823094';
 echo $_smarty_tpl->getSubTemplate ("../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -68,11 +70,11 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                         </div>
                     <?php }?>
                     <form class="register-form outer-top-xs" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/auth/login">
+registry/find">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Registry Detail<span>*</span></label>
-                            <input type="email" name="email" placeholder="You can search by name, email, gifts" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+                            <input type="text" name="registry_search_query" placeholder="You can search by registry name or couples email." class="form-control unicase-form-control text-input">
                         </div>
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Search</button>
                     </form>
@@ -83,13 +85,68 @@ index.php/registry/auth/login">
 
                 <!-- create a new account -->			</div><!-- /.row -->
         </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
 
     </div><!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
 
+</div><!-- /.container -->
 
+<?php if ((($tmp = @$_smarty_tpl->tpl_vars['registry_search_details']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+<br>
+<div class="body-content">
+    <div class="container">
+        <div class="my-wishlist-page">
+            <div class="row">
+                <div class="col-md-12 my-wishlist">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th colspan="4" class="heading-title">Search Results</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+$_from = $_smarty_tpl->tpl_vars['registry_search_details']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['data'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['data']->_loop = false;
+$_smarty_tpl->tpl_vars['eKey'] = new Smarty_Variable;
+foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_vars['data']->value) {
+$_smarty_tpl->tpl_vars['data']->_loop = true;
+$foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
+?>
+                            <tr>
+                                <td class="col-md-3"><img src="<?php echo $_smarty_tpl->tpl_vars['data']->value['dashboard_image'];?>
+" alt="imga"></td>
+                                <td class="col-md-5">
+                                    <div class="product-name"><a href="#"><?php echo $_smarty_tpl->tpl_vars['data']->value['groom_first_name'];?>
+ & <?php echo $_smarty_tpl->tpl_vars['data']->value['bride_first_name'];?>
+</a></div>
+                                </td>
+                                <td class="col-md-7">
+                                    <div class="product-name"> Wedding Date : <?php echo $_smarty_tpl->tpl_vars['data']->value['wedding_date'];?>
+</div>
+                                </td>
+                                <td class="col-md-2">
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['data']->value['registry_url_tag'];?>
+" class="btn-upper btn btn-primary">Visit Registry</a>
+                                </td>
+                            </tr>
+                            <?php
+$_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
+}
+?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>			</div><!-- /.row -->
+        </div>
+    </div>
+</div>
+<?php }?>
 <?php echo $_smarty_tpl->getSubTemplate ("../registry/couple/share/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 
 }

@@ -129,14 +129,14 @@ class Product extends CI_Controller
             if (empty($product_name)) $error[] = "The field cannot be empty.";
 
             if (empty($error)){
-                $check = $this->product_model->custom_get("lucy_product",
+                $check = $this->user_model->custom_get("lucy_product",
                     array("name" => $product_name), 0, 0);
                 if ($check) {
                     $this->data['product_details'] = $check;
                     $this->session->set_userdata('product_details', $check);
                     redirect('index.php/admin/product/edit');
                 } else
-                    $this->data["error"] = "The category provided does not exist";
+                    $this->data["error"] = "The product name provided does not exist";
             }
             else
                 $this->data['error'] = $error;
