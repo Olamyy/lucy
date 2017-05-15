@@ -76,6 +76,7 @@ class User_model extends CI_Model
             return false;
     }
 
+
     public function get_where_or_where($table, $where, $or_where){
         $query = $this->db->select('*')->from($table)
             ->group_start()

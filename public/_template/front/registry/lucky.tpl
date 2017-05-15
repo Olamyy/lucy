@@ -28,17 +28,24 @@
                             {/foreach}
                         </div>
                     {/if}
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/houseWarming">
+                    {if $user_session|default:''}
+                    {/if}
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/lucky">
                         <h4 class="">Profile Details</h4>
                         <div class="form-group">
-                            <label class="info-title" for="name">Your name<span>*</span></label>
-                            <input type="text" name="name" required placeholder="First and last name"
+                            <label class="info-title" for="name">Name<span>*</span></label>
+                            <input type="text" name="name" required placeholder="Your FullName"
                                    class="form-control unicase-form-control text-input" id="name" >
                         </div>
                         <div class="form-group">
                             <label class="info-title" for="venue">Venue</label>
-                            <input type="text" name="venue" required placeholder="Event Venue(This is Optional)"
+                            <input type="text" name="venue" required placeholder="Venue(Optional)"
                                    class="form-control unicase-form-control text-input" id="venue" >
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="event_name">Event Name<span>*</span></label>
+                            <input type="text" name="event_name" required placeholder="Name of your event"
+                                   class="form-control unicase-form-control text-input" id="event_name" >
                         </div>
                         <br>
                         <h4 class="">Registry Details</h4>
@@ -50,19 +57,19 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="info-title" for="event_date">Event Date</label>
-                            <input type="text" name="event_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="event_date" >
+                            <label class="info-title" for="even_date">Event Date</label>
+                            <input type="text" name="event_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="even_date" >
                         </div>
                         <div class="form-group">
-                            <label for="NoDate"></label><input type="checkbox" aria-label="" id="NoDate">
-                            <label class="info-title" for="NoDate">I haven't picked a date yet</div>
+                            <input type="checkbox" aria-label="" id="NoDate">
+                            <label class="info-title" for="NoDat">I haven't picked a date yet</div>
                 </div>
                 <br>
                 <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Create Registry</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 {include file="../footer.tpl"}

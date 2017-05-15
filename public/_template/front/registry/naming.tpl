@@ -6,7 +6,7 @@
             <ul class="list-inline list-unstyled">
                 <li><a href="{$BASE_URL}">Home</a></li>
                 <li><a href="{$BASE_URL}registry">Registry</a></li>
-                <li class='active'>Couple Details</li>
+                <li class='active'>Registry Details</li>
             </ul>
         </div><!-- /.breadcrumb-inner -->
     </div><!-- /.container -->
@@ -28,16 +28,23 @@
                             {/foreach}
                         </div>
                     {/if}
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/houseWarming">
+                    {if $user_session|default:''}
+                    {/if}
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/ChildNaming">
                         <h4 class="">Profile Details</h4>
                         <div class="form-group">
                             <label class="info-title" for="name">Your name<span>*</span></label>
-                            <input type="text" name="name" required placeholder="First and last name"
+                            <input type="text" name="name" required placeholder="First and Last names"
                                    class="form-control unicase-form-control text-input" id="name" >
                         </div>
                         <div class="form-group">
-                            <label class="info-title" for="venue">Venue</label>
-                            <input type="text" name="venue" required placeholder="Event Venue(This is Optional)"
+                            <label class="info-title" for="child_name">Child's Name</label>
+                            <input type="text" name="child_name" required placeholder="Child name(Optional)"
+                                   class="form-control unicase-form-control text-input" id="child_name" >
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="name">Event Venue</label>
+                            <input type="text" name="venue" required placeholder="Venue(Optional)"
                                    class="form-control unicase-form-control text-input" id="venue" >
                         </div>
                         <br>
@@ -50,19 +57,20 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="info-title" for="event_date">Event Date</label>
+                            <label class="info-title" for="event_date">{if $user_session[0].regType =='wedding'}Wedding {else}Event {/if} Date</label>
                             <input type="text" name="event_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="event_date" >
                         </div>
                         <div class="form-group">
-                            <label for="NoDate"></label><input type="checkbox" aria-label="" id="NoDate">
-                            <label class="info-title" for="NoDate">I haven't picked a date yet</div>
+                            <label for="NoDate"></label>
+                            <input type="checkbox" aria-label="" id="NoDate">
+                            <label class="info-title" for="NoDate">{if $user_session[0].regType =='wedding'}We {else}I {/if}haven't picked a date yet</div>
                 </div>
                 <br>
                 <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Create Registry</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 {include file="../footer.tpl"}

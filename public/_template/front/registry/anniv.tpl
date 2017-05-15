@@ -28,17 +28,24 @@
                             {/foreach}
                         </div>
                     {/if}
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/houseWarming">
+                    {if $user_session|default:''}
+                    {/if}
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/init/anniv">
                         <h4 class="">Profile Details</h4>
                         <div class="form-group">
-                            <label class="info-title" for="name">Your name<span>*</span></label>
-                            <input type="text" name="name" required placeholder="First and last name"
+                            <label class="info-title" for="name">Family Name<span>*</span></label>
+                            <input type="text" name="name" required placeholder="Name"
                                    class="form-control unicase-form-control text-input" id="name" >
                         </div>
                         <div class="form-group">
-                            <label class="info-title" for="venue">Venue</label>
-                            <input type="text" name="venue" required placeholder="Event Venue(This is Optional)"
+                            <label class="info-title" for="venue">Event Venue</label>
+                            <input type="text" name="venue" required placeholder="Venue(Optional)"
                                    class="form-control unicase-form-control text-input" id="venue" >
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="years_of_marriage">Marriage Years<span>*</span></label>
+                            <input type="text" name="years_of_marriage" required placeholder="Years of Marriage(Optional)"
+                                   class="form-control unicase-form-control text-input" id="years_of_marriage" >
                         </div>
                         <br>
                         <h4 class="">Registry Details</h4>
@@ -54,11 +61,11 @@
                             <input type="text" name="event_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="event_date" >
                         </div>
                         <div class="form-group">
-                            <label for="NoDate"></label><input type="checkbox" aria-label="" id="NoDate">
-                            <label class="info-title" for="NoDate">I haven't picked a date yet</div>
+                            <input type="checkbox" aria-label="" id="NoDate">
+                            <label class="info-title" for="NoDat">I haven't picked a date yet</div>
                 </div>
-                <br>
-                <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Create Registry</button>
+                        <br>
+                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Create Registry</button>
                     </form>
                 </div>
             </div>

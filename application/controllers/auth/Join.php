@@ -23,14 +23,11 @@ class Join extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $reg_type = $this->input->post('regType');
-
-            print_r($this->input->post('regType'));
-
             if (empty($email)) $error[] = 'Provide a Valid Email';
             if (empty($password)) $error[] = 'Provide a Valid Password';
 
             if (empty($error)) {
-                $check_email = $this->user_model->custom_get('lucy_couple',array('email' => $email), 0, 0);
+                $check_email = $this->user_model->custom_get('lucy_all_users', array('email' => $email), 0, 0);
                 if (!$check_email) {
                     $hash_password = password_hash($password, PASSWORD_BCRYPT);
                     $user_details = array('email' => $email, 'password' => $hash_password,
@@ -38,25 +35,20 @@ class Join extends CI_Controller
                             'ip' => $this->input->ip_address(),
                             'date_added' => date('Y-m-d H:i:s'),
                             'regType'=>$reg_type);
-                    if ($reg_type == 'wedding'){
-                        $user_details['couple_id'] = $this->user_model->get_transaction_code(15);
-                        $user_details['couple_status'] = 0;
-                        $insert = $this->user_model->add('lucy_couple',$user_details);
-                        if ($insert) {
+                    $user_details['user_id'] = $this->user_model->get_transaction_code(15);
+                    $user_details['user_status'] = 0;
+                    $insert = $this->user_model->add('lucy_all_users',$user_details);
+                    if ($insert && $reg_type =='wedding') {
                             $this->session->set_userdata(array('user_session'=>$insert));
-                            redirect('registry/couple/init');
-                        }
-                        else
-                            $this->data['error'] = "Unable to register your details. Please, check your details.";
+                            redirect('registry/initcouple');
                     }
                     else{
-                        $user_details['user_id'] = $this->user_model->get_transaction_code(15);
-                        $user_details['user_status'] = 0;
-                        $insert = $this->user_model->add('lucy_reg_user',$user_details);
                         if ($insert) {
                             $this->session->set_userdata(array('user_session'=>$insert));
                             redirect('registry/init/'.$reg_type);
                         }
+                        else
+                            $this->data['error'] = "Unable to register your details. Please, check your details.";
                     }
 
                     }

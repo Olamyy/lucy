@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-05-11 21:32:20
+<?php /* Smarty version 3.1.24, created on 2017-05-15 17:56:27
          compiled from "/var/www/html/lucy/public/_template/front/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12282024975914ca54a758d7_76925881%%*/
+/*%%SmartyHeaderCode:19318163345919ddbb5836e5_89914561%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e676c75439b7749b3ccebaf66c43d3fcafaf786' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/navmenu.tpl',
-      1 => 1494534738,
+      1 => 1494867386,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12282024975914ca54a758d7_76925881',
+  'nocache_hash' => '19318163345919ddbb5836e5_89914561',
   'variables' => 
   array (
     'user_session' => 0,
@@ -24,22 +24,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5914ca54ae9e93_75331007',
+  'unifunc' => 'content_5919ddbb600d83_59541822',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5914ca54ae9e93_75331007')) {
-function content_5914ca54ae9e93_75331007 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5919ddbb600d83_59541822')) {
+function content_5919ddbb600d83_59541822 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12282024975914ca54a758d7_76925881';
+$_smarty_tpl->properties['nocache_hash'] = '19318163345919ddbb5836e5_89914561';
 if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-  <?php if ($_smarty_tpl->tpl_vars['user_session']->value[0]['regType'] == "wedding") {?>
-    <input type="hidden" id="couple_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['couple_id'];?>
-">
-  <?php }?>
-  <?php } else { ?>
   <input type="hidden" id="user_id" value="<?php echo $_smarty_tpl->tpl_vars['user_session']->value[0]['user_id'];?>
 ">
-<?php }?>
+  <?php }?>
 
 <div class="main-header">
   <div class="container">
@@ -78,11 +73,16 @@ registry/checkout/cart" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4">
           <ul class="account">
-            <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp)) {?>
+            <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp) && $_smarty_tpl->tpl_vars['user_session']->value[0]['regType'] != 'wedding') {?>
             <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
+registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['name'])===null||$tmp==='' ? '' : $tmp);?>
 
               </a></li>
+              <?php } elseif ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['is_logged_in'])===null||$tmp==='' ? '' : $tmp) && $_smarty_tpl->tpl_vars['user_session']->value[0]['regType'] == 'wedding') {?>
+              <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/couple/action/settings">Hi, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['user_session']->value[0]['groom_first_name'])===null||$tmp==='' ? '' : $tmp);?>
+
+                </a></li>
             <?php } else { ?>
               <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 auth/login">My Account</a></li>

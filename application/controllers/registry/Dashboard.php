@@ -35,7 +35,9 @@ class Dashboard extends CI_Controller
 
         $this->data['ip'] = $this->input->ip_address();
         $this->data['new_products'] = $this->user_model->get('lucy_product');
-        $this->smarty->view('front/registry/couple/dashboard/dashboard.tpl', $this->data);
+
+        print_r($this->data['user_details']);
+//        $this->smarty->view('front/registry/couple/dashboard/dashboard.tpl', $this->data);
     }
 
 

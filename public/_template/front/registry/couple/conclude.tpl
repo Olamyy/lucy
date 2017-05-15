@@ -38,12 +38,12 @@
                         </div>
                         <hr>
                         <div class="form-group">
-                            <label class="info-title" for="exampleInputPassword1">Wedding Date</label>
+                            <label class="info-title" for="wedding_date">Wedding Date</label>
                             <input type="text" name="wedding_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="wedding_date" >
                         </div>
                         <div class="form-group">
                             <input type="checkbox" aria-label="" id="NoDate"">
-                            <label class="info-title" for="NoDat"">We haven't picked a date yet</label>
+                            <label class="info-title" for="NoDate">We haven't picked a date yet</label>
                         </div>
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Finish</button>
                     </form>

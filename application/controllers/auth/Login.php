@@ -36,7 +36,7 @@ class Login extends CI_Controller
 
             if (empty($error)){
                 //verify email
-                $couple_data = $this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0);
+                $couple_data = $this->user_model->custom_get('lucy_all_users', array('email'=>$email), 0, 0);
 
                 //misc update
                 $user_ip = $this->user_model->custom_get('misc', array('ip'=>$ip), 0, 0);
@@ -46,12 +46,11 @@ class Login extends CI_Controller
 
                     ///verify password
                     if (password_verify($password, $couple_password)){
-                        $this->user_model->update(array('is_logged_in'=>1),'lucy_couple',  array('email'=>$email));
+                        $this->user_model->update(array('is_logged_in'=>1),'lucy_all_users',  array('email'=>$email));
                         $this->user_model->update(array('login_attempt'=>$user_ip['login_attempt'] + 1,
-                            'success_login'=>$user_ip['success_login'] + 1),'misc',  array('ip'=>$ip));
-                        $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_couple', array('email'=>$email), 0, 0)));
+                            'success_login'=>$user_ip['success_login'] + 1), 'misc',  array('ip'=>$ip));
+                        $this->session->set_userdata(array('user_session'=>$this->user_model->custom_get('lucy_all_users', array('email'=>$email), 0, 0)));
                         if (empty($redirect_uri)){
-                            print_r($this->session->userdata());
                             redirect('registry/couple/dashboard');
                         }
                         else
