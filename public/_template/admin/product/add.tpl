@@ -35,6 +35,14 @@
                             <i class="fa fa-file-text-o"></i>
                             New Product
                         </div>
+                        {if $error|default:''}
+                            <div class="alert alert-danger">
+                                <strong>Oops! Something went wrong</strong>
+                                {foreach from=$error item=err}
+                                    <p>{$err}</p>
+                                {/foreach}
+                            </div>
+                        {/if}
                         <div class="card-block m-t-20">
                             <div id="rootwizard_no_val">
                                 <ul class="nav nav-pills">

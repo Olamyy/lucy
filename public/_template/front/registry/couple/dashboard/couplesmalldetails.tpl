@@ -1,7 +1,7 @@
 <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
     <div id="advertisement" class="advertisement">
         <div class="item">
-                {if $user_details|default: ''  && $user_details[0]['regType'] == 'wedding'}
+                {if $complete_details|default: ''  && $user_details[0]['regType'] == 'wedding'}
                     {foreach from=$user_details item=user key=eKey}
                     <div class="avatar"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/dashboardcouple.png" alt="Image">
                         <br>
@@ -11,10 +11,11 @@
                         </div>
                     {/foreach}
                 {else}
-                        <div class="avatar"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/dashboardcouple.png" alt="Image">
+                  <div class="avatar"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/person.png" alt="Image">
                             <br>
-                    {foreach from=$user_details item=user key=eKey}
-                        <button class="btn btn-primary" style="background-color: #FF8F00; font-weight: 300; margin-top: 5px; font-size: large;">{$user.name}</button>
+                    {foreach from=$complete_details item=user key=eKey}
+                        {*{$user_details[0]}*}
+                        <bautton class="btn btn-primary" style="background-color: #FF8F00; font-weight: 300; margin-top: 5px; font-size: large;">{$user.name}</bautton>
                         <div>
                             <h5 style="margin-top: 10px;">{if !$user.event_date}Date coming Soon{/if}{format_date date={$user.event_date}}</h5>
                         </div>

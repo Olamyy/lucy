@@ -8,7 +8,7 @@
 <input type="hidden" id="user_ip" value="{$ip}">
 <input type="hidden" id="product_id" value="{$product.product_id}">
 <input type="hidden" id="base_url" value="{$BASE_URL}">
-<input type="hidden" id="couple_id" value="{$user_session[0].couple_id}">
+<input type="hidden" id="user_id" value="{$user_session[0].user_id}">
 
 <div class="body-content Hi outer-top-xs">
         <div class='container'>

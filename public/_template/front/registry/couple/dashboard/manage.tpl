@@ -1,10 +1,10 @@
 {include file="./header.tpl"}
 {include file="./nav.tpl"}
 
-{foreach from=$current_user item=_user}
+{foreach from=$complete_details item=_user}
 
 <form>
-    <input type="hidden" name="name"  value="{$_user.couple_id}" id="couple_id" class="couples-name">
+    <input type="hidden" name="name"  value="{$_user.user_id}" id="user_id" class="couples-name">
     <input type="hidden" id="base_url" value="{$BASE_URL}" />
     <input type="hidden" id="dashboard_image" value="{$_user.dashboard_image}" />
     <input type="hidden" id="base_dashboard_image" value="{$BASE_URL}public/_template/uploads/files/{$_user.base_dashboard_image}" />
@@ -21,10 +21,12 @@
                     </button>
                     <form action="" class="couples-form">
                         <input type="text" name="name" id="name" class="couples-name">
-                        <span class="name-display">{$_user.groom_first_name} & {$_user.bride_first_name}</span>
+                        <span class="name-display">
+                            {if $_user.regType == 'wedding'}{$_user.groom_first_name} & {$_user.bride_first_name}{elseif $_user.regType == 'anniv'}Mr & Mrs {$_user.name}{else}{$_user.name}{/if}
+                        </span>
                     </form>
                 </div>
-                <h2 class="name-display" style="font-size: small; padding-top: 80px;">{if empty($_user.wedding_date)}Date is coming soon{else}{format_date date={$user.wedding_date}}{/if}</h2>
+                <h2 class="name-display" style="font-size: small; padding-top: 80px;">{if empty($_user.event_date)}Date is coming soon{else}{format_date date={$user.event_date}}{/if}</h2>
 
                 <div id="backgrounds" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-dialog-background">
@@ -51,7 +53,7 @@
                     </div>
                 </div>
                 <div class="row small-boxes-wrapper">
-                    <a href="{$BASE_URL}registry/couple/action/preview?preview_id={$_user.couple_id}" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
+                    <a href="{$BASE_URL}registry/action/preview?preview_id={$_user.user_id}" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 small-boxes">
                         <h4>view as a guest</h4>
                         <p>View your profile as a guest and know how it feels</p>
                     </a>
@@ -75,10 +77,10 @@
                         <h4 class="modal-title"><b>Invite Partner</b></h4>
                     </div>
                     <div class="modal-body">
-                        <P class="desc-text">Once invited, your partner will be able to add, remove, and update products and adjust your wedding registry settings.</P>
+                        <P class="desc-text">Once invited, your partner will be able to add, remove, and update products and adjust your registry settings.</P>
                             <div class="form-group">
                                 <label for="email">EMAIL ADDRESS:</label>
-                                <input type="email" class="form-control email-field" id="email" placeholder="{$_user.spouse_email}">
+                                <input type="email" class="form-control email-field" id="email" placeholder="{if $_user.regType == 'wedding' || $_user.regType == 'wedding' }{$_user.spouse_email}{else}{$_user.friend_email}{/if}">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">INVITE</button>
                             <br><br>
@@ -94,10 +96,10 @@
                         <h4 class="modal-title"><b>Validity Check</b></h4>
                     </div>
                     <div class="modal-body">
-                        <P class="desc-text">Enter the name of your partner to confirm going live.</P>
+                        <P class="desc-text">Enter your email to confirm going live.</P>
                             <div class="form-group">
                                 <label for="email">NAME :</label>
-                                <input type="email" class="form-control email-field" id="email" placeholder="{$_user.bride_first_name}">
+                                <input type="email" class="form-control email-field" id="email" placeholder="{$_user.email}">
                             </div>
                             <button type="button" id="invitePartnerForm" class="btn btn-primary pull-right submit-btn" data-dismiss="modal">Go Live</button>
                             <br><br>
@@ -108,8 +110,8 @@
 
         <!--End of invite partner modal-->
 
-                <br>
-                <hr>
+        <br>
+        <hr>
                 <div class="product-tabs inner-bottom-xs">
                     <div class="row">
                         <div class="col-sm-12">
@@ -127,7 +129,7 @@
                                         <p class="text"  id="Vmessage">
                                            <br><br><br>{if
                                             empty($_user.vow_message)}
-                                            Share your love with the world ....
+                                            {if $_user.regType == 'wedding' || $_user.regType == 'anniv'}Share your love with the world ....{else}Tell the world about your event{/if}
                                             {else}{$_user.vow_message}{/if}<br><br></p>
                                            <p>Click <a href="#"  data-toggle="modal" data-target="#vowMessage" >here</a> to edit this message </p>
                                     </div>

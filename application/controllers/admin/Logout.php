@@ -5,7 +5,7 @@
  * Date: 1/20/17
  * Time: 4:28 PM
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined("BASEPATH") OR exit("No direct script access allowed");
 
 class Logout extends CI_Controller
 {
@@ -19,7 +19,7 @@ class Logout extends CI_Controller
     {
         $this->session->sess_destroy();
 
-        redirect('index.php/admin/login');
+        redirect("index.php/admin/login");
     }
 
 }

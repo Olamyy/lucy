@@ -14,9 +14,17 @@ class Checkout extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->library('session');
-        $this->load->model('user_model');
-        $this->load->helper('cookie');
+        $this->load->library("session");
+        $this->load->model("user_model");
+        $this->load->helper("cookie");
+
+        $this->data["pre_cart"] = $this->user_model->get_cat_details();
+        $user_session = $this->session->has_userdata("user_session");
+        if (!$user_session) {
+            redirect("index.php/registry/auth/login");
+        }
+        $this->data["user_session"] = $this->session->userdata("user_session");
+
 
     }
 
@@ -25,36 +33,75 @@ class Checkout extends CI_Controller
         $this->cart();
     }
 
-    public function cart(){
-        $cat_from_db = $this->user_model->get('lucy_category_description', 0 , 0);
-        $pre_cart = array();
-            foreach($cat_from_db as $data){
-                $loop_cat = array('pre_cat'=>explode(",", $data['sub_categories']));
-                $loop_cat = array_replace($data, $loop_cat);
-                $pre_cart[] = $loop_cat;
-            }
-            $this->data['pre_cart'] = $pre_cart;
-            $ip = $this->input->ip_address();
-            $this->data['user_session'] = $this->session->userdata('user_session');
-            $user_details = $this->user_model->custom_get('lucy_user', array('ip'=>$ip), 0, 0);
-            if(empty($user_details)){
-                $temp_user_cart_data = $this->user_model->custom_get('lucy_temp_user', array('ip'=>$ip), 0, 0);
-                $this->data['user_cart_items'] = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$temp_user_cart_data[0]['cart_id']), 0, 0);
+    public function cart()
+    {
+        $ip = $this->input->ip_address();
+        $user_details = $this->user_model->custom_get("lucy_all_users", array("ip" => $ip), 0, 0);
+        if (empty($user_details)) {
+            //assume temp and create new user
+            $temp_user_id = $this->user_model->get_transaction_code(5);
+            $cart_id = $this->user_model->get_transaction_code(10);
+            $create_temp_user = $this->create_temp_user($ip, $temp_user_id, $cart_id);
+            if ($create_temp_user) {
+                $this->data['message'] = "Your cart is currently empty";
+            } else
+                $this->data['message'] = "Your cart is currently empty";
+        } else {
+            $temp_user_cart = $this->user_model->custom_get("lucy_temp_user", array("ip" => $ip), 0, 0);
+            if ($user_details[0]['is_logged_in']) {
+                $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items",
+                    array("cart_id" => $user_details[0]["cart_id"]), 0, 0);
                 $pre_cart = array();
                 $product_details = array();
-                foreach($this->data['user_cart_items'] as $data){
-                    $pre_cart[] = $data['product_id'];
+                foreach ($this->data["user_cart_items"] as $data) {
+                    $pre_cart[] = $data["product_id"];
                 }
-                foreach($pre_cart as $product_id){
-                    $product_details[] = $this->user_model->custom_get('lucy_product', array('product_id'=>$product_id), 0, 0);
+                foreach ($pre_cart as $product_id) {
+                    $product_details[] = $this->user_model->custom_get("lucy_product", array("product_id" => $product_id), 0, 0);
+                    $this->data["user_products"] = $product_details;
+                    $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items", array("cart_id" => $temp_user_cart[0]["cart_id"]), 0, 0);
+                    $this->data["product_details"] = $this->user_model->custom_get("lucy_product", array("product_id" => $this->data["user_cart_items"][0]["product_id"]), 0, 0);
+                    $this->data["user_products"] = $product_details;
                 }
-                $this->data['user_products'] = $product_details;
-                $temp_user_cart = $this->user_model->custom_get('lucy_temp_user', array('ip'=>$this->data['user_session'][0]['ip']), 0, 0);
-                $this->data['user_cart_items'] = $this->user_model->custom_get('lucy_user_cart_items', array('cart_id'=>$temp_user_cart[0]['cart_id']), 0, 0);
-                $this->data['product_details'] = $this->user_model->custom_get('lucy_product', array('product_id'=>$this->data['user_cart_items'][0]['product_id']), 0, 0);
-                $this->data['user_products'] = $product_details;
-                $this->smarty->view('front/registry/cart.tpl', $this->data);
+            } else {
+                $temp_user_cart = $this->user_model->custom_get("lucy_temp_user", array("ip" => $ip), 0, 0);
+                $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items", array("cart_id" => $temp_user_cart[0]["cart_id"]), 0, 0);
+                $this->data["product_details"] = $this->user_model->custom_get("lucy_product", array("product_id" => $this->data["user_cart_items"][0]["product_id"]), 0, 0);
+//                    $this->data["user_products"] = $product_details;
             }
+
+        }
+        $this->smarty->view("front/registry/cart.tpl", $this->data);
     }
+
+
+    private function create_temp_user($user_ip, $temp_user_id, $cart_id)
+    {
+
+        $temp_user = $this->user_model->add("lucy_temp_user",
+            array("user_status" => 0, "temp_user_id" => $temp_user_id,
+                "ip" => $user_ip, "date_added" => date("Y-m-d H:i:s"), "cart_id" => $cart_id));
+        return $this->user_model->add("lucy_user_cart", array("cart_id" => $temp_user[0]["cart_id"], "user_id" => $temp_user[0]["temp_user_id"],
+            "date_added" => date("Y-m-d H:i:s")));
+
+    }
+
+    private function get_all_data()
+    {
+        $pre_cart = array();
+        $product_details = array();
+        foreach ($this->data["user_cart_items"] as $data) {
+            $pre_cart[] = $data["product_id"];
+        }
+        foreach ($pre_cart as $product_id) {
+            $product_details[] = $this->user_model->custom_get("lucy_product", array("product_id" => $product_id), 0, 0);
+            $this->data["user_products"] = $product_details;
+            $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items", array("cart_id" => $temp_user_cart[0]["cart_id"]), 0, 0);
+            $this->data["product_details"] = $this->user_model->custom_get("lucy_product", array("product_id" => $this->data["user_cart_items"][0]["product_id"]), 0, 0);
+            $this->data["user_products"] = $product_details;
+        }
+
+    }
+
 
 }

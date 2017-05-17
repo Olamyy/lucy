@@ -21,7 +21,7 @@ class User_model extends CI_Model
     }
 
     public function get_cat_details(){
-        $cat_from_db = $this->get('lucy_category_description', 0 , 0);
+        $cat_from_db = $this->get('lucy_category_description');
         $pre_cart = array();
         foreach($cat_from_db as $data){
             $loop_cat = array('pre_cat'=>explode(",", $data['sub_categories']));
@@ -60,6 +60,7 @@ class User_model extends CI_Model
     public function update($data, $table, $condition)
     {
         $state = $this->db->update($table, $data, $condition);
+        $this->db->order_by('id', 'RANDOM');
         if ($state) {
             return $this->get($table);
         } else
@@ -94,15 +95,16 @@ class User_model extends CI_Model
     }
 
     public function get_registry_with_email_or_name($query_term){
-        $query = $this->db->select('*')->from('lucy_couple')
+        $query = $this->db->select('*')->from('lucy_all_users')
             ->group_start()
             ->where(array('email'=>$query_term))
-            ->or_group_start()
-            ->or_where(array('groom_first_name'=>$query_term))
-            ->or_where(array('groom_last_name'=>$query_term))
-            ->or_where(array('bride_first_name'=>$query_term))
-            ->or_where(array('bride_last_name'=>$query_term))
-            ->group_end()
+//            ->or_group_start()
+////            ->or_where(array('groom_first_name'=>$query_term))
+////            ->or_where(array('groom_last_name'=>$query_term))
+////            ->or_where(array('bride_first_name'=>$query_term))
+////            ->or_where(array('bride_last_name'=>$query_term))
+////            ->or_where(array('name'=>$query_term))
+//            ->group_end()
             ->group_end()
             ->get();
         if ($query){
