@@ -33,18 +33,7 @@ class Welcome extends CI_Controller
       $pre_cart[] = $loop_cat;
     }
     $this->data["pre_cart"] = $pre_cart;
-    $this->data["hot_deals"] = $this->user_model->custom_get("lucy_product", array("position" => "Hot Deals"), 2, 1);
-    $this->data["special_offer"] = $this->user_model->custom_get("lucy_product", array("position" => "Special Offer"), 0, 0);
-    $this->data["special_deals"] = $this->user_model->custom_get("lucy_product", array("position" => "Special Deals"), 0, 0);
-    $this->data["new_products"] = $this->user_model->custom_get("lucy_product", array("position" => "New Products"), 0, 0);
-    $this->data["featured_products"] = $this->user_model->custom_get("lucy_product", array("position" => "Featured Products"), 0, 0);
-    $this->data["best_sellers"] = $this->user_model->custom_get("lucy_product", array("position" => "Best Sellers"), 0, 0);
-    $this->data["new_arrivals"] = $this->user_model->custom_get("lucy_product", array("position" => "New Arrivals"), 0, 0);
-    $this->data["promo"] = $this->user_model->custom_get("lucy_product", array("position" => "Promo"), 0, 0);
-
-//    echo "<pre>";
-//    print_r($this->data["pre_cart"]);
-//    echo "<pre>";
+    $this->data["on_home_page"] = $this->user_model->get_random("lucy_product", 15);
     $this->smarty->view("front/store.tpl", $this->data);
   }
 

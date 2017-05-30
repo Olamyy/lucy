@@ -34,12 +34,16 @@ class Updates extends REST_Controller
 
       if (empty($error)){
 
-          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
 
           if(!empty($user_details)){
               $update_data = array("dashboard_image"=>$bg_image);
-              $table_name = str_replace("<REG_TYPE>", $user_details[0]["regType"], "lucy_<REG_TYPE>_user");
-              $update = $this->user_model->update($update_data,
+              if ($user_details[0]["regType"] == "wedding"){
+                  $table_name = "lucy_couple";
+              }
+              else{
+                  $table_name = str_replace("<REG_TYPE>", $user_details[0]["regType"], "lucy_<REG_TYPE>_user");
+              }              $update = $this->user_model->update($update_data,
                   $table_name,
                   array("user_id"=>$user_details[0]["user_id"]));
 
@@ -157,7 +161,7 @@ class Updates extends REST_Controller
       if (empty($user_ip)) $error[] = "Empty User IP";
 
       if(empty($error)){
-          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
           if (!empty($user_details)){
               $update = $this->user_model->update(array("is_logged_in"=>0),"lucy_couple", array("user_id"=>$user_details[0]["user_id"]));
               $this->session->sess_destroy();
@@ -182,7 +186,7 @@ class Updates extends REST_Controller
       if (empty($quantity)) $error[] = "Empty Quantity";
 
       if (empty($error)){
-          $user_details = $this->user_model->custom_get("lucy_user", array("ip"=>$user_ip), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_users", array("ip"=>$user_ip), 0, 0);
           $product_details = $this->user_model->custom_get("lucy_product", array("product_id"=>$product_id), 0 , 0);
           if(empty($user_details)){
               $temp_user_details = $this->user_model->custom_get("lucy_temp_user", array("ip"=>$user_ip), 0, 0);
@@ -207,7 +211,7 @@ class Updates extends REST_Controller
                   //temp user exists
                   $cart_id = $temp_user_details[0]["cart_id"];
                   //check if user already has product in cart
-                    $user_cart = $this->user_model->custom_get("lucy_user_cart_items", array("cart_id"=>$cart_id,
+                    $user_cart = $this->user_model->custom_get("lucy_all_users_cart_items", array("cart_id"=>$cart_id,
                                     "product_id"=>$product_id), 0 , 0);
                   if(empty($user_cart)){
                       //new product
@@ -286,9 +290,13 @@ class Updates extends REST_Controller
       if (empty($user_id)) $error[] = "Empty Couple ID";
 
       if (empty($error)){
-          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
-          $table_name = str_replace("<REG_TYPE>", $user_details[0]["regType"], "lucy_<REG_TYPE>_user");
-          $product_details = $this->user_model->custom_get("lucy_product", array("product_id"=>$product_id), 0 , 0);
+          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
+          if ($user_details[0]["regType"] == "wedding"){
+              $table_name = "lucy_couple";
+          }
+          else{
+              $table_name = str_replace("<REG_TYPE>", $user_details[0]["regType"], "lucy_<REG_TYPE>_user");
+          }          $product_details = $this->user_model->custom_get("lucy_product", array("product_id"=>$product_id), 0 , 0);
           if (empty($user_details)){
               $this->response_bad("Invalid Couple", $error);
           }
@@ -311,7 +319,7 @@ class Updates extends REST_Controller
                       $user_registry = $this->user_model->custom_get("lucy_registry_items
                       ", array("user_id" => $user_id), 0, 0);
                       if (empty($user_registry)) {
-                          $add_registry = $this->add_to_registry($user_id, $product_details, $quantity);
+                          $add_registry = $this->add_to_registry($user_id, $product_details, $quantity, $this->registry_id,  $table_name);
                           if ($add_registry) {
                               $this->response_ok($add_registry);
                           } else {
@@ -351,17 +359,17 @@ class Updates extends REST_Controller
         $temp_user = $this->user_model->add("lucy_temp_user",
             array("user_status"=>0, "temp_user_id"=>$temp_user_id,
                 "ip"=>$user_ip,"date_added"=>date("Y-m-d H:i:s"), "cart_id"=>$cart_id));
-            return $this->user_model->add("lucy_user_cart", array("cart_id"=>$temp_user[0]["cart_id"], "user_id"=>$temp_user[0]["temp_user_id"],
+            return $this->user_model->add("lucy_all_users_cart", array("cart_id"=>$temp_user[0]["cart_id"], "user_id"=>$temp_user[0]["temp_user_id"],
                 "date_added"=>date("Y-m-d H:i:s")));
 
     }
 
   private function add_to_cart($cart_id, $product_details, $quantity)
     {
-        $this->user_model->update(array("date_modified"=>date("Y-m-d H:i:s")), "lucy_user_cart",
+        $this->user_model->update(array("date_modified"=>date("Y-m-d H:i:s")), "lucy_all_users_cart",
             array("cart_id"=>$cart_id), 0, 0);
         
-        return $this->user_model->add("lucy_user_cart_items", array("cart_item_id" => $this->user_model->get_transaction_code(7),
+        return $this->user_model->add("lucy_all_users_cart_items", array("cart_item_id" => $this->user_model->get_transaction_code(7),
                 "cart_id" => $cart_id, "product_id" => $product_details[0]["product_id"], "quantity" => $quantity, "price" => $product_details[0]["price"],
                 "image" => $product_details[0]["image"], "date_added"=>date("Y-m-d H:i:s")));
     }
@@ -369,19 +377,19 @@ class Updates extends REST_Controller
   private function update_cart($user_cart, $quantity, $product_id)
     {
 
-        $this->user_model->update(array("date_modified"=>date("Y-m-d H:i:s")), "lucy_user_cart",
+        $this->user_model->update(array("date_modified"=>date("Y-m-d H:i:s")), "lucy_all_users_cart",
             array("cart_id"=>$user_cart[0]["cart_id"]), 0, 0);
 
-        if ($this->user_model->update(array("quantity"=>$user_cart[0]["quantity"] + $quantity), "lucy_user_cart_items"
+        if ($this->user_model->update(array("quantity"=>$user_cart[0]["quantity"] + $quantity), "lucy_all_users_cart_items"
                                             ,array("cart_item_id"=>$user_cart[0]["cart_item_id"],
                                 "cart_id"=>$user_cart[0]["cart_id"], "product_id"=>$product_id))){
-            return $this->user_model->custom_get("lucy_user_cart_items", array("cart_id"=>$user_cart[0]["cart_id"]), 0,0);
+            return $this->user_model->custom_get("lucy_all_users_cart_items", array("cart_id"=>$user_cart[0]["cart_id"]), 0,0);
         };
     }
 
   private function add_to_registry($user_id,$product_details, $quantity, $registry_id, $table_name)
     {
-        $this->user_model->update(array("registry_id"=> $registry_id),"lucy_all_users", array("user_id"=>$user_id), 0, 0);
+        $this->user_model->update(array("registry_id"=> $registry_id),"lucy_all_userss", array("user_id"=>$user_id), 0, 0);
         $this->user_model->update(array("registry_id"=>$registry_id),
             $table_name, array("user_id"=>$user_id), 0, 0);
 
@@ -401,6 +409,47 @@ class Updates extends REST_Controller
         $this->response_ok($ip);
     }
 
+  public function get_cart_data_get()
+  {
+      $user_ip = $this->post("user_ip");
+      $cart_id = $this->user_model->custom_get("lucy_all_users", array("ip" => $user_ip), 0, 0);
+      $cart_data = $this->user_model->custom_get("lucy_user_cart_items" ,array("cart_id" => $cart_id),  0, 0);
+      print_r($cart_id);
+      if($cart_data){
+            print_r($cart_data);
+      }
+    else{
+        $this->response_bad("Unable to get data");
+    }
 
+  }
 
+  public function review_product_post(){
+      $ip = $this->input->ip_address();
+      $product_id = $this->post("product_id");
+      $stars = $this->post("stars");
+      $review = $this->post("review");
+      $name = $this->post("name");
+
+      $error = array();
+      if (empty($product_id)) $error[] = "Empty Product ID";
+      if (empty($ip)) $error[] = "Empty User IP";
+      if (empty($stars)) $error[] = "Select a star";
+      if (empty($review)) $error[] = "Enter a review";
+      if (empty($name)) $error[] = "Enter your name";
+
+      if (empty($error)){
+          $data = array("product_id"=>$product_id, "ip"=>$ip, "stars"=>$stars, "review"=>$review, "reviewer_name"=>$name);
+          $review_data = $this->user_model->add("lucy_product_review", $data);
+          if($review_data){
+              $this->response_ok($review_data);
+          }
+          else{
+              $this->response_bad("Unable to review product", $error);
+          }
+      }
+      else{
+          $this->response_bad("Unable to review product", $error);
+      }
+  }
 }

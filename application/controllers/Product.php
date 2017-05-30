@@ -36,7 +36,9 @@ class Product extends CI_Controller
     {
         $product_id = $this->input->get("product_id");
         $data = array("product_id"=>$product_id);
+        $this->data["on_home_page"] = $this->user_model->get_random("lucy_product", 10);
         $this->data["product_details"] = $this->user_model->custom_get("lucy_product",$data, 0, 0);
+        $this->data["review_details"] = $this->user_model->custom_get("lucy_product_review", array("product_id"=>$product_id), 5, 0);
         $this->smarty->view("front/product/product_details.tpl", $this->data);
     }
 

@@ -56,6 +56,18 @@ class User_model extends CI_Model
         }
     }
 
+    public function get_random($table, $count)
+    {
+        $this->db->order_by('id', 'RANDOM');
+        $this->db->limit($count);
+        $query = $this->db->get($table);
+        if($query){
+            return $query->result($type='array');
+        }else{
+            return false;
+        }
+    }
+
 
     public function update($data, $table, $condition)
     {
@@ -95,23 +107,16 @@ class User_model extends CI_Model
     }
 
     public function get_registry_with_email_or_name($query_term){
-        $query = $this->db->select('*')->from('lucy_all_users')
-            ->group_start()
-            ->where(array('email'=>$query_term))
-//            ->or_group_start()
-////            ->or_where(array('groom_first_name'=>$query_term))
-////            ->or_where(array('groom_last_name'=>$query_term))
-////            ->or_where(array('bride_first_name'=>$query_term))
-////            ->or_where(array('bride_last_name'=>$query_term))
-////            ->or_where(array('name'=>$query_term))
-//            ->group_end()
-            ->group_end()
-            ->get();
-        if ($query){
-            return $query->result($type='array');
+        $query = $this->custom_get('lucy_all_users', array("email" => $query_term), 0, 0);
+        if(($query)){
+            $table_name = str_replace("<REG_TYPE>", $query[0]["regType"], "lucy_<REG_TYPE>_user");
+            return $this->custom_get($table_name, array("user_id" => $query[0]["user_id"]), 0, 0);
         }
-        else
+        else{
             return false;
+
+        }
+
     }
 
     public function delete_data($table,$condition){

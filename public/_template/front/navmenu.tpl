@@ -75,7 +75,7 @@
                               <li><a href="{$BASE_URL}registry/find">Find Registry</a></li>
                               <li><a href="{$BASE_URL}auth/join">Create Registry</a></li>
                               <li><a href="{$BASE_URL}auth/login">Manage Registry</a></li>
-                              <li><a href="{$BASE_URL}registry/whyus">Why Lucy Registry?</a></li>
+                              <li><a href="{$BASE_URL}registry/base">Why Lucy Registry?</a></li>
                             </ul>
                           </div>
                         </div>
@@ -95,7 +95,7 @@
                           <div class="col-xs-12 col-menu">
                             <ul class="links">
                               {foreach from=$data.pre_cat item=cat_cart key=eKey}
-                                <li><a href="{$BASE_URL}registry/find">{$cat_cart}</a></li>
+                                <li><a href="{$BASE_URL}registry/{$cat_cart}">{$cat_cart}</a></li>
                               {/foreach}
                             </ul>
                           </div>

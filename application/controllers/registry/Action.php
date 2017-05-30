@@ -13,21 +13,31 @@ class Action extends CI_Controller
         $this->load->library("session");
         $this->load->model("user_model");
 
+        $user_session = $this->session->has_userdata("user_session");
+        if (!$user_session){
+            redirect("/auth/login");
+        }
+
     }
 
     public function index()
     {
-
+//        $this->manage();
+//        $this->session->sess_destroy();
     }
 
 
     public function manage(){
         $this->data["current_user"] = $this->session->userdata("user_session");
-        $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }
         $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $user_id = $this->data["current_user"][0]["user_id"];
-        $this->data["couple_details"] = $this->user_model->custom_get("lucy_couple", array("user_id"=>$user_id), 0, 0);
-        $this->data["bg_images"] = scandir(FCPATH."/public/_template/uploads/files", 1);
+        $this->data["bg_images"] = scandir(FCPATH."/public/_template/uploads/files", 2);
         $this->data["registry_details"] = $this->user_model->custom_get("lucy_registry_items", array("user_id"=>$user_id), 0, 0);
         $this->data["ip"] = $this->input->ip_address();
         $pre_cart = array();
@@ -46,8 +56,13 @@ class Action extends CI_Controller
     {
         $preview_id = $this->input->get("preview_id");
         ///Check if user_id is valid
-         $this->data["user_session"] = $this->session->userdata("user_session");
-            $table_name = str_replace("<REG_TYPE>", $this->data["user_session"][0]["regType"], "lucy_<REG_TYPE>_user");
+         $this->data["current_user"] = $this->session->userdata("user_session");
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }
             $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["user_session"][0]["user_id"]), 0, 0);
             $user_id = $this->data["user_session"][0]["user_id"];
             $this->data["couple_details"] = $this->user_model->custom_get("lucy_couple", array("user_id"=>$user_id), 0, 0);
@@ -72,29 +87,47 @@ class Action extends CI_Controller
 
     public function share(){
         $this->data["current_user"] = $this->session->userdata("user_session");
-        $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }
         $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $this->smarty->view("front/registry/couple/share/share.tpl", $this->data);
     }
 
     public function track(){
         $this->data["current_user"] = $this->session->userdata("user_session");
-        $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }
         $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $this->smarty->view("front/registry/couple/track/track.tpl", $this->data);
     }
 
     public function settings(){
         $this->data["current_user"] = $this->session->userdata("user_session");
-        $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
-        $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }        $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $this->smarty->view("front/registry/couple/settings.tpl", $this->data);
     }
 
     public function help(){
         $this->data["current_user"] = $this->session->userdata("user_session");
-        $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
-        $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
+        if ($this->data["current_user"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["current_user"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }        $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $this->smarty->view("front/registry/couple/help.tpl", $this->data);
     }
 }

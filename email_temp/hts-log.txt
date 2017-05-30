@@ -1,0 +1,26 @@
+HTTrack3.48-21 launched on Wed, 17 May 2017 10:03:11 at http://www.stampready.net/dashboard/editor/index.php?demo=3423
+(httrack http://www.stampready.net/dashboard/editor/index.php?demo=3423 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_glass_100_f6f6f6_1x400.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_glass_100_fdf5ce_1x400.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_glass_65_ffffff_1x400.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-icons_222222_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-icons_ffffff_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-icons_ef8c08_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-icons_228ef1_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-icons_ffd27a_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_diagonals-thick_20_666666_40x40.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/css/images/ui-bg_flat_10_000000_40x100.png (from www.stampready.net/dashboard/editor/css/jquery-ui.min.css)
+10:04:22	Error: 	"Not Found" (404) at link www.stampready.net/dashboard/editor/img/icons/ui-icons_222222_256x240.png (from www.stampready.net/dashboard/editor/css/jquery-ui.theme.min.css)
+
+HTTrack Website Copier/3.48-21 mirror complete in 1 minutes 11 seconds : 91 links scanned, 75 files written (1128597 bytes overall) [1129189 bytes received at 15904 bytes/sec], 50449 bytes transferred using HTTP compression in 17 files, ratio 26%, 1.4 requests per connection
+(15 errors, 0 warnings, 0 messages)

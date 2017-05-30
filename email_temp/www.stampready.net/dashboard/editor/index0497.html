@@ -1,0 +1,1277 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.stampready.net/dashboard/editor/index.php?demo=3423 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 May 2017 09:03:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+Viewing Koble-Noti-2 created by nutzumi
+</title>
+<link rel="shortcut icon" type="image/x-icon" href="#" />
+<link rel="stylesheet" type="text/css" href="css/global.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/editor2ad3.css?random=591c11d02a962" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/farbtastic.css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+<link rel=stylesheet href="lib/codemirror.css">
+<link rel="stylesheet" href="css/codemirror/theme/mbo.css">
+<link rel="stylesheet" type="text/css" href="css/imgareaselect-animated.css" />
+
+<!-- Jquery Framework -->
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+
+<!-- jQuery UI -->
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<!-- jQuery Color -->
+<script type="text/javascript" src="js/jquery.color.js"></script>
+
+<!-- Gravatar -->
+<script type="text/javascript" src="http://www.stampready.net/dashboard/js/jquery.gravatar.js"></script>
+
+<!-- jQuery Easing -->
+<script type="text/javascript" src="js/easing.js"></script>
+
+<!-- Tooltip -->
+<script type="text/javascript" src="js/tooltip.js"></script>
+
+<!-- Colorpicker -->
+<script type="text/javascript" src="js/farbtastic.js"></script>
+
+<script type="text/javascript" src="js/jquery.imgareaselect.pack.js"></script>
+
+<!-- jQuery Transform  -->
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+
+<!-- jQuery Cropper -->
+<script type="text/javascript" src="js/cropper7a54.js?token=2017051711"></script>
+
+<script>
+
+$(document).ready(function(){
+
+	test_email = '';
+	demo_id = '3423';
+
+	//detect if the customer is using an outdated computer
+	if(window.localStorage!==undefined){
+
+	    //works
+
+	}
+
+	else{
+
+	    headline = 'You\'re browser feels a little old.';
+		paragraph = 'It seems you are using an outdated internet browser. Therefore it\'s impossible to render a few neat editing features!';
+
+		btnTrue = 'Download Chrome';
+		btnTrueId = 'downloadChrome';
+
+		btnFalse = 'I understand. Continue.';
+
+		setTimeout(function(){
+
+			openPopup();
+
+		}, 2000);
+
+	}
+
+	//redirect to download chrome
+	$(document).on('click', '#downloadChrome', function(){
+
+		$(location).attr('href','https://www.google.nl/chrome/browser/desktop/');
+
+	});
+
+	$(document).ready(function(){
+
+		$('#font_colorpicker').farbtastic('#font_colorpicker_value');
+
+	});
+
+
+	$(document).on('mousedown', 'body', function(){
+
+		closeEditor();
+
+	});
+
+	$(document).on('mousedown', '.moduleCodeButton, .moduleCode', function(e){
+
+		e.stopPropagation();
+
+	});
+
+	$(document).on('keypress', '.moduleCode', function(e){
+
+		if ( e.metaKey && ( e.which === 13 ) ) {
+
+			closeEditor();
+
+		}
+
+	})
+
+	$(document).on('click', '.codeButton', function(e){
+
+		e.stopPropagation();
+
+		theMod = $(this).closest('[data-module]');
+		$('.codeButton, .dragButton, .deleteButton, .duplicateButton').animate({
+
+			width: '0%'
+
+		}, 200)
+
+		if ($('.moduleCode').length > 0) {
+
+		    // it exists
+		    $('.moduleCode').animate({
+
+				height: '0px'
+
+			}, 250, 'easeOutQuad', function () {
+
+				openEditor();
+
+			});
+		}
+
+		else {
+
+			openEditor();
+
+		}
+
+	})
+
+	$('#frame').on('mouseenter', '[data-module]', function(e){
+
+		if($(this).next().is('.moduleCode')) {
+
+			return false;
+
+		}
+
+		e.stopPropagation();
+
+		table = $(this);
+
+		mod_h = parseInt($(this).height()) / 2;
+
+		$(table).first('td').prepend('<div class="moduleCodeButton preventSelection" style="top: '+mod_h+'px"><div class="codeButton"></div></div><div class="moduleDuplicateButton preventSelection" style="top: '+mod_h+'px"><div class="duplicateButton"></div></div><div class="moduleDragButton preventSelection" style="top: '+mod_h+'px"><div class="dragButton"></div></div><div class="moduleDeleteButton preventSelection" style="top: '+mod_h+'px"><div class="deleteButton"></div></div>');
+
+		$("#frame").sortable('enable');
+		$('#frame').sortable({
+	        items: 'table[data-module]',
+	        axis: 'y',
+	        distance: 5,
+	        handle: '.dragButton',
+	        opacity: 0.85,
+	        cursor: '-webkit-grabbing',
+	        start: function(event, ui){
+
+		        if ($('.ui-draggable.ui-draggable-dragging').length > 0) {
+
+
+
+				}
+
+				else {
+
+					 h_module = $('.dragButton').closest('table').height();
+
+					 $('.ui-sortable-placeholder').css('height','3px');
+
+				}
+
+	        },
+	        stop: function(event, ui ){
+
+	        	$('#frame').css('-webkit-transform','scale(1)');
+
+	        	allowSave();
+
+	        }
+		});
+
+		$('.codeButton, .dragButton, .deleteButton, .duplicateButton').delay(500).animate({
+
+			width: '100%'
+
+		}, { duration: 400, easing: 'easeOutBack' });
+
+	}).on('mouseleave', '[data-module]', function(e){
+
+		$('.moduleCodeButton, .moduleDragButton, .moduleDeleteButton, .moduleDuplicateButton').remove();
+
+	});
+
+	//Delete Module
+	$('#frame').on('click', '.deleteButton', function(ev) {
+
+		$(this).parent().parent('table[data-module]').remove();
+		$('.moduleCode').remove();
+
+		count = $('#frame table[data-module]').size();
+
+		if ($(count).length > 0) {
+
+			$('#frame').removeClass('empty').css('min-height','250px');
+
+			if ($('#clear_template').length > 0) {
+
+
+			}
+
+			else {
+
+				$('#frame').prepend('<input type="button" id="clear_template" class="semi_bold" value="Clear Template">');
+
+			}
+
+		}
+
+		else {
+
+			$('#frame').addClass('empty').css('min-height','250px');
+			$('#frame #clear_template').remove();
+
+		}
+
+		checkAttributes();
+		allowSave()
+
+	});
+
+
+
+	if (document.images) {
+    	img1 = new Image();
+		img1.src = "img/framework/wheel.png";
+	}
+
+	$(document).on('mouseleave', '#sidebar', function() {
+
+		$('#menu_btn').removeClass('active').removeClass('closed');
+		$('#user_info').css('box-shadow','none');
+
+		$('#menu').slideUp({
+                    duration: 300,
+                    easing: "easeInBack"
+                });
+
+        $('#sidebar').animate({
+	        paddingTop: '81px',
+        }, { duration: 300, easing: 'easeInBack' });
+
+		$('#menu_btn .stroke_1').animate({
+		  transform: 'rotate(0deg)',
+		  top: '0px'
+		}, 200);
+
+		$('#menu_btn .stroke_3').animate({
+		  transform: 'rotate(0deg)',
+		  top: '8px'
+		}, 200);
+
+		$('#menu_btn .stroke_2').animate({
+		 	opacity: 1
+		}, 200);
+
+	});
+
+	$(document).on('mouseup', '#menu_btn', function(){
+
+		el = (this);
+
+		if($(this).hasClass('closed')){
+
+			$(el).removeClass('closed');
+
+			$('#menu').slideUp({
+	                    duration: 300,
+	                    easing: "easeInBack"
+	                });
+
+	        $('#sidebar').animate({
+		        paddingTop: '45px',
+	        }, { duration: 300, easing: 'easeInBack' });
+
+			$('#menu_btn .stroke_1').animate({
+			  transform: 'rotate(0deg)',
+			  top: '0px'
+			}, 200);
+
+			$('#menu_btn .stroke_3').animate({
+			  transform: 'rotate(0deg)',
+			  top: '8px'
+			}, 200);
+
+			$('#menu_btn .stroke_2').animate({
+			 	opacity: 1
+			}, 200);
+
+		}
+
+		else {
+
+			$(el).addClass('closed');
+
+			$('#menu_btn .stroke_1').animate({
+			  transform: 'rotate(45deg)',
+			  top: '4px'
+			}, 200);
+
+			$('#menu_btn .stroke_3').animate({
+			  transform: 'rotate(-45deg)',
+			  top: '4px'
+			}, 200);
+
+			$('#menu_btn .stroke_2').animate({
+			 	opacity: 0
+			}, 200);
+
+			$('#menu').slideDown({
+	                    duration: 300,
+	                    easing: "easeOutBack"
+	                });
+
+	        $('#sidebar').animate({
+		        paddingTop: '368px',
+	        }, { duration: 300, easing: 'easeOutBack' });
+
+		}
+
+	});
+
+	$(document).on('click', '#mirror_mobile', function(){
+
+		customHtml = '<div id="mirror_mobile_popup"><h4 class="font-bold">See your changes live on mobile</h4><p class="regular" style="padding-bottom: 0px!important;">Open <a href="http://www.stampready.net/mirror/" class="regular" style="color: #69c0af;" target="_blank">stampready.net/mirror/</a> on your device and use the code below to see the changes reflect live.<br/><br/><span class="font-bold mirror_token">&nbsp;</span></p></div>';
+
+		btnFalse = 'Got it!';
+
+		invert = 'true';
+
+		openPopup();
+
+		$('#save').trigger('click');
+
+		createMirrorCode();
+
+	})
+
+	$(document).on('click', '#saveFromCodeEditor', function(){
+
+		editorGetHtml = editor.getValue();
+
+		$tmp = $('<div>'+editorGetHtml+'</div>');
+		$tmp.find('style').remove();
+		src = $tmp.html();
+
+		$('#frame').html(src);
+
+		$('#coderWrapper').css('transform','scale(0.9)').css('opacity','0');
+
+		$('.stackSR').css('transform','scale(1)').css('opacity','1');
+
+		$('#popupOverlay').css({
+			'opacity': '0',
+		});
+
+		setTimeout(function(){
+
+			$('html, body').css('overflow','');
+			$('#popupOverlay').remove();
+			$('#coderWrapper').addClass('hidden');
+
+			editor.setValue('');
+
+		}, 400);
+
+	});
+
+
+	$(document).on('click', '#save', function() {
+
+		//variables
+		plain_text = '';
+
+		if($(this).hasClass('de')){
+
+		}
+
+		else {
+
+			$(this).addClass('ani');
+
+	   	   $tmp = $("<div></div>").html($("#frame").html());
+	   	   $tmp.find('*[contenteditable]').each(function() { $(this).removeAttr('contenteditable') });
+	   	   $tmp.find('.editable').each(function() { $(this).removeClass('editable') });
+	   	   $tmp.find('.delete, .handle, .moduleDeleteButton, .moduleDragButton, .moduleCodeButton, .moduleDuplicateButton, .moduleCode').each(function() { $(this).remove(); });
+	   	   $tmp.find('.last-table').each(function() { $(this).removeClass('last-table'); });
+	   	   $tmp.find('.last-table').removeClass('last-table');
+	   	   $tmp.find('.image_target').removeClass('image_target');
+	   	   $tmp.find('tr').unwrap('<tbody></tbody>');
+	   	   $tmp.find('.elementIndicator').removeClass('elementIndicator');
+	   	   $tmp.find('.currentTable').each(function() { $(this).removeClass('currentTable'); });
+	   	   $tmp.find('#edit_link').each(function() { $(this).remove(); });
+	   	   $tmp.find('.parentOfBg').contents().unwrap();
+	   	   $tmp.find('.parentOfBg, .highlighter-container').remove();
+	   	   $tmp.find('#clear_template, grammarly-btn, grammarly').each(function() { $(this).remove(); });
+	   	   $tmp.find('[class=""]').each(function() { $(this).removeAttr('class') });
+	   	   campaign_html = $tmp.html().replace(/sr_name/g, '*|name|*').replace(/sr_first_name/g, '*|first_name|*').replace(/sr_email/g, '*|email|*').replace(/sr_unsubscribe/g, '*|unsubscribe|*').replace(/sr_date/g, '*|date|*').replace(/sr_view_online/g, '*|view_online|*').replace(/sr_country/g, '*|country|*').replace(/sr_browser/g, '*|browser|*').replace(/sr_os/g, '*|os|*').replace(/sr_referrer/g, '*|referrer|*').replace(/sr_custom_1/g, '*|custom_1|*').replace(/sr_custom_2/g, '*|custom_2|*').replace(/zip:uploads/g, 'zip_uploads');
+
+	   	   //create plain text version
+	   	   $('#frame').find('td').each(function(){
+
+				var el = $(this);
+
+				if($(el).children('table').length) {}
+
+				else {
+
+					var text = $(el).text();
+					var text = text.replace(/<br\/>/g, '').replace(/\n/g, '').replace(/	/g, '').replace(/  /g, '').replace(/VIEW ONLINE/g, '').replace(/view online/g, '');
+					var count = text.split(' ').length;
+
+					if($.trim($(el).html()) == '' || $.trim($(el).html()) == ' '){}
+
+					else if($(el).is(':empty')) {}
+
+					else if(count == 1){}
+
+					else if(text == ' '){}
+
+					else {
+
+						plain_text = plain_text+text;
+						plain_text = plain_text+'\r';
+
+					}
+
+				}
+
+			})
+
+	   	    campaign_id = "";
+
+	   	   $.ajax({
+	            type: "POST",
+	            dataType: "html",
+	            url: "../scripts/calls.php?func=save_campaign",
+	            data: {
+		            campaign_id: campaign_id, campaign_html: campaign_html, plain_text: plain_text
+	            }
+	        }).done(function(data) {
+
+	        	if(data == '2'){
+
+	        		$('.ani').removeClass('ani');
+
+		        	headline = 'Due to inactivity, you\'ve been logged out.';
+					paragraph = 'Just enter your password so we know it\'s you again';
+
+					inputField = '';
+					inputFieldId = 'confirmAccountPassword';
+
+					btnTrue = 'Confirm Account';
+					btnTrueId = 'confirmAccountSession';
+
+					btnFalse = 'Close without saving';
+
+					openPopup();
+
+					$('#confirmAccountPassword').attr('type','password')
+
+	        	}
+
+	        	else {
+
+	        		$('.ani').removeClass('ani').addClass('de');
+
+	        	}
+
+			});
+
+		}
+
+	   });
+
+	   $(document).on('click', '#confirmAccountSession', function(){
+
+		   user_email = $('[data-useremail]').attr('data-useremail');
+		   user_pass = $('#confirmAccountPassword').val();
+
+		    $.ajax({
+	            type: "POST",
+	            dataType: "html",
+	            url: "../scripts/calls.php?func=confirm_account_session",
+	            data: {
+		            user_email: user_email, user_pass: user_pass
+	            }
+	        }).done(function(data) {
+
+	        	if(data == '1'){
+
+		        	closePopup();
+
+					setTimeout(function(){
+
+						$('#save').trigger('click');
+
+					}, 500)
+
+	        	}
+
+	        	else {
+
+		        	notificationContent = 'Wrong Password';
+					notificationColor = "#ea5a5b";
+
+					notification();
+
+					$('##confirmAccountPassword').focus();
+
+	        	}
+
+	        });
+
+	   });
+
+	   $('#logo').each(function(){
+
+			//vars
+			email = $(this).attr('data-avatar');
+
+			//find data and add gravatar
+			$(this).append($.gravatar(email));
+
+			//fetch img src
+			a = $(this).find('img').attr('src');
+
+			//add stampready default icon
+			$(this).find('img').attr('src', a+'d=http%3A%2F%2Fwww.stampready.net%2Fdashboard%2Fimg%2Fframework%2Favatar_default_ready.png');
+
+		});
+
+});
+
+//Generate Template
+function downloadTemplate() {
+
+	//Hide overlay
+	$('.overlay').fadeOut(200);
+
+	campaign_id = '';
+
+	$('#campaign_id').val(campaign_id);
+
+}
+
+function createMirrorCode(){
+
+	campaign_id = '';
+
+	$.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "scripts/create_mirror_token.php",
+        data: {
+            campaign_id: campaign_id
+        }
+    }).done(function(data) {
+
+    	$('.mirror_token').text(data);
+
+    });
+
+   }
+
+</script>
+
+<!-- Functions -->
+<script type="text/javascript" src="js/functions7a54.js?token=2017051711"></script>
+
+<!-- Code Mirror -->
+<script type="text/javascript" src="lib/codemirror.js"></script>
+<script type="text/javascript" src="mode/xml/xml.js"></script>
+<script type="text/javascript" src="mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="mode/css/css.js"></script>
+<script type="text/javascript" src="mode/htmlmixed/htmlmixed.js"></script>
+<script type="text/javascript" src="addon/fold/xml-fold.js"></script>
+<script type="text/javascript" src="addon/edit/matchtags.js"></script>
+
+<script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+
+<!-- Custom -->
+<script type="text/javascript" src="js/editor7a54.js?token=2017051711"></script>
+
+<!-- Shortcuts -->
+<script type="text/javascript" src="js/shortcuts.js"></script>
+
+<style>
+	body { -webkit-transform: translate3d(0, 0, 0); }
+	#save { position: absolute; bottom: 74px; width: 206px; left: 22px; height: 55px; background-color: #68c0b0; line-height: 56px; color: #FFF; font-size: 13px!important; text-transform: uppercase; cursor: pointer; background-image: url(img/icons/save_arrow.png); background-repeat: no-repeat; background-position: 118px 19px; -webkit-transition: all 0.4s ease; -moz-transition: all 0.4s ease; transition: all 0.4s ease; padding-left: 13px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+
+	.ani { -webkit-transition: all 0.4s ease; -moz-transition: all 0.4s ease; transition: all 0.4s ease; box-shadow: inset 200px 0px 0px rgba(0,0,0,0.25); }
+	.de { background-color: #b1b1b1!important; background-position: 118px -65px!important; -webkit-transition: all 0.4s ease; -moz-transition: all 0.4s ease; transition: all 0.4 ease; }
+	#save.de:hover { background-color: #b1b1b1!important; }
+	#save:hover { background-color: #5ca99a!important; }
+
+	#menu_btn { width: 16px; height: 12px; position: absolute; left: 212px; top: 37px; cursor: pointer; }
+	#menu_btn div { background-color: #959799; height: 2px; width: 16px; position: absolute; left: 0px; }
+		#menu_btn .stroke_1 { top: 0px; }
+		#menu_btn .stroke_2 { top: 4px; }
+		#menu_btn .stroke_3 { top: 8px; }
+
+	#menu { position: absolute; top: 84px; left: 0px; width: 250px; background-color: rgba(255,255,255,0.05); z-index: 99; }
+	#menu li { color: #a3a3a3; font-size: 15px; }
+	#menu li:last-child { padding-bottom: 20px; }
+	#menu a { color: #a3a3a3; display: block; padding: 10px 20px 10px 20px;}
+	#menu a:hover { color: #FFF; }
+
+	#frame { opacity: 1!important; }
+
+	/*** Tooltip Actions ***/
+	#cmdLink { background-image: url(img/icons/link.png); }
+	#cmdLeftAlign { background-image: url(img/icons/leftAlign.png); }
+	#cmdCenterAlign { background-image: url(img/icons/centerAlign.png); }
+	#cmdRightAlign { background-image: url(img/icons/rightAlign.png); }
+	#cmdBold { background-image: url(img/icons/bold.png); }
+	#cmdItalic { background-image: url(img/icons/italic.png); background-position: 10px center}
+
+	.wrap{
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
+	}
+	img#uploadPreview{
+		border: 0;
+		overflow: hidden;
+	}
+
+	img#uploadPreview { max-width: 780px; max-height: 600px; }
+
+	.ui-resizable-e { width: 30px; right: -30px; z-index: 9999; }
+	#coderWrapper { width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; background-color: #FFF; z-index: 99999; -webkit-transform: scale(0.8); -ms-transform: scale(0.8) ; transform: scale(0.8); opacity: 0;}
+	#preview { width: 100%; height: 100%; }
+	#preview_right { min-width: 320px; position: relative; }
+	#coderNav { height: 50px; background-color: #2c2c2c; box-shadow: inset 0px -1px 0px rgba(0,0,0,0.1); position: absolute; top: 0px; left: 0px; width: 100%; z-index: 999999;}
+	#previewDeviceFormat { width: 400px; margin: auto; color: #808285; font-size: 13px; line-height: 50px; text-align: center;}
+	.CodeMirror { -webkit-font-smoothing: antialiased; text-shadow: 1px 1px 1px rgba(0,0,0,0.004); }
+	#saveFromCodeEditor { position: absolute; right: 0px; top: 0px; background-color: #68c0b0; height: 50px; padding: 0 35px; line-height: 50px; color: #FFF; font-size: 13px; text-transform: uppercase; cursor: pointer; }
+
+	.moduleCode { height: 0px; overflow-y: hidden; position: relative; z-index: 999999999; box-shadow: 0px 1px 0px rgba(0,0,0,0.08), 0px -1px 0px rgba(0,0,0,0.08); }
+
+
+	/* code button */
+	.moduleCodeButton { width: 40px; height: 40px; position: absolute; top: 0px; z-index: 9999999; margin-top: -20px; }
+	.codeButton { width: 0%; height: 100%; background-color: #cecece; background-image: url(img/icons/openCodeEditor.png); background-position: center center; background-repeat: no-repeat; cursor: pointer; position: absolute; top: 0px; }
+	.codeButton:hover { background-color: #68c0b0; }
+	.codeButton:active { background-color: #5aafa0; }
+
+	/* drag button */
+	.moduleDragButton { width: 40px; height: 40px; position: absolute; top: 40px; z-index: 9999999; margin-top: -60px; -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+	.dragButton { width: 0%; height: 100%; background-color: #cecece; background-image: url(img/icons/dragButton.png); background-position: center center; background-repeat: no-repeat; cursor: pointer; position: absolute; top: 0px; cursor: -webkit-grab}
+	.dragButton:hover { background-color: #ed7831; }
+	.dragButton:active { cursor: -webkit-grabbing; background-color: #d76824; }
+
+	/* close button */
+	.moduleDeleteButton { width: 40px; height: 40px; position: absolute; top: 0px; z-index: 9999999; margin-top: -20px; -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+	.deleteButton { width: 0%; height: 100%; background-color: #cecece; background-image: url(img/icons/deleteButton.png); background-position: center center; background-repeat: no-repeat; cursor: pointer; position: absolute; top: 0px; }
+	.deleteButton:hover { background-color: #e75d5d; }
+	.deleteButton:active { background-color: #d14f4f; }
+
+	/* duplicate button */
+	.moduleDuplicateButton { width: 40px; height: 40px; position: absolute; top: 0px; z-index: 9999999; margin-top: 20px; -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+	.duplicateButton { width: 0%; height: 100%; background-color: #cecece; background-image: url(img/icons/duplicateButton.png); background-position: center center; background-repeat: no-repeat; cursor: pointer; position: absolute; top: 0px; }
+	.duplicateButton:hover { background-color: #58a2d6; }
+	.duplicateButton:active { background-color: #4687b4; }
+
+	/* save code button */
+	.moduleSaveCodeButton { width: 40px; height: 40px; position: absolute; top: 0px; right: 0px; z-index: 9999999; -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+	.saveCodeButton { width: 100%; height: 100%; background-color: #b1b1b1; background-image: url(img/icons/save_code_animation.png); background-repeat: no-repeat; background-position: center 12px; cursor: pointer; position: absolute; top: 0px; -webkit-transition: all 0.4s ease; -moz-transition: all 0.4s ease; transition: all 0.4s ease; }
+	.saveCodeButton.active { background-color: #69c0af; -webkit-transition: all 0.4s ease; -moz-transition: all 0.4s ease; transition: all 0.4s ease; background-position: center -72px; }
+
+
+	.cm-tab { width: 12px!important; height: 12px!important }
+	.ui-resizable-s { height: 12px; bottom: 0px; z-index: 99999999; }
+
+	.preventSelection { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+	@media only screen and (max-width: 1420px)
+		   {
+
+		   		/* code button */
+		   		.moduleCodeButton { right: 0px; }
+		   		.codeButton { right: 0px; }
+
+		   		/* drag button */
+				.moduleDragButton { right: 0px; }
+				.dragButton { right: 0px; }
+
+				/* close button */
+				.moduleDeleteButton { left: 0px; }
+				.deleteButton { left: 0px; }
+
+				/* duplicate button */
+				.moduleDuplicateButton { right: 0px; }
+				.duplicateButton { right: 0px; }
+
+		   }
+
+	@media (min-width: 1421px) {
+
+		/* code button */
+   		.moduleCodeButton { right: -40px; }
+   		.codeButton { left: 0px; }
+
+   		/* drag button */
+		.moduleDragButton { right: -40px; }
+		.dragButton { left: 0px; }
+
+		/* close button */
+		.moduleDeleteButton { left: -40px; }
+		.deleteButton { right: 0px; }
+
+		/* duplicate button */
+		.moduleDuplicateButton { right: -40px; }
+		.duplicateButton { left: 0px; }
+
+	}
+
+</style>
+
+</head>
+
+<body>
+
+	<!-- image uploading form -->
+	<form id="imageForm" method="post" enctype="multipart/form-data" class="hidden">
+		<input id="uploadImage" type="file" accept="image/*" name="image" />
+		<input type="submit" id="button "value="Upload">
+
+		<!-- hidden inputs -->
+		<input type="hidden" id="x" name="x" />
+		<input type="hidden" id="y" name="y" />
+		<input type="hidden" id="w" name="w" />
+		<input type="hidden" id="h" name="h" />
+		<input type="hidden" id="img_original_crop_w" name="img_original_crop_w" />
+		<input type="hidden" id="img_original_crop_h" name="img_original_crop_h" />
+		<input type="hidden" id="img_original_w" name="img_original_w" />
+		<input type="hidden" id="img_scaled_w" name="img_scaled_w" />
+		<input type="hidden" id="img_original_h" name="img_original_h" />
+		<input type="hidden" id="img_scaled_h" name="img_scaled_h" />
+	</form>
+
+	<!-- The Editor -->
+	<div id="editor" class="stackSR">
+
+		<!-- Modules Sidebar -->
+		<div id="modules" style="margin-left: -500px;" class="hidden">
+
+			<!-- Modules Widget -->
+			<ul id="modules_widgets">
+
+			</ul>
+
+			<!-- Styling Options -->
+			<div id="style_options" class="hidden">
+
+				<div id="info_bar">
+
+					<h3 class="semi_bold">Effect All Modules</h3>
+
+					<!-- Switch  -->
+					<div id="switch">
+
+						<!-- thumb -->
+						<div id="switch_thumb"></div>
+
+					</div>
+
+				</div>
+
+				<!-- Colorpicker -->
+				<div id="colorpicker" class="hidden"></div>
+
+				<!-- Background Colorpicker-->
+				<div id="bg_colorpicker" class="hidden"></div>
+
+				<!-- Styling Attributes -->
+				<ul class="semi_bold">
+
+					<!-- Font Colors-->
+					<h4 class="semi_bold">Font Colors</h4>
+					<div id="colors"></div>
+
+					<!-- Background Colors -->
+					<h4 class="semi_bold">Background Colors</h4>
+					<div id="bg_colors"></div>
+
+					<!-- Appearances -->
+					<h4 class="semi_bold">Appearances</h4>
+					<div id="appearances"></div>
+
+					<!-- Background Images -->
+					<h4 class="semi_bold">Background Images</h4>
+					<div id="background_settings"></div>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar" class="regular disable_selection" style="padding-bottom: 168px;">
+
+
+			<!-- User Logo -->
+			<div id="user_info" class="clear-fix" data-useremail="">
+
+				<!-- Logo -->
+				<a href="http://www.stampready.net/"><!-- Logo -->
+					<div id="logo" data-avatar=""></div>
+				</a>
+
+				<!-- User -->
+				<div id="user">
+
+					<!-- Username -->
+					<span id="username" class="semi_bold">
+
+						
+					</span>
+
+				</div>
+
+				<!-- Menu Button -->
+				<div id="menu_btn">
+
+					<div class="stroke_1"></div>
+					<div class="stroke_2"></div>
+					<div class="stroke_3"></div>
+
+				</div>
+
+				<ul id="menu" class="hidden light">
+
+					<li class="regular"><a href="http://www.stampready.net/dashboard/index.php">Dashboard</a></li>
+					<li class="regular"><a href="http://www.stampready.net/dashboard/new_campaign/index.php">Campaigns</a></li>
+					<li class="regular"><a href="http://www.stampready.net/dashboard/subscribers/all/index.php">Subscriber Lists</a></li>
+					<li class="regular"><a href="http://www.stampready.net/dashboard/analytics/campaign/index.php">Analytics</a></li>
+					<li class="regular"><a href="http://www.stampready.net/dashboard/credits/index.php">Credits</a></li>
+					<li class="regular"><a href="http://www.stampready.net/dashboard/account/settings/index.php">Account</a></li>
+					<li class="regular"><a href="http://www.stampready.net/faq/index.php">Knowledge Base</a></li>
+
+				</ul>
+
+			</div>
+
+			<!-- Menu -->
+			<ul id="nav">
+				<li id="modules_link" class="active">
+					<h2 class="semi_bold">Edit</h2>
+					<ul>
+
+						<li id="modules_widget" class="active">Modules</li>
+						<li id="style_widget">Styles</li>
+
+
+					</ul>
+				</li>
+
+				<li id="preview_link">
+					<h2 class="semi_bold">Preview</h2>
+					<ul class="hidden">
+
+						<li id="preview_fullscreen">Fullscreen</li>
+						<li onclick="screen(this,event)" class="portrait">Mobile</li>
+						<li id="mirror_mobile">Mirror on mobile</li>
+
+					</ul>
+				</li>
+
+				<li id="options_link">
+					<h2 class="semi_bold">Export</h2>
+					<ul class="hidden">
+
+						<li id="export">To Desktop</li>
+						
+					</ul>
+				</li>
+
+				<li id="send_link">
+					<h2 class="semi_bold">Send</h2>
+					<ul class="hidden">
+
+						<li id="send" class="preventExit" name="">Send Campaign</li>
+					<li id="send_test_email" class="demo-only">Send Test Email</li>
+
+
+					</ul>
+				</li>
+
+			</ul>
+
+			<a href="https://themeforest.net/item/koble-business-email-set/7902937?ref=nutzumi" id="buy_template" class="semi_bold" target="_blank"><span class="temp_name">Koble-Noti-2</span> $<span class="temp_price">0</span></a>
+			<!-- Credits Status -->
+			<div id="credits">
+
+				<div class="credits_or_plan semi_bold" id="create-free-account">
+
+					<a style="text-decoration: none; color: #FFF;">Get full access</a>
+					<!-- Meter -->
+					<div class="meter"></div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<!-- Editor Canvas -->
+		<div id="canvas">
+
+			<!-- Editor Holder -->
+			<div id="holder">
+
+				<div id="titles_holders">
+
+					
+				</div>
+
+				<div id="meta_holder">
+
+					
+				</div>
+
+				<div id="styles_holder">
+
+					
+				</div>
+
+				<div id="modules_holder" style="opacity: 0; display: none;">
+
+					
+				</div>
+
+				<!-- Editor Frame -->
+				<div id="frame" class="empty">
+
+					
+					
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">					
+				
+					
+					<style type="text/css">
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+html { width: 100%; }
+body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; margin: 0; padding: 0; }
+table { border-spacing: 0; table-layout: fixed; margin: 0 auto; }
+table table table { table-layout: auto; }
+.yshortcuts a { border-bottom: none !important; }
+img:hover { opacity: 0.9 !important; }
+a { color: #3cb2d0; text-decoration: none; }
+.textbutton a { font-family: 'open sans', arial, sans-serif !important; }
+.btn-link a { color: #FFFFFF !important; }
+
+@media only screen and (max-width: 640px) {
+body { width: auto !important; }
+/* image */
+img[class="img1"] { width: 100% !important; height: auto !important; }
+}
+
+@media only screen and (max-width: 480px) {
+body { width: auto !important; }
+/* image */
+img[class="img1"] { width: 100% !important; }
+}
+</style>					
+				
+					
+					<table data-module="noti-2" data-thumb="http://www.stampready.net/dashboard/editor/user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/thumbnails/noti-2.jpg" data-bgcolor="Main BG" width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#494c50">
+    <tbody><tr>
+      <td data-bg="Main BG" align="center" background="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/bg.jpg" style="background-size:cover; background-position:top;">
+        <table border="0" align="center" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td height="60"></td>
+          </tr>
+          <tr>
+            <td width="600" align="center">
+              <table data-bgcolor="Container" align="center" bgcolor="#FFFFFF" style="border-radius:4px; box-shadow: 0px 3px 0px #d4d2d2;" width="95%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td height="50"></td>
+                </tr>
+                <!-- logo -->
+                <tr>
+                  <td align="center" style="line-height: 0px;"><img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/logo.png" alt="logo" width="50" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="logo" data-crop="false" mc:edit="noti-2-1"></td>
+                </tr>
+                <!-- end logo -->
+                <tr>
+                  <td height="15"></td>
+                </tr>
+                <!-- slogan -->
+                <tr>
+                  <td data-link-style="text-decoration:none; color:#3cb2d0;" data-link-color="Slogan Link" data-color="Slogan" data-size="Slogan" mc:edit="noti-2-2" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:12px; color:#3b3b3b; text-transform:uppercase; letter-spacing:2px; font-weight: normal;">
+                    <singleline label="slogan">Powered by a Community of Millions.</singleline>
+                  </td>
+                </tr>
+                <!-- end slogan -->
+                <tr>
+                  <td height="40"></td>
+                </tr>
+                <tr>
+                  <td data-bgcolor="Content BG" align="center" bgcolor="#f3f3f3">
+                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tbody><tr>
+                        <td height="50"></td>
+                      </tr>
+                      <!-- title -->
+                      <tr>
+                        <td data-link-style="text-decoration:none; color:#3cb2d0;" data-link-color="Content Link" data-color="Headline" data-size="Headline" mc:edit="noti-2-3" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:36px; color:#3b3b3b; font-weight: bold; letter-spacing:4px;">
+                          <singleline label="title">You are invited</singleline>
+                        </td>
+                      </tr>
+                      <!-- end title -->
+                      <tr>
+                        <td align="center">
+                          <table width="25" border="0" cellspacing="0" cellpadding="0">
+                            <tbody><tr>
+                              <td data-border-bottom-color="Dash" height="15" style="border-bottom:2px solid #3cb2d0;"></td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="20"></td>
+                      </tr>
+                      <!-- content -->
+                      <tr>
+                        <td data-link-style="text-decoration:none; color:#3cb2d0;" data-link-color="Content Link" data-color="Main Text" data-size="Main Text" mc:edit="noti-2-4" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:13px; color:#7f8c8d; line-height:30px;">
+                          <multiline label="content">Envato is an ecosystem of sites to help you get creative. It includes Envato Market, the leading marketplace for images, themes, project files and creative assets.</multiline>
+                        </td>
+                      </tr>
+                      <!-- end content -->
+                      <tr>
+                        <td height="50"></td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="40"></td>
+                </tr>
+                <!-- button -->
+                <tr>
+                  <td align="center">
+                    <table class="textbutton" align="center" bgcolor="#3cb2d0" border="0" cellspacing="0" cellpadding="0" style=" border-radius:4px; box-shadow: 0px 2px 0px #dedfdf;">
+                      <tbody><tr>
+                        <td data-link-style="text-decoration:none; color:#ffffff;" data-link-color="Button Link" data-size="Button" mc:edit="noti-2-5" height="55" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:16px; color:#FFFFFF;font-weight: bold;padding-left: 25px;padding-right: 25px;">
+                          <a href="#" style="text-decoration:none; color:#ffffff" data-color="Button Link">
+                            <singleline label="button">Send me my ticket</singleline>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+                <!-- end button -->
+                <!-- option -->
+                <tr>
+                  <td align="center">
+                    <table align="center" border="0" cellspacing="0" cellpadding="0">
+                      <tbody><tr>
+                        <td height="25"></td>
+                      </tr>
+                      <tr>
+                        <td data-link-style="text-decoration:none; color:#7f8c8d;" data-link-color="Text Link" mc:edit="noti-2-6" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:13px; color:#7f8c8d;">
+                          <webversion>Webversion</webversion>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <unsubscrube>Unsubscribe</unsubscrube>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+                <!-- end option -->
+                <tr>
+                  <td height="30"></td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+          <tr>
+            <td height="30"></td>
+          </tr>
+          <!-- copyright -->
+          <tr>
+            <td data-color="copyright" data-size="copyright" mc:edit="noti-2-7" align="center" style="font-family: 'Open Sans', Arial, sans-serif; font-size:13px; color:#ffffff;">
+              <singleline label="copyright">© 2016 Koble . All Rights Reserved.</singleline>
+            </td>
+          </tr>
+          <!-- end copyright -->
+          <tr>
+            <td height="25"></td>
+          </tr>
+          <!-- social -->
+          <tr>
+            <td align="center">
+              <table align="center" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/fb.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-1" data-crop="false" mc:edit="noti-2-8"> </a>
+                  </td>
+                  <td width="20"></td>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/tw.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-2" data-crop="false" mc:edit="noti-2-9"> </a>
+                  </td>
+                  <td width="20"></td>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/gg.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-3" data-crop="false" mc:edit="noti-2-10"> </a>
+                  </td>
+                  <td width="20"></td>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/in.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-4" mc:edit="noti-2-11"> </a>
+                  </td>
+                  <td width="20"></td>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/bh.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-5" data-crop="false" mc:edit="noti-2-12"> </a>
+                  </td>
+                  <td width="20"></td>
+                  <td align="center" style="line-height:0xp;">
+                    <a href="#"> <img src="user_uploads/zip_uploads/2016/07/16/qlw1JE70zsRFHWTreAm2ktiS/Notification-2/images/db.png" alt="img" width="16" style="display:block; line-height:0px; font-size:0px; border:0px;" editable="" label="social-6" data-crop="false" mc:edit="noti-2-13"> </a>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+          <!-- end social -->
+          <tr>
+            <td height="45"></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>					
+				
+					<div id="edit_link" class="hidden">
+
+						<!-- Close Link -->
+						<div class="close_link"></div>
+
+						<!-- Edit Link Value -->
+						<input type="text" id="edit_link_value" class="createlink" placeholder="Your URL">
+
+						<!-- Change Image Wrapper-->
+						<div id="change_image_wrapper">
+
+							<!-- Change Image Tooltip -->
+							<div id="change_image">
+
+								<!-- Change Image Button -->
+								<p id="change_image_button">Change &nbsp; <span class="pixel_result"></span></p>
+
+							</div>
+
+							<!-- Change Image Link Button -->
+							<input type="button" value="" id="change_image_link">
+
+							<!-- Remove Image -->
+							<input type="button" value="" id="remove_image">
+
+						</div>
+
+						<!-- Tooltip Bottom Arrow-->
+						<div id="tip"></div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- Text Highlighter Tooltip -->
+			<span class="highlighter-container hidden">
+
+				<!-- Tooltip Actions-->
+				<div id="template_actions">
+
+					<li style="padding-left: 12px!important;"><input type="button" value="" id="cmdBold"></li>
+					<li style="width: 25px!important;"><input type="button" value="" id="cmdItalic" style="background-position: 6px center!important;"></li>
+					<li><input type="button" value="" id="cmdLeftAlign"></li>
+					<li><input type="button" value="" id="cmdCenterAlign"></li>
+					<li><input type="button" value="" id="cmdRightAlign"></li>
+					<li style="width: 33px!important;"><input type="button" value="" id="cmdLink" onclick="createLink()"></li>
+
+				</div>
+
+				<!-- Link Value Wrapper -->
+				<div id="link">
+
+					<!-- Close -->
+					<div class="close_link"></div>
+
+					<!-- Link Value -->
+					<input type="text" id="link_value" class="createlink" placeholder="Your URL">
+
+				</div>
+
+				<!-- Tool Tip Arrow -->
+				<div id="tip"></div>
+			</span>
+
+		</div>
+
+	</div>
+
+	<!-- Dummy Div to check height of the module which needs to get loaded into the canvas -->
+	<div id="heightChecker" class="hidden"></div>
+
+	<!-- Upload Image -->
+	<form enctype="multipart/form-data" class="hidden">
+	    <input type="file" name="user-uploaded-file" id="user-uploaded-file" accept="image/*">
+	    <button type="button" name="btnSubmit" id="upload-file"> Submit </button>
+	</form>
+
+	<!-- Export Template form -->
+	<form id="hiddenform" method="POST" action="#" class="hidden">
+		<input type="text" id="template_name_form" name="template_name">
+		<input type="text" id="campaign_id_form" name="campaign_id">
+		<input type="submit" id="downloadTemplate">
+	</form>
+
+</body>
+
+<!-- Mirrored from www.stampready.net/dashboard/editor/index.php?demo=3423 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 May 2017 09:04:01 GMT -->
+</html>
+

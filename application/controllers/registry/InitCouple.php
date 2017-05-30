@@ -27,7 +27,7 @@ class InitCouple extends CI_Controller
     {
         $error = array();
         $user_ip = $this->input->ip_address();
-        $this->check_user_ip = $this->user_model->custom_get("lucy_couple", array("ip" => $user_ip), 0, 0);
+        $this->check_user_ip = $this->user_model->custom_get("lucy_all_users", array("ip" => $user_ip), 0, 0);
 
         if (!$this->check_user_ip){
             redirect("index.php/registry/auth/login");
@@ -54,7 +54,7 @@ class InitCouple extends CI_Controller
 
                 if($update){
                     $this->session->set_userdata(array("user_session"=>$update));
-                    redirect("index.php/registry/couple/init/conclude");
+                    redirect("registry/InitCouple/conclude");
                 }
                 else
                     $this->data["error"] = "Unable to save your details. Please, try again.";
@@ -78,7 +78,7 @@ class InitCouple extends CI_Controller
             if (empty($reg_url)) $error[] = "Pick a url tag";
 
             if (empty($error)){
-                $couple_details = array("registry_url_tag"=>$reg_url, "wedding_date"=>$wedding_date,
+                $couple_details = array("registry_url_tag"=>$reg_url, "event_date"=>$wedding_date,
                                             "date_modified" => date("Y-m-d H:i:s"), "walkthrough"=>1);
 
                 $update = $this->user_model->update($couple_details, "lucy_couple", array("user_id"=>$this->check_user_ip[0]["user_id"]));
@@ -86,7 +86,7 @@ class InitCouple extends CI_Controller
 
                 if($update){
                     $this->session->set_userdata(array("user_session"=>$update));
-                    redirect("index.php/registry/couple/dashboard");
+                    redirect("registry/dashboard");
                 }
                 else
                     $this->data["error"] = "Unable to save your details. Please, try again.";

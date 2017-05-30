@@ -461,7 +461,7 @@ jQuery(document).ready(function() {
     $.ajax(
         {
           type: "POST",
-          url: $('#base_url').val()+ '/api/updates/invite_partner',
+          url: $('#base_url').val()+ 'api/updates/invite_partner',
           data: {
             "user_id": user_id,
             "partner_email" : partner_email
@@ -520,7 +520,7 @@ jQuery(document).ready(function() {
     $.ajax(
         {
           type: "GET",
-          url: $('#base_url').val()+ '/api/updates/dashboard_image',
+          url: $('#base_url').val()+ 'api/updates/dashboard_image',
           data: {
             "user_id": user_id,
             "bg_image" : new_bg_image
@@ -534,6 +534,7 @@ jQuery(document).ready(function() {
               dashboard_image_setter(new_bg);
           },
           error : function(response){
+            console.log(response);
             toastr.error('Unable to set dashboard image.')
           }
         });
@@ -547,13 +548,43 @@ jQuery(document).ready(function() {
   var show_product_details = function(){
     $('#product_cart_details').css("display","block");
   };
+
+  var checkUserCart = function () {
+      var base_url = $('#base_url').val();
+      var template_url = $('#template_url').val();
+      $.ajax({
+          type: "GET",
+          url: base_url + 'api/updates/get_ip',
+          dataType: 'json',
+          async : false,
+          success: function (response) {
+              var current_user_ip = response.response;
+              $.ajax({
+                  type: "GET",
+                  url: base_url + 'api/updates/get_cart_data',
+                  dataType: 'json',
+                  async : false,
+                  success: function (response) {
+                      console.log(response);
+                  },
+                  error: function (response) {
+                      console.log(response);
+                  }
+              })
+          },
+          error : function(response){
+              console.log(response)
+          }
+      });
+
+  };
     
   var getCartDetails = function(){
     var base_url = $('#base_url').val();
     var template_url = $('#template_url').val();
     $.ajax({
       type: "GET",
-      url: base_url + '/api/updates/get_ip',
+      url: base_url + 'api/updates/get_ip',
       dataType: 'json',
       async : false,
       success: function (response) {
@@ -638,7 +669,7 @@ jQuery(document).ready(function() {
     $.ajax(
         {
           type: "POST",
-          url: base_url + '/api/updates/registry_add',
+          url: base_url + 'api/updates/registry_add',
           data: {
             "user_ip": user_ip,
             "product_id" : product_id,
@@ -675,7 +706,7 @@ jQuery(document).ready(function() {
     $.ajax(
         {
           type: "POST",
-          url: base_url + '/api/updates/logout',
+          url: base_url + 'api/updates/logout',
           data: {
             "user_ip": user_ip,
             "user_id": user_id
@@ -729,13 +760,56 @@ jQuery(document).ready(function() {
         });
   });
 
-  hide_product_details();
+
+  var review_update = function () {
+      $('#submit_review').on('click', function (event) {
+          event.preventDefault();
+          if(!document.querySelector('input[name="star"]:checked')){
+              toastr.error('Select a star');
+          }
+          else{
+              var product_id = $('#product_id').val();
+              var review = $('#reviewInput').val();
+              var name = $('#nameInput').val();
+              var base_url = $('#base_url').val();
+              var stars = document.querySelector('input[name="star"]:checked').value;
+              console.log(name);
+              $.ajax(
+                  {
+                      url: base_url + 'api/updates/review_product',
+                      type: "POST",
+                      data: {
+                          "product_id" : product_id,
+                          "review": review,
+                          "stars" : stars,
+                          "name": name
+                      },
+                      dataType: 'json',
+                      async : false,
+                      success: function (response) {
+                          console.log(response);
+                          toastr.info('Your review has been added.');
+                      },
+                      error : function(response){
+                          console.log(response);
+                          if (response.responseJSON['error-reasons'].reason == "NoLogin"){
+                              toastr.error('You need to login to add to cart');
+                          }
+                      }
+                  });
+          }
+      })
+  };
 
   dashboard_image_setter();
 
   getCartDetails();
 
   handleReg();
+
+  checkUserCart();
+
+  review_update();
 
 });
 

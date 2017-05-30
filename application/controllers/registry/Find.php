@@ -32,7 +32,7 @@ class Find extends CI_Controller
 
             if (empty($error)){
                 $search_query = $this->user_model->get_registry_with_email_or_name($registry_search_query);
-                if($search_query){
+                if(!empty($search_query)){
                     $this->data["registry_search_details"] = $search_query;
                 }
                 else

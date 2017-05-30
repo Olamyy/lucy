@@ -15,10 +15,9 @@ class Dashboard extends CI_Controller
 
         $user_session = $this->session->has_userdata("user_session");
         if (!$user_session){
-            redirect("index.php/registry/auth/login");
+            redirect("auth/login");
         }
         $this->data["user_details"] = $this->session->userdata()["user_session"];
-
 
     }
 
@@ -35,7 +34,12 @@ class Dashboard extends CI_Controller
 
         $this->data["ip"] = $this->input->ip_address();
         $this->data["new_products"] = $this->user_model->get("lucy_product");
-        $table_name = str_replace("<REG_TYPE>", $this->data["user_details"][0]["regType"], "lucy_<REG_TYPE>_user");
+        if ($this->data["user_details"][0]["regType"] == "wedding"){
+            $table_name = "lucy_couple";
+        }
+        else{
+            $table_name = str_replace("<REG_TYPE>", $this->data["user_details"][0]["regType"], "lucy_<REG_TYPE>_user");
+        }
         $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["user_details"][0]["user_id"]), 0, 0);
         $this->smarty->view("front/registry/couple/dashboard/dashboard.tpl", $this->data);
     }

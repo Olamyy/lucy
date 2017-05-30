@@ -43,12 +43,12 @@ class Checkout extends CI_Controller
             $cart_id = $this->user_model->get_transaction_code(10);
             $create_temp_user = $this->create_temp_user($ip, $temp_user_id, $cart_id);
             if ($create_temp_user) {
-                $this->data['message'] = "Your cart is currently empty";
+                $this->data["message"] = "Your cart is currently empty";
             } else
-                $this->data['message'] = "Your cart is currently empty";
+                $this->data["message"] = "Your cart is currently empty";
         } else {
             $temp_user_cart = $this->user_model->custom_get("lucy_temp_user", array("ip" => $ip), 0, 0);
-            if ($user_details[0]['is_logged_in']) {
+            if ($user_details[0]["is_logged_in"]) {
                 $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items",
                     array("cart_id" => $user_details[0]["cart_id"]), 0, 0);
                 $pre_cart = array();

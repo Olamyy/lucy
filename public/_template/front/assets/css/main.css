@@ -6270,7 +6270,6 @@ age-container #owl-main .owl-next {
     padding-bottom: 60px;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    background-color: rgba(255, 42, 48, 0.2);
 }
 .top-div>h2{
     font-family: 'Raleway', 'Roboto Slab', serif, sans-serif;
@@ -6375,3 +6374,6 @@ age-container #owl-main .owl-next {
   height: 650px;background-size: cover;
 }
 
+.main-slider {
+  float: right;
+}

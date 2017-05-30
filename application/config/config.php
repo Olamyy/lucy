@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-//$config['base_url'] = 'http://c012f26a.ngrok.io/lucy/';
+//$config['base_url'] = 'https://2b64cd2f.ngrok.io/lucy/';
 $config['base_url'] = 'http://localhost/lucy/';
 
 

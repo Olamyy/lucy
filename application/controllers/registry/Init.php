@@ -288,7 +288,7 @@ class Init extends CI_Controller
 
     public function update_all_users($user_id, $tag)
     {
-       $update_all = $this->user_model->update(array("registry_url"=>$tag, "is_logged_in"=>1), "lucy_all_users", array("user_id"=>$user_id), 0, 0);
+       $update_all = $this->user_model->update(array("registry_url"=>$tag, "is_logged_in"=>1,"walkthrough"=>1), "lucy_all_users", array("user_id"=>$user_id), 0, 0);
        $this->session->set_userdata(array("user_session"=>$update_all));
 
     }

@@ -35,13 +35,17 @@ class Join extends CI_Controller
                             "ip" => $this->input->ip_address(),
                             "date_added" => date("Y-m-d H:i:s"),
                             "regType"=>$reg_type,
-                            "cart_id"=>$this->user_model->get_transaction_code(4));
-                    $user_details["user_id"] = $this->user_model->get_transaction_code(15);
-                    $user_details["user_status"] = 0;
+                            "cart_id"=>$this->user_model->get_transaction_code(4),
+                            "user_id"=>$this->user_model->get_transaction_code(15),"user_status" => 0);
                     $insert = $this->user_model->add("lucy_all_users",$user_details);
                     if ($insert && $reg_type =="wedding") {
+                        print_r($reg_type);
+                        exit();
+                        $this->user_model->add("lucy_couple", $user_details);
                             $this->session->set_userdata(array("user_session"=>$insert));
-                            redirect("registry/initcouple");
+                            print_r($this->session);
+                            exit();
+                            redirect("registry/InitCouple");
                     }
                     else{
                         if ($insert) {
@@ -54,7 +58,10 @@ class Join extends CI_Controller
 
                     }
                 else
-                    $this->data["error"] = "This email is already registered";
+                    if ($check_email && $check_email[0]["walkthrough"] == 1){
+                        $this->data["error"] = "We detected signed up once but it was not complete. Fill the form below to complete your registration.";
+                    }else
+                        $this->data["error"] = "This email is already registered";
             }
             else
                 $this->data["error"] = $error;
