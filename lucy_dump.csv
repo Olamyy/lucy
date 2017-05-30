@@ -1,3 +1,5 @@
+
+
 -- MySQL dump 10.13  Distrib 5.7.16, for Linux (x86_64)
 --
 -- Host: localhost    Database: lucy
@@ -43,6 +45,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `lucy_admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
+
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lucy_admin` (
   `last_login` datetime NOT NULL,

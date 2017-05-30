@@ -38,7 +38,8 @@ class Init extends CI_Controller
 
     public function index()
     {
-        $this->session->sess_destroy();
+//        $this->session->sess_destroy();
+          echo CI_VERSION;
     }
 
     public function houseWarming()
