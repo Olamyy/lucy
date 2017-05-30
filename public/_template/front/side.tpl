@@ -3,7 +3,7 @@
         <div class="row">
             <div class="row">
                 <!-- ============================================== SIDEBAR ============================================== -->
-                <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
                     {include file="./hotdeals.tpl"}
-                    {include file="./specialoffers.tpl"}
-                    {include file="./banners.tpl"}
+                    {*{include file="./specialoffers.tpl"}*}
+                    {*{include file="./banners.tpl"}*}

@@ -4,8 +4,8 @@
     <div class="container">
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
-                <li><a href="{$BASE_URL}index.php/">Home</a></li>
-                <li><a href="{$BASE_URL}index.php/registry">Registry</a></li>
+                <li><a href="{$BASE_URL}">Home</a></li>
+                <li><a href="{$BASE_URL}registry">Registry</a></li>
                 <li class='active'>Couple Details</li>
             </ul>
         </div><!-- /.breadcrumb-inner -->
@@ -28,9 +28,7 @@
                             {/foreach}
                         </div>
                     {/if}
-                    {if $user_session|default:''}
-                    {/if}
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/registry/couple/init">
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/InitCouple">
                         <div class="form-group">
                             <h4 class="">Groom Details</h4>
                             <label class="info-title" for="groom_first_name">First Name<span>*</span></label>

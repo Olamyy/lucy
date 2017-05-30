@@ -400,7 +400,11 @@ CREATE TABLE `lucy_houseWarming_user` (
 
 LOCK TABLES `lucy_houseWarming_user` WRITE;
 /*!40000 ALTER TABLE `lucy_houseWarming_user` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `lucy_houseWarming_user` VALUES (1,'u5y8ioi8n1oqy4z',0,'ABC Hospita','$2y$10$.5IfMbCMD4.DEW86k2TbCOVBqeTNukE63vDrUlX05AA3mTXe6NRoK','kemime@me.com',NULL,'rdr3','::1','2017-05-14 08:32:14',NULL,NULL,'2016-01-05 00:00:00','ututtiiuuu',NULL,NULL,NULL,'2017-05-14 14:56:31',0,NULL,NULL,NULL,0,NULL,'',NULL,'2017-05-14 08:32:14','Testing');
+=======
+INSERT INTO lucy_warming_user VALUES (1,'u5y8ioi8n1oqy4z',0,'ABC Hospita','$2y$10$.5IfMbCMD4.DEW86k2TbCOVBqeTNukE63vDrUlX05AA3mTXe6NRoK','kemime@me.com',NULL,'rdr3','::1','2017-05-14 08:32:14',NULL,NULL,'2016-01-05 00:00:00','ututtiiuuu',NULL,NULL,NULL,'2017-05-14 14:56:31',0,NULL,NULL,NULL,0,NULL,'',NULL,'2017-05-14 08:32:14','Testing');
+>>>>>>> 049d9a2e56648c74967424d2deb32a2f5c96ced9
 /*!40000 ALTER TABLE `lucy_houseWarming_user` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -28,8 +28,9 @@
                             </tr>
                             </tfoot>
                             <tbody>
-                            {if $user_cart}
+                            {if $user_cart_items|default:''}
                                 {foreach from=$user_cart_items item=product key=eKey}
+                                    {$price_arr[] = {math equation="x * y" x=$product.quantity y=$product.price}}
                                     <tr>
                                         <td class="cart-image">
                                             <a class="entry-thumbnail">
@@ -39,12 +40,13 @@
                                         <td class="cart-product-name-info">
                                             <h4 class='cart-product-description'><a href="{$BASE_URL}product?product_id={$product.product_id}">{$product_details[0]['name']}</a></h4>
                                         </td>
-                                        <td class="cart-product-sub-total"><span class="cart-sub-total-price">{$product.quantity}</span></td>
-                                        <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;{$product.price}</span></td>
+                                        <td class="cart-product-sub-total" ><span class="cart-sub-total-price">{$product.quantity}</span></td>
+                                        <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;{math equation="x * y" x=$product.quantity y=$product.price}</span></td>
                                     </tr>
                                 {/foreach}
                             {else}
                             <tr>
+
 
 
 
@@ -111,10 +113,10 @@
                         <tr>
                             <th>
                                 <div class="cart-sub-total">
-                                    Subtotal<span class="inner-left-md">$600.00</span>
+                                    Subtotal<span class="inner-left-md">&#8358;{$price_arr|array_sum}</span>
                                 </div>
                                 <div class="cart-grand-total">
-                                    Grand Total<span class="inner-left-md">$600.00</span>
+                                    Grand Total<span class="inner-left-md">&#8358;{$price_arr|array_sum}</span>
                                 </div>
                             </th>
                         </tr>
@@ -124,7 +126,6 @@
                             <td>
                                 <div class="cart-checkout-btn pull-right">
                                     <button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>
-                                    <span class="">Checkout with multiples address!</span>
                                 </div>
                             </td>
                         </tr>

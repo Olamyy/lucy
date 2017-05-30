@@ -18,8 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-//$config['base_url'] = 'http://6ffcd44e.ngrok.io/lucy/';
-//$config['base_url'] = 'http://695821fd.ngrok.io/lucy/';
+//$config['base_url'] = 'https://2b64cd2f.ngrok.io/lucy/';
 $config['base_url'] = 'http://localhost/lucy/';
 
 
@@ -81,7 +80,7 @@ $config['language']	= 'english';
 |--------------------------------------------------------------------------
 | Default Character Set
 |--------------------------------------------------------------------------
-|
+|p
 | This determines which character set is used by default in various methods
 | that require a character set to be provided.
 |
@@ -504,5 +503,3 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-
-

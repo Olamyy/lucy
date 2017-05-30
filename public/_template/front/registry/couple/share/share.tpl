@@ -9,7 +9,7 @@
                 <div class="col-md-12 col-sm-6 sign-in">
                     <h4 class="">Registry Sharer</h4>
                     <p class="">Your registry url</p>
-                    {foreach from=$current_user item=_user}
+                    {foreach from=$complete_details item=_user}
                     <input type="text"  class="form-control disabled" disabled value="{$BASE_URL}registry/{$_user.registry_url_tag}">
                     <div class="social-sign-in outer-top-xs">
                         <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i>Share on Facebook</a>

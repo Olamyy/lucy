@@ -57,10 +57,10 @@
                             <tr>
                                 <td class="col-md-3"><img src="{$data.dashboard_image}" alt="imga"></td>
                                 <td class="col-md-5">
-                                    <div class="product-name"><a href="#">{$data.groom_first_name} & {$data.bride_first_name}</a></div>
+                                    <div class="product-name"><a href="#">{if $data.regType == 'wedding'}{$data.groom_first_name} & {$data.bride_first_name}{else}{$data.name} {/if}</a></div>
                                 </td>
-                                <td class="col-md-7">
-                                    <div class="product-name"> Wedding Date : {$data.wedding_date}</div>
+                                <td class="col-md-4">
+                                    <div class="product-name">{$data.event_date}</div>
                                 </td>
                                 <td class="col-md-2">
                                     <a href="{$BASE_URL}{$data.registry_url_tag}" class="btn-upper btn btn-primary">Visit Registry</a>

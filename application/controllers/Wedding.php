@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined("BASEPATH") OR exit("No direct script access allowed");
 
 class Wedding extends CI_Controller
 {
@@ -15,7 +15,7 @@ class Wedding extends CI_Controller
     public function index()
     {
 
-        $this->smarty->view('front-theme/weddingservices.tpl', $this->data);
+        $this->smarty->view("front-theme/weddingservices.tpl", $this->data);
     }
 
 

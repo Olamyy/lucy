@@ -16,13 +16,13 @@
                     <form>
                         <div class="control-group">
                             <ul class="categories-filter animate-dropdown">
-                                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Filter Search <b class="caret"></b></a>
+                                <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="">Filter Search <b class="caret"></b></a>
                                     <ul class="dropdown-menu" role="menu" >
                                         <li class="menu-header">Computer</li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Wedding</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Souvenirs</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Made In Nigeria</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Customized</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">- Wedding</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">- Souvenirs</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">- Made In Nigeria</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">- Customized</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -78,7 +78,7 @@
                                 <div class="clearfix cart-total">
                                     <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
                                     <div class="clearfix"></div>
-                                    <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                                    <a href="" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
                                 <!-- /.cart-total-->
 
                             </li>
@@ -87,9 +87,14 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <ul class="account">
-                        {if $current_user[0].is_logged_in|default: ''}
-                            <li><a href="{$BASE_URL}registry/couple/action/settings">Hi, {$current_user[0].groom_first_name|default: ''}
+                        {if $complete_details[0].is_logged_in|default: ''}
+                            {if $complete_details[0].regType != 'wedding'}
+                            <li><a href="{$BASE_URL}registry/action/settings">Hi, {$complete_details[0].name}
                                 </a></li>
+                            {else}
+                                <li><a href="{$BASE_URL}registry/action/settings">Hi, {$complete_details[0].groom_first_name}
+                                    </a></li>
+                                {/if}
                         {else}
                             <li><a href="{$BASE_URL}auth/login">My Account</a></li>
                         {/if}
@@ -109,10 +114,10 @@
                 <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                     <div class="nav-outer">
                         <ul class="nav navbar-nav">
-                            <li class="active"> <a href="{$BASE_URL}registry/couple/dashboard" id="dashboard">Dashboard</a> </li>
-                            <li class=""> <a href="{$BASE_URL}registry/couple/action/manage" id="manage">Manage Registry</a> </li>
-                            <li class=""> <a href="{$BASE_URL}registry/couple/action/share" id="share">Share</a> </li>
-                            <li class=""> <a href="{$BASE_URL}registry/couple/action/track" id="track">Track</a> </li>
+                            <li class="active"> <a href="{$BASE_URL}registry/dashboard" id="dashboard">Dashboard</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/action/manage" id="manage">Manage Registry</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/action/share" id="share">Share</a> </li>
+                            <li class=""> <a href="{$BASE_URL}registry/action/track" id="track">Track</a> </li>
                             <li class="dropdown"> <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">My Account</a>
                                 <ul class="dropdown-menu pages">
                                     <li>
@@ -120,12 +125,12 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-menu">
                                                     <ul class="links">
-                                                        <li><a href="{$BASE_URL}registry/couple/action/settings">Account Settings</a></li>
-                                                        <li><a href="{$BASE_URL}registry/couple/action/help">Help</a></li>
+                                                        <li><a href="{$BASE_URL}registry/action/settings">Account Settings</a></li>
+                                                        <li><a href="{$BASE_URL}registry/action/help">Help</a></li>
                                                         <input type="hidden" id="base_url" value="{$BASE_URL}">
-                                                        <input type="hidden" id="couple_id" value="{$current_user[0].couple_id}">
-                                                        <input type="hidden" id="user_ip" value="{$current_user[0].ip}">
-                                                        <li><a href="{$BASE_URL}registry/couple/action/logout" id="logout_btn">Logout</a></li>
+                                                        <input type="hidden" id="user_id" value="{$complete_details[0].user_id}">
+                                                        <input type="hidden" id="user_ip" value="{$complete_details[0].ip}">
+                                                        <li><a href="{$BASE_URL}registry/action/logout" id="logout_btn">Logout</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

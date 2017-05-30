@@ -16,13 +16,13 @@ class Account extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->library('session');
-        $this->load->model('user_model');
-        $this->load->model('category_model');
+        $this->load->library("session");
+        $this->load->model("user_model");
+        $this->load->model("category_model");
 
         //check if user is already logged-in...
-        $this->check = $this->session->userdata('user_session');
-        if (empty($check)) redirect('index.php/registry/auth/login');
+        $this->check = $this->session->userdata("user_session");
+        if (empty($check)) redirect("index.php/registry/auth/login");
     }
 
     public function index()

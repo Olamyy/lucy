@@ -12,7 +12,7 @@ class Customers extends CI_Controller
     private $data = array();
     public function __construct(){
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model("user_model");
     }
 
     public function index(){
@@ -37,8 +37,8 @@ class Customers extends CI_Controller
 
     private function all()
     {
-        $this->data['voucher_details'] = $this->user_model->get("lucy_user", 0, 0);
-//        $this->smarty->view('admin/sales/vouchers/vouchers.tpl', $this->data);
+        $this->data["voucher_details"] = $this->user_model->get("lucy_user", 0, 0);
+//        $this->smarty->view("admin/sales/vouchers/vouchers.tpl", $this->data);
     }
 
 }

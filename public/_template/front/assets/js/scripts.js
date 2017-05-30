@@ -411,14 +411,14 @@ jQuery(document).ready(function() {
   });
 
   jQuery('#setVowMessageButton').on('click', function () {
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
     var vow_message = $('#vows').val();
     $.ajax(
         {
           type: "POST",
           url: $('#base_url').val() + 'api/updates/vow_message',
           data: {
-            "couple_id": couple_id,
+            "user_id": user_id,
             "vow_message" : vow_message
           },
           dataType: 'json',
@@ -433,14 +433,14 @@ jQuery(document).ready(function() {
   });
 
   jQuery('#setVotMessageButton').on('click', function () {
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
     var votmessage = $('#vot').val();
     $.ajax(
         {
           type: "POST",
           url: $('#base_url').val()+ 'api/updates/vot_of_thanks',
           data: {
-            "couple_id": couple_id,
+            "user_id": user_id,
             "vot_message" : votmessage
           },
           dataType: 'json',
@@ -456,14 +456,14 @@ jQuery(document).ready(function() {
 
   jQuery('#invitePartnerForm').on('click', function(){
     var partner_email = $('#email').val();
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
 
     $.ajax(
         {
           type: "POST",
-          url: $('#base_url').val()+ '/api/updates/invite_partner',
+          url: $('#base_url').val()+ 'api/updates/invite_partner',
           data: {
-            "couple_id": couple_id,
+            "user_id": user_id,
             "partner_email" : partner_email
           },
           dataType: 'json',
@@ -488,7 +488,7 @@ jQuery(document).ready(function() {
 
   var dashboard_image_setter = function(image_url){
      var bg_img = Cookies.get('dash_image');
-     if (!bg_img){
+      if (!bg_img){
          var bg_from_html = $("#dashboard_image").val();
          if (bg_from_html){
              image_url = bg_from_html;
@@ -514,15 +514,15 @@ jQuery(document).ready(function() {
     var new_bg_image = $(this).attr('src');
 
 // For IE we need to remove quotes to the proper url
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
     var bg_image = $('.main-couple-img').css('backgroundImage');
 
     $.ajax(
         {
           type: "GET",
-          url: $('#base_url').val()+ '/api/updates/dashboard_image',
+          url: $('#base_url').val()+ 'api/updates/dashboard_image',
           data: {
-            "couple_id": couple_id,
+            "user_id": user_id,
             "bg_image" : new_bg_image
           },
           dataType: 'json',
@@ -530,9 +530,11 @@ jQuery(document).ready(function() {
           success: function (response) {
             var new_bg = $("#dashboard_image").val(response.response[0].dashboard_image);
               Cookies.set('dash_image', response.response[0].dashboard_image);
+              toastr.success('New dashboard image set. Reload to see changes.');
               dashboard_image_setter(new_bg);
           },
           error : function(response){
+            console.log(response);
             toastr.error('Unable to set dashboard image.')
           }
         });
@@ -546,20 +548,48 @@ jQuery(document).ready(function() {
   var show_product_details = function(){
     $('#product_cart_details').css("display","block");
   };
+
+  var checkUserCart = function () {
+      var base_url = $('#base_url').val();
+      var template_url = $('#template_url').val();
+      $.ajax({
+          type: "GET",
+          url: base_url + 'api/updates/get_ip',
+          dataType: 'json',
+          async : false,
+          success: function (response) {
+              var current_user_ip = response.response;
+              $.ajax({
+                  type: "GET",
+                  url: base_url + 'api/updates/get_cart_data',
+                  dataType: 'json',
+                  async : false,
+                  success: function (response) {
+                      console.log(response);
+                  },
+                  error: function (response) {
+                      console.log(response);
+                  }
+              })
+          },
+          error : function(response){
+              console.log(response)
+          }
+      });
+
+  };
     
   var getCartDetails = function(){
     var base_url = $('#base_url').val();
     var template_url = $('#template_url').val();
     $.ajax({
       type: "GET",
-      url: base_url + '/api/updates/get_ip',
+      url: base_url + 'api/updates/get_ip',
       dataType: 'json',
       async : false,
       success: function (response) {
         var current_user_ip = response.response;
-        console.log(current_user_ip);
         var user_details = Cookies.getJSON('user_details');
-        console.log(user_details);
         if (user_details){
           if (user_details.user_ip === current_user_ip){
             var sums = [];
@@ -574,6 +604,10 @@ jQuery(document).ready(function() {
             $('#price_count_span').html(user_details.cart_count + '  item(s) /');
             $('#cart_price_sum').html(sum);
           }
+        }
+        else{
+            $('#price_count_span').html('0' + '  item(s) /');
+            $('#cart_price_sum').html('0');
         }
       },
       error : function(response){
@@ -594,7 +628,7 @@ jQuery(document).ready(function() {
   $('.remove_btn').on('click', function(event){
     event.preventDefault();
     var product_id = $('#product_id').val();
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
 
     swal({title: 'Are you sure you want to remove the product?', showCancelButton: true}).then(
         function(result) {
@@ -603,7 +637,7 @@ jQuery(document).ready(function() {
                 type: "POST",
                 url:   $('#base_url').val() + 'api/updates/remove_product',
                 data: {
-                  "couple_id": couple_id,
+                  "user_id": user_id,
                   "product_id": product_id
                 },
                 dataType: 'json',
@@ -624,25 +658,30 @@ jQuery(document).ready(function() {
     var user_ip = $('#user_ip').val();
     var product_id = $('#product_id').val();
     var quantity = $('#quantity').val();
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
     var base_url = $('#base_url').val();
 
+    var data = {"user_ip": user_ip,
+        "product_id" : product_id,
+        "quantity" : quantity,
+        "user_id":user_id}
+        console.log(data)
     $.ajax(
         {
           type: "POST",
-          url: base_url + '/api/updates/registry_add',
+          url: base_url + 'api/updates/registry_add',
           data: {
             "user_ip": user_ip,
             "product_id" : product_id,
             "quantity" : quantity,
-            "couple_id":couple_id
+            "user_id":user_id
           },
           dataType: 'json',
           async : false,
-          success: function (response) {
+          success: function () {
             toastr.info('The product has been added to your registry');
           },
-          error : function(response){
+          error : function(){
             toastr.warning('You need to login to add to registry');
           }
         });
@@ -660,22 +699,23 @@ jQuery(document).ready(function() {
 
   $('#logout_btn').on('click', function(event){
     event.preventDefault();
-    var couple_id = $('#couple_id').val();
+    var user_id = $('#user_id').val();
     var user_ip = $('#user_ip').val();
     var base_url = $('#base_url').val();
 
     $.ajax(
         {
           type: "POST",
-          url: base_url + '/api/updates/logout',
+          url: base_url + 'api/updates/logout',
           data: {
             "user_ip": user_ip,
-            "couple_id": couple_id
+            "user_id": user_id
           },
           dataType: 'json',
           async : false,
           success: function (response) {
-            window.location.href = base_url;
+              Cookies.remove('user_details');
+              window.location.href = base_url;
           },
           error : function(response){
             console.log(response)
@@ -720,13 +760,56 @@ jQuery(document).ready(function() {
         });
   });
 
-  hide_product_details();
+
+  var review_update = function () {
+      $('#submit_review').on('click', function (event) {
+          event.preventDefault();
+          if(!document.querySelector('input[name="star"]:checked')){
+              toastr.error('Select a star');
+          }
+          else{
+              var product_id = $('#product_id').val();
+              var review = $('#reviewInput').val();
+              var name = $('#nameInput').val();
+              var base_url = $('#base_url').val();
+              var stars = document.querySelector('input[name="star"]:checked').value;
+              console.log(name);
+              $.ajax(
+                  {
+                      url: base_url + 'api/updates/review_product',
+                      type: "POST",
+                      data: {
+                          "product_id" : product_id,
+                          "review": review,
+                          "stars" : stars,
+                          "name": name
+                      },
+                      dataType: 'json',
+                      async : false,
+                      success: function (response) {
+                          console.log(response);
+                          toastr.info('Your review has been added.');
+                      },
+                      error : function(response){
+                          console.log(response);
+                          if (response.responseJSON['error-reasons'].reason == "NoLogin"){
+                              toastr.error('You need to login to add to cart');
+                          }
+                      }
+                  });
+          }
+      })
+  };
 
   dashboard_image_setter();
 
   getCartDetails();
 
   handleReg();
+
+  checkUserCart();
+
+  review_update();
 
 });
 

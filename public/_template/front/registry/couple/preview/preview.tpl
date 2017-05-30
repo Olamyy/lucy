@@ -3,12 +3,12 @@
 
 <!-- ============================================== HEADER : END ============================================== -->
 
-{foreach from=$user_session item=session key=eKey}
-    <input type="hidden" value="{$session.groom_last_name}" name="couple_id" id="couple">
+{foreach from=$complete_details item=session key=eKey}
+    <input type="hidden" value="{$session.user_id}" name="user_id" id="couple">
 {/foreach}
 
 <form>
-    <input type="hidden" name="name" value="{$session.couple_id}" id="couple_id" class="couples-name">
+    <input type="hidden" name="name" value="{$session.user_id}" id="user_id" class="couples-name">
     <input type="hidden" id="base_url" value="{$BASE_URL}" />
 </form>
 
@@ -64,8 +64,11 @@
 </div>
 <!-- ============================================== HEADER : END ============================================== -->
 <div class="preview_bg"  style="background-image: url('{$session.dashboard_image}');">
-    <div class="preview-display-name">{$session.groom_first_name} & {$session.bride_first_name}</div>
-    <div class="preview-display-date">{if empty($session.wedding_date)}Date is coming soon{else}{$session.wedding_date}{/if}</div>
+    <div class="preview-display-name">
+        {if $session.regType == 'wedding'}{$session.groom_first_name} &
+            {$session.bride_first_name}{elseif $session.regType == 'anniv'}Mr & Mrs {$session.name}{else}{$session.name}{/if}
+    </div>
+    <div class="preview-display-date">{if empty($session.event_date)}Date is coming soon{else}{$session.event_date}{/if}</div>
 </div>
 
 <br>
@@ -86,8 +89,13 @@
                         <div id="description" class="tab-pane in active">
                             <div class="product-tab">
                                 <p class="text"  id="Vmessage">
-                                    <br><br>{if empty($session.vow_message)}Share your love with the world ....
-                                    {else}{$session.vow_message}{/if}<br><br></p>
+                                    <div class="product-tab">
+                                <p class="text"  id="Vmessage">
+                                    <br><br><br>{if
+                                    empty($session.vow_message)}
+                                    {if $session.regType == 'wedding' || $session.regType == 'anniv'} <br><br>{if empty($session.vow_message)}Share your love with the world ....{else}{$session.vow_message}{/if}{else} <br><br>{if empty($session.vow_message)}Tell the world about your event ....{else}{$session.vow_message}{/if}{/if}
+                                    {else}{$session.vow_message}{/if}</p>
+                            </div><br><br></p>
                             </div>
                         </div><!-- /.tab-pane -->
 

@@ -28,7 +28,7 @@
                             {/foreach}
                         </div>
                     {/if}
-                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}index.php/registry/couple/init/conclude">
+                    <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}registry/InitCouple/conclude">
                         <div class="form-group">
                         <label for="basic-url">Your registry URL<span>*</span></label>
                         <div class="input-group">
