@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-11 10:30:39
+<?php /* Smarty version 3.1.24, created on 2017-06-01 01:23:12
          compiled from "/var/www/html/lucy/public/_template/admin/product/category/categoryheader.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:46619047958eca23f5a8765_85405592%%*/
+/*%%SmartyHeaderCode:1286734905592f5e7008ead2_38117395%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '091e9410d8f907eec44eb2e4be9640f0ba0382fb' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/product/category/categoryheader.tpl',
-      1 => 1487677328,
+      1 => 1496276074,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '46619047958eca23f5a8765_85405592',
+  'nocache_hash' => '1286734905592f5e7008ead2_38117395',
   'variables' => 
   array (
     'APP_NAME' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58eca23f5cd100_32775819',
+  'unifunc' => 'content_592f5e700e3913_80121217',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58eca23f5cd100_32775819')) {
-function content_58eca23f5cd100_32775819 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_592f5e700e3913_80121217')) {
+function content_592f5e700e3913_80121217 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '46619047958eca23f5a8765_85405592';
+$_smarty_tpl->properties['nocache_hash'] = '1286734905592f5e7008ead2_38117395';
 ?>
 
 <!doctype html>
@@ -39,7 +39,7 @@ $_smarty_tpl->properties['nocache_hash'] = '46619047958eca23f5a8765_85405592';
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['APP_NAME']->value;?>
-</title>
+ - Admin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
@@ -52,33 +52,39 @@ echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /admin/assets/css/custom.css"/>
-    <!--End of Global styles-->
+    <!--end of global styles-->
     <!--plugin styles-->
-    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
-echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/intl-tel-input/css/intlTelInput.css">
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/bootstrapvalidator/css/bootstrapValidator.min.css" />
+/admin/assets/vendors/select2/css/select2.min.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/sweetalert/css/sweetalert2.min.css" />
-    <!--End of plugin styles-->
+/admin/assets/vendors/datatables/css/dataTables.bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/admin/assets/css/pages/dataTables.bootstrap.css"/>
+    <!-- end of plugin styles -->
     <!--Page level styles-->
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/css/pages/sweet_alert.css" />
+/admin/assets/css/pages/tables.css"/>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/css/pages/form_layouts.css" />
+/admin/assets/vendors/modal/css/component.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/vendors/toastr/css/toastr.min.css" />
-    <!--End of plugin styles-->
-    <!--Page level styles-->
+/admin/assets/vendors/bootstrap-tagsinput/css/bootstrap-tagsinput.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/admin/assets/vendors/animate/css/animate.min.css" />
+    <!-- end of plugin styles -->
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
-/admin/assets/css/pages/toastr.css" />
+/admin/assets/css/pages/portlet.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
+/admin/assets/css/pages/advanced_components.css"/>
     <link type="text/css" rel="stylesheet" href="#" id="skin_change" />
     <!-- end of page level styles -->
 </head>

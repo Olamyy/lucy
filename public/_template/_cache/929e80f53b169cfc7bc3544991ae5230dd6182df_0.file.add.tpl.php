@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-11 10:30:39
+<?php /* Smarty version 3.1.24, created on 2017-06-03 04:22:37
          compiled from "public/_template/admin/product/category/add.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:197257825658eca23f527714_17312794%%*/
+/*%%SmartyHeaderCode:39363545559322b7d7c3ac3_71693372%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '929e80f53b169cfc7bc3544991ae5230dd6182df' => 
     array (
       0 => 'public/_template/admin/product/category/add.tpl',
-      1 => 1487677328,
+      1 => 1496460155,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '197257825658eca23f527714_17312794',
+  'nocache_hash' => '39363545559322b7d7c3ac3_71693372',
   'variables' => 
   array (
     'error' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58eca23f59dbd9_89028914',
+  'unifunc' => 'content_59322b7d836679_69332292',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58eca23f59dbd9_89028914')) {
-function content_58eca23f59dbd9_89028914 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_59322b7d836679_69332292')) {
+function content_59322b7d836679_69332292 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '197257825658eca23f527714_17312794';
+$_smarty_tpl->properties['nocache_hash'] = '39363545559322b7d7c3ac3_71693372';
 echo $_smarty_tpl->getSubTemplate ("../category/categoryheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -102,7 +102,7 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                                 </div>
                             <?php }?>
                             <?php if ((($tmp = @$_smarty_tpl->tpl_vars['message']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-                                <div class="alert alert-s">
+                                <div class="alert alert-success">
                                     <?php
 $_from = $_smarty_tpl->tpl_vars['message']->value;
 if (!is_array($_from) && !is_object($_from)) {

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-05 14:23:09
+<?php /* Smarty version 3.1.24, created on 2017-06-01 03:02:11
          compiled from "public/_template/front/registry/cart.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:133996090658bc113d481802_45080425%%*/
+/*%%SmartyHeaderCode:118784768592f75a3d84e72_19108249%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd3bbd4eedf065a4ee37518dbbd377a12ec5dded8' => 
     array (
       0 => 'public/_template/front/registry/cart.tpl',
-      1 => 1488717701,
+      1 => 1496282526,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '133996090658bc113d481802_45080425',
+  'nocache_hash' => '118784768592f75a3d84e72_19108249',
   'variables' => 
   array (
     'BASE_URL' => 0,
-    'user_cart' => 0,
     'user_cart_items' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
     'product' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
     'product_details' => 0,
+    'price_arr' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bc113d4eee18_29089541',
+  'unifunc' => 'content_592f75a3df01d6_83189045',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bc113d4eee18_29089541')) {
-function content_58bc113d4eee18_29089541 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_592f75a3df01d6_83189045')) {
+function content_592f75a3df01d6_83189045 ($_smarty_tpl) {
+if (!is_callable('smarty_function_math')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/function.math.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '133996090658bc113d481802_45080425';
+$_smarty_tpl->properties['nocache_hash'] = '118784768592f75a3d84e72_19108249';
 echo $_smarty_tpl->getSubTemplate ("../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -67,7 +68,7 @@ echo $_smarty_tpl->getSubTemplate ("../header.tpl", $_smarty_tpl->cache_id, $_sm
                             </tr>
                             </tfoot>
                             <tbody>
-                            <?php if ($_smarty_tpl->tpl_vars['user_cart']->value) {?>
+                            <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_cart_items']->value)===null||$tmp==='' ? '' : $tmp)) {?>
                                 <?php
 $_from = $_smarty_tpl->tpl_vars['user_cart_items']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -80,6 +81,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['product']->_loop = true;
 $foreach_product_Sav = $_smarty_tpl->tpl_vars['product'];
 ?>
+                                    <?php ob_start();
+echo smarty_function_math(array('equation'=>"x * y",'x'=>$_smarty_tpl->tpl_vars['product']->value['quantity'],'y'=>$_smarty_tpl->tpl_vars['product']->value['price']),$_smarty_tpl);
+$_tmp1=ob_get_clean();
+$_smarty_tpl->createLocalArrayVariable('price_arr', null, 0);
+$_smarty_tpl->tpl_vars['price_arr']->value[] = $_tmp1;?>
                                     <tr>
                                         <td class="cart-image">
                                             <a class="entry-thumbnail">
@@ -95,9 +101,9 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['product']->value['product_
 "><?php echo $_smarty_tpl->tpl_vars['product_details']->value[0]['name'];?>
 </a></h4>
                                         </td>
-                                        <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo $_smarty_tpl->tpl_vars['product']->value['quantity'];?>
+                                        <td class="cart-product-sub-total" ><span class="cart-sub-total-price"><?php echo $_smarty_tpl->tpl_vars['product']->value['quantity'];?>
 </span></td>
-                                        <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+                                        <td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358;<?php echo smarty_function_math(array('equation'=>"x * y",'x'=>$_smarty_tpl->tpl_vars['product']->value['quantity'],'y'=>$_smarty_tpl->tpl_vars['product']->value['price']),$_smarty_tpl);?>
 </span></td>
                                     </tr>
                                 <?php
@@ -106,6 +112,7 @@ $_smarty_tpl->tpl_vars['product'] = $foreach_product_Sav;
 ?>
                             <?php } else { ?>
                             <tr>
+
 
 
 
@@ -172,10 +179,12 @@ $_smarty_tpl->tpl_vars['product'] = $foreach_product_Sav;
                         <tr>
                             <th>
                                 <div class="cart-sub-total">
-                                    Subtotal<span class="inner-left-md">$600.00</span>
+                                    Subtotal<span class="inner-left-md">&#8358;<?php echo array_sum($_smarty_tpl->tpl_vars['price_arr']->value);?>
+</span>
                                 </div>
                                 <div class="cart-grand-total">
-                                    Grand Total<span class="inner-left-md">$600.00</span>
+                                    Grand Total<span class="inner-left-md">&#8358;<?php echo array_sum($_smarty_tpl->tpl_vars['price_arr']->value);?>
+</span>
                                 </div>
                             </th>
                         </tr>
@@ -185,7 +194,6 @@ $_smarty_tpl->tpl_vars['product'] = $foreach_product_Sav;
                             <td>
                                 <div class="cart-checkout-btn pull-right">
                                     <button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>
-                                    <span class="">Checkout with multiples address!</span>
                                 </div>
                             </td>
                         </tr>

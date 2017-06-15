@@ -20,9 +20,9 @@ class Checkout extends CI_Controller
 
         $this->data["pre_cart"] = $this->user_model->get_cat_details();
         $user_session = $this->session->has_userdata("user_session");
-        if (!$user_session) {
-            redirect("index.php/registry/auth/login");
-        }
+//        if (!$user_session) {
+//            redirect("registry/auth/login");
+//        }
         $this->data["user_session"] = $this->session->userdata("user_session");
 
 
@@ -67,7 +67,6 @@ class Checkout extends CI_Controller
                 $temp_user_cart = $this->user_model->custom_get("lucy_temp_user", array("ip" => $ip), 0, 0);
                 $this->data["user_cart_items"] = $this->user_model->custom_get("lucy_user_cart_items", array("cart_id" => $temp_user_cart[0]["cart_id"]), 0, 0);
                 $this->data["product_details"] = $this->user_model->custom_get("lucy_product", array("product_id" => $this->data["user_cart_items"][0]["product_id"]), 0, 0);
-//                    $this->data["user_products"] = $product_details;
             }
 
         }

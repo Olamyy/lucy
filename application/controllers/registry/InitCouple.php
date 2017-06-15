@@ -48,8 +48,10 @@ class InitCouple extends CI_Controller
             if (empty($error)){
                 $couple_details = array("groom_first_name"=>$groom_first_name,"groom_last_name"=>$groom_last_name,
                                         "bride_first_name"=>$bride_first_name,"bride_last_name"=>$bride_last_name,
-                                        "spouse_email"=>$spouse_email,"date_modified" => date("Y-m-d H:i:s"));
+                                        "spouse_email"=>$spouse_email,"date_modified" => date("Y-m-d H:i:s"),
+                                         );
 
+                $this->user_model->update(array("date_modified" => date("Y-m-d H:i:s")), "lucy_all_users", array("user_id"=>$this->check_user_ip[0]["user_id"]));
                 $update = $this->user_model->update($couple_details,"lucy_couple", array("user_id"=>$this->check_user_ip[0]["user_id"]));
 
                 if($update){
@@ -67,13 +69,15 @@ class InitCouple extends CI_Controller
     }
 
     public function conclude(){
+        $user_ip = $this->input->ip_address();
+
+        $this->check_user_ip = $this->user_model->custom_get("lucy_all_users", array("ip" => $user_ip), 0, 0);
         $error = array();
+
         if (!empty($_POST)) {
 
             $reg_url = $this->input->post("reg_url");
             $wedding_date = $this->input->post("wedding_date");
-
-            if(empty($wedding_date)) $wedding_date ="";
 
             if (empty($reg_url)) $error[] = "Pick a url tag";
 
@@ -81,8 +85,9 @@ class InitCouple extends CI_Controller
                 $couple_details = array("registry_url_tag"=>$reg_url, "event_date"=>$wedding_date,
                                             "date_modified" => date("Y-m-d H:i:s"), "walkthrough"=>1);
 
+                $this->user_model->update(array("registry_url"=>$reg_url,
+                    "date_modified" => date("Y-m-d H:i:s"), "walkthrough"=>1), "lucy_all_users", array("user_id"=>$this->check_user_ip[0]["user_id"]));
                 $update = $this->user_model->update($couple_details, "lucy_couple", array("user_id"=>$this->check_user_ip[0]["user_id"]));
-                $this->user_model->update(array("walkthrough"=>1), "lucy_couple", array("user_id"=>$this->check_user_ip[0]["user_id"]));
 
                 if($update){
                     $this->session->set_userdata(array("user_session"=>$update));

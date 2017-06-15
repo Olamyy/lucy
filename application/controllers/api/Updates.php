@@ -34,7 +34,7 @@ class Updates extends REST_Controller
 
       if (empty($error)){
 
-          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
 
           if(!empty($user_details)){
               $update_data = array("dashboard_image"=>$bg_image);
@@ -161,14 +161,14 @@ class Updates extends REST_Controller
       if (empty($user_ip)) $error[] = "Empty User IP";
 
       if(empty($error)){
-          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
           if (!empty($user_details)){
               $update = $this->user_model->update(array("is_logged_in"=>0),"lucy_couple", array("user_id"=>$user_details[0]["user_id"]));
               $this->session->sess_destroy();
-              $this->response_ok($update);
+              $this->response_ok(array('yo'=>$update, 't'=>'Yeah'));
           }
           else{
-              $this->response_bad("Unable to logout", array("Hello"=>$user_id));
+              $this->response_bad("Unable to logout");
           }
       }
       else
@@ -287,10 +287,10 @@ class Updates extends REST_Controller
       if (empty($product_id)) $error[] = "Empty Product ID";
       if (empty($user_ip)) $error[] = "Empty User IP";
       if (empty($quantity)) $error[] = "Empty Quantity";
-      if (empty($user_id)) $error[] = "Empty Couple ID";
+      if (empty($user_id)) $error[] = "Empty User ID";
 
       if (empty($error)){
-          $user_details = $this->user_model->custom_get("lucy_all_userss", array("user_id"=>$user_id), 0, 0);
+          $user_details = $this->user_model->custom_get("lucy_all_users", array("user_id"=>$user_id), 0, 0);
           if ($user_details[0]["regType"] == "wedding"){
               $table_name = "lucy_couple";
           }
@@ -386,10 +386,37 @@ class Updates extends REST_Controller
             return $this->user_model->custom_get("lucy_all_users_cart_items", array("cart_id"=>$user_cart[0]["cart_id"]), 0,0);
         };
     }
+  public function delete_product_post(){
+        $user_id = $this->post("user_id");
+        $product_id = $this->post("product_id");
+
+        $error = array();
+
+        if (empty($user_id)) $error[] = "Empty Couple ID";
+        if (empty($product_id)) $error[] = "Empty Product ID";
+
+        if (empty($error)){
+            $couple_details = $this->user_model->custom_get("lucy_registry_cart_items", array("user_id"=>$user_id), 0, 0);
+            if (empty($couple_details)){
+                $this->response_bad("Invalid Couple ID");
+            }
+            else{
+                $delete = $this->user_model->delete_data("lucy_registry_cart_items" , array("product_id"=>$product_id));
+                if ($delete){
+                    $this->response_ok($delete);
+                }
+                else
+                    $this->response_bad("Unable to remove item");
+            }
+        }
+        else
+            $this->response_bad("Invalid Parameters", $error);
+
+    }
 
   private function add_to_registry($user_id,$product_details, $quantity, $registry_id, $table_name)
     {
-        $this->user_model->update(array("registry_id"=> $registry_id),"lucy_all_userss", array("user_id"=>$user_id), 0, 0);
+        $this->user_model->update(array("registry_id"=> $registry_id),"lucy_all_users", array("user_id"=>$user_id), 0, 0);
         $this->user_model->update(array("registry_id"=>$registry_id),
             $table_name, array("user_id"=>$user_id), 0, 0);
 
@@ -452,4 +479,6 @@ class Updates extends REST_Controller
           $this->response_bad("Unable to review product", $error);
       }
   }
+
+
 }

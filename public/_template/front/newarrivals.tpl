@@ -47,8 +47,6 @@
 </section>
 
 {if $on_home_page|default:''}
-
-
 <div class="best-deal wow fadeInUp outer-bottom-xs">
   <h3 class="section-title">Explore products</h3>
   <div class="sidebar-widget-body outer-top-xs">
@@ -61,7 +59,7 @@
                   <div class="row product-micro-row">
                     <div class="col col-xs-5">
                       <div class="product-image">
-                        <div class="image"> <a href="{$BASE_URL}product?product_id={$product.product_id}"> <img src="{$product.image}" alt="{$product.name}"> </a> </div>
+                        <div class="image"> <a href="{$BASE_URL}product?product_id={$product.product_id}"> <img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/uploads/products/{$product.image}" alt="{$product.name}"> </a> </div>
                         <!-- /.image -->
                       </div>
                       <!-- /.product-image -->
@@ -72,16 +70,10 @@
                         <h3 class="name"><a href="{$BASE_URL}product?product_id={$product.product_id}">{$product.name}</a></h3>
                         <div class="rating rateit-small"></div>
                         <div class="product-price"> <span class="price">{$product.price}</span> </div>
-                        <!-- /.product-price -->
-
                       </div>
                     </div>
-                    <!-- /.col -->
                   </div>
-                  <!-- /.product-micro-row -->
                 </div>
-                <!-- /.product-micro -->
-
               </div>
             </div>
           </div>
@@ -92,21 +84,6 @@
 </div>
 
 {/if}
-
-
-<div class="container-fluid top-div">
-  <h2 class="text-center">This is going to be fun. We wish we were you right now.</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <a href="{$BASE_URL}registry/auth/join"><button class="pull-right btn-reg">register</button></a>
-    </div>
-    <div class="col-md-6">
-      <a href="{$BASE_URL}registry/find"><button class="pull-left btn-find">Find a gift registry</button></a>
-    </div>
-  </div>
-</div>
-
-
 
 </div>
 </div>

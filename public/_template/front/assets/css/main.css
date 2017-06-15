@@ -1,31 +1,4 @@
 
-/*
-Theme Name: Flipmart
-Author: ThemesGround
-Description:  Flipmart HTML Template
-Version: 1.4
-License: GNU General Public License v2 or later
-Tags: two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu
-Text Domain:  Flipmart
-
-/* TABLE OF CONTENTS
-
-1.   Body
-2.   Layout
-3.   Header
-4.   Side menu
-5.   Slider
-6.   Top Banner Section	
-8.   Home Tabs
-9.   Products Grid 
-10.  Products List
-11.  Latest-Blog
-12.  Sidebar
-13.  Product View
-14.  Footer
-15.  Responsive
-16.  Testimonials
-
 /* */
 /*===================================================================================*/
 /*  Body
@@ -78,18 +51,83 @@ a {
   -o-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
 }
+
+
 body {
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   background-color: #f7f7f7;
+  font-weight: bold;
 }
 
-.cnt-home {background-color: #f7f7f7;}
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* Styles */
+  .cnt-home {background-color: #f7f7f7;}
+
+}
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  /* Styles */
+  .cnt-home {background-color: #f7f7f7;}
+
+}
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  /* Styles */
+  .cnt-home {background-color: #f7f7f7;}
+
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  /* Styles */
+  .cnt-home {background-color: #f7f7f7;}
+
+}
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  /* Styles */.cnt-home {background-color: #f7f7f7;}
+
+}
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  /* Styles */
+  .cnt-home {background-color: #f7f7f7;}
+
+}
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  /* Styles */
+}
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */
+}
 ul {
   margin: 0;
   padding: 0;
@@ -101,9 +139,6 @@ a:hover,
 a:active,
 a:focus {
   text-decoration: none;
-}
-img[src="assets/images/blank.gif"] {
-  background: url("../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/images/ajax.gif") no-repeat scroll center center #ffffff;
 }
 
 .btn-upper {
@@ -143,12 +178,11 @@ img[src="assets/images/blank.gif"] {
   -ms-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
-  background: #e40046;
+  background: #3687F1;
   color: #fff;
   border: none;
   font-size: 13px;
   line-height: 22px;
-  border-radius:0;
   padding: 6px 14px;
   font-family: 'Montserrat', sans-serif;
   border-radius:2px
@@ -373,7 +407,7 @@ img[src="assets/images/blank.gif"] {
 }
 .section-title {
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 12px;
   text-transform: uppercase;
@@ -385,7 +419,7 @@ img[src="assets/images/blank.gif"] {
   margin-bottom: 0px;
   margin-top: 5px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #e3e3e3;
@@ -400,15 +434,12 @@ img[src="assets/images/blank.gif"] {
 }
 
 .best-deal .section-title {
-  margin-bottom: 0px;
-  margin-top: 5px;
+  margin-top: 50px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #e3e3e3;
-  padding-bottom: 10px;
-  padding: 18px 20px;
 }
 
 .best-deal .best-seller {padding:21px; padding-top:0px;}
@@ -448,7 +479,7 @@ img[src="assets/images/blank.gif"] {
 .custom-carousel .owl-controls .owl-prev:before {
   color: #fff;
   content: "\f104";
-  font-family: fontawesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 13px;
   left: 7px;
   position: absolute;
@@ -472,7 +503,7 @@ img[src="assets/images/blank.gif"] {
 }
 .custom-carousel .owl-controls .owl-next:before {
   content: "\f105";
-  font-family: fontawesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: #fff;
   font-size: 13px;
   left: 7px;
@@ -485,7 +516,7 @@ img[src="assets/images/blank.gif"] {
   display:none
 }
 .featured-product {
-  margin-bottom:30px;
+  margin-top:35px;
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
 
@@ -520,7 +551,7 @@ img[src="assets/images/blank.gif"] {
   margin-bottom: 0px;
   margin-top: 5px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #e3e3e3;
@@ -543,7 +574,7 @@ img[src="assets/images/blank.gif"] {
   margin-bottom: 0px;
   margin-top: 5px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #e3e3e3;
@@ -565,7 +596,6 @@ img[src="assets/images/blank.gif"] {
 
 .special-product .product .image img {width:100%}
 .special-product .product .col {padding-right:0px}
-.special-product .product .btn-primary {background:none; padding:0px; color:#157ed2; text-decoration:underline; margin-top:5px;}
 
 .special-product .product:last-child {
   margin-top: 20px;
@@ -1097,7 +1127,7 @@ a {
 .top-bar {
   padding:0px;
   font-size: 11px;
-  background:#c7003d
+  background:#3687F1
 }
 .top-bar .cnt-account {
   float: right;
@@ -1194,7 +1224,7 @@ a {
 /*===================================================================================*/
 /* Header
 /*===================================================================================*/
-header{background:#e40046}
+header{background:#3687F1}
 
 .main-header {
   padding:0px 0px 0px 0px;
@@ -1271,7 +1301,7 @@ header{background:#e40046}
   background: rgba(0, 0, 0, 0);
 }
 .main-header .top-search-holder .search-area .categories-filter .dropdown-menu li.menu-header {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   line-height: 30px;
 }
 .main-header .top-search-holder .search-area .search-button {
@@ -1287,7 +1317,7 @@ header{background:#e40046}
 .main-header .top-search-holder .search-area .search-button:after {
   color: #fff;
   content: "\f002";
-  font-family: fontawesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 16px;
   line-height: 7px;
   vertical-align: middle;
@@ -1295,6 +1325,7 @@ header{background:#e40046}
 .cnt-home .header-style-1.header-style-2 .header-nav .navbar-default {
   background: #404040;
 }
+
 .top-cart-row {
   padding-top:0px;
   padding-left:0px
@@ -1302,11 +1333,13 @@ header{background:#e40046}
 .top-cart-row .dropdown-cart {
   float: right;
 }
+
+
 .top-cart-row .top-cart {display:inline-block}
 .top-cart-row .top-cart:before{
   content:"\f290";
-  font-family:FontAwesome;
-  background:#ce003f;
+  font-family: Tahoma, Verdana, Segoe, sans-serif; 
+  background:#3687F1;
   color:#fff;
   display:inline-block;
   padding:0px;
@@ -1321,7 +1354,6 @@ header{background:#e40046}
 
 .top-cart-row .dropdown-cart .lnk-cart {
   padding: 12px 0px 12px 20px;
-  border-left: 1px solid #d40041;
   display: inline-block;
   color: #fff;
 }
@@ -1330,13 +1362,12 @@ header{background:#e40046}
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .total-price-basket {
   padding: 12px 12px 13px 5px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   letter-spacing: 0.5px;
   display:inline-block
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .basket {
   float: left;
-  padding: 12px;
   border-right: 1px solid rgba(255,255,255,0.2);
   padding: 12px 18px 13px 12px;
 }
@@ -1350,7 +1381,7 @@ header{background:#e40046}
   top: 13px;
   width: 18px;
   background: #fdd922;
-  color: #e40046;
+  color: #3687F1;
   font-size: 11px;
   text-align: center;
   line-height: 19px;;
@@ -1372,7 +1403,7 @@ header{background:#e40046}
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name {
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin-top: 0px;
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a {
@@ -1393,7 +1424,7 @@ header{background:#e40046}
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-total .text {
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #666666;
   margin-right: 10px;
 }
@@ -1417,7 +1448,7 @@ header{background:#e40046}
   padding: 0;
 }
 .header-style-1 .header-nav .navbar-default .navbar-collapse .navbar-nav > li.active > a {
-  color: #e40046;
+  color: #3687F1;
   font-weight: bold;
   padding-bottom:15px
 }
@@ -1430,7 +1461,7 @@ header{background:#e40046}
 .header-style-1 .header-nav .navbar-default .navbar-collapse .navbar-nav > li > a {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
   color: #333;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 13px;
   line-height: 20px;
   padding: 16px 15px;
@@ -1451,7 +1482,7 @@ header{background:#e40046}
   padding: 1px 7px;
   color: #fff;
   font-size: 9px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   right: 23px;
   line-height: normal;
   letter-spacing:1px;
@@ -1493,7 +1524,7 @@ header{background:#e40046}
   border-color: #5fce6f rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
 }
 .header-style-1 .header-nav .navbar-default .navbar-collapse .navbar-nav > li .menu-label.hot-menu:before {
-  border-color: #ff7878 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  border-color: #3687F1 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
 }
 .header-style-2 {
   /*margin-bottom:10px;*/
@@ -1571,7 +1602,7 @@ header{background:#e40046}
 
 .yamm .dropdown-menu .yamm-content .links li a {
   padding: 4px 0px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   letter-spacing: 0.2px;
   font-size:13px;
   color:#565656!important;
@@ -1582,7 +1613,7 @@ header{background:#e40046}
 .yamm .dropdown-menu h2 {
   font-size: 14px;
   color: #555;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin-top: 0px;
   font-weight:bold
 }
@@ -1679,7 +1710,7 @@ header{background:#e40046}
   border-radius: 0px;
   color: #fff;
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   padding: 13px 17px 13px 17px;
   text-transform: uppercase;
 
@@ -1710,7 +1741,7 @@ header{background:#e40046}
 .sidebar .side-menu nav .nav > li > a {
   padding: 9px 15px;
   color: #666666;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   letter-spacing:0.2px;
 }
 .sidebar .side-menu nav .nav > li > a:after {
@@ -1725,7 +1756,7 @@ header{background:#e40046}
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   width: 10px;
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .sidebar .side-menu nav .nav > li > a .icon {
   font-size: 14px;
@@ -1773,7 +1804,7 @@ header{background:#e40046}
   line-height: 26px;
   padding: 0px;
   font-size:13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .sidebar .side-menu nav .nav > li > .mega-menu .yamm-content .dropdown-banner-holder {
   position: absolute;
@@ -1788,21 +1819,21 @@ header{background:#e40046}
 }
 .sidebar .sidebar-module-container .sidebar-widget .widget-header .widget-title {
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin: 0px;
   font-weight:bold
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle {
   clear: both;
   display: block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 13px;
   line-height: 28px;
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle:after {
   content:"\f068";
   float: right;
-  font-family: fontawesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle.collapsed {
   color: #666666;
@@ -1810,7 +1841,7 @@ header{background:#e40046}
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle.collapsed:after {
   color: #636363;
   content: "\f067";
-  font-family: fontawesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-weight:normal
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-body .accordion-inner {
@@ -1827,7 +1858,7 @@ header{background:#e40046}
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-body .accordion-inner ul li a:before {
   content: "\f105";
-  font-family: fontawesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 14px;
   line-height: 15px;
   margin: 0 5px 0 0;
@@ -1900,7 +1931,7 @@ header{background:#e40046}
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .list li {
   clear: both;
   display: block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 28px;
@@ -1932,13 +1963,13 @@ header{background:#e40046}
   font-size: 60px;
   line-height: 125px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: #fff;
   text-shadow: 1px 1px 3px #cfcfcf;
 }
 .sidebar .sidebar-widget .advertisement .item .caption .big-text .big {
   font-size: 120px;
-  color: #ff7878;
+  color:#3687F1;
   display: block;
   text-shadow: 1px 1px 3px #cfcfcf;
 }
@@ -2368,7 +2399,7 @@ header{background:#e40046}
   padding-right: 8%;
 }
 #owl-main .item .caption .slider-header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size:13px;
   font-weight:bold;
   text-transform:uppercase;
@@ -2383,7 +2414,7 @@ header{background:#e40046}
   font-size: 38px;
   line-height: 50px;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   padding: 0px 25px;
   background: #bbbbbb;
   color: #fff;
@@ -2399,7 +2430,7 @@ header{background:#e40046}
   font-size: 14px;
   /*line-height: 50px;*/
   margin-top: 10px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-weight: 500;
   padding-left: 23px;
   background: rgba(0, 0, 0, 0);
@@ -2460,7 +2491,7 @@ header{background:#e40046}
 #owl-main .full-width-slider .item .caption .big-text {
   font-size: 119px;
   line-height: 80px;
-  font-family: 'PacificoRegular';
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: #fff;
   background: rgba(0, 0, 0, 0);
   padding: 0px;
@@ -2470,7 +2501,7 @@ header{background:#e40046}
   font-size: 60px;
   line-height: 80px;
   margin-top: 15px;
-  font-family: 'LatoBold';
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   color: #fff;
   background: rgba(0, 0, 0, 0);
@@ -2522,7 +2553,7 @@ header{background:#e40046}
   font-size: 15px;
   line-height: 50px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   text-shadow: 2px 2px #c3c3c3;
   color: #fff ;
   padding-left: 0px;
@@ -2531,7 +2562,7 @@ header{background:#e40046}
   font-size: 45px;
   line-height: 50px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   text-shadow: 2px 2px #c3c3c3;
   color: #000;
 }
@@ -2666,7 +2697,7 @@ age-container #owl-main .owl-next {
   font-size: 14px;
   line-height:21px;
   text-transform: uppercase;
-  font-family:'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   margin-top: 0px;
   font-weight:bold;
   margin-bottom:0px;
@@ -2676,7 +2707,7 @@ age-container #owl-main .owl-next {
   color: #ffb847;
 }
 .info-boxes .info-box .info-box-heading.red {
-  color: #ff7878;
+  color: #3687F1;
 }
 .info-boxes .info-box .text {
   color:#aaa;
@@ -2684,7 +2715,7 @@ age-container #owl-main .owl-next {
   font-size: 13px;
   margin: 0px;
   letter-spacing:0.5px;
-  font-family:'Open Sans', sans-serif
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 'Open Sans', sans-serif
 
 }
 
@@ -2707,7 +2738,7 @@ age-container #owl-main .owl-next {
   margin-bottom: 0px;
   margin-top: 5px;
   font-size:16px;
-  font-family:'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;
   font-weight:bold
 }
@@ -2729,7 +2760,7 @@ age-container #owl-main .owl-next {
   box-shadow: none;
   padding: 0 10px !important;
   position: relative;
-  font-family:'Open Sans', sans-serif
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .scroll-tabs .nav-tab-line li a:hover,
 .scroll-tabs .nav-tab-line li a:focus {
@@ -2748,7 +2779,7 @@ age-container #owl-main .owl-next {
 }
 .product .product-info .name {
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 
 .product .product-info .name a {
@@ -2795,7 +2826,7 @@ age-container #owl-main .owl-next {
 }
 .product .cart .action ul li.lnk {
   margin: 10px 0px;
-  background: #e40046;
+  background: #3687F1;
   margin: 0px;
   padding: 8px 2px;
   border-left:1px solid hsla(0,0%,100%,.4);
@@ -2807,7 +2838,7 @@ age-container #owl-main .owl-next {
   padding: 8px 10px;
 }
 .product .cart .action ul li.lnk.wishlist {
-  background:#e40046;
+  background:#3687F1;
   margin:0px;
   border-radius:0px
 
@@ -2838,7 +2869,7 @@ age-container #owl-main .owl-next {
   background: #46aad7;
 }
 .tag.hot {
-  background: #ff7878;
+  background: #3687F1;
 }
 .product:hover .cart {
   opacity: 1;
@@ -2885,7 +2916,7 @@ age-container #owl-main .owl-next {
 .product-micro .product-image .image a .zoom-overlay:before {
   color: #FFFFFF;
   content: "\f00e";
-  font-family: fontawesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
   left: 45%;
   position: relative;
   right: 40%;
@@ -2920,7 +2951,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-home .product-micro .product-info .product-price .price {
   font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .cnt-home .product-micro .product-info .action .lnk.btn.btn-primary {
   font-size: 12px;
@@ -2972,7 +3003,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .strip h1 {
   font-size: 36px;
-  color: #ff4c4c;
+  color: #3687F1;
   margin: 0;
   text-transform: uppercase;
   font-family:'Montserrat', sans-serif;
@@ -2980,14 +3011,14 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .strip h2 {
   font-size: 36px;
-  color: #e40046;
+  color: #3687F1;
   margin: 0;
   text-transform: uppercase;
-  font-family:'Montserrat', sans-serif;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-weight:bold
 }
 .cnt-strip .strip h2 .shopping-needs {
-  font-family:'Montserrat', sans-serif;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #fff;
   font-weight:normal;
   font-size:22px
@@ -2997,19 +3028,20 @@ age-container #owl-main .owl-next {
   color: #434343;
   margin: 0;
   text-transform: uppercase;
-  font-family:'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+
 }
 .cnt-strip .strip h4 {
   font-size: 20px;
   margin: 0;
   text-transform: uppercase;
-  font-family:'Montserrat', sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .cnt-strip .strip.strip-text {
   width: 60%;
 }
 .cnt-strip .strip .red {
-  color: #ff7878;
+  color:#3687F1;
 }
 .cnt-strip .strip .black {
   color: #434343;
@@ -3022,10 +3054,9 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .strip .normal-shopping-needs {
   font-size: 35px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .cnt-strip .new-label {
-  background: url("../../../../../../../../../home/lekanterragon/Documents/Templates/shop/themesground.com/Lotus/V1/HTML/assets/images/label.png") no-repeat scroll right top;
   height: 72px;
   position: absolute;
   left: -1px;
@@ -3035,7 +3066,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .new-label .text {
   color: #fff;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 14px;
   font-weight: bold;
   line-height: 22px;
@@ -3060,11 +3091,11 @@ age-container #owl-main .owl-next {
 }
 .wide-banners.homepage-banner h4 {
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .wide-banners.homepage-banner h3 {
   font-size: 35px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .new-banner {
   margin-top: 30px;
@@ -3079,7 +3110,7 @@ age-container #owl-main .owl-next {
   padding: 13px 23px 13px 16px;
   line-height: 24px;
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .new-banner .cnt-strip .strip h5 {
   font-size: 16px;
@@ -3103,36 +3134,36 @@ age-container #owl-main .owl-next {
 }
 .megamenu-banner h3 {
   font-size: 30px;
-  font-family: 'BebasNeueRegular';
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .megamenu-banner h2 {
   font-size: 40px;
-  font-family: 'BebasNeueBold';
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .wide-banner-4 .cnt-strip .strip h1 {
   font-size: 50px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .wide-banner-4 .cnt-strip .strip h2 {
   font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .wide-banner-4 .cnt-strip .strip h3 {
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .wide-banner-4 .cnt-strip .strip h4 {
   font-size: 20px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .wide-banner-4 .cnt-strip .strip p {
   font-size: 23px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin-bottom: 0px;
 }
 .blog-slider-container .blog-slider .blog-post-info .name {
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-weight:bold
 }
 .blog-slider-container .blog-slider .blog-post-info .name a {
@@ -3172,7 +3203,7 @@ age-container #owl-main .owl-next {
 }
 .social .fb a:before {
   content: "\f09a";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .social .fb a {
   font-size: 16px;
@@ -3183,7 +3214,7 @@ age-container #owl-main .owl-next {
 }
 .social .tw a:before {
   content: "\f099";
-  font-family: FontAwesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .social .tw a {
   font-size: 16px;
@@ -3194,7 +3225,7 @@ age-container #owl-main .owl-next {
 }
 .social .googleplus a:before {
   content: "\f0d5";
-  font-family: FontAwesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .social .googleplus a {
   font-size: 16px;
@@ -3205,11 +3236,11 @@ age-container #owl-main .owl-next {
 }
 .social .rss a:before {
   content: "\f09e";
-  font-family: FontAwesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .social .rss a {
   content: "\f09e";
-  font-family: FontAwesome;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 16px;
   display: inline-block!important;
   text-align: center;
@@ -3218,24 +3249,23 @@ age-container #owl-main .owl-next {
 }
 .social .pintrest a:before {
   content: "\f0d3";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .social .pintrest a {
   content: "\f0d3";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 16px;
   display: inline-block!important;
   text-align: center;
   padding: 0;
-  background: #cb2027 !important;
+  background: #3687F1 !important;
 }
 .social .linkedin a:before {
   content: "\f0e1";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .social .linkedin a {
-  content: "\f0e1";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 16px;
   display: inline-block!important;
   text-align: center;
@@ -3244,7 +3274,7 @@ age-container #owl-main .owl-next {
 }
 .social .youtube a:before {
   content: "\f167";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .social .youtube a {
   font-size: 16px;
@@ -3308,7 +3338,7 @@ age-container #owl-main .owl-next {
 .footer .module-heading {
   font-size: 16px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #555555;
 }
 .footer .contact-timing .table tbody tr {
@@ -3321,7 +3351,7 @@ age-container #owl-main .owl-next {
   padding: 0px !important;
 }
 .footer .contact-timing .contact-number {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .footer .contact-information .media .media-body a {
   color: #666666;
@@ -3342,7 +3372,7 @@ age-container #owl-main .owl-next {
 .footer .footer-bottom .module-heading {
   font-size: 16px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #898989;
 }
 .footer .footer-bottom .module-body ul li {
@@ -3366,7 +3396,7 @@ age-container #owl-main .owl-next {
 }
 .footer .footer-bottom .module-body ul li a:before {
   content: "\f111";
-  font-family: FontAwesome;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   position: absolute;
   margin-left: -15px;
   font-size: 6px;
@@ -3422,7 +3452,7 @@ age-container #owl-main .owl-next {
   right: 10px;
   width: 50px;
   z-index: 100;
-  background: #ff7878;
+  background:#3687F1;
   position: absolute;
   text-align: center;
 }
@@ -3457,7 +3487,7 @@ age-container #owl-main .owl-next {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family:'Open Sans', sans-serif
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 .hot-deals .hot-deal-wrapper .timing-wrapper .box-wrapper .box .value {
   display: block;
@@ -3470,7 +3500,7 @@ age-container #owl-main .owl-next {
 }
 .hot-deals .product-info .name {
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .hot-deals .product-info .name a {
   color: #555;
@@ -3545,7 +3575,7 @@ age-container #owl-main .owl-next {
 .breadcrumb ul li:after {
   color: #666666;
   content: "/";
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 12px;
   line-height: 24px;
   margin-left: 9px;
@@ -3557,7 +3587,7 @@ age-container #owl-main .owl-next {
 }
 .breadcrumb ul li a {
   color: #666666;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 500;
@@ -3583,7 +3613,7 @@ age-container #owl-main .owl-next {
   font-size: 100px;
   line-height: 145px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #f31f60;
 }
 .category-carousel .item .caption .excerpt {
@@ -3664,7 +3694,7 @@ age-container #owl-main .owl-next {
   -moz-border-radius: 0;
   border-radius: 0;
   color: #666666;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
   line-height: 18px;
   border: none !important;
   padding: 0px;
@@ -3838,7 +3868,7 @@ age-container #owl-main .owl-next {
 }
 .single-product .product-info .stock-container .stock-box .label {
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   line-height: 18px;
   color: #666666;
   padding: 0px;
@@ -3846,7 +3876,7 @@ age-container #owl-main .owl-next {
 }
 .single-product .product-info .stock-container .stock-box .value {
   font-size: 13px;
-  color: #ff7878;
+  color:#3687F1;
 }
 .single-product .product-info .description-container {
   line-height: 20px;
@@ -3876,7 +3906,7 @@ age-container #owl-main .owl-next {
 }
 .single-product .product-info .quantity-container .label {
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   line-height: 35px;
   text-transform: uppercase;
   color: #666666;
@@ -3927,7 +3957,7 @@ age-container #owl-main .owl-next {
 }
 .single-product .product-info .product-social-link .social-label {
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   line-height: 20px;
   text-transform: uppercase;
 }
@@ -3971,7 +4001,7 @@ age-container #owl-main .owl-next {
   display: block;
   padding: 12px 28px;
   font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   line-height: 28px;
   text-transform: uppercase;
   position: relative;
@@ -4187,7 +4217,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-homepage .single-product .product-info-block .stock-container .stock-box .label {
   color: #434343;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 13px;
   font-weight: normal;
   line-height: 20px;
@@ -4207,7 +4237,7 @@ age-container #owl-main .owl-next {
   -moz-border-radius: 0px;
   border-radius: 0px;
   color: #666666;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 20px;
   line-height: 30px;
   padding-bottom: 4px;
@@ -4243,7 +4273,7 @@ age-container #owl-main .owl-next {
   font-weight: bold;
   line-height: 20px;
   margin: 0 0 10px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 
 }
 .product-tabs .tab-content .tab-pane .product-reviews .reviews .review {
@@ -4282,7 +4312,7 @@ age-container #owl-main .owl-next {
   font-weight: 500;
   line-height: 20px;
   margin: 0 0 10px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .product-tabs .tab-content .tab-pane .product-add-review .review-table .table thead th {
   font-weight: normal;
@@ -4322,7 +4352,7 @@ age-container #owl-main .owl-next {
   font-weight: bold;
   line-height: 20px;
   margin: 0 0 20px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .product-tabs .tab-content .tab-pane .product-tag .form-group label {
   font-weight: normal;
@@ -4347,7 +4377,7 @@ age-container #owl-main .owl-next {
 .furniture-container .product .btn-primary {
   font-size: 15px;
   line-height: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   background: #cbc9c9;
   text-transform: uppercase;
   border: none;
@@ -4420,11 +4450,11 @@ age-container #owl-main .owl-next {
   background: #46aad7;
 }
 .homepage-container .product .product-image .tag.hot {
-  background: #ff7878;
+  background:#3687F1;
 }
 .homepage-container .product .product-info .name {
   font-size: 18px !important;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .homepage-container .product .product-info .name a {
   color: #555;
@@ -4483,7 +4513,7 @@ age-container #owl-main .owl-next {
 .homepage-container .btn-primary {
   font-size: 15px;
   line-height: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   background: rgba(0, 0, 0, 0);
   text-transform: uppercase;
   border: 2px solid #f2f2f2;
@@ -4554,7 +4584,7 @@ age-container #owl-main .owl-next {
   background: #989898;
 }
 .wrapper .box .wrapper-inner .wrapper-body-inner .owl-item .tag.hot {
-  background: #ff7878;
+  background:#3687F1;
 }
 /*===================================================================================*/
 /*  Responsive Layout
@@ -4849,7 +4879,7 @@ age-container #owl-main .owl-next {
 }
 
 .blog-page .blog-post h1 {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 22px;
   font-weight:bold;
 
@@ -4900,7 +4930,7 @@ age-container #owl-main .owl-next {
   color: #888888;
 }
 .blog-page .sidebar .sidebar-module-container .sidebar-widget .blog-post h4 {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 15px;
 
 }
@@ -4972,7 +5002,7 @@ age-container #owl-main .owl-next {
   margin-left: 2px;
 }
 .blog-page .side-bar-blog .widget .categories .side-bar-title h3 {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 18px;
   text-transform: uppercase;
   color: #555;
@@ -5043,7 +5073,7 @@ age-container #owl-main .owl-next {
 .blog-page .blog-post-author-details h4 {
   display: inline-block;
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   color: #555;
   margin: 0px;
 }
@@ -5056,7 +5086,7 @@ age-container #owl-main .owl-next {
 .blog-page .blog-review .title-review-comments {
   font-size: 16px;
   color: #555;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin-bottom: 40px;
 
 }
@@ -5126,7 +5156,7 @@ age-container #owl-main .owl-next {
 .contact-page .contact-title h4 {
   font-size: 14px;
   color: #555;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   display: inline-block;
 }
 .blog-page .blog-review .review-action a:hover,
@@ -5198,7 +5228,7 @@ age-container #owl-main .owl-next {
   padding: 15px 20px;
 }
 .checkout-box .checkout-steps .checkout-subtitle {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 14px;
   color: #434343;
   margin-right: 12px;
@@ -5249,7 +5279,7 @@ age-container #owl-main .owl-next {
 }
 .checkout-box .checkout-steps .panel .panel-heading,
 .checkout-box .checkout-progress-sidebar .panel .panel-heading {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 20px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -5367,7 +5397,7 @@ age-container #owl-main .owl-next {
 }
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info h4 {
   margin-top: 0px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 16px;
 
 }
@@ -5382,7 +5412,7 @@ age-container #owl-main .owl-next {
   margin-top: 10px;
 }
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info .cart-product-info span {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 12px;
   color: #666666;
   text-transform: uppercase;
@@ -5400,7 +5430,7 @@ age-container #owl-main .owl-next {
 .shopping-cart .shopping-cart-table .table > thead > tr > th {
   text-align: center;
   padding: 16px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 15px;
 }
 .shopping-cart .shopping-cart-table .shopping-cart-btn span {
@@ -5408,7 +5438,7 @@ age-container #owl-main .owl-next {
   display: block;
 }
 .shopping-cart .estimate-ship-tax table thead tr th .estimate-title {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 14px;
   color: #555;
   margin-bottom: 2px;
@@ -5472,7 +5502,7 @@ age-container #owl-main .owl-next {
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-sub-total span,
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-grand-total span {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 16px;
   color: #555;
   text-transform: uppercase;
@@ -5495,7 +5525,7 @@ age-container #owl-main .owl-next {
 }
 .shopping-cart .cart-shopping-total table thead tr th .cart-sub-total,
 .shopping-cart .cart-shopping-total table thead tr th .cart-grand-total {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 14px;
 }
 .shopping-cart-table table tbody tr td .quant-input {
@@ -5545,7 +5575,7 @@ age-container #owl-main .owl-next {
 
 
 .product-comparison .page-title {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 30px;
   text-transform: uppercase;
   color: #666666;
@@ -5604,7 +5634,7 @@ age-container #owl-main .owl-next {
   color: #ff6666;
 }
 .body-content .x-page .x-text h1 {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   font-size: 200px;
   font-weight:bold
 }
@@ -5657,13 +5687,13 @@ age-container #owl-main .owl-next {
   text-transform: uppercase;
   color: #555;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 .body-content .terms-conditions-page .terms-conditions h3 {
   font-size: 14px;
   text-transform: uppercase;
   color: #555;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   margin-bottom: 30px;
   font-weight: bold;
 }
@@ -5752,7 +5782,7 @@ age-container #owl-main .owl-next {
 .body-content .my-wishlist-page .my-wishlist table > thead > tr > th {
   text-align: center;
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   text-transform: uppercase;
   border: none;
   font-weight: 400;
@@ -5764,7 +5794,7 @@ age-container #owl-main .owl-next {
 }
 .body-content .my-wishlist-page .my-wishlist table tbody .product-name {
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   padding-bottom: 6px;
 }
 .body-content .my-wishlist-page .my-wishlist table tbody .product-name a {
@@ -5804,7 +5834,7 @@ age-container #owl-main .owl-next {
 }
 .body-content .my-wishlist-page .my-wishlist table tbody .close-btn a,
 .body-content .my-wishlist-page .my-wishlist table tbody .close-btn a:hover {
-  color: #ff7878;
+  color:#3687F1;
   font-size: 15px;
 }
 
@@ -5822,7 +5852,7 @@ age-container #owl-main .owl-next {
 .body-content .sign-in-page .sign-in h4,
 .body-content .sign-in-page .create-new-account h4 {
   font-size:18px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   padding-bottom: 14px;
   border-bottom: 1px solid #ddd;
 
@@ -5862,7 +5892,7 @@ age-container #owl-main .owl-next {
 }
 .body-content .sign-in-page .create-new-account > span {
   font-size: 20px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   padding-bottom: 14px;
   text-transform: uppercase;
   display: inline-block;
@@ -5888,7 +5918,7 @@ age-container #owl-main .owl-next {
 
 }
 .tooltip-inner {
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
   border-radius:2px;
   min-width:70px;
   z-index:10000
@@ -6119,7 +6149,7 @@ age-container #owl-main .owl-next {
   font-size: 13px;
   margin: 0px;
   letter-spacing: 0.5px;
-  font-family: 'Open Sans', sans-serif;
+   font-family: Tahoma, Verdana, Segoe, sans-serif; 
 }
 
 .desc-text{
@@ -6234,28 +6264,16 @@ age-container #owl-main .owl-next {
 
 .back-to-dashboard:hover{
   background-color: white;
-  color: #cb2027;
+  color: #3687F1;
 }
 
 .preview-cart:hover{
   background-color: white;
-  color: #cb2027;
+  color: #3687F1;
 }
 
 .preview-modal-body{
   min-height: 400px !important;
-}
-
-.account{
-  display: block;
-  height: inherit;
-  margin: 10px auto;
-  padding: 15px 10px 13px 10px;
-}
-
-.account>li>a{
-  color: white !important;
-  font-weight: 400;
 }
 
 
@@ -6281,11 +6299,11 @@ age-container #owl-main .owl-next {
     font-family: 'Lato', sans-serif;
 }
 .btn-reg, .btn-find{
-  border: 1px solid #cb2027;
+  border: 1px solid #3687F1;
   width: 50%;
   text-transform: uppercase;
   padding: 10px;
-  background-color: #cb2027;
+  background-color: #3687F1;
   color: white;
   font-weight: 600;
     margin-top: 20px;
@@ -6336,7 +6354,7 @@ age-container #owl-main .owl-next {
 }
 
 .btn-link{
-    color: #cb2027;
+    color: #3687F1;
 }
 
 .nav-section{
@@ -6352,12 +6370,12 @@ age-container #owl-main .owl-next {
 
 .nav-section a:hover{
     font-weight: 600;
-    color: #cb2027;
+    color: #3687F1;
 }
 
 .nav-section a:active{
     font-weight: 600;
-    color: #cb2027;
+    color: #3687F1;
 }
 
 .nav-section>h6{
@@ -6377,3 +6395,145 @@ age-container #owl-main .owl-next {
 .main-slider {
   float: right;
 }
+
+.main-btn {
+  width: 400px;
+  position: relative;
+  top: 100px;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 1px 25px 5px 130px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+}
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 1px 25px 5px 130px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 1px 25px 5px 130px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+}
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 1px 25px 5px 130px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+}
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 17px 20px 5px 15px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+
+}
+@media only screen
+and (min-width : 1224px) {
+
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 17px 20px 5px 15px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-size: 15px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-weight: bold;
+  }
+}
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+
+  .account{
+    display: table;
+    height: inherit;
+    margin: 10px auto;
+    padding: 17px 20px 5px 15px;
+    width: 500px;
+  }
+
+  .account>li>a{
+    color: white !important;
+    font-weight: 400;
+  }
+}
+

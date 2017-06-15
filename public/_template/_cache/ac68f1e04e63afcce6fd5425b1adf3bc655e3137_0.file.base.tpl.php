@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-02-21 16:48:19
+<?php /* Smarty version 3.1.24, created on 2017-06-01 18:55:55
          compiled from "public/_template/front/registry/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:61932560058ac61439a3778_48939634%%*/
+/*%%SmartyHeaderCode:13314505575930552bb17744_63007790%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ac68f1e04e63afcce6fd5425b1adf3bc655e3137' => 
     array (
       0 => 'public/_template/front/registry/base.tpl',
-      1 => 1487677328,
+      1 => 1496170487,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '61932560058ac61439a3778_48939634',
+  'nocache_hash' => '13314505575930552bb17744_63007790',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58ac61439da395_51520663',
+  'unifunc' => 'content_5930552bb7a572_10626390',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58ac61439da395_51520663')) {
-function content_58ac61439da395_51520663 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5930552bb7a572_10626390')) {
+function content_5930552bb7a572_10626390 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '61932560058ac61439a3778_48939634';
+$_smarty_tpl->properties['nocache_hash'] = '13314505575930552bb17744_63007790';
 echo $_smarty_tpl->getSubTemplate ('../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -46,7 +46,7 @@ registry/auth/join"><button class="pull-right btn-reg">register</button></a>
         </div>
         <div class="col-md-6">
             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-registry/find"><button class="pull-left btn-find">Find a lucky couple</button></a>
+registry/find"><button class="pull-left btn-find">Find a gift registry</button></a>
         </div>
     </div>
 </div>
@@ -57,9 +57,12 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
             <div class="nav-section">
                 <h6>REGISTRY</h6>
                 <ul>
-                    <li><a href="#">Find a Registry</a></li>
-                    <li><a href="#">Create a Registry</a></li>
-                    <li><a href="#">Manage a Registry</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/find">Find a Registry</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/create">Create a Registry</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+registry/action/manage">Manage a Registry</a></li>
                 </ul>
             </div>
             <div class="nav-section">
@@ -73,17 +76,16 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
 
     </div>
     <div class="col-md-10 benefit-wrapper">
-        <h1 class="text-center">Wedding Registry Benefits</h1>
+        <h1 class="text-center">Gift Registry Benefits</h1>
         <div class="row">
             <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
                 <div class="benefit-content">
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                       Wedding Registry</h3>
+                    <p class="text-center text-muted">Wedding Registry Description</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -92,10 +94,9 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                        House Warming</h3>
+                    <p class="text-center text-muted">House Warming  Description</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -104,10 +105,9 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                        Anniversary</h3>
+                    <p class="text-center text-muted">Anniversary Registry Description</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -116,10 +116,9 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                        Birthday</h3>
+                    <p class="text-center text-muted">Birthday registry description.</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -128,10 +127,9 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                        Child Naming</h3>
+                    <p class="text-center text-muted">Naming registry description.</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -140,82 +138,9 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
                     <h3 class="text-center">
                         <div class="glyphicon glyphicon-gift"></div>
                         <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
+                        Lucky</h3>
+                    <p class="text-center text-muted">Lucky registry description</p>
                     <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
-                    </p>
-                </div>
-            </a>
-            <a href="#" target="_self" class="col-xs-12 col-sm-6 col-md-4 benefit-block">
-                <div class="benefit-content">
-                    <h3 class="text-center">
-                        <div class="glyphicon glyphicon-gift"></div>
-                        <br>
-                        Everything in One Place</h3>
-                    <p class="text-center text-muted">Add gifts and experiences from Zola's curated assortment, create personalized cash funds, plus add anything from any store.</p>
-                    <p class="text-center">
-                        <button type="button" class="btn btn-link">Learn More ›</button>
                     </p>
                 </div>
             </a>
@@ -224,20 +149,6 @@ registry/find"><button class="pull-left btn-find">Find a lucky couple</button></
 
     </div>
 </div>
-
-<div class="container-fluid top-div">
-    <h2 class="text-center">This is going to be fun. We wish we were you right now.</h2>
-    
-    <div class="row">
-        <div class="col-md-6">
-            <button class="pull-right btn-reg">register</button>
-        </div>
-        <div class="col-md-6">
-            <button class="pull-left btn-find">Find a lucky couple</button>
-        </div>
-    </div>
-</div>
-
 <?php echo $_smarty_tpl->getSubTemplate ("../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 
 }

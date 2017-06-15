@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-16 22:15:01
+<?php /* Smarty version 3.1.24, created on 2017-06-02 10:57:53
          compiled from "public/_template/front/registry/couple/share/share.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:119772514558f3ded5ed9372_18057695%%*/
+/*%%SmartyHeaderCode:1279951244593136a179efa9_27829633%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4d2c27fa42e4ae96d24a706081687ff468bdb815' => 
     array (
       0 => 'public/_template/front/registry/couple/share/share.tpl',
-      1 => 1492377297,
+      1 => 1496170487,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '119772514558f3ded5ed9372_18057695',
+  'nocache_hash' => '1279951244593136a179efa9_27829633',
   'variables' => 
   array (
-    'current_user' => 0,
+    'complete_details' => 0,
     'BASE_URL' => 0,
     '_user' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58f3ded5ef7f56_91307054',
+  'unifunc' => 'content_593136a180da19_43540768',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58f3ded5ef7f56_91307054')) {
-function content_58f3ded5ef7f56_91307054 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593136a180da19_43540768')) {
+function content_593136a180da19_43540768 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '119772514558f3ded5ed9372_18057695';
+$_smarty_tpl->properties['nocache_hash'] = '1279951244593136a179efa9_27829633';
 echo $_smarty_tpl->getSubTemplate ('../../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -45,7 +45,7 @@ echo $_smarty_tpl->getSubTemplate ('../../../header.tpl', $_smarty_tpl->cache_id
                     <h4 class="">Registry Sharer</h4>
                     <p class="">Your registry url</p>
                     <?php
-$_from = $_smarty_tpl->tpl_vars['current_user']->value;
+$_from = $_smarty_tpl->tpl_vars['complete_details']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }

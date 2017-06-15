@@ -14,7 +14,6 @@ class Product extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model("user_model");
-//        $this->load->library("upload");
     }
 
     public function index(){
@@ -26,6 +25,8 @@ class Product extends CI_Controller
     public function add()
     {
         $error = array();
+//
+
 
         if (!empty($_POST)) {
             $name = $this->input->post("product_name");
@@ -36,8 +37,6 @@ class Product extends CI_Controller
             $product_meta_keywords = $this->input->post("product_meta_keywords");
             $product_tags = $this->input->post("product_tags");
             $model = $this->input->post("product_model");
-            $isbn = $this->input->post("product_isbn");
-            $mpn = $this->input->post("product_mpn");
             $quantity = $this->input->post("product_quantity");
             $price = $this->input->post("product_price");
             $minimum = $this->input->post("product_min_quantity");
@@ -52,39 +51,13 @@ class Product extends CI_Controller
             $position = $this->input->post("primary_product_position");
             $image = $_FILES["product_image"];
 
-            if (empty($name)) $error[] = "Provide valid name for the product";
-            if (empty($description)) $error[] = "Provide a description";
-            if (empty($product_meta_title)) $error[] = "Provide a Meta Title";
-            if (empty($product_meta_description)) $error[] = "Provide a Meta Description";
-            if (empty($product_meta_keywords)) $error[] = "Provide search Meta Keywords";
-            if (empty($product_tags)) $error[] = "Provide product tags";
-            if (empty($model)) $error[] = "Provide product model";
-            if (empty($isbn)) $error[] = "Provide product isbn";
-            if (empty($mpn)) $error[] = "Provide product mpn";
-            if (empty($quantity)) $error[] = "Provide product quantity";
-            if (empty($price)) $error[] = "Provide product price";
-            if (empty($minimum)) $error[] = "Provide Minimum Order";
-            if (empty($out_of_store_range)) $error[] = "Provide out of store range";
-            if (empty($requires_delivery)) $error[] = "Provide  delivery status";
-            if (empty($availability)) $error[] = "Provide availability status";
-            if (empty($manufacturer_name)) $error[] = "Provide manufacturers name";
-            if (empty($manufacturer_id)) $error[] = "Provide manufacturers name";
-            if (empty($product_categories)) $error[] = "Provide product categories";
-            if (empty($product_search_filters)) $error[] = "Provide search filters";
-            if (empty($position)) $error[] = "Provide Primary Product Position";
-            if (empty($related_products)) $error[] = "Provide related products";
-            if (empty($short_description)) $error[] = "Provide a short description";
-            if (empty($image)) $error[] = "Provide product image again.";
-
-
-
             if (empty($error)) {
                 $image_data = $this->handle_image_upload();
                 $product_details = array("name" => $name,
                     "description" => $description,
                     "short_description" => $short_description, "product_meta_title" => $product_meta_title,
                     "product_meta_description" => $product_meta_description, "product_meta_keywords" => $product_meta_keywords,
-                    "product_tags" => $product_tags, "model" => $model, "isbn" => $isbn, "mpn" => $mpn,
+                    "product_tags" => $product_tags, "model" => $model,
                     "quantity" => $quantity, "manufacturer_id" => $manufacturer_id, "delivery" => $requires_delivery,
                     "price" => $price, "date_available" => date("Y-m-d H:i:s"), "minimum" => $minimum,
                     "availability" => $availability, "view_count" => 0,
@@ -99,7 +72,7 @@ class Product extends CI_Controller
                 $insert = $this->user_model->add("lucy_product", $product_details);
 
                 if ($insert) {
-                   $this->data["message"] = "Successfully Created the category";
+                   $this->data["message"] = "Successfully Created the product";
                 }
                 else
                     {
@@ -115,7 +88,7 @@ class Product extends CI_Controller
 
     private function handle_image_upload(){
         $image_config = array(
-            "upload_path"=>FCPATH. "public/_template/uploads",
+            "upload_path"=>FCPATH. "public/_template/uploads/products",
             "allowed_types"=>"jpg|png|jpeg",
             "overwrite" => TRUE,
         );
@@ -124,7 +97,7 @@ class Product extends CI_Controller
 
         $this->upload->initialize($image_config);
 
-        if (! $this->upload->do_upload("product_image")){
+        if (!$this->upload->do_upload("product_image")){
           return $this->upload->display_errors();
         }
         else
@@ -138,7 +111,7 @@ class Product extends CI_Controller
 
         $error = array();
         if (!empty($_POST)){
-            $product_name = $this->input->post("product_name");
+            $product_name = $this->input->post("prod_title");
 
             if (empty($product_name)) $error[] = "The field cannot be empty.";
 
@@ -148,7 +121,7 @@ class Product extends CI_Controller
                 if ($check) {
                     $this->data["product_details"] = $check;
                     $this->session->set_userdata("product_details", $check);
-                    redirect("index.php/admin/product/edit");
+                    redirect("admin/product/edit");
                 } else
                     $this->data["error"] = "The product name provided does not exist";
             }
@@ -236,6 +209,36 @@ class Product extends CI_Controller
                 $this->data["error"] = $error;
         }
         $this->smarty->view("admin/product/edit.tpl", $this->data);
+
+    }
+
+    public function delete(){
+
+        $product_details = $this->user_model->get("lucy_product", 0, 0);
+        $this->data["product_details"] = $product_details;
+
+        $error = array();
+        if (!empty($_POST)){
+            $product_name = $this->input->post("prod_title");
+
+            if (empty($product_name)) $error[] = "The field cannot be empty.";
+
+            if (empty($error)){
+                $check = $this->user_model->delete_data("lucy_product",
+                    array("name" => $product_name));
+                if ($check) {
+                    $this->data["message"] = "Successfully deleted product";
+                    $this->data["product_details"] = $this->user_model->get("lucy_product", 0, 0);
+                    $this->session->set_userdata("product_details", $this->data["product_details"]);
+                    redirect("admin/product/view");
+                } else
+                    $this->data["error"] = "The product name provided does not exist";
+            }
+            else
+                $this->data["error"] = $error;
+        }
+
+        $this->smarty->view("admin/product/view.tpl", $this->data);
 
     }
 

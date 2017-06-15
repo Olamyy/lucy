@@ -24,6 +24,8 @@ class Login extends CI_Controller
     public function index()
     {
         $this->data["user_session"] = $this->session->userdata("user_session");
+        $err = $this->input->get("error");
+        if ($err == "twitterauthfail") $this->data['error'] = "Twitter Login is currently unavailable.";
 
         if (!empty($_POST)) {
             $email = $this->input->post("email");
@@ -40,6 +42,7 @@ class Login extends CI_Controller
 
                 //misc update
                 $user_ip = $this->user_model->custom_get("misc", array("ip"=>$ip), 0, 0);
+
 
                 if ($couple_data){
                     $couple_password = $couple_data[0]["password"];

@@ -6,8 +6,8 @@
         <div class="sign-in-page">
             <div class="row">
                 <div class="col-md-12 col-sm-6 sign-in">
-                    <h4 class="">Sign Up</h4>
-                    <p class="">Fill the form below to start..</p>
+                    <h4 class="">Congratulations</h4>
+                    <p class="">Fill the form below to create your registry</p>
                     {if $error|default:''}
                         <div class="alert alert-danger">
                             <strong>Oops! Something went wrong</strong>
@@ -19,8 +19,12 @@
                     <form class="register-form outer-top-xs" role="form" method="post" action="{$BASE_URL}auth/join">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
-                            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                            <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+                            <label class="info-title">Email<span>*</span></label>
+                            <input type="email" name="email" placeholder="Your email" class="form-control unicase-form-control text-input" id="emailInput" >
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title">Mobile Number</label>
+                            <input type="text" name="mobile" placeholder="Optional" class="form-control unicase-form-control text-input" id="mobileInput" >
                         </div>
                         <div class="form-group">
                             <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
@@ -37,7 +41,7 @@
                                     <a class="item" id="lucky">Feeling Lucky</a>
                             </div>
                         </div>
-                            <input type="hidden" id="regType" name="regType" value="">
+                            <input type="hidden" id="regType" name="regType">
                             <div class="social-sign-in outer-top-xs pull-right">
                             <a href="{$BASE_URL}auth/login" class="button btn-success"><i class=""></i>Click here to sign in</a>
                         </div>

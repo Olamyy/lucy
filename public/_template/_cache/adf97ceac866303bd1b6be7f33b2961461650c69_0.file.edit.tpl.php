@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-01-18 19:16:25
+<?php /* Smarty version 3.1.24, created on 2017-06-12 14:49:34
          compiled from "public/_template/admin/product/category/edit/edit.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2136545595587fb0f93811e7_13129272%%*/
+/*%%SmartyHeaderCode:788278499593e9bee93b325_51043957%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'adf97ceac866303bd1b6be7f33b2961461650c69' => 
     array (
       0 => 'public/_template/admin/product/category/edit/edit.tpl',
-      1 => 1484750208,
+      1 => 1497275363,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2136545595587fb0f93811e7_13129272',
+  'nocache_hash' => '788278499593e9bee93b325_51043957',
   'variables' => 
   array (
     'error' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_587fb0f94257b4_02904782',
+  'unifunc' => 'content_593e9bee9d7f79_84199626',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587fb0f94257b4_02904782')) {
-function content_587fb0f94257b4_02904782 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593e9bee9d7f79_84199626')) {
+function content_593e9bee9d7f79_84199626 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2136545595587fb0f93811e7_13129272';
+$_smarty_tpl->properties['nocache_hash'] = '788278499593e9bee93b325_51043957';
 echo $_smarty_tpl->getSubTemplate ("../../category/categoryheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -52,7 +52,7 @@ echo $_smarty_tpl->getSubTemplate ("../../category/categoryheader.tpl", $_smarty
             <div class="col-sm-7 col-lg-6">
                 <ol class="breadcrumb float-xs-right nav_breadcrumb_top_align">
                     <li class="breadcrumb-item">
-                        <a href="index.html">
+                        <a href="">
                             <i class="fa fa-home" data-pack="default" data-tags=""></i> Dashboard
                         </a>
                     </li>
@@ -104,7 +104,8 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                                 </div>
                             <?php }?>
                             <?php if ((($tmp = @$_smarty_tpl->tpl_vars['message']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-                                <div class="alert alert-s">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong>
                                     <?php
 $_from = $_smarty_tpl->tpl_vars['message']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -125,7 +126,8 @@ $_smarty_tpl->tpl_vars['mess'] = $foreach_mess_Sav;
                                 </div>
                             <?php }?>
                             <form class="form-horizontal" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/admin/category/edit">
+index.php/admin/category/edit?c_id=<?php echo $_smarty_tpl->tpl_vars['cat_details']->value[0]['id'];?>
+">
                                 <fieldset>
                                     <!-- Name input-->
                                     <div class="form-group row m-t-25">

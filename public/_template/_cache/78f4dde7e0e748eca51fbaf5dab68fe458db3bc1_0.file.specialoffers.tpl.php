@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-01 02:05:21
+<?php /* Smarty version 3.1.24, created on 2017-06-11 18:14:07
          compiled from "/var/www/html/lucy/public/_template/front/specialoffers.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:174082705758b61e519cbcf9_49538248%%*/
+/*%%SmartyHeaderCode:1623669608593d7a6000ee87_89710612%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '78f4dde7e0e748eca51fbaf5dab68fe458db3bc1' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/specialoffers.tpl',
-      1 => 1488298254,
+      1 => 1497201246,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '174082705758b61e519cbcf9_49538248',
+  'nocache_hash' => '1623669608593d7a6000ee87_89710612',
   'variables' => 
   array (
     'special_offer' => 0,
     'BASE_URL' => 0,
     'ip' => 0,
-    'SMARTY_VIEW_FOLDER' => 0,
     'data' => 0,
+    'SMARTY_VIEW_FOLDER' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b61e519faea2_29010960',
+  'unifunc' => 'content_593d7a60066740_25647717',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b61e519faea2_29010960')) {
-function content_58b61e519faea2_29010960 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593d7a60066740_25647717')) {
+function content_593d7a60066740_25647717 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '174082705758b61e519cbcf9_49538248';
+$_smarty_tpl->properties['nocache_hash'] = '1623669608593d7a6000ee87_89710612';
 if ((($tmp = @$_smarty_tpl->tpl_vars['special_offer']->value)===null||$tmp==='' ? '' : $tmp)) {?>
   <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 ">
@@ -40,10 +40,12 @@ if ((($tmp = @$_smarty_tpl->tpl_vars['special_offer']->value)===null||$tmp==='' 
 ">
 
   <div class="sidebar-widget outer-bottom-small wow fadeInUp">
-    <h3 class="section-title">Special Offers</h3>
+    <h3 class="section-title">Special Offer</h3>
     <div class="sidebar-widget-body outer-top-xs">
       <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
-        <?php
+        <div class="item">
+          <div class="products special-product">
+            <?php
 $_from = $_smarty_tpl->tpl_vars['special_offer']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -55,52 +57,51 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['data']->_loop = true;
 $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
 ?>
-          <div class="item">
-            <div class="products special-product">
-              <div class="product">
-                <div class="product-micro">
-                  <div class="row product-micro-row">
-                    <div class="col col-xs-5">
-                      <div class="product-image">
-                        <div class="image"> <a href="#"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
+            <div class="product">
+              <input type="hidden" id="product_id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'];?>
+">
+
+              <div class="item">
+                <div class="products">
+                  <div class="hot-deal-wrapper">
+                    <div class="image"> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;
 echo $_smarty_tpl->tpl_vars['SMARTY_VIEW_FOLDER']->value;?>
 /uploads/products/<?php echo $_smarty_tpl->tpl_vars['data']->value['image'];?>
-" alt=""> </a> </div>
-                        <!-- /.image -->
-
-                      </div>
-                      <!-- /.product-image -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col col-xs-7">
-                      <div class="product-info">
-                        <h3 class="name"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+" alt=""> </div>
+                  </div>
+                  <div class="product-info text-left m-t-20">
+                    <h3 class="name"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 product?product_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['data']->value['name']);?>
 </a></h3>
-                        <div class="rating rateit-small"></div>
-                        <div class="product-price"> <span class="price">&#8358;<?php echo $_smarty_tpl->tpl_vars['data']->value['price'];?>
-</span> </div>
-                        <!-- /.product-price -->
-
-                      </div>
+                    <div class="rating rateit-small"></div>
+                    <div class="product-price"> <span class="price"> <?php echo $_smarty_tpl->tpl_vars['data']->value['price'];?>
+ </span>
                     </div>
-                    <!-- /.col -->
                   </div>
-                  <!-- /.product-micro-row -->
+                  <div class="">
+                    <div class="action">
+                      <ul class="list-unstyled">
+                        <li class="add-cart-button btn-group">
+                          <button class="btn btn-success cart_add" type="button">To Cart</button>
+                          <button class="btn btn-danger registry_add" type="button">To Registry</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <!-- /.product-micro -->
-
               </div>
-            </div>
-          </div>
-        <?php
+              <?php
 $_smarty_tpl->tpl_vars['data'] = $foreach_data_Sav;
 }
 ?>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- /.sidebar-widget-body -->
+    <br>
+    <br>
   </div>
 
 <?php }

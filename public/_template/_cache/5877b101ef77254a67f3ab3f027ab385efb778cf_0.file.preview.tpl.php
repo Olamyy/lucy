@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-05 12:17:09
+<?php /* Smarty version 3.1.24, created on 2017-06-08 04:18:51
          compiled from "public/_template/front/registry/couple/preview/preview.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:16050338558bbf3b5070863_95200820%%*/
+/*%%SmartyHeaderCode:16047764825938c21b336537_20137052%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,14 +9,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5877b101ef77254a67f3ab3f027ab385efb778cf' => 
     array (
       0 => 'public/_template/front/registry/couple/preview/preview.tpl',
-      1 => 1488702590,
+      1 => 1496170487,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16050338558bbf3b5070863_95200820',
+  'nocache_hash' => '16047764825938c21b336537_20137052',
   'variables' => 
   array (
-    'user_session' => 0,
+    'complete_details' => 0,
     'session' => 0,
     'BASE_URL' => 0,
     'user_cart_items' => 0,
@@ -32,14 +32,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bbf3b5355380_98263942',
+  'unifunc' => 'content_5938c21b435ad6_32435699',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bbf3b5355380_98263942')) {
-function content_58bbf3b5355380_98263942 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5938c21b435ad6_32435699')) {
+function content_5938c21b435ad6_32435699 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '16050338558bbf3b5070863_95200820';
+$_smarty_tpl->properties['nocache_hash'] = '16047764825938c21b336537_20137052';
 echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -50,7 +50,7 @@ echo $_smarty_tpl->getSubTemplate ("./header.tpl", $_smarty_tpl->cache_id, $_sma
 <!-- ============================================== HEADER : END ============================================== -->
 
 <?php
-$_from = $_smarty_tpl->tpl_vars['user_session']->value;
+$_from = $_smarty_tpl->tpl_vars['complete_details']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }
@@ -61,16 +61,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['eKey']->value => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['session']->_loop = true;
 $foreach_session_Sav = $_smarty_tpl->tpl_vars['session'];
 ?>
-    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['session']->value['groom_last_name'];?>
-" name="couple_id" id="couple">
+    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['session']->value['user_id'];?>
+" name="user_id" id="couple">
 <?php
 $_smarty_tpl->tpl_vars['session'] = $foreach_session_Sav;
 }
 ?>
 
 <form>
-    <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['session']->value['couple_id'];?>
-" id="couple_id" class="couples-name">
+    <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['session']->value['user_id'];?>
+" id="user_id" class="couples-name">
     <input type="hidden" id="base_url" value="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " />
 </form>
@@ -151,11 +151,18 @@ $_smarty_tpl->tpl_vars['product'] = $foreach_product_Sav;
 <!-- ============================================== HEADER : END ============================================== -->
 <div class="preview_bg"  style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['session']->value['dashboard_image'];?>
 ');">
-    <div class="preview-display-name"><?php echo $_smarty_tpl->tpl_vars['session']->value['groom_first_name'];?>
- & <?php echo $_smarty_tpl->tpl_vars['session']->value['bride_first_name'];?>
-</div>
-    <div class="preview-display-date"><?php if (empty($_smarty_tpl->tpl_vars['session']->value['wedding_date'])) {?>Date is coming soon<?php } else {
-echo $_smarty_tpl->tpl_vars['session']->value['wedding_date'];
+    <div class="preview-display-name">
+        <?php if ($_smarty_tpl->tpl_vars['session']->value['regType'] == 'wedding') {
+echo $_smarty_tpl->tpl_vars['session']->value['groom_first_name'];?>
+ &
+            <?php echo $_smarty_tpl->tpl_vars['session']->value['bride_first_name'];
+} elseif ($_smarty_tpl->tpl_vars['session']->value['regType'] == 'anniv') {?>Mr & Mrs <?php echo $_smarty_tpl->tpl_vars['session']->value['name'];
+} else {
+echo $_smarty_tpl->tpl_vars['session']->value['name'];
+}?>
+    </div>
+    <div class="preview-display-date"><?php if (empty($_smarty_tpl->tpl_vars['session']->value['event_date'])) {?>Date is coming soon<?php } else {
+echo $_smarty_tpl->tpl_vars['session']->value['event_date'];
 }?></div>
 </div>
 
@@ -177,10 +184,20 @@ echo $_smarty_tpl->tpl_vars['session']->value['wedding_date'];
                         <div id="description" class="tab-pane in active">
                             <div class="product-tab">
                                 <p class="text"  id="Vmessage">
-                                    <br><br><?php if (empty($_smarty_tpl->tpl_vars['session']->value['vow_message'])) {?>Share your love with the world ....
+                                    <div class="product-tab">
+                                <p class="text"  id="Vmessage">
+                                    <br><br><br><?php if (empty($_smarty_tpl->tpl_vars['session']->value['vow_message'])) {?>
+                                    <?php if ($_smarty_tpl->tpl_vars['session']->value['regType'] == 'wedding' || $_smarty_tpl->tpl_vars['session']->value['regType'] == 'anniv') {?> <br><br><?php if (empty($_smarty_tpl->tpl_vars['session']->value['vow_message'])) {?>Share your love with the world ....<?php } else {
+echo $_smarty_tpl->tpl_vars['session']->value['vow_message'];
+}
+} else { ?> <br><br><?php if (empty($_smarty_tpl->tpl_vars['session']->value['vow_message'])) {?>Tell the world about your event ....<?php } else {
+echo $_smarty_tpl->tpl_vars['session']->value['vow_message'];
+}
+}?>
                                     <?php } else {
 echo $_smarty_tpl->tpl_vars['session']->value['vow_message'];
-}?><br><br></p>
+}?></p>
+                            </div><br><br></p>
                             </div>
                         </div><!-- /.tab-pane -->
 

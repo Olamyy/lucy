@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-14 18:20:56
+<?php /* Smarty version 3.1.24, created on 2017-06-01 15:23:57
          compiled from "public/_template/admin/product/add.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:214606692158f104f8b7b239_18584927%%*/
+/*%%SmartyHeaderCode:9424833335930237d73d570_41545428%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ddb12c259723b62b7917851e286054c77ee1c189' => 
     array (
       0 => 'public/_template/admin/product/add.tpl',
-      1 => 1492189043,
+      1 => 1496327019,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '214606692158f104f8b7b239_18584927',
+  'nocache_hash' => '9424833335930237d73d570_41545428',
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'error' => 0,
+    'err' => 0,
+    'message' => 0,
+    'mess' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58f104f8be6b52_88498555',
+  'unifunc' => 'content_5930237d81ee75_71682002',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58f104f8be6b52_88498555')) {
-function content_58f104f8be6b52_88498555 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5930237d81ee75_71682002')) {
+function content_5930237d81ee75_71682002 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '214606692158f104f8b7b239_18584927';
+$_smarty_tpl->properties['nocache_hash'] = '9424833335930237d73d570_41545428';
 echo $_smarty_tpl->getSubTemplate ("./addproductheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -69,6 +73,50 @@ index.php/Product/view">Products</a>
                             <i class="fa fa-file-text-o"></i>
                             New Product
                         </div>
+                        <?php if ((($tmp = @$_smarty_tpl->tpl_vars['error']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+                            <div class="alert alert-danger">
+                                <strong>Oops! Something went wrong</strong>
+                                <?php
+$_from = $_smarty_tpl->tpl_vars['error']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['err'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['err']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
+$_smarty_tpl->tpl_vars['err']->_loop = true;
+$foreach_err_Sav = $_smarty_tpl->tpl_vars['err'];
+?>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
+</p>
+                                <?php
+$_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
+}
+?>
+                            </div>
+                        <?php }?>
+                        <?php if ((($tmp = @$_smarty_tpl->tpl_vars['message']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+                            <div class="alert alert-success">
+                                <strong>Success!</strong>
+                                <?php
+$_from = $_smarty_tpl->tpl_vars['message']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['mess'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['mess']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['mess']->value) {
+$_smarty_tpl->tpl_vars['mess']->_loop = true;
+$foreach_mess_Sav = $_smarty_tpl->tpl_vars['mess'];
+?>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['mess']->value;?>
+</p>
+                                <?php
+$_smarty_tpl->tpl_vars['mess'] = $foreach_mess_Sav;
+}
+?>
+                            </div>
+                        <?php }?>
                         <div class="card-block m-t-20">
                             <div id="rootwizard_no_val">
                                 <ul class="nav nav-pills">
@@ -133,18 +181,6 @@ index.php/admin/product/add"  enctype="multipart/form-data" id="add_product_form
                                                    type="text" class="form-control required" >
                                         </div>
                                         <div class="form-group">
-                                            <label for="surname" class="control-label">ISBN</label>
-                                            <input id="surname" name="product_isbn" type="text"
-                                                   placeholder="ISBN"
-                                                   class="form-control required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="surname" class="control-label">MPN</label>
-                                            <input id="surname" name="product_mpn" type="text"
-                                                   placeholder="MPN"
-                                                   class="form-control required" >
-                                        </div>
-                                        <div class="form-group">
                                             <label for="surname" class="control-label">Price</label>
                                             <input id="surname" name="product_price" type="text"
                                                    placeholder="Price"
@@ -166,9 +202,9 @@ index.php/admin/product/add"  enctype="multipart/form-data" id="add_product_form
                                             <label>Out Of Stock Time Range</label>
                                             <select class="custom-select form-control"
                                                     title="Out Of Stock Time Range" name="out_of_stock_range">
-                                                <option>2-3 days</option>
-                                                <option>1 - 2week</option>
-                                                <option>3 weeks - 1 month</option>
+                                                <option>3 months</option>
+                                                <option>6 months</option>
+                                                <option>1 year</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

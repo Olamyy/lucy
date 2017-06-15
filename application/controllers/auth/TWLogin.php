@@ -8,7 +8,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Twitterauth extends CI_Controller {
+class TWLogin extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
@@ -25,10 +25,10 @@ class Twitterauth extends CI_Controller {
             redirect('registry/dashboard');
         }
 
-        $ok = $this->twconnect->twredirect('twitterauth/callback');
+        $ok = $this->twconnect->twredirect('TWLogin/callback');
 
         if (!$ok) {
-            echo 'Could not connect to Twitter. Refresh the page or try again later.';
+            redirect ('auth/login?error=twitterauthfail');
         }
 
     }

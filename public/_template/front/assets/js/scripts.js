@@ -625,6 +625,8 @@ jQuery(document).ready(function() {
   };
 
 
+
+
   $('.remove_btn').on('click', function(event){
     event.preventDefault();
     var product_id = $('#product_id').val();
@@ -664,7 +666,7 @@ jQuery(document).ready(function() {
     var data = {"user_ip": user_ip,
         "product_id" : product_id,
         "quantity" : quantity,
-        "user_id":user_id}
+        "user_id": user_id}
         console.log(data)
     $.ajax(
         {
@@ -681,8 +683,9 @@ jQuery(document).ready(function() {
           success: function () {
             toastr.info('The product has been added to your registry');
           },
-          error : function(){
-            toastr.warning('You need to login to add to registry');
+          error : function(error){
+            //toastr.warning('You need to login to add to registry');
+            console.log(error)
           }
         });
   });
@@ -718,6 +721,7 @@ jQuery(document).ready(function() {
               window.location.href = base_url;
           },
           error : function(response){
+            console.log(response);
             console.log(response)
           }
         });

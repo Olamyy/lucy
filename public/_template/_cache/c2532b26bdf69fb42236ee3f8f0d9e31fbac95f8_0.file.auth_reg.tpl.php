@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-05-10 01:52:47
+<?php /* Smarty version 3.1.24, created on 2017-06-09 22:26:58
          compiled from "public/_template/front/registry/auth/auth_reg.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:20460970595912645f47e7b8_65995346%%*/
+/*%%SmartyHeaderCode:345903412593b12a26099b0_22812145%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2532b26bdf69fb42236ee3f8f0d9e31fbac95f8' => 
     array (
       0 => 'public/_template/front/registry/auth/auth_reg.tpl',
-      1 => 1494377566,
+      1 => 1497043610,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20460970595912645f47e7b8_65995346',
+  'nocache_hash' => '345903412593b12a26099b0_22812145',
   'variables' => 
   array (
     'error' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5912645f565ed8_57535529',
+  'unifunc' => 'content_593b12a2639815_06116441',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5912645f565ed8_57535529')) {
-function content_5912645f565ed8_57535529 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593b12a2639815_06116441')) {
+function content_593b12a2639815_06116441 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '20460970595912645f47e7b8_65995346';
+$_smarty_tpl->properties['nocache_hash'] = '345903412593b12a26099b0_22812145';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -41,8 +41,8 @@ echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $
         <div class="sign-in-page">
             <div class="row">
                 <div class="col-md-12 col-sm-6 sign-in">
-                    <h4 class="">Sign Up</h4>
-                    <p class="">Fill the form below to start..</p>
+                    <h4 class="">Congratulations</h4>
+                    <p class="">Fill the form below to create your registry</p>
                     <?php if ((($tmp = @$_smarty_tpl->tpl_vars['error']->value)===null||$tmp==='' ? '' : $tmp)) {?>
                         <div class="alert alert-danger">
                             <strong>Oops! Something went wrong</strong>
@@ -69,8 +69,12 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 auth/join">
                         <input type="hidden" value="login" name="action">
                         <div class="form-group">
-                            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                            <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+                            <label class="info-title">Email<span>*</span></label>
+                            <input type="email" name="email" placeholder="Your email" class="form-control unicase-form-control text-input" id="emailInput" >
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title">Mobile Number</label>
+                            <input type="text" name="mobile" placeholder="Optional" class="form-control unicase-form-control text-input" id="mobileInput" >
                         </div>
                         <div class="form-group">
                             <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
@@ -87,7 +91,7 @@ auth/join">
                                     <a class="item" id="lucky">Feeling Lucky</a>
                             </div>
                         </div>
-                            <input type="hidden" id="regType" name="regType" value="">
+                            <input type="hidden" id="regType" name="regType">
                             <div class="social-sign-in outer-top-xs pull-right">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 auth/login" class="button btn-success"><i class=""></i>Click here to sign in</a>

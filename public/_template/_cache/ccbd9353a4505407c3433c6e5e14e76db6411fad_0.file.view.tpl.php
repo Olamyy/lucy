@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-14 17:50:40
+<?php /* Smarty version 3.1.24, created on 2017-06-02 07:53:23
          compiled from "public/_template/admin/product/view.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:50267527058f0fde09af149_44343030%%*/
+/*%%SmartyHeaderCode:98445360659310b6311aa44_51147820%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ccbd9353a4505407c3433c6e5e14e76db6411fad' => 
     array (
       0 => 'public/_template/admin/product/view.tpl',
-      1 => 1492185751,
+      1 => 1496385309,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '50267527058f0fde09af149_44343030',
+  'nocache_hash' => '98445360659310b6311aa44_51147820',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'error' => 0,
     'err' => 0,
+    'message' => 0,
+    'mess' => 0,
     'product_details' => 0,
     'eKey' => 0,
     'data' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58f0fde0a5ff48_23110777',
+  'unifunc' => 'content_59310b631e6945_22545273',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58f0fde0a5ff48_23110777')) {
-function content_58f0fde0a5ff48_23110777 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_59310b631e6945_22545273')) {
+function content_59310b631e6945_22545273 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '50267527058f0fde09af149_44343030';
+$_smarty_tpl->properties['nocache_hash'] = '98445360659310b6311aa44_51147820';
 echo $_smarty_tpl->getSubTemplate ("../product/category/view/viewheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -72,23 +74,48 @@ echo $_smarty_tpl->getSubTemplate ("../product/category/view/viewheader.tpl", $_
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-white">Product Title</h4>
+                    <h4 class="modal-title text-white">Category Title</h4>
                 </div>
                 <div class="modal-body">
                     <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-/admin/product/view">
+index.php/admin/product/view">
                         <p>
                             Product Title:
-                            <input id="cat_title" type="text" name="product_name" class="form-control" placeholder="Enter the name of the product to edit"/>
+                            <input id="cat_title" type="text" name="prod_title" class="form-control" placeholder="Enter the title of the product to edit"/>
                         </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    <button type="submit" class="btn btn-primary" id="edit_button">Edit</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
-
+    <div class="modal fade bs-example-modal-sm in display_none" id="stack2" tabindex="-1" role="dialog"
+         aria-hidden="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title text-white">Category Title</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+index.php/admin/product/delete">
+                        <p>
+                            Category Title:
+                            <input id="cat_title" type="text" name="prod_title" class="form-control" placeholder="Enter the name of the product to delete"/>
+                        </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    <button type="submit" class="btn btn-primary" id="delete_btn">Delete Product</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div class="outer">
         <div class="inner bg-light lter bg-container">
@@ -120,9 +147,30 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 ?>
                         </div>
                     <?php }?>
+                    <?php if ((($tmp = @$_smarty_tpl->tpl_vars['message']->value)===null||$tmp==='' ? '' : $tmp)) {?>
+                        <div class="alert alert-success">
+                            <?php
+$_from = $_smarty_tpl->tpl_vars['message']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['mess'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['mess']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['mess']->value) {
+$_smarty_tpl->tpl_vars['mess']->_loop = true;
+$foreach_mess_Sav = $_smarty_tpl->tpl_vars['mess'];
+?>
+                                <p><?php echo $_smarty_tpl->tpl_vars['mess']->value;?>
+</p>
+                            <?php
+$_smarty_tpl->tpl_vars['mess'] = $foreach_mess_Sav;
+}
+?>
+                        </div>
+                    <?php }?>
                     <div class="m-t-35">
                         <button id="" class="btn btn-primary" data-toggle="modal" data-href="#stack1" href="#stack1"> Edit Product </button>
-                        <button id="del_button" class="btn btn-danger"> Delete Selected Row </button>
+                        <button id="" class="btn btn-danger" data-toggle="modal" data-href="#stack2" href="#stack2"> Delete Product </button>
                         <div class="m-t-25">
                             <?php if ((($tmp = @$_smarty_tpl->tpl_vars['product_details']->value)===null||$tmp==='' ? '' : $tmp)) {?>
                                 <table id="example_demo" class="table table-hover table-bordered " >
@@ -137,7 +185,6 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
                                         <th>Delivery</th>
                                         <th>Price</th>
                                         <th>Views</th>
-                                        <th>Date Added</th>
                                         <th>Date Added</th>
                                         <th>Search Filters</th>
                                     </tr>

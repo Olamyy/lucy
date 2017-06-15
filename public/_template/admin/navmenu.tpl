@@ -30,7 +30,7 @@
             <!-- #menu -->
             <ul id="menu" class="bg-blue dker">
                 <li class="active">
-                    <a href="">
+                    <a href="{$BASE_URL}admin/dashboard">
                         <i class="fa fa-home"></i>
                         <span class="link-title">&nbsp;Dashboard</span>
                     </a>
@@ -71,7 +71,11 @@
                                 <i class="fa fa-angle-right"></i> &nbsp;View Categories
                             </a>
                         </li>
-
+                        <li>
+                            <a href="{$BASE_URL}admin/Category/viewsub">
+                                <i class="fa fa-angle-right"></i> &nbsp;View Sub Categories
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

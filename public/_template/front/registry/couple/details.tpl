@@ -40,7 +40,7 @@
                         </div>
                         <hr>
                         <div class="form-group">
-                        <h4 class="">Bride Details</h4>
+                        <h4 class="">Partner Details</h4>
                         <label class="info-title" for="spouse_first_name">First Name<span>*</span></label>
                         <input type="text" name="spouse_first_name"  placeholder="Bride's first name" required class="form-control unicase-form-control text-input" id="spouse_first_name" >
                         </div>
@@ -48,7 +48,6 @@
                             <label class="info-title" for="spouse_last_name">Last Name<span>*</span></label>
                             <input type="text" name="spouse_last_name" placeholder="Bride's last name" required class="form-control unicase-form-control text-input" id="spouse_last_name" >
                         </div>
-                        <hr>
                         <div class="form-group">
                             <label class="info-title" for="spouse_email">Partner email</label>
                             <input type="email" name="spouse_email"  placeholder="This is optional"  class="form-control unicase-form-control text-input" id="spouse_email" >
@@ -57,17 +56,9 @@
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Next</button>
                     </form>
                 </div>
-                <!-- Sign-in -->
+            </div>
+        </div>
 
-                <!-- create a new account -->
-
-                <!-- create a new account -->			</div><!-- /.row -->
-        </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-    </div><!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
-<!-- ============================================================= FOOTER ============================================================= -->
-
+    </div>
+</div>
 {include file="../../footer.tpl"}

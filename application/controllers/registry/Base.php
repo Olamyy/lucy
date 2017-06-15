@@ -25,6 +25,7 @@ class Base extends CI_Controller
     {
         $cat_from_db = $this->user_model->get("lucy_category_description", 0 , 0);
         $this->data["user_session"] = $this->session->userdata("user_session");
+        $this->data["is_sub"] = false;
 
         $pre_cart = array();
         foreach($cat_from_db as $data){
@@ -33,6 +34,8 @@ class Base extends CI_Controller
             $pre_cart[] = $loop_cat;
         }
         $this->data["pre_cart"] = $pre_cart;
+
+        print_r($this->data["is_sub"]);
 
         $this->smarty->view("front/registry/base.tpl", $this->data);
     }

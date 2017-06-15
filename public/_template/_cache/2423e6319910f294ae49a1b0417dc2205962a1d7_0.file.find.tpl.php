@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-15 18:46:48
+<?php /* Smarty version 3.1.24, created on 2017-06-01 01:30:44
          compiled from "public/_template/front/registry/find.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:182949927758f25c88c4a051_57823094%%*/
+/*%%SmartyHeaderCode:1607407053592f60343df680_29132434%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2423e6319910f294ae49a1b0417dc2205962a1d7' => 
     array (
       0 => 'public/_template/front/registry/find.tpl',
-      1 => 1492278404,
+      1 => 1496170487,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '182949927758f25c88c4a051_57823094',
+  'nocache_hash' => '1607407053592f60343df680_29132434',
   'variables' => 
   array (
     'error' => 0,
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58f25c88c8efb6_14112640',
+  'unifunc' => 'content_592f60344408e2_81269500',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58f25c88c8efb6_14112640')) {
-function content_58f25c88c8efb6_14112640 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_592f60344408e2_81269500')) {
+function content_592f60344408e2_81269500 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '182949927758f25c88c4a051_57823094';
+$_smarty_tpl->properties['nocache_hash'] = '1607407053592f60343df680_29132434';
 echo $_smarty_tpl->getSubTemplate ("../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -121,12 +121,15 @@ $foreach_data_Sav = $_smarty_tpl->tpl_vars['data'];
                                 <td class="col-md-3"><img src="<?php echo $_smarty_tpl->tpl_vars['data']->value['dashboard_image'];?>
 " alt="imga"></td>
                                 <td class="col-md-5">
-                                    <div class="product-name"><a href="#"><?php echo $_smarty_tpl->tpl_vars['data']->value['groom_first_name'];?>
- & <?php echo $_smarty_tpl->tpl_vars['data']->value['bride_first_name'];?>
-</a></div>
+                                    <div class="product-name"><a href="#"><?php if ($_smarty_tpl->tpl_vars['data']->value['regType'] == 'wedding') {
+echo $_smarty_tpl->tpl_vars['data']->value['groom_first_name'];?>
+ & <?php echo $_smarty_tpl->tpl_vars['data']->value['bride_first_name'];
+} else {
+echo $_smarty_tpl->tpl_vars['data']->value['name'];?>
+ <?php }?></a></div>
                                 </td>
-                                <td class="col-md-7">
-                                    <div class="product-name"> Wedding Date : <?php echo $_smarty_tpl->tpl_vars['data']->value['wedding_date'];?>
+                                <td class="col-md-4">
+                                    <div class="product-name"><?php echo $_smarty_tpl->tpl_vars['data']->value['event_date'];?>
 </div>
                                 </td>
                                 <td class="col-md-2">

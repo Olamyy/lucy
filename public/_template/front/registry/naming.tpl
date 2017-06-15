@@ -48,6 +48,13 @@
                                    class="form-control unicase-form-control text-input" id="venue" >
                         </div>
                         <br>
+                        <h4 class="">Email Details</h4>
+                        <div class="form-group">
+                            <label class="info-title" for="spouse_email">Your email <span>*</span></label>
+                            <input type="email" name="email"  placeholder="This is optional"  class="form-control unicase-form-control text-input" id="email" >
+                        </div>
+                        <br>
+
                         <h4 class="">Registry Details</h4>
                         <br>
                         <label for="basic-url">Your registry URL<span>*</span></label>

@@ -43,6 +43,14 @@
                                 {/foreach}
                             </div>
                         {/if}
+                        {if $message|default:''}
+                            <div class="alert alert-success">
+                                <strong>Success!</strong>
+                                {foreach from=$message item=mess}
+                                    <p>{$mess}</p>
+                                {/foreach}
+                            </div>
+                        {/if}
                         <div class="card-block m-t-20">
                             <div id="rootwizard_no_val">
                                 <ul class="nav nav-pills">
@@ -106,18 +114,6 @@
                                                    type="text" class="form-control required" >
                                         </div>
                                         <div class="form-group">
-                                            <label for="surname" class="control-label">ISBN</label>
-                                            <input id="surname" name="product_isbn" type="text"
-                                                   placeholder="ISBN"
-                                                   class="form-control required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="surname" class="control-label">MPN</label>
-                                            <input id="surname" name="product_mpn" type="text"
-                                                   placeholder="MPN"
-                                                   class="form-control required" >
-                                        </div>
-                                        <div class="form-group">
                                             <label for="surname" class="control-label">Price</label>
                                             <input id="surname" name="product_price" type="text"
                                                    placeholder="Price"
@@ -139,9 +135,9 @@
                                             <label>Out Of Stock Time Range</label>
                                             <select class="custom-select form-control"
                                                     title="Out Of Stock Time Range" name="out_of_stock_range">
-                                                <option>2-3 days</option>
-                                                <option>1 - 2week</option>
-                                                <option>3 weeks - 1 month</option>
+                                                <option>3 months</option>
+                                                <option>6 months</option>
+                                                <option>1 year</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

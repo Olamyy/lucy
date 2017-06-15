@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-01 02:05:21
+<?php /* Smarty version 3.1.24, created on 2017-06-10 06:52:13
          compiled from "/var/www/html/lucy/public/_template/front/hotdeals.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:150385268458b61e516c5350_13827762%%*/
+/*%%SmartyHeaderCode:1881195221593b890d5975f9_25942828%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0701b5fe895e5c30566156d902cc238bd01bee03' => 
     array (
       0 => '/var/www/html/lucy/public/_template/front/hotdeals.tpl',
-      1 => 1488298254,
+      1 => 1497073854,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '150385268458b61e516c5350_13827762',
+  'nocache_hash' => '1881195221593b890d5975f9_25942828',
   'variables' => 
   array (
     'hot_deals' => 0,
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58b61e51795887_33110538',
+  'unifunc' => 'content_593b890d5c5da7_94401804',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b61e51795887_33110538')) {
-function content_58b61e51795887_33110538 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593b890d5c5da7_94401804')) {
+function content_593b890d5c5da7_94401804 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/var/www/html/lucy/vendor/smarty/smarty/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '150385268458b61e516c5350_13827762';
+$_smarty_tpl->properties['nocache_hash'] = '1881195221593b890d5975f9_25942828';
 if ((($tmp = @$_smarty_tpl->tpl_vars['hot_deals']->value)===null||$tmp==='' ? '' : $tmp)) {?>
 
   <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
@@ -75,11 +75,7 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'
               <div class="rating rateit-small"></div>
               <div class="product-price"> <span class="price">&#8358;<?php echo $_smarty_tpl->tpl_vars['data']->value['price'];?>
  </span></div>
-              <!-- /.product-price -->
-
             </div>
-            <!-- /.product-info -->
-
             <div class="">
               <div class="action">
                 <ul class="list-unstyled">
@@ -89,7 +85,6 @@ product?product_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['product_id'
                   </li>
                 </ul>
               </div>
-              <!-- /.action -->
             </div>              <!-- /.cart -->
           </div>
         </div>

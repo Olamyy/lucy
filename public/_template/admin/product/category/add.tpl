@@ -51,7 +51,7 @@
                                 </div>
                             {/if}
                             {if $message|default:''}
-                                <div class="alert alert-s">
+                                <div class="alert alert-success">
                                     {foreach from=$message item=mess}
                                         <p>{$mess}</p>
                                     {/foreach}

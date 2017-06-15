@@ -42,6 +42,13 @@
                             <input type="text" name="venue" required placeholder="Venue(Optional)"
                                    class="form-control unicase-form-control text-input" id="venue" >
                         </div>
+
+                        <h4 class="">Email Details</h4>
+                        <div class="form-group">
+                            <label class="info-title" for="spouse_email">Your email <span>*</span></label>
+                            <input type="email" name="email"  placeholder="This is optional"  class="form-control unicase-form-control text-input" id="email" >
+                        </div>
+
                         <br>
                         <h4 class="">Registry Details</h4>
                         <br>
@@ -55,6 +62,7 @@
                             <label class="info-title" for="event_date">{if $user_session[0].regType =='wedding'}Wedding {else}Event {/if} Date</label>
                             <input type="text" name="event_date" placeholder="DD-MM-YYYY"  class="form-control unicase-form-control text-input" id="event_date" >
                         </div>
+
                         <div class="form-group">
                             <input type="checkbox" aria-label="" id="NoDate">
                             <label class="info-title" for="NoDate">{if $user_session[0].regType =='wedding'}We {else}I {/if}haven't picked a date yet</div>

@@ -14,14 +14,13 @@
                   <div class="avatar"><img src="{$BASE_URL}{$SMARTY_VIEW_FOLDER}/front/assets/images/person.png" alt="Image">
                             <br>
                     {foreach from=$complete_details item=user key=eKey}
-                        {*{$user_details[0]}*}
                         <bautton class="btn btn-primary" style="background-color: #FF8F00; font-weight: 300; margin-top: 5px; font-size: large;">{$user.name} </bautton>
                         <div>
                             <h5 style="margin-top: 10px;">{if !$user.event_date}Date coming Soon{else}{format_date date={$user.event_date}}{/if}</h5>
                         </div>
                     {/foreach}
                 {/if}
-                <button class="glyphicon glyphicon-plus btn btn-lg btn-primary" href="{$BASE_URL}" style="margin-top: 20px; height: 50px; width: 200px;" onclick="window.location.href = '{$BASE_URL}'">Add Gifts</button>
+                <button class="glyphicon glyphicon-plus btn btn-lg btn-primary" href="{$BASE_URL}" style="margin-top: 20px; height: 50px; width: 200px;" onclick="window.location.href = '{$BASE_URL}store'">Add Gifts</button>
             </div>
         </div>
     </div>

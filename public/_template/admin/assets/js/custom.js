@@ -408,3 +408,19 @@ $("#admin_auth").on('submit',function()
 
     return true;
 });
+
+$('.edit_button').on('click', function(event){
+    //var itemID = this.id;
+    //$(this).toggleClass("active");
+    //$('#regType').val(itemID);
+    alert(this.id);
+    alert('Fuck');
+})
+
+$('.edit_button').on('click', function(event){
+    //var itemID = this.id;
+    //$(this).toggleClass("active");
+    //$('#regType').val(itemID);
+    alert(this.id);
+    alert('Fuck');
+})

@@ -20,11 +20,7 @@
               <h3 class="name"><a href="{$BASE_URL}product?product_id={$data.product_id}">{$data.name|capitalize}</a></h3>
               <div class="rating rateit-small"></div>
               <div class="product-price"> <span class="price">&#8358;{$data.price} </span></div>
-              <!-- /.product-price -->
-
             </div>
-            <!-- /.product-info -->
-
             <div class="">
               <div class="action">
                 <ul class="list-unstyled">
@@ -34,7 +30,6 @@
                   </li>
                 </ul>
               </div>
-              <!-- /.action -->
             </div>              <!-- /.cart -->
           </div>
         </div>

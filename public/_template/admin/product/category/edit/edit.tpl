@@ -14,7 +14,7 @@
             <div class="col-sm-7 col-lg-6">
                 <ol class="breadcrumb float-xs-right nav_breadcrumb_top_align">
                     <li class="breadcrumb-item">
-                        <a href="index.html">
+                        <a href="">
                             <i class="fa fa-home" data-pack="default" data-tags=""></i> Dashboard
                         </a>
                     </li>
@@ -52,13 +52,14 @@
                                 </div>
                             {/if}
                             {if $message|default:''}
-                                <div class="alert alert-s">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong>
                                     {foreach from=$message item=mess}
                                         <p>{$mess}</p>
                                     {/foreach}
                                 </div>
                             {/if}
-                            <form class="form-horizontal" method="post" action="{$BASE_URL}index.php/admin/category/edit">
+                            <form class="form-horizontal" method="post" action="{$BASE_URL}index.php/admin/category/edit?c_id={$cat_details[0]['id']}">
                                 <fieldset>
                                     <!-- Name input-->
                                     <div class="form-group row m-t-25">

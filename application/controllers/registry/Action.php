@@ -37,7 +37,8 @@ class Action extends CI_Controller
         }
         $this->data["complete_details"] = $this->user_model->custom_get($table_name, array("user_id" => $this->data["current_user"][0]["user_id"]), 0, 0);
         $user_id = $this->data["current_user"][0]["user_id"];
-        $this->data["bg_images"] = scandir(FCPATH."/public/_template/uploads/files", 2);
+        $dir = FCPATH."/public/_template/uploads/files";
+        $this->data["bg_images"] = array_diff(scandir($dir), array('.', '..'));
         $this->data["registry_details"] = $this->user_model->custom_get("lucy_registry_items", array("user_id"=>$user_id), 0, 0);
         $this->data["ip"] = $this->input->ip_address();
         $pre_cart = array();

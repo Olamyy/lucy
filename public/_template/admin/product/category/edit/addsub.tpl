@@ -1,5 +1,6 @@
-{include file="../category/categoryheader.tpl"}
-{include file='../../navmenu.tpl'}
+{include file="../../category/categoryheader.tpl"}
+
+{include file="../../../navmenu.tpl"}
 
 <div id="content" class="bg-container">
     <header class="head">
@@ -57,7 +58,7 @@
                                     {/foreach}
                                 </div>
                             {/if}
-                            <form class="form-horizontal" method="post" action="{$BASE_URL}index.php/admin/category/add">
+                            <form class="form-horizontal" method="post" action="{$BASE_URL}index.php/admin/category/addsub?c_id={$c_id}&c_title={$c_title}">
                                 <fieldset>
                                     <div class="form-group row">
                                         <div class="col-lg-10 push-lg-1">
@@ -65,19 +66,10 @@
                                                 Sub Categories
                                             </label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="sub_cat_cats" id="signup_email" placeholder="Enter the sub categories of the sub category if it has any.">
+                                                <input type="text" class="form-control" name="sub_cat_cats" placeholder="Enter the sub categories of the sub category.">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-lg-10 push-lg-1">
-                                            <label for="signup_email" class="form-control-label form-group-horizontal">
-                                                Category Search Filters
-                                            </label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="cat_search_filters" id="signup_email" placeholder="Enter the search filters for the category.">
-                                            </div>
                                         </div>
-                                    </div>
                                     <div class="form-group row">
                                         <div class="col-lg-11 push-lg-1">
                                             <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Create Sub Categories</button>
@@ -96,4 +88,4 @@
 </div>
 </div>
 
-{include file="../category/categoryfooter.tpl"}
+{include file="../../category/categoryfooter.tpl"}

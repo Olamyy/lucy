@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-03-06 09:57:27
+<?php /* Smarty version 3.1.24, created on 2017-06-07 19:32:08
          compiled from "public/_template/front/registry/couple/details.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:203519610158bd2477d8cd15_25913806%%*/
+/*%%SmartyHeaderCode:466445984593846a8a64a74_45759175%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2d8ef1159c1f7ab210ac481ea77d69c6322b76f' => 
     array (
       0 => 'public/_template/front/registry/couple/details.tpl',
-      1 => 1488790643,
+      1 => 1496859906,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '203519610158bd2477d8cd15_25913806',
+  'nocache_hash' => '466445984593846a8a64a74_45759175',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'error' => 0,
     'err' => 0,
-    'user_session' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58bd2477dc0921_94067124',
+  'unifunc' => 'content_593846a8a906f1_48726543',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58bd2477dc0921_94067124')) {
-function content_58bd2477dc0921_94067124 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593846a8a906f1_48726543')) {
+function content_593846a8a906f1_48726543 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '203519610158bd2477d8cd15_25913806';
+$_smarty_tpl->properties['nocache_hash'] = '466445984593846a8a64a74_45759175';
 echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -41,9 +40,9 @@ echo $_smarty_tpl->getSubTemplate ('../../header.tpl', $_smarty_tpl->cache_id, $
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/">Home</a></li>
+">Home</a></li>
                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry">Registry</a></li>
+registry">Registry</a></li>
                 <li class='active'>Couple Details</li>
             </ul>
         </div><!-- /.breadcrumb-inner -->
@@ -80,10 +79,8 @@ $_smarty_tpl->tpl_vars['err'] = $foreach_err_Sav;
 ?>
                         </div>
                     <?php }?>
-                    <?php if ((($tmp = @$_smarty_tpl->tpl_vars['user_session']->value)===null||$tmp==='' ? '' : $tmp)) {?>
-                    <?php }?>
                     <form class="register-form outer-top-xs" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php/registry/couple/init">
+registry/InitCouple">
                         <div class="form-group">
                             <h4 class="">Groom Details</h4>
                             <label class="info-title" for="groom_first_name">First Name<span>*</span></label>
@@ -95,7 +92,7 @@ index.php/registry/couple/init">
                         </div>
                         <hr>
                         <div class="form-group">
-                        <h4 class="">Bride Details</h4>
+                        <h4 class="">Partner Details</h4>
                         <label class="info-title" for="spouse_first_name">First Name<span>*</span></label>
                         <input type="text" name="spouse_first_name"  placeholder="Bride's first name" required class="form-control unicase-form-control text-input" id="spouse_first_name" >
                         </div>
@@ -103,7 +100,6 @@ index.php/registry/couple/init">
                             <label class="info-title" for="spouse_last_name">Last Name<span>*</span></label>
                             <input type="text" name="spouse_last_name" placeholder="Bride's last name" required class="form-control unicase-form-control text-input" id="spouse_last_name" >
                         </div>
-                        <hr>
                         <div class="form-group">
                             <label class="info-title" for="spouse_email">Partner email</label>
                             <input type="email" name="spouse_email"  placeholder="This is optional"  class="form-control unicase-form-control text-input" id="spouse_email" >
@@ -112,19 +108,11 @@ index.php/registry/couple/init">
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Next</button>
                     </form>
                 </div>
-                <!-- Sign-in -->
+            </div>
+        </div>
 
-                <!-- create a new account -->
-
-                <!-- create a new account -->			</div><!-- /.row -->
-        </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-    </div><!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
-<!-- ============================================================= FOOTER ============================================================= -->
-
+    </div>
+</div>
 <?php echo $_smarty_tpl->getSubTemplate ("../../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 
 }

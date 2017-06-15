@@ -2,10 +2,7 @@
 
 {include file="./nav.tpl"}
 
-{include file="./side.tpl"}
+{include file="./coredashboard.tpl"}
 
-{include file="../../../mainsliders.tpl"}
-
-{include file="../../../newproducts.tpl"}
 
 {include file="./footer.tpl"}

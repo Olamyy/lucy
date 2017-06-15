@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2017-04-14 18:21:40
+<?php /* Smarty version 3.1.24, created on 2017-06-03 07:58:54
          compiled from "/var/www/html/lucy/public/_template/admin/navmenu.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1271516058f10524f05c25_83199104%%*/
+/*%%SmartyHeaderCode:635603059325e2e4c0636_67641921%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '06a25c92213522c9b6f8ad7e07dc06fbf9cb34a9' => 
     array (
       0 => '/var/www/html/lucy/public/_template/admin/navmenu.tpl',
-      1 => 1492190497,
+      1 => 1496473131,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1271516058f10524f05c25_83199104',
+  'nocache_hash' => '635603059325e2e4c0636_67641921',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_58f105250266b6_86169516',
+  'unifunc' => 'content_59325e2e532431_91033529',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58f105250266b6_86169516')) {
-function content_58f105250266b6_86169516 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_59325e2e532431_91033529')) {
+function content_59325e2e532431_91033529 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1271516058f10524f05c25_83199104';
+$_smarty_tpl->properties['nocache_hash'] = '635603059325e2e4c0636_67641921';
 ?>
 <div class="bg-dark" id="wrap">
     <div id="top">
@@ -60,7 +60,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1271516058f10524f05c25_83199104';
             <!-- #menu -->
             <ul id="menu" class="bg-blue dker">
                 <li class="active">
-                    <a href="">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/dashboard">
                         <i class="fa fa-home"></i>
                         <span class="link-title">&nbsp;Dashboard</span>
                     </a>
@@ -105,7 +106,12 @@ admin/Category/view">
                                 <i class="fa fa-angle-right"></i> &nbsp;View Categories
                             </a>
                         </li>
-
+                        <li>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+admin/Category/viewsub">
+                                <i class="fa fa-angle-right"></i> &nbsp;View Sub Categories
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

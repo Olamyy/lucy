@@ -49,9 +49,11 @@ class Init extends CI_Controller
             $venue = $this->input->post("venue");
             $name = $this->input->post("name");
             $event_date = $this->input->post("event_date");
+            $email = $this->input->post("email");
             $registry_url_tag = $this->input->post("registry_url_tag");
 
             if (empty($venue)) $error[] = "Provide a valid venue.";
+            if (empty($email)) $error[] = "Provide a valid email.";
             if (empty($name)) $error[] = "Provide  name.";
             if (!$this->check_url_tag($registry_url_tag)) $error[] = str_replace("<URLTAG>", $registry_url_tag, "The url tag <URLTAG> has been taken");
 
@@ -65,7 +67,7 @@ class Init extends CI_Controller
                     "date_added" => $this->check_user_ip[0]["date_added"],
                     "regType" => $this->check_user_ip[0]["date_added"],
                     "event_date" => date("Y-m-d H:i:s", strtotime($event_date)),
-                    "email" => $this->check_user_ip[0]["email"],
+                    "email" => $email,
                     "ip" => $this->check_user_ip[0]["ip"],
                     "registry_url_tag" => $registry_url_tag,
                     "password" => $this->check_user_ip[0]["password"],
@@ -96,6 +98,8 @@ class Init extends CI_Controller
             $years_of_marriage = $this->input->post("years_of_marriage");
             $event_date = $this->input->post("event_date");
             $registry_url_tag = $this->input->post("registry_url_tag");
+            $email = $this->input->post("email");
+
             if (!$this->check_url_tag($registry_url_tag)) $error[] = str_replace("<URLTAG>", $registry_url_tag, "The url tag <URLTAG> has been taken");
 
 
@@ -112,7 +116,7 @@ class Init extends CI_Controller
                     "date_added"=>$this->check_user_ip[0]["date_added"],
                     "regType"=>$this->check_user_ip[0]["date_added"],
                     "event_date"=>date("Y-m-d H:i:s", strtotime($event_date)),
-                    "email"=>$this->check_user_ip[0]["email"],
+                    "email" => $email,
                     "ip"=>$this->check_user_ip[0]["ip"],
                     "years_of_marriage"=>$years_of_marriage,
                     "registry_url_tag"=>$registry_url_tag,
@@ -143,6 +147,7 @@ class Init extends CI_Controller
             $name = $this->input->post("name");
             $event_date = $this->input->post("event_date");
             $registry_url_tag = $this->input->post("registry_url_tag");
+            $email = $this->input->post("email");
             if (!$this->check_url_tag($registry_url_tag)) $error[] = str_replace("<URLTAG>", $registry_url_tag, "The url tag <URLTAG> has been taken");
 
 
@@ -159,7 +164,7 @@ class Init extends CI_Controller
                     "date_added"=>$this->check_user_ip[0]["date_added"],
                     "regType"=>$this->check_user_ip[0]["date_added"],
                     "event_date"=>date("Y-m-d H:i:s", strtotime($event_date)),
-                    "email"=>$this->check_user_ip[0]["email"],
+                    "email" => $email,
                     "ip"=>$this->check_user_ip[0]["ip"],
                     "registry_url_tag"=>$registry_url_tag,
                     "password"=>$this->check_user_ip[0]["password"],
@@ -188,6 +193,7 @@ class Init extends CI_Controller
             $name = $this->input->post("name");
             $child_name = $this->input->post("child_name");
             $event_date = $this->input->post("event_date");
+            $email = $this->input->post("email");
             $registry_url_tag = $this->input->post("registry_url_tag");
             if (!$this->check_url_tag($registry_url_tag)) $error[] = str_replace("<URLTAG>", $registry_url_tag, "The url tag <URLTAG> has been taken");
 
@@ -205,7 +211,7 @@ class Init extends CI_Controller
                     "date_added"=>$this->check_user_ip[0]["date_added"],
                     "regType"=>$this->check_user_ip[0]["date_added"],
                     "event_date"=>date("Y-m-d H:i:s", strtotime($event_date)),
-                    "email"=>$this->check_user_ip[0]["email"],
+                    "email" => $email,
                     "ip"=>$this->check_user_ip[0]["ip"],
                     "child_name"=>$child_name,
                     "password"=>$this->check_user_ip[0]["password"],
@@ -237,6 +243,7 @@ class Init extends CI_Controller
             $event_date = $this->input->post("event_date");
             $event_name = $this->input->post("event_name");
             $registry_url_tag = $this->input->post("registry_url_tag");
+            $email = $this->input->post("email");
             if (!$this->check_url_tag($registry_url_tag)) $error[] = str_replace("<URLTAG>", $registry_url_tag, "The url tag <URLTAG> has been taken");
 
 
@@ -255,7 +262,7 @@ class Init extends CI_Controller
                     "regType"=>$this->check_user_ip[0]["regType"],
                     "password"=>$this->check_user_ip[0]["password"],
                     "event_date"=>date("Y-m-d H:i:s", strtotime($event_date)),
-                    "email"=>$this->check_user_ip[0]["email"],
+                    "email" => $email,
                     "ip"=>$this->check_user_ip[0]["ip"],
                     "event_name"=>$event_name,
                     "registry_url_tag"=>$registry_url_tag

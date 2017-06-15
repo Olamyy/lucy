@@ -15,7 +15,7 @@ class User_model extends CI_Model
         $query = $this->db->insert($table, $data);
         if ($query) {
             $insert_id = $this->db->insert_id();
-            return $this->custom_get($table,array('id' => $insert_id), 0, 0);
+            return $this->custom_get($table,array("id" => $insert_id), 0, 0);
         } else
             return false;
     }
@@ -31,6 +31,35 @@ class User_model extends CI_Model
         return $pre_cart;
     }
 
+    public function get_sub_products($p_id, $c_id){
+        $query = $this->custom_get("lucy_category_description" , array("category_id"=>$c_id), 0, 0);
+        if(!empty($query)){
+            $sub_categories = explode(',',$query[0]["sub_categories"]);
+            if (in_array($p_id, $sub_categories)) {
+                $product = $this->custom_get("lucy_product" , array("product_categories"=>$p_id), 5, 0);
+                return $product;
+            }
+        }
+
+    }
+
+    public function get_sub_from_cat($p_id, $c_id){
+
+        $query = $this->custom_get("lucy_category_description" , array("id"=>$c_id), 0, 0);
+
+        if(!empty($query)){
+            $sub_categories = explode(',',$query[0]["sub_categories"]);
+            $data = array();
+            foreach($sub_categories as  $cat){
+                array_push($data,  preg_replace('/\s+/', '', $cat));
+            }
+            if (in_array(preg_replace('/\s+/', '', $p_id), $data)) {
+                print_r('Yeah');
+                return true;
+            }
+        }
+
+    }
 
     public function get($table){
         $query = $this->db->get($table);  // Produces: SELECT * FROM mytable
@@ -61,6 +90,18 @@ class User_model extends CI_Model
         $this->db->order_by('id', 'RANDOM');
         $this->db->limit($count);
         $query = $this->db->get($table);
+        if($query){
+            return $query->result($type='array');
+        }else{
+            return false;
+        }
+    }
+
+    public function get_random_where($table, $condition, $count)
+    {
+        $this->db->order_by('id', 'RANDOM');
+        $this->db->limit($count);
+        $query = $this->db->get_where($table,$condition);
         if($query){
             return $query->result($type='array');
         }else{
@@ -109,7 +150,12 @@ class User_model extends CI_Model
     public function get_registry_with_email_or_name($query_term){
         $query = $this->custom_get('lucy_all_users', array("email" => $query_term), 0, 0);
         if(($query)){
-            $table_name = str_replace("<REG_TYPE>", $query[0]["regType"], "lucy_<REG_TYPE>_user");
+            if ($query[0]["regType"] == "wedding"){
+                $table_name = "lucy_couple";
+            }
+            else{
+                $table_name = str_replace("<REG_TYPE>", $query[0]["regType"], "lucy_<REG_TYPE>_user");
+            }
             return $this->custom_get($table_name, array("user_id" => $query[0]["user_id"]), 0, 0);
         }
         else{
